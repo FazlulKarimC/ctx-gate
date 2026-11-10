@@ -8,8 +8,8 @@ import {
   chooseTerraEffort,
 } from "../scripts/phase8-terra-plan.mjs";
 
-test("Active pilot plan fixes six untouched task pairs and alternates first arm", () => {
-  assert.equal(TERRA_MODEL, "gemini-flash-3.8");
+test("Terra pilot fixes six untouched task pairs and alternates first arm", () => {
+  assert.equal(TERRA_MODEL, "gpt-5.6-terra");
   assert.equal(TERRA_TIMEOUT_MS, 240_000);
   assert.equal(TERRA_ASSIGNMENTS.length, TERRA_MAX_ATTEMPTS);
   assert.equal(new Set(TERRA_ASSIGNMENTS.map((row) => row.slot)).size, 12);
@@ -33,13 +33,13 @@ test("Active pilot plan fixes six untouched task pairs and alternates first arm"
   );
 });
 
-test("Active plan prefers low reasoning effort and otherwise only accepts a returned default", () => {
+test("Terra prefers medium and otherwise only accepts a returned default", () => {
   assert.equal(
     chooseTerraEffort({
       defaultReasoningEffort: "high",
-      supportedReasoningEfforts: [{ reasoningEffort: "low" }],
+      supportedReasoningEfforts: [{ reasoningEffort: "medium" }],
     }),
-    "low",
+    "medium",
   );
   assert.equal(
     chooseTerraEffort({
@@ -51,7 +51,7 @@ test("Active plan prefers low reasoning effort and otherwise only accepts a retu
   assert.equal(
     chooseTerraEffort({
       defaultReasoningEffort: "high",
-      supportedReasoningEfforts: [{ reasoningEffort: "medium" }],
+      supportedReasoningEfforts: [{ reasoningEffort: "low" }],
     }),
     null,
   );

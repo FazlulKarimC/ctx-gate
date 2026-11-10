@@ -11,8 +11,8 @@ export const project = resolve(
   dirname(fileURLToPath(import.meta.url)),
   "../..",
 );
-export const MODEL = "gemini-flash-3.8",
-  EFFORT = "low";
+export const MODEL = "gpt-6.1-sol",
+  EFFORT = "high";
 export const WINDOWS_SANDBOX = "mxc";
 export const trialRoot = join(tmpdir(), "ctxgate-phase5-trials");
 const within = (parent, path) => {

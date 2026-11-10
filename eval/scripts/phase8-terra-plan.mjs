@@ -1,5 +1,5 @@
-export const TERRA_MODEL = "gemini-flash-3.8";
-export const TERRA_PREFERRED_EFFORT = "low";
+export const TERRA_MODEL = "gpt-5.6-terra";
+export const TERRA_PREFERRED_EFFORT = "medium";
 export const TERRA_TIMEOUT_MS = 240_000;
 export const TERRA_MAX_ATTEMPTS = 12;
 

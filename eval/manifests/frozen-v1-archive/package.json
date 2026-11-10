@@ -1,0 +1,46 @@
+{
+  "name": "ctxgate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A sufficient local repository context engine, evaluated against explicit baselines.",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "bin": {
+    "ctxgate": "dist/cli/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "format": "prettier --write src tests eval/scripts eval/labels package.json tsconfig.json .github/workflows",
+    "format:check": "prettier --check src tests eval/scripts eval/labels package.json tsconfig.json .github/workflows",
+    "check": "npm run format:check && npm run typecheck && npm test",
+    "eval:preflight": "node eval/scripts/preflight.mjs",
+    "eval:register": "node eval/scripts/register-corpus.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "ignore": "7.0.14",
+    "js-tiktoken": "1.0.21",
+    "minimatch": "10.2.6",
+    "typescript": "6.0.2",
+    "yaml": "2.9.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "prettier": "3.9.10"
+  }
+}

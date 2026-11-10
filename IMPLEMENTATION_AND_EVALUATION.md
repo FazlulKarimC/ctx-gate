@@ -1,6 +1,6 @@
 # Implementation Plan, Experiments & Evaluation Record
 
-This document consolidates the implementation roadmap, empirical benchmark results across all phases, post-study maintenance fixes (`v0.1.1`), the **Gemini Flash 3.8 (`low` reasoning)** evaluation configuration, and portfolio/interview takeaways.
+This document consolidates the implementation roadmap, empirical benchmark results across all phases, post-study maintenance fixes (`v0.1.1`), the **Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)** evaluation harness, and portfolio/interview takeaways.
 
 ---
 
@@ -17,7 +17,7 @@ This document consolidates the implementation roadmap, empirical benchmark resul
 | **Phase 5** | Fixed-Root Stdio MCP Server (`ctx_context`, `ctx_expand`, `ctx_check`) & Host Integration | **Done** | [`src/mcp/index.ts`](src/mcp/index.ts), [`eval/summaries/phase5-pilot.json`](eval/summaries/phase5-pilot.json) |
 | **Phase 6** | Direct-Import Boundary Checker (`ctxgate check`) & 16-Case Registered Patch Study | **Done** | [`src/checker/index.ts`](src/checker/index.ts), [`eval/summaries/checker.json`](eval/summaries/checker.json) |
 | **Phase 7** | Operational Scaling Profile (106 / 506 / 1,006 files), Mutation Resilience & Evaluation Freeze | **Done** | [`eval/summaries/operational.json`](eval/summaries/operational.json), [`eval/manifests/evaluation-freeze.json`](eval/manifests/evaluation-freeze.json) |
-| **Phase 8** | Held-Out A/B Evaluation Harness (transitioned to **Gemini Flash 3.8, `low` reasoning**) | **Ready (Preview Verified)** | [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json), [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs) |
+| **Phase 8** | Held-Out A/B Evaluation Harness (**Gemini 3.8 Flash, `gemini-3.8-flash`, `low` reasoning**) | **Ready (Harness & Multi-Turn Loop Tested)** | [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json), [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs) |
 | **Phase 9** | Offline Synthetic Demo, Clean-Copy Reproducibility & Consolidated Documentation | **Done** | [`examples/demo.mjs`](examples/demo.mjs), [`eval/scripts/portfolio-reproduce.mjs`](eval/scripts/portfolio-reproduce.mjs), [`eval/summaries/portfolio-reproduction.json`](eval/summaries/portfolio-reproduction.json) |
 
 ---
@@ -87,7 +87,7 @@ Measured fresh CLI child processes across synthetic repositories of `106`, `506`
 
 ## 3. Post-Study Maintenance Fixes (`v0.1.1`)
 
-During the post-study technical audit, four concrete defects in the `v0.1.0` frozen codebase were identified, fixed, and covered by regression tests in `v0.1.1`:
+During the post-study technical audit, five concrete defects in the `v0.1.0` frozen codebase were identified, fixed, and covered by regression tests in `v0.1.1`:
 
 1. **Async Test-Fixture Initialization Race ([`tests/features.test.mjs`](tests/features.test.mjs))**
    - `fixture()` previously invoked `initialize(root)` without `await`, causing intermittent race conditions against `.ctx/config.json` and `.gitignore` creation during parallel test runs. Fixed with `await initialize(root);`.
@@ -97,22 +97,25 @@ During the post-study technical audit, four concrete defects in the `v0.1.0` fro
    - `captureCommit()` previously checked whether configured `roots` existed in `regular` (before `.gitignore` and `exclude` filtering) rather than `selected` (after ignore rules). Moved the check to inspect `selected` so worktree and commit capture behave identically.
 4. **Defensive `package.json` Dependency Map Guard ([`src/analyzer/index.ts`](src/analyzer/index.ts))**
    - `resolveImports()` previously spread `pkg?.data.dependencies` directly into `Object.assign` and looked up `allDependencies[rootName]`. Added plain-object validation (`depMap`) and `Object.hasOwn` so malformed/array `dependencies` fields cannot match `Array.prototype` or `Object.prototype` properties.
+5. **Ancestor Git Repository Ignore Isolation in Worktree Capture ([`src/workspace/snapshot.ts`](src/workspace/snapshot.ts))**
+   - `captureWorktree()` previously ran `git check-ignore` whenever `root` was inside any Git worktree, even if `root` was a non-Git subdirectory inside a parent repository's ignored directory (such as `.cache/tests/`). Added a `realpathSync(run("rev-parse", "--show-toplevel").trim()) === root` check so `git check-ignore` is only applied when `root` itself is the repository root.
 
-The original `v0.1.0` freeze manifest is preserved as [`eval/manifests/evaluation-freeze-v1.json`](eval/manifests/evaluation-freeze-v1.json), and [`eval/manifests/evaluation-freeze.json`](eval/manifests/evaluation-freeze.json) pins the updated 92-file hashes for `v0.1.1`.
+The original `v0.1.0` freeze manifest is preserved as [`eval/manifests/evaluation-freeze-v1.json`](eval/manifests/evaluation-freeze-v1.json) with the exact `v0.1.0` versions of the 7 modified files archived in tracked [`eval/manifests/frozen-v1-archive/`](eval/manifests/frozen-v1-archive/), while [`eval/manifests/evaluation-freeze.json`](eval/manifests/evaluation-freeze.json) pins the updated 92-file hashes for `v0.1.1`.
 
 ---
 
-## 4. Agent Evaluation Setup: Gemini Flash 3.8 (`low` reasoning)
+## 4. Agent Evaluation Setup: Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)
 
-### Why the Active Harness Targets `gemini-flash-3.8` (`low` reasoning)
-Earlier exploratory runs using Codex-hosted models (`gpt-6.1-sol` and `gpt-5.6-terra`) were stopped by external provider model retirement and account usage limits before a statistically valid held-out A/B sample could be completed. Those historical summaries remain untouched in `eval/summaries/` as an honest audit trail, and **no claim of agent task-success improvement, speedup, or net host token reduction is made.**
+### Why the Active Harness Targets `gemini-3.8-flash` (`low` reasoning)
+Earlier exploratory runs using Codex-hosted models (`gpt-6.1-sol` and `gpt-5.6-terra`) were stopped by external provider model retirement and account usage limits before a statistically valid held-out A/B sample could be completed. Those historical scripts (`eval/scripts/phase5-host.mjs`, `eval/scripts/phase8-terra-plan.mjs`, `eval/scripts/run-initial.mjs`) and summaries in `eval/summaries/` remain preserved intact as an honest audit trail, and **no claim of agent task-success improvement, speedup, or net host token reduction is made.**
 
-All active evaluation configurations, scripts, and plan tests now target **`gemini-flash-3.8`** with **`low` reasoning effort** via direct Gemini API calls:
-- **Policy Manifest:** [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json) (`stratum: "gemini_flash_38_low_pilot"`, `model: "gemini-flash-3.8"`, `reasoning_effort: "low"`, 12 paired A/B assignments across 6 held-out tasks).
-- **Plan & Direct API Runner:** [`eval/scripts/phase8-gemini-plan.mjs`](eval/scripts/phase8-gemini-plan.mjs) and [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs).
-  - Condition `A` exposes isolated workspace file tools (`read_workspace_file`, `write_workspace_file`).
+A dedicated, standalone Gemini evaluation harness targets **`gemini-3.8-flash`** with **`low` reasoning effort** (`thinkingConfig: { thinkingLevel: "LOW" }`, without deprecated `temperature` sampling parameters) via direct Gemini API calls:
+- **Policy Manifest:** [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json) (`stratum: "gemini_38_flash_low_pilot"`, `model: "gemini-3.8-flash"`, `reasoning_effort: "low"`, 12 paired A/B assignments across 6 held-out tasks).
+- **Plan & Multi-Turn Execution Harness:** [`eval/scripts/phase8-gemini-plan.mjs`](eval/scripts/phase8-gemini-plan.mjs) and [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs).
+  - Implements the complete multi-turn Gemini function-calling loop (`runGeminiAgentSession`) matching `functionCall` `id` and `name` fields to `functionResponse` turns.
+  - Condition `A` exposes isolated workspace tools (`list_workspace_files`, `read_workspace_file`, `write_workspace_file`, `run_focused_node_test`).
   - Condition `B` adds `ctx_context` and `ctx_expand` backed directly by the local `ctx-gate` engine.
-  - Defaults to safe, zero-cost **preview mode** (`model_calls: 0`) unless `--execute` and `GEMINI_API_KEY` are explicitly supplied.
+  - Supports `--register` (append-only ledger creation) and `--execute` (isolated workspace export from task `base_commit`, baseline fail-before/pass-control verification, reservation logging, multi-turn model execution, protected post-patch assessment, stop-rule enforcement, and report generation), while defaulting to safe, zero-cost **preview mode** (`model_calls: 0`).
 
 ---
 
@@ -121,7 +124,7 @@ All active evaluation configurations, scripts, and plan tests now target **`gemi
 With **Node 24 LTS** (`v24.x`) and **Git** installed:
 
 ```powershell
-# 1. Full code style, TypeScript typecheck, build, and 86 unit/integration/eval tests
+# 1. Full code style, TypeScript typecheck, build, and 90 unit/integration/eval tests
 npm run check
 
 # 2. Verify the 92-file SHA-256 source/evaluation freeze
@@ -133,7 +136,7 @@ node examples/demo.mjs
 # 4. Run the clean-copy offline reproduction pipeline (0 model calls)
 node eval/scripts/portfolio-reproduce.mjs
 
-# 5. Preview the Gemini Flash 3.8 (low reasoning) evaluation plan (0 model calls)
+# 5. Preview the Gemini 3.8 Flash (gemini-3.8-flash, low reasoning) evaluation plan (0 model calls)
 node eval/scripts/phase8-gemini-run.mjs
 ```
 
@@ -141,7 +144,10 @@ node eval/scripts/phase8-gemini-run.mjs
 
 ## 6. Resume & Interview Showcase Highlights
 
-- **Problem-First Framing:** Built a local-first TypeScript/Node 24 context-management SDK and MCP server (`ctx-gate`) using built-in `node:sqlite` (WAL + FTS5), TypeScript AST analysis, and `js-tiktoken` to give AI coding agents token-bounded, hash-verified repository context and syntactic import-boundary checks.
-- **Evidence-Driven Refinement:** Diagnosed why initial lexical retrieval missed branches inside long functions and suffered `4.03 s` warm `p95` tail latency; designed intra-symbol window focusing and a 40-candidate packing cap (`v2`) that improved development labeled-span recall from `36.25%` to `45.00%`, reduced warm `p95` latency from `3.96 s` to `1.86 s`, and cut full-envelope tokenizer calls by `73%` (`406.85` to `108.80`).
-- **Disciplined Negative Findings:** Conducted a 240-brief ablation study across 1,000/2,000/4,000-token budgets showing that 1-hop import neighbors and reviewed notes displaced `9–40` labeled source lines without adding new relevant lines—justifying keeping both features off by default instead of shipping unmeasured complexity.
-- **Security-Conscious Boundary Checking:** Implemented `ctxgate check` to compare baseline and target Git trees against trusted baseline `deny_import` rules (`16/16` synthetic patch study cases), preventing candidate edits to `.ctx/config.json` or `.gitignore` from bypassing architectural boundaries.
+Recommended resume bullets supported directly by verified repository artifacts:
+- Built a local-first TypeScript context-management SDK using SQLite FTS5, AST import analysis, token-bounded retrieval, freshness-validated expansion, MCP tools, and boundary checks.
+- Improved labeled span recall from `36.25%` to `45.00%` and reduced warm `p95` retrieval latency from `3.96 s` to `1.86 s` in a controlled development study.
+- Ran a 240-response ablation that showed optional graph context and reviewed notes displaced useful evidence, so kept them default-off.
+- Built reproducible offline validation: `90` tests, frozen evaluation inputs, deterministic demo, and clean-copy reproduction.
+
+*(Note: Do not claim that `ctx-gate` improves coding-agent completion rate, cost, or speed until the held-out `gemini-3.8-flash` experiment is executed.)*

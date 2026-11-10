@@ -10,7 +10,7 @@ Built on **Node 24 LTS** (`node:sqlite` WAL + FTS5, TypeScript syntax/module-res
 
 1. **[`PROBLEM_AND_RESEARCH.md`](PROBLEM_AND_RESEARCH.md)** — Problem statement, why AI coding agents fail on repository context, comparison with RAG/graph/daemon alternatives, and research hypotheses.
 2. **[`ARCHITECTURE_AND_TRADEOFFS.md`](ARCHITECTURE_AND_TRADEOFFS.md)** — The 6-module architecture, provenance & freshness contracts, full-envelope token budgeting, why graph neighbors & reviewed notes are default-off, and the trusted baseline boundary checker.
-3. **[`IMPLEMENTATION_AND_EVALUATION.md`](IMPLEMENTATION_AND_EVALUATION.md)** — Phase-by-phase implementation record, empirical benchmark tables, `v0.1.1` bug fixes, the **Gemini Flash 3.8 (`low` reasoning)** evaluation setup, and resume/interview highlights.
+3. **[`IMPLEMENTATION_AND_EVALUATION.md`](IMPLEMENTATION_AND_EVALUATION.md)** — Phase-by-phase implementation record, empirical benchmark tables, `v0.1.1` bug fixes, the **Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)** evaluation setup, and resume/interview highlights.
 
 ---
 
@@ -19,7 +19,7 @@ Built on **Node 24 LTS** (`node:sqlite` WAL + FTS5, TypeScript syntax/module-res
 Requires **Node 24 LTS** (`>=24 <25`) and **Git**.
 
 ```powershell
-# Install locked dependencies, typecheck, build, and run all 86 tests
+# Install locked dependencies, typecheck, build, and run all 90 tests
 npm ci
 npm run check
 
@@ -76,4 +76,4 @@ const verdict = check(repoRoot, { base: baselineCommitSha, mode: "required" });
 - **Lexical Retrieval vs. Raw Search:** On the 20-task development benchmark at a strict 2,000-token `o200k_base` budget, lexical retrieval (`v2`) hit `14/20` relevant source files and `11/20` labeled implementation spans (`45.00%` mean span recall) vs. `0/20` for an alphabetical `ripgrep` baseline.
 - **Intra-Symbol Focus & Bounded Packing (`v2` vs. `v1`):** Focusing windows inside matched symbols and capping packing attempts at 40 reduced warm `p95` latency from `3.96 s` to `1.86 s` and reduced full-envelope tokenizer calls by `73%` (`406.85` to `108.80`).
 - **Evidence-Gated Features:** One-hop import neighbors (`--neighbors`) and reviewed Markdown notes (`--notes`) are supported but **disabled by default** because controlled ablations showed they displaced `9–40` labeled code lines under fixed token budgets without adding new relevant spans.
-- **Honest Scope:** Local retrieval quality, freshness safety, and synthetic boundary checking (`16/16` cases) are deterministically verified; end-to-end coding-agent A/B evaluation is configured for **Gemini Flash 3.8 (`low` reasoning)** (`node eval/scripts/phase8-gemini-run.mjs`).
+- **Honest Scope:** Local retrieval quality, freshness safety, and synthetic boundary checking (`16/16` cases) are deterministically verified; end-to-end coding-agent A/B evaluation is configured for **Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)** (`node eval/scripts/phase8-gemini-run.mjs`).
