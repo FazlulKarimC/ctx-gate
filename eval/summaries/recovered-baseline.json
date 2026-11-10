@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-26T10:11:20.915Z",
+  "run_id": "2026-10-26T10-01-40-821Z",
+  "qualification_id": "2026-10-26T08-27-25-645Z",
+  "condition": "A",
+  "purpose": "host-only instrumentation; no ctxgate tools",
+  "attempts": 5,
+  "focused_regressions_passed": 5,
+  "supplemental_new_test_failures": 0,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_requested": "high",
+  "model_resolved": null,
+  "controlled_comparison_ready": false,
+  "limitations": [
+    "memory/tool isolation unverified; not a causal comparison",
+    "all tasks from Picomatch; d03/d04 share a fix family",
+    "selected existing tests use an inspected describe/it subset, not upstream npm test/lint/coverage",
+    "focused passing regressions plus source review do not prove all behaviors correct",
+    "cached input is a subset of input; missing pricing stays unavailable"
+  ],
+  "rows": [
+    {
+      "task_id": "picomatch-d01",
+      "status": "unassessed",
+      "focused_regression_passed": true,
+      "existing_tests_base": 178,
+      "existing_tests_patched": 181,
+      "existing_tests_patched_failed": 0,
+      "new_existing_test_failures": 0,
+      "elapsed_ms": 108606,
+      "tool_commands": 9,
+      "usage": {
+        "input_tokens": 285787,
+        "cached_input_tokens": 250368,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3141,
+        "reasoning_output_tokens": 954
+      },
+      "changed_paths": [
+        "lib/parse.js",
+        "test/globstars.js"
+      ],
+      "patch_review": "See docs/experiments/recovered-baseline.md; original raw status remains unassessed",
+      "raw_report": "eval/runs/initial-baseline/2026-10-26T10-01-40-821Z/picomatch-d01/report.json"
+    },
+    {
+      "task_id": "picomatch-d02",
+      "status": "unassessed",
+      "focused_regression_passed": true,
+      "existing_tests_base": 177,
+      "existing_tests_patched": 180,
+      "existing_tests_patched_failed": 0,
+      "new_existing_test_failures": 0,
+      "elapsed_ms": 94866,
+      "tool_commands": 6,
+      "usage": {
+        "input_tokens": 212256,
+        "cached_input_tokens": 184960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3145,
+        "reasoning_output_tokens": 1120
+      },
+      "changed_paths": [
+        "lib/parse.js",
+        "test/globstars.js"
+      ],
+      "patch_review": "See docs/experiments/recovered-baseline.md; original raw status remains unassessed",
+      "raw_report": "eval/runs/initial-baseline/2026-10-26T10-01-40-821Z/picomatch-d02/report.json"
+    },
+    {
+      "task_id": "picomatch-d03",
+      "status": "unassessed",
+      "focused_regression_passed": true,
+      "existing_tests_base": 172,
+      "existing_tests_patched": 176,
+      "existing_tests_patched_failed": 0,
+      "new_existing_test_failures": 0,
+      "elapsed_ms": 167137,
+      "tool_commands": 12,
+      "usage": {
+        "input_tokens": 366996,
+        "cached_input_tokens": 331392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5315,
+        "reasoning_output_tokens": 1517
+      },
+      "changed_paths": [
+        "lib/scan.js",
+        "test/api.scan.js"
+      ],
+      "patch_review": "See docs/experiments/recovered-baseline.md; original raw status remains unassessed",
+      "raw_report": "eval/runs/initial-baseline/2026-10-26T10-01-40-821Z/picomatch-d03/report.json"
+    },
+    {
+      "task_id": "picomatch-d04",
+      "status": "unassessed",
+      "focused_regression_passed": true,
+      "existing_tests_base": 172,
+      "existing_tests_patched": 173,
+      "existing_tests_patched_failed": 0,
+      "new_existing_test_failures": 0,
+      "elapsed_ms": 66246,
+      "tool_commands": 9,
+      "usage": {
+        "input_tokens": 235934,
+        "cached_input_tokens": 213632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1594,
+        "reasoning_output_tokens": 166
+      },
+      "changed_paths": [
+        "lib/scan.js",
+        "test/api.scan.js"
+      ],
+      "patch_review": "See docs/experiments/recovered-baseline.md; original raw status remains unassessed",
+      "raw_report": "eval/runs/initial-baseline/2026-10-26T10-01-40-821Z/picomatch-d04/report.json"
+    },
+    {
+      "task_id": "picomatch-d05",
+      "status": "unassessed",
+      "focused_regression_passed": true,
+      "existing_tests_base": 171,
+      "existing_tests_patched": 177,
+      "existing_tests_patched_failed": 0,
+      "new_existing_test_failures": 0,
+      "elapsed_ms": 101798,
+      "tool_commands": 8,
+      "usage": {
+        "input_tokens": 283177,
+        "cached_input_tokens": 252416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3093,
+        "reasoning_output_tokens": 554
+      },
+      "changed_paths": [
+        "lib/picomatch.js",
+        "test/api.picomatch.js",
+        "test/options.js"
+      ],
+      "patch_review": "See docs/experiments/recovered-baseline.md; original raw status remains unassessed",
+      "raw_report": "eval/runs/initial-baseline/2026-10-26T10-01-40-821Z/picomatch-d05/report.json"
+    }
+  ]
+}

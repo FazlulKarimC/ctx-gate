@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-26T14:06:18.432Z",
+  "frozen_run": "2026-10-26T13-55-50-466Z",
+  "reason": "Regression reproduced a resolved TS import into .ctx/notes bypassing notes opt-in. Exclude note paths from graph selection/degree and accept only Markdown note files. No ranking, cap, interleaving or budget retuning.",
+  "changes": [
+    "src/notes/index.ts",
+    "src/retrieval/neighbors.ts",
+    "tests/features.test.mjs"
+  ],
+  "source_hashes": {
+    "src/analyzer/index.ts": "33d0756676a49003ab00566700af1ab9710e993585e6dedca159a53334861dfe",
+    "src/cli/doctor.ts": "0a4d62dc2706cd88c4d4575824bf79fdba5cd7fbdb688275d4d501b5fb532af7",
+    "src/cli/index.ts": "dad08503454a00ffd5f6732a0c9c085372fd0b1b9b1ad6a3b1434f35b66d5431",
+    "src/contracts/index.ts": "e9ca7aa5b45d3b1e6f6430b3cd4400bf1abf202c883a87e2a14eaae85d988558",
+    "src/index.ts": "88076174057b8eac72a849d95bb763a396d4b31e100baac4bcdcf8c66596393d",
+    "src/indexer.ts": "75abe2f6e662f11ece37ec4040c8476bf45d11108bebd56c808fa49a7eeaf3bc",
+    "src/notes/index.ts": "13ea2eab481509503ebd7820fb026a9d7939766f303d26d401b4d1ed499d6d42",
+    "src/retrieval/budget.ts": "546674344f6488ab94b5b995cad237905d9198d9f58b92594602b72496f73a92",
+    "src/retrieval/focus.ts": "771e198758403fc5c08e7d2d1130924cd6827a9c9092ef6a3b70c5bb4a99cfb2",
+    "src/retrieval/index.ts": "0c8aab3b5569e33e6d497245759cc311c58de2b8185b6a0294c59f56116f3ba9",
+    "src/retrieval/neighbors.ts": "98a3efbad2df84ec115ed050a2361048dbcf1ecf439d74995a829fdd08734c4c",
+    "src/retrieval/query.ts": "30a8489e504269a23498513e373ba476cc54a43d37cccf2e0a57373a298060f1",
+    "src/store/index.ts": "263818801f13d04495889b781a1e693faf83a1bb23fa074b0c75340c92cbbf6b",
+    "src/workspace/git.ts": "e1c93c17fefd3534901bedaec54313eac6914a9b7e2e39415360682c00f4122a",
+    "src/workspace/initialize.ts": "aef5db6ca39548d1abc2c55170fdefccb83b3034c1c63b72c5299235250a7f57",
+    "src/workspace/snapshot.ts": "040d7763286ea5d310152d30701db2e6de725ce6483f96591d76335fc9600eb4",
+    "tests/features.test.mjs": "1132f5e812f3d9f2f00f91a1862ea440fe16156be724fabe80130f90a8cef2cb",
+    "eval/scripts/verify-context-guard.mjs": "0c73c505c420f2120715c56b3dac2d6f509fc6c1f79fc4df15d8f42a1c6e50cd"
+  },
+  "verification": "Compare complete lexical/graph candidate pools and parsed note data in every original study view under frozen and corrected modules. Replay all 80 default-budget payloads exactly. Candidate equivalence plus unchanged packing/budget modules covers the three original allowances; original timings remain those of the frozen implementation."
+}

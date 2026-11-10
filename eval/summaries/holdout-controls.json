@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T03:53:59.915Z",
+  "tasks": 18,
+  "passed": 18,
+  "model_calls": 0,
+  "holdout_queries": 0,
+  "registration": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\holdout-controls\\2026-10-27T03-53-14-777Z\\registration.json",
+  "results": [
+    {
+      "id": "picomatch-h01",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":177,\"passed\":177,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":177,\"passed\":177,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "picomatch-h02",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h02\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h02\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "picomatch-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "picomatch-h06",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":170,\"passed\":170,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":171,\"passed\":171,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "json-server-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "json-server-h05",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"json-server-h05\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"json-server-h05\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "fastify-h01",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "fastify-h02",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h02\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h02\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "fastify-h03",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h03\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h03\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "fastify-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "picomatch-h07",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h07\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\"],\"total\":116,\"passed\":116,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h07\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\"],\"total\":116,\"passed\":116,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "picomatch-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h08\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\"],\"total\":110,\"passed\":110,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"picomatch-h08\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": "",
+        "existing": {
+          "exit_code": 0,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\"],\"total\":112,\"passed\":112,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "json-server-h07",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 6.673 ms - 89\nGET /posts/1 200 1.171 ms - 33\n{\"id\":\"json-server-h07\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.565 ms - 89\nGET /posts/1 200 1.190 ms - 33\n{\"id\":\"json-server-h07\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "json-server-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.818 ms - 89\nGET /posts/1 200 1.252 ms - 33\n{\"id\":\"json-server-h08\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.531 ms - 89\nGET /posts/1 200 1.089 ms - 33\n{\"id\":\"json-server-h08\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "json-server-h09",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.704 ms - 89\nGET /posts/1 200 1.117 ms - 33\n{\"id\":\"json-server-h09\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.584 ms - 89\nGET /posts/1 200 1.171 ms - 33\n{\"id\":\"json-server-h09\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "json-server-h10",
+      "qualification_run": "2026-10-26T18-29-29-901Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.831 ms - 89\nGET /posts/1 200 1.269 ms - 33\n{\"id\":\"json-server-h10\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "GET /posts 200 4.568 ms - 89\nGET /posts/1 200 1.085 ms - 33\n{\"id\":\"json-server-h10\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "fastify-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h08\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h08\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    },
+    {
+      "id": "fastify-h09",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "before": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h09\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "after": {
+        "exit_code": 0,
+        "stdout": "{\"id\":\"fastify-h09\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+        "stderr": ""
+      },
+      "passed": true
+    }
+  ]
+}

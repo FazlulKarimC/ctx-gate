@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-26T15-29-49-794Z",
+  "reviews": [
+    {
+      "slot": "picomatch-d01-r1-A",
+      "reviewer": "implementation agent; not independent human review",
+      "reviewed_at": "2026-10-26T17:24:33.117Z",
+      "correctness": "focused regressions and protected original selected tests pass; runtime coercion applies to the glob syntax, without hardcoded input filenames",
+      "scope": "lib/parse.js and test/globstars.js only",
+      "regression_coverage_added": true,
+      "unnecessary_changes": false,
+      "task_constraints_met": true,
+      "accepted": true,
+      "final_status": "task_success",
+      "outcome_reason": "assessed scoped runtime correction",
+      "agent_added_test_assessment": {
+        "base": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 180,
+          "passed": 179,
+          "failures": [
+            {
+              "name": "stars / issue related / should keep double-stars followed by literal extensions in one segment",
+              "error": "The expression evaluated to a falsy value:\n\n  assert(!isMatch('dir/file.thing.js', pattern, options))\n"
+            }
+          ]
+        },
+        "patched": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 180,
+          "passed": 180,
+          "failures": []
+        }
+      },
+      "limitations": [
+        "Selected inspected test subset only; not full upstream npm test/lint/coverage",
+        "Source review and focused tests do not prove all possible glob behaviors correct"
+      ]
+    },
+    {
+      "slot": "picomatch-d01-r1-B",
+      "reviewer": "implementation agent; not independent human review",
+      "reviewed_at": "2026-10-26T17:24:33.987Z",
+      "correctness": "focused regressions and protected original selected tests pass; runtime coercion applies to the glob syntax, without hardcoded input filenames",
+      "scope": "lib/parse.js and test/globstars.js only",
+      "regression_coverage_added": true,
+      "unnecessary_changes": false,
+      "task_constraints_met": true,
+      "accepted": true,
+      "final_status": "task_success",
+      "outcome_reason": "assessed scoped runtime correction",
+      "agent_added_test_assessment": {
+        "base": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 179,
+          "passed": 178,
+          "failures": [
+            {
+              "name": "stars / issue related / should keep double-stars with literal suffixes within one path segment",
+              "error": "The expression evaluated to a falsy value:\n\n  assert(!isMatch(`dir/${filename}`, pattern, options))\n"
+            }
+          ]
+        },
+        "patched": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 179,
+          "passed": 179,
+          "failures": []
+        }
+      },
+      "limitations": [
+        "Selected inspected test subset only; not full upstream npm test/lint/coverage",
+        "Source review and focused tests do not prove all possible glob behaviors correct"
+      ]
+    },
+    {
+      "slot": "picomatch-d02-r1-B",
+      "reviewer": "implementation agent; not independent human review",
+      "reviewed_at": "2026-10-26T17:24:35.284Z",
+      "correctness": "incomplete: only regression tests changed; runtime fix absent when account limit interrupted execution",
+      "scope": "test/globstars.js only",
+      "regression_coverage_added": true,
+      "unnecessary_changes": false,
+      "task_constraints_met": false,
+      "accepted": false,
+      "final_status": "task_failure",
+      "outcome_reason": "account_limit_after_task_progress",
+      "agent_added_test_assessment": {
+        "base": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 181,
+          "passed": 177,
+          "failures": [
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: true) / should match line terminators in globstar segments",
+              "error": "{\"path\":\"\\n\",\"pattern\":\"**\"}"
+            },
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: true) / should preserve hidden-file handling for paths with newlines",
+              "error": "{\"path\":\".hidden\\n/file.js\",\"pattern\":\"**\"}"
+            },
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: false) / should match line terminators in globstar segments",
+              "error": "{\"path\":\"\\n\",\"pattern\":\"**\"}"
+            },
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: false) / should preserve hidden-file handling for paths with newlines",
+              "error": "{\"path\":\".hidden\\n/file.js\",\"pattern\":\"**\"}"
+            }
+          ]
+        },
+        "patched": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 181,
+          "passed": 177,
+          "failures": [
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: true) / should match line terminators in globstar segments",
+              "error": "{\"path\":\"\\n\",\"pattern\":\"**\"}"
+            },
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: true) / should preserve hidden-file handling for paths with newlines",
+              "error": "{\"path\":\".hidden\\n/file.js\",\"pattern\":\"**\"}"
+            },
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: false) / should match line terminators in globstar segments",
+              "error": "{\"path\":\"\\n\",\"pattern\":\"**\"}"
+            },
+            {
+              "name": "stars / globstars / paths with line terminators (fastpaths: false) / should preserve hidden-file handling for paths with newlines",
+              "error": "{\"path\":\".hidden\\n/file.js\",\"pattern\":\"**\"}"
+            }
+          ]
+        },
+        "known_fixed": {
+          "runner": "inspected-describe-it-subset-v1",
+          "files": [
+            "api.picomatch.js",
+            "api.scan.js",
+            "globstars.js",
+            "stars.js",
+            "dotfiles.js",
+            "options.js",
+            "slashes-posix.js",
+            "slashes-windows.js",
+            "non-globs.js"
+          ],
+          "total": 181,
+          "passed": 181,
+          "failures": []
+        }
+      },
+      "limitations": [
+        "Selected inspected test subset only; not full upstream npm test/lint/coverage",
+        "Source review and focused tests do not prove all possible glob behaviors correct"
+      ]
+    }
+  ]
+}

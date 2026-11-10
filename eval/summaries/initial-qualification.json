@@ -1,0 +1,331 @@
+[
+  {
+    "id": "picomatch-d01",
+    "snapshots": {
+      "base": {
+        "files": 78,
+        "bytes": 839744,
+        "skipped": []
+      },
+      "fixed": {
+        "files": 78,
+        "bytes": 840759,
+        "skipped": []
+      }
+    },
+    "assessments": {
+      "base": {
+        "task": "picomatch-d01",
+        "checks": [
+          {
+            "name": "adjacent literal does not cross separators",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+          },
+          {
+            "name": "adjacent extension does not cross nested paths",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+          },
+          {
+            "name": "same-segment file still matches",
+            "passed": true
+          },
+          {
+            "name": "standalone globstar still crosses paths",
+            "passed": true
+          }
+        ],
+        "passed": false,
+        "exit_code": 1
+      },
+      "fixed": {
+        "task": "picomatch-d01",
+        "checks": [
+          {
+            "name": "adjacent literal does not cross separators",
+            "passed": true
+          },
+          {
+            "name": "adjacent extension does not cross nested paths",
+            "passed": true
+          },
+          {
+            "name": "same-segment file still matches",
+            "passed": true
+          },
+          {
+            "name": "standalone globstar still crosses paths",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "exit_code": 0
+      }
+    }
+  },
+  {
+    "id": "picomatch-d02",
+    "snapshots": {
+      "base": {
+        "files": 78,
+        "bytes": 839205,
+        "skipped": []
+      },
+      "fixed": {
+        "files": 78,
+        "bytes": 839483,
+        "skipped": []
+      }
+    },
+    "assessments": {
+      "base": {
+        "task": "picomatch-d02",
+        "checks": [
+          {
+            "name": "\"hello\\nworld\" matches **",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+          },
+          {
+            "name": "\"foo/hello\\nworld\" matches **/*",
+            "passed": true
+          },
+          {
+            "name": "\"foo\\nbar/bar\" matches **/bar",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+          },
+          {
+            "name": "\"foo\\nbar/baz\\nqux\" matches **/**",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+          },
+          {
+            "name": "hidden file rule retained",
+            "passed": true
+          }
+        ],
+        "passed": false,
+        "exit_code": 1
+      },
+      "fixed": {
+        "task": "picomatch-d02",
+        "checks": [
+          {
+            "name": "\"hello\\nworld\" matches **",
+            "passed": true
+          },
+          {
+            "name": "\"foo/hello\\nworld\" matches **/*",
+            "passed": true
+          },
+          {
+            "name": "\"foo\\nbar/bar\" matches **/bar",
+            "passed": true
+          },
+          {
+            "name": "\"foo\\nbar/baz\\nqux\" matches **/**",
+            "passed": true
+          },
+          {
+            "name": "hidden file rule retained",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "exit_code": 0
+      }
+    }
+  },
+  {
+    "id": "picomatch-d03",
+    "snapshots": {
+      "base": {
+        "files": 78,
+        "bytes": 826515,
+        "skipped": []
+      },
+      "fixed": {
+        "files": 78,
+        "bytes": 827875,
+        "skipped": []
+      }
+    },
+    "assessments": {
+      "base": {
+        "task": "picomatch-d03",
+        "checks": [
+          {
+            "name": "complete parts for foo",
+            "passed": false,
+            "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'foo'\n- ]\n"
+          },
+          {
+            "name": "complete parts for /",
+            "passed": false,
+            "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   '',\n-   ''\n- ]\n"
+          },
+          {
+            "name": "complete parts for /a/b/",
+            "passed": false,
+            "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '/a',\n-   '',\n-   'a',\n    'b',\n-   ''\n  ]\n"
+          },
+          {
+            "name": "complete parts for !(!(bar)/baz)",
+            "passed": false,
+            "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '!(!(bar)',\n+   'baz)'\n-   '!(!(bar)/baz)'\n  ]\n"
+          },
+          {
+            "name": "complete parts for a/((b)/c)/d",
+            "passed": false,
+            "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'a',\n+   '((b)',\n+   'c)',\n-   '((b)/c)',\n    'd'\n  ]\n"
+          }
+        ],
+        "passed": false,
+        "exit_code": 1
+      },
+      "fixed": {
+        "task": "picomatch-d03",
+        "checks": [
+          {
+            "name": "complete parts for foo",
+            "passed": true
+          },
+          {
+            "name": "complete parts for /",
+            "passed": true
+          },
+          {
+            "name": "complete parts for /a/b/",
+            "passed": true
+          },
+          {
+            "name": "complete parts for !(!(bar)/baz)",
+            "passed": true
+          },
+          {
+            "name": "complete parts for a/((b)/c)/d",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "exit_code": 0
+      }
+    }
+  },
+  {
+    "id": "picomatch-d04",
+    "snapshots": {
+      "base": {
+        "files": 78,
+        "bytes": 826515,
+        "skipped": []
+      },
+      "fixed": {
+        "files": 78,
+        "bytes": 826743,
+        "skipped": []
+      }
+    },
+    "assessments": {
+      "base": {
+        "task": "picomatch-d04",
+        "checks": [
+          {
+            "name": "tokens imply complete parts",
+            "passed": false,
+            "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'a',\n    'b',\n+   '*/c'\n-   '*',\n-   'c'\n  ]\n"
+          },
+          {
+            "name": "existing explicit parts remain complete",
+            "passed": true
+          }
+        ],
+        "passed": false,
+        "exit_code": 1
+      },
+      "fixed": {
+        "task": "picomatch-d04",
+        "checks": [
+          {
+            "name": "tokens imply complete parts",
+            "passed": true
+          },
+          {
+            "name": "existing explicit parts remain complete",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "exit_code": 0
+      }
+    }
+  },
+  {
+    "id": "picomatch-d05",
+    "snapshots": {
+      "base": {
+        "files": 78,
+        "bytes": 822850,
+        "skipped": []
+      },
+      "fixed": {
+        "files": 78,
+        "bytes": 823574,
+        "skipped": []
+      }
+    },
+    "assessments": {
+      "base": {
+        "task": "picomatch-d05",
+        "checks": [
+          {
+            "name": "windows basename",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+          },
+          {
+            "name": "nested windows matchBase",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+          },
+          {
+            "name": "mixed separators",
+            "passed": false,
+            "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+          },
+          {
+            "name": "negative match retained",
+            "passed": true
+          }
+        ],
+        "passed": false,
+        "exit_code": 1
+      },
+      "fixed": {
+        "task": "picomatch-d05",
+        "checks": [
+          {
+            "name": "windows basename",
+            "passed": true
+          },
+          {
+            "name": "nested windows matchBase",
+            "passed": true
+          },
+          {
+            "name": "mixed separators",
+            "passed": true
+          },
+          {
+            "name": "negative match retained",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "exit_code": 0
+      }
+    }
+  }
+]

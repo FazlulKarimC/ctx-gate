@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T05:44:16.0940052Z",
+  "status": "blocked_provider_usage_limit_after_progress",
+  "registered_task_ceiling": 36,
+  "capability_model_reservations": 1,
+  "capability_report": "eval/runs/phase8-readiness/2026-10-27T04-42-27-838Z/report.json",
+  "host": "codex-cli 0.163.0",
+  "windows_sandbox": "mxc",
+  "source_freeze_valid": true,
+  "readiness_reports": [
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T03-39-15-235Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "Host audit exited: WARNING: failed to clean up stale arg0 temp dirs: Access is denied. (os error 5)\nWARNING: proceeding, even though we could not create PATH aliases: Access is denied. (os error 5) at path \"C:\\\\Users\\\\FAZLUL\\\\.codex\\\\tmp\\\\arg0-windows\\\\codex-arg06JWBfd\"\nError: Access is denied. (os error 5)\n"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T03-39-55-416Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "ENOENT: no such file or directory, open 'C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase5-trials\\phase8-readiness-2026-10-27T03-39-55-416Z\\workspace\\output.txt'"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T03-45-25-282Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "ENOENT: no such file or directory, open 'C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase5-trials\\phase8-readiness-2026-10-27T03-45-25-282Z\\workspace\\output.txt'"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T03-47-24-414Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "Host audit exited: Error: invalid type: sequence, expected struct WorkspaceRootsToml\nin `permissions`\n\n"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T03-48-26-615Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "ENOENT: no such file or directory, open 'C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase5-trials\\phase8-readiness-2026-10-27T03-48-26-615Z\\workspace\\output.txt'"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T04-05-08-583Z\\report.json",
+      "runtime": "v22.22.2",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "ENOENT: no such file or directory, open 'C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase5-trials\\phase8-readiness-2026-10-27T04-05-08-583Z\\workspace\\output.txt'"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T04-28-09-894Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "ENOENT: no such file or directory, open 'C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase5-trials\\phase8-readiness-2026-10-27T04-28-09-894Z\\workspace\\output.txt'"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T04-36-09-159Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "infrastructure_invalid",
+      "static_ready": false,
+      "model_probe_requested": false,
+      "error": "{\"code\":-32603,\"message\":\"error creating thread: failed to load AGENTS.md instructions for environment `local`: fs sandbox helper failed with status exit code: 1: MXC launcher: The supplied `process.env` cannot launch a Windows process container because it is missing the required variable(s): SYSTEMROOT. MXC uses your `process.env` (an environment of 5 variable(s)) verbatim when `process.inheritDefaultEnv` is false. Set `process.inheritDefaultEnv` to true to layer these entries on the default user environment. Alternatively, add the missing variable(s) to `process.env` — any value will do because the Windows requirement is presence-only — or omit `process.env` entirely to use the default user environment.\"}"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T04-41-06-187Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "static_ready",
+      "static_ready": true,
+      "model_probe_requested": false,
+      "error": null
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\phase8-readiness\\2026-10-27T04-42-27-838Z\\report.json",
+      "runtime": "v24.22.1",
+      "status": "ready",
+      "static_ready": true,
+      "model_probe_requested": true,
+      "error": null
+    }
+  ],
+  "assessment": "Original and approved recovery stopped separately. Recovery: 2 baseline completions, 1 quota-after-progress treatment failure; 1 eligible outcome pair, 0 fully completed performance pairs. CLI account-bucket API capacity conflicts with model usage-limit response; availability scope unresolved. No automatic further block, login/reset/purchase, extra probe or task retry.",
+  "task_reservations": 6,
+  "unattempted_slots": 30,
+  "valid_strict_pairs": 0,
+  "cleanup_verified": true,
+  "recovery_eligible_outcome_pairs": 1,
+  "recovery_fully_completed_turn_pairs": 0,
+  "recovery_report": "docs/experiments/phase8-recovery.md"
+}

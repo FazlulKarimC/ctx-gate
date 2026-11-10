@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-27T05-21-56-704Z",
+  "created_at": "2026-10-27T05:38:21.510Z",
+  "planned_attempts": 33,
+  "reserved_attempts": 3,
+  "total_reserved_across_variants": 6,
+  "completed_reports": 3,
+  "unassessed_reservations": 0,
+  "stop_reason": "account_limit_after_task_progress",
+  "patch_review_pending": true,
+  "rows": [
+    {
+      "id": "picomatch-h02",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h02-r1-A",
+      "run_id": "2026-10-27T05-21-56-704Z",
+      "reserved_at": "2026-10-27T05:23:10.767Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v1",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "unassessed",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:19:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h02\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h02\",\"status\":\"passed\"}\n",
+          "stderr": ""
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h02\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 24,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 14,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 389010,
+            "cached_input_tokens": 329728,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 6474,
+            "reasoning_output_tokens": 3150
+          },
+          "input_tokens": 389010,
+          "cached_input_tokens": 329728,
+          "uncached_input_tokens": 59282,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6474,
+          "reasoning_output_tokens": 3150,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/parse.js",
+          "before": {
+            "sha256": "233b2d070faffbb0d0313a1ccc7a68d2c6f0bc88265465ed3e7c99e5b67f4128"
+          },
+          "after": {
+            "sha256": "6b11a091b8720b0a39e726e7b76adb7d6d9d37efee024921aca077f55d91e3ee"
+          }
+        },
+        {
+          "path": "test/brackets.js",
+          "before": {
+            "sha256": "85ed3c4e8c1ba2126280f0d300972c89b10f47e0ee28e369d6864ecf90588916"
+          },
+          "after": {
+            "sha256": "d0850ada1a5d27e6b56ebc2e2ffd53f8424a62a6f3ac0a4937ce957a04454c0b"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/parse.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\original-files\\\\lib\\\\parse.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\patch-files\\\\lib\\\\parse.js\"\nindex 30ba813..0448cc5 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\original-files\\\\lib\\\\parse.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\patch-files\\\\lib\\\\parse.js\"\n@@ -748,8 +748,9 @@ const parse = (input, options) => {\n         value = `\\\\${value}`;\n       }\n \n-      if (value === '!' && prev.value === '[') {\n+      if (value === '!' && prev.value === '[' && (peek() !== ']' || remaining().includes(']', 1))) {\n         // POSIX bracket negation: [!abc] is equivalent to [^abc]\n+        // Keep [!] literal unless another ] can close the negated class.\n         value = '^';\n       }\n \n"
+        },
+        {
+          "path": "test/brackets.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\original-files\\\\test\\\\brackets.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\patch-files\\\\test\\\\brackets.js\"\nindex c8663c1..8b3ec69 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\original-files\\\\test\\\\brackets.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h02-r1-A\\\\patch-files\\\\test\\\\brackets.js\"\n@@ -1,7 +1,7 @@\n 'use strict';\n \n const assert = require('assert');\n-const { isMatch } = require('..');\n+const { isMatch, makeRe } = require('..');\n \n describe('brackets', () => {\n   describe('trailing stars', () => {\n@@ -44,11 +44,78 @@ describe('brackets', () => {\n     });\n \n     it('should not match slashes with [!...]', () => {\n-      assert(!isMatch('a/b', '[!c]/b'.replace('/b', ']b')) || true);\n-      assert(!isMatch('a/b', '[!a]/b') === isMatch('x/b', '[!a]/b') || true);\n+      assert(!isMatch('a/b', '[!a]/b'));\n+      assert(isMatch('x/b', '[!a]/b'));\n       assert(!isMatch('/', '[!a]'));\n     });\n \n+    it('should keep [!] as a class containing a literal exclamation mark', () => {\n+      for (const options of [{}, { posix: true }, { posix: false }, { strictBrackets: true }]) {\n+        const re = makeRe('[!]', options);\n+        assert(re.test('!'));\n+        assert(re.test('[!]'));\n+        assert(!re.test('a'));\n+        assert(isMatch('!a', '[!]a', options));\n+        assert(!isMatch('aa', '[!]a', options));\n+      }\n+    });\n+\n+    it('should keep unterminated brackets literal', () => {\n+      for (const pattern of ['[!', '[!abc']) {\n+        const re = makeRe(pattern);\n+        assert(re.test(pattern));\n+        assert(!re.test(pattern.replace('!', '^')));\n+        assert.throws(() => makeRe(pattern, { strictBrackets: true }), SyntaxError);\n+      }\n+    });\n+\n+    it('should support a closing bracket as the first negated character', () => {\n+      const configurations = [\n+        {},\n+        { posix: true },\n+        { posix: false },\n+        { strictBrackets: true },\n+        { literalBrackets: true },\n+        { literalBrackets: false }\n+      ];\n+      for (const options of configurations) {\n+        for (const pattern of ['[!]]', '[!]a]']) {\n+          const re = makeRe(pattern, options);\n+          assert.strictEqual(re.source, makeRe(pattern.replace('!', '^'), options).source);\n+          assert(re.test('b'));\n+          assert(re.test('!'));\n+          assert(!re.test(']'));\n+          assert(!re.test('/'));\n+        }\n+        assert(!isMatch('a', '[!]a]', options));\n+      }\n+    });\n+\n+    it('should support negation when POSIX classes are disabled', () => {\n+      const options = { posix: false };\n+      assert(isMatch('b', '[!a]', options));\n+      assert(!isMatch('a', '[!a]', options));\n+      assert(!isMatch('/', '[!a]', options));\n+      assert.strictEqual(makeRe('[!a]', options).source, makeRe('[^a]', options).source);\n+    });\n+\n+    it('should preserve literal bracket options', () => {\n+      const literal = makeRe('[!]', { literalBrackets: true });\n+      assert(literal.test('[!]'));\n+      assert(!literal.test('!'));\n+\n+      const characterClass = makeRe('[!]', { literalBrackets: false });\n+      assert(characterClass.test('!'));\n+      assert(!characterClass.test('[!]'));\n+\n+      for (const pattern of ['[!]', '[!a]', '[!]]']) {\n+        const re = makeRe(pattern, { nobracket: true });\n+        assert(re.test(pattern));\n+        assert(!re.test('!'));\n+        assert(!re.test('b'));\n+      }\n+    });\n+\n     it('should keep escaped \"!\" literal inside brackets', () => {\n       assert(isMatch('!', '[\\\\!a]'));\n       assert(isMatch('a', '[\\\\!a]'));\n"
+        }
+      ],
+      "run": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 199518.67100000003,
+        "turn_completed_ms": 198543.49690000003,
+        "cleanup_elapsed_ms": 975.1741000000038,
+        "cleanup_forced": false,
+        "cleanup_incomplete": false,
+        "model_turn_completed": true,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "unassessed",
+      "audit_reason": null,
+      "report_path": "eval/runs/phase8-recovery/2026-10-27T05-21-56-704Z/picomatch-h02-r1-A/report.json"
+    },
+    {
+      "id": "picomatch-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h04-r1-A",
+      "run_id": "2026-10-27T05-21-56-704Z",
+      "reserved_at": "2026-10-27T05:26:40.758Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v1",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "unassessed",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:25:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: true,\n  expected: false,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\"}\n",
+          "stderr": ""
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 18,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 13,
+        "repeated_exact_commands": 1,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 419357,
+            "cached_input_tokens": 358528,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3449,
+            "reasoning_output_tokens": 987
+          },
+          "input_tokens": 419357,
+          "cached_input_tokens": 358528,
+          "uncached_input_tokens": 60829,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3449,
+          "reasoning_output_tokens": 987,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/parse.js",
+          "before": {
+            "sha256": "73211a8ba85ce257b827abd8960e52c9750385b3fd18e8ef1080b114d774eb23"
+          },
+          "after": {
+            "sha256": "0d3df2ccc9f6216e1318cb275a2cb57f9356b44ef997e51449179facc6dc7e6c"
+          }
+        },
+        {
+          "path": "test/brackets.js",
+          "before": {
+            "sha256": "9e1226dff735d61a45bd59212909063944fd7a3f84ee36a87b080bdd40767b7a"
+          },
+          "after": {
+            "sha256": "93eab0aae5a8c191f636e84b091c1308b2dd08f1c371f095933748549dc3eba2"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/parse.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\original-files\\\\lib\\\\parse.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\patch-files\\\\lib\\\\parse.js\"\nindex a85bb2d..7aec430 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\original-files\\\\lib\\\\parse.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\patch-files\\\\lib\\\\parse.js\"\n@@ -660,6 +660,7 @@ const parse = (input, options) => {\n \n   while (!eos()) {\n     value = advance();\n+    const isEscaped = value === '\\\\';\n \n     if (value === '\\u0000') {\n       continue;\n@@ -748,7 +749,7 @@ const parse = (input, options) => {\n         value = `\\\\${value}`;\n       }\n \n-      if (opts.posix === true && value === '!' && prev.value === '[') {\n+      if (value === '!' && prev.value === '[' && !isEscaped) {\n         value = '^';\n       }\n \n"
+        },
+        {
+          "path": "test/brackets.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\original-files\\\\test\\\\brackets.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\patch-files\\\\test\\\\brackets.js\"\nindex c510625..4db262d 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\original-files\\\\test\\\\brackets.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-A\\\\patch-files\\\\test\\\\brackets.js\"\n@@ -4,6 +4,56 @@ const assert = require('assert');\n const { isMatch } = require('..');\n \n describe('brackets', () => {\n+  describe('negation', () => {\n+    it('should negate a leading exclamation mark regardless of the posix option', () => {\n+      for (const options of [undefined, { posix: true }, { posix: false }]) {\n+        assert(isMatch('b', '[!a]', options));\n+        assert(isMatch('!', '[!a]', options));\n+        assert(!isMatch('a', '[!a]', options));\n+        assert(isMatch('1', '[!a-z]', options));\n+        assert(!isMatch('b', '[!a-z]', options));\n+      }\n+    });\n+\n+    it('should negate bracket expressions within paths', () => {\n+      assert(isMatch('foo/b.js', 'foo/[!a].js'));\n+      assert(!isMatch('foo/a.js', 'foo/[!a].js'));\n+      assert(isMatch('foo/bb.js', 'foo/[!a]*.js'));\n+      assert(!isMatch('foo/ab.js', 'foo/[!a]*.js'));\n+    });\n+\n+    it('should keep escaped leading exclamation marks literal', () => {\n+      for (const options of [undefined, { posix: true }, { unescape: true }, { posix: true, unescape: true }]) {\n+        assert(isMatch('!', '[\\\\!a]', options));\n+        assert(isMatch('a', '[\\\\!a]', options));\n+        assert(!isMatch('b', '[\\\\!a]', options));\n+      }\n+    });\n+\n+    it('should keep non-leading exclamation marks literal', () => {\n+      assert(isMatch('!', '[a!]'));\n+      assert(isMatch('a', '[a!]'));\n+      assert(!isMatch('b', '[a!]'));\n+      assert(!isMatch('!', '[!!a]'));\n+      assert(!isMatch('a', '[!!a]'));\n+      assert(isMatch('b', '[!!a]'));\n+    });\n+\n+    it('should preserve path separators in negated brackets', () => {\n+      for (const windows of [false, true]) {\n+        for (const pattern of ['foo[!a]bar', 'foo[!a/]bar', 'foo[^a]bar']) {\n+          assert(isMatch('foobbar', pattern, { windows }));\n+          assert(!isMatch('fooabar', pattern, { windows }));\n+          assert(!isMatch('foo/bar', pattern, { windows }));\n+          if (windows) {\n+            assert(!isMatch('foo\\\\bar', pattern, { windows }));\n+          }\n+        }\n+        assert(isMatch('foo/bar', 'foo[/]bar', { windows }));\n+      }\n+    });\n+  });\n+\n   describe('trailing stars', () => {\n     it('should support stars following brackets', () => {\n       assert(isMatch('a', '[a]*'));\n"
+        }
+      ],
+      "run": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 113767.0136,
+        "turn_completed_ms": 108549.09530000004,
+        "cleanup_elapsed_ms": 5217.918299999961,
+        "cleanup_forced": true,
+        "cleanup_incomplete": false,
+        "model_turn_completed": true,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "unassessed",
+      "audit_reason": null,
+      "report_path": "eval/runs/phase8-recovery/2026-10-27T05-21-56-704Z/picomatch-h04-r1-A/report.json"
+    },
+    {
+      "id": "picomatch-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h04-r1-B",
+      "run_id": "2026-10-27T05-21-56-704Z",
+      "reserved_at": "2026-10-27T05:28:42.185Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v1",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "task_failure",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:25:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: true,\n  expected: false,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\"}\n",
+          "stderr": ""
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":172,\"passed\":172,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 1,
+        "valid_context_responses": 1,
+        "nonempty_context_deliveries": 1,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 18,
+        "pre_edit_delivery": true,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": 18936,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 8,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [
+          2413.1622000000007
+        ],
+        "returned_engine_tokens": 1932,
+        "engine_payload_bytes": 6583,
+        "observed_mcp_result_json_bytes": 6889,
+        "tool_configuration": [
+          {
+            "encoding": "o200k_base",
+            "budget_tokens": 2000,
+            "neighbors": false,
+            "notes": false
+          }
+        ],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 1:58 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 1:58 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "task_failure",
+        "reason": "account_limit_after_task_progress",
+        "stop_batch": true,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/parse.js",
+          "before": {
+            "sha256": "73211a8ba85ce257b827abd8960e52c9750385b3fd18e8ef1080b114d774eb23"
+          },
+          "after": {
+            "sha256": "9f220267569649e1812cee4089ce4b2fd333a4b2f40e3bfa8fd404d01dec3ff3"
+          }
+        },
+        {
+          "path": "test/brackets.js",
+          "before": {
+            "sha256": "9e1226dff735d61a45bd59212909063944fd7a3f84ee36a87b080bdd40767b7a"
+          },
+          "after": {
+            "sha256": "2d993bbf68b5215ad86df6fc86bbae536fee432fdf660462a9b2adfe74a6fb3b"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/parse.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\original-files\\\\lib\\\\parse.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\patch-files\\\\lib\\\\parse.js\"\nindex a85bb2d..434f48b 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\original-files\\\\lib\\\\parse.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\patch-files\\\\lib\\\\parse.js\"\n@@ -660,6 +660,7 @@ const parse = (input, options) => {\n \n   while (!eos()) {\n     value = advance();\n+    const isEscaped = value === '\\\\';\n \n     if (value === '\\u0000') {\n       continue;\n@@ -748,7 +749,7 @@ const parse = (input, options) => {\n         value = `\\\\${value}`;\n       }\n \n-      if (opts.posix === true && value === '!' && prev.value === '[') {\n+      if (opts.posix !== false && !isEscaped && value === '!' && prev.value === '[') {\n         value = '^';\n       }\n \n"
+        },
+        {
+          "path": "test/brackets.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\original-files\\\\test\\\\brackets.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\patch-files\\\\test\\\\brackets.js\"\nindex c510625..e90a3b9 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\original-files\\\\test\\\\brackets.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-recovery\\\\2026-10-27T05-21-56-704Z\\\\picomatch-h04-r1-B\\\\patch-files\\\\test\\\\brackets.js\"\n@@ -4,6 +4,50 @@ const assert = require('assert');\n const { isMatch } = require('..');\n \n describe('brackets', () => {\n+  describe('negation', () => {\n+    it('should negate a leading exclamation mark by default', () => {\n+      assert(!isMatch('a', '[!a]'));\n+      assert(isMatch('b', '[!a]'));\n+      assert(isMatch('!', '[!a]'));\n+      assert(!isMatch('m', '[!a-z]'));\n+      assert(isMatch('1', '[!a-z]'));\n+      assert(!isMatch('file.a', 'file.[!a]'));\n+      assert(isMatch('file.b', 'file.[!a]'));\n+    });\n+\n+    it('should preserve the explicit posix option', () => {\n+      assert(!isMatch('a', '[!a]', { posix: true }));\n+      assert(isMatch('b', '[!a]', { posix: true }));\n+      assert(isMatch('a', '[!a]', { posix: false }));\n+      assert(isMatch('!', '[!a]', { posix: false }));\n+      assert(!isMatch('b', '[!a]', { posix: false }));\n+    });\n+\n+    it('should keep escaped and non-leading exclamation marks literal', () => {\n+      for (const options of [{}, { unescape: true }]) {\n+        assert(isMatch('!', '[\\\\!a]', options));\n+        assert(isMatch('a', '[\\\\!a]', options));\n+        assert(!isMatch('b', '[\\\\!a]', options));\n+        assert(isMatch('!', '[a!]', options));\n+        assert(isMatch('a', '[a!]', options));\n+        assert(!isMatch('b', '[a!]', options));\n+      }\n+    });\n+\n+    it('should preserve path separators around negated brackets', () => {\n+      for (const windows of [false, true]) {\n+        const options = { windows };\n+        assert(!isMatch('/', '[!a]', options));\n+        assert(!isMatch('foo/bar', 'foo[!a]bar', options));\n+        assert(isMatch('foo/b', 'foo/[!a]', options));\n+        assert(!isMatch('foo/a', 'foo/[!a]', options));\n+        assert(isMatch('foo/bar', 'foo[/]bar', options));\n+      }\n+      assert(!isMatch('foo\\\\bar', 'foo[!a]bar', { windows: true }));\n+      assert(isMatch('foo\\\\b', 'foo/[!a]', { windows: true }));\n+    });\n+  });\n+\n   describe('trailing stars', () => {\n     it('should support stars following brackets', () => {\n       assert(isMatch('a', '[a]*'));\n"
+        }
+      ],
+      "run": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 89381.59169999999,
+        "turn_completed_ms": null,
+        "cleanup_elapsed_ms": null,
+        "cleanup_forced": false,
+        "cleanup_incomplete": false,
+        "model_turn_completed": false,
+        "account_limit_detected": true,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "unassessed",
+      "audit_reason": "Passing partial-patch tests cannot override the registered quota-after-progress task-failure status or missing terminal completion. The raw wrapper omitted its task_failure precedence branch.",
+      "report_path": "eval/runs/phase8-recovery/2026-10-27T05-21-56-704Z/picomatch-h04-r1-B/report.json"
+    }
+  ],
+  "operation": "phase8_recovery_audit",
+  "raw_preliminary_sha256": "ac4202465dca9e0f62a4d7586fa967c95e43b11157d6620d20df7002257125dc",
+  "adjudication": "Preserve original report labels. Apply the existing registered task_failure precedence to quota-after-progress, even when its unfinished patch passes tests. No task was rerun or promoted into success. Missing usage is unavailable; interrupted elapsed time is consumed time, not completion latency."
+}

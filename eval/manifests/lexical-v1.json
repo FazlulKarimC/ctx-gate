@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-26T11:27:01.957Z",
+  "version": "lexical-v1",
+  "configuration": {
+    "candidate_limit": 200,
+    "max_items": 6,
+    "per_file": 2,
+    "excerpt_radius": 8,
+    "field_weights": [
+      8,
+      4,
+      2,
+      2,
+      1
+    ]
+  },
+  "tokenizer": "o200k_base",
+  "budget_tokens": 2000,
+  "graph": false,
+  "notes": false,
+  "tuning": "No historical-task retrieval results inspected before this registration; only synthetic behavior tests. This is a frozen untuned starting point, not an optimized ranking.",
+  "baseline": "Case-insensitive fixed-string OR search of the same normalized terms over identical eligible files; deterministic path/line order; same excerpt/packing/counter limits. No interactive query refinement.",
+  "label_scope": "Twenty registered development candidates, pre-fix source relevance labels; does not establish behavioral eligibility for agent trials. Holdout candidates are not queried. Nonce negative controls are separate synthetic checks.",
+  "frozen_before_first_measurement_at": "2026-10-26T11:35:54.564Z",
+  "source_hashes": {
+    "src/retrieval/query.ts": "0e46cb927b26cfd14668d88a26db804181bb0e7d1df85ebcd846a54ffdd51fbf",
+    "src/retrieval/index.ts": "d651a984d5aca1ae1741542f4e3b0b327240ad29a18929b66efda03e9110930b",
+    "src/retrieval/budget.ts": "546674344f6488ab94b5b995cad237905d9198d9f58b92594602b72496f73a92",
+    "src/workspace/snapshot.ts": "deaf8ddc22380ef35d6ea5805452093d40cc65bc26419e21e34fa97a4abfc22b",
+    "src/indexer.ts": "81b246f0d27a96804e113abf9dc74b41ef66edf1c5845da244be4f40c2930132",
+    "src/contracts/index.ts": "d3b7eebdebbec86db1368995609e1f82a3b16a76eca0a49d486958fefd729794",
+    "eval/scripts/retrieval-study.mjs": "4f0f2ee143a17bdfff0f4d6a6379cdff429e95a31ff084e4be83e5f6538e5f50",
+    "package-lock.json": "4c08a698c8c0b8664e036c20cb92c72c159075cbad50fe1ee509c684d6c2e6ea"
+  },
+  "premeasurement_corrections": "Synthetic anchor priority, qualified symbol matching, JSON accounting preserving key order, and lockfile exclusion verified before any historical retrieval result."
+}

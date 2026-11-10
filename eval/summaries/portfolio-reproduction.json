@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "operation": "clean_source_copy_reproduction",
+  "created_at": "2026-11-06T17:32:37.277Z",
+  "runtime": "v24.22.1",
+  "platform": "win32",
+  "output": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\.cache\\portfolio-reproduce\\run-M00KkR",
+  "root": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\.cache\\portfolio-reproduce\\run-M00KkR\\source",
+  "model_calls": 0,
+  "git_commit": null,
+  "source_copy": {
+    "examples/demo.mjs": "089f285d276a3847f6c112ad6ad83693a6f47fc10824073c97b7a76e26b08481",
+    "package-lock.json": "82d63d50e1a7924ba34c3a9a39559755c06a57dc8539f146ec142cba73923be2",
+    "package.json": "fba992e1d91a198f06f1158d85071020169954b2083caecd0904692183a7a6ed",
+    "src/analyzer/index.ts": "33d0756676a49003ab00566700af1ab9710e993585e6dedca159a53334861dfe",
+    "src/checker/index.ts": "db313244ff7305c83824395366919fa61b2c8876e043496236b3276e4c003f6c",
+    "src/cli/doctor.ts": "1d01f3c8d8b6a8518108d02522f9f95be05f19557bdfebdf3b6c0b680b81ba4c",
+    "src/cli/index.ts": "e5e08382cb0e88e595afd42abae77a6b1195b157c01f93c8fc4c011bb79801bb",
+    "src/contracts/index.ts": "8ed10abda4d1a97c262ca5252291c6f6613a76c1f4694477809e9e3d83f272b9",
+    "src/index.ts": "af4f3ba693cf3e859d53c75d997fb524f64ed3a88e390348801630ed1a306c83",
+    "src/indexer.ts": "6d9486a6d2af8ba7f809a099a71fde1e9979290101b5490bc788e6cc97833da6",
+    "src/mcp/index.ts": "902519e3814820d581f115749633881fbb7e3fb0f8617e87bc9cf2e63355259e",
+    "src/notes/index.ts": "13ea2eab481509503ebd7820fb026a9d7939766f303d26d401b4d1ed499d6d42",
+    "src/retrieval/budget.ts": "546674344f6488ab94b5b995cad237905d9198d9f58b92594602b72496f73a92",
+    "src/retrieval/focus.ts": "771e198758403fc5c08e7d2d1130924cd6827a9c9092ef6a3b70c5bb4a99cfb2",
+    "src/retrieval/index.ts": "f1bdd84e80f1bf4d18016b1259dace4e4988646e282d2546beab8c5ad38b3842",
+    "src/retrieval/neighbors.ts": "98a3efbad2df84ec115ed050a2361048dbcf1ecf439d74995a829fdd08734c4c",
+    "src/retrieval/query.ts": "30a8489e504269a23498513e373ba476cc54a43d37cccf2e0a57373a298060f1",
+    "src/store/index.ts": "af6b052579a7bdc1819a035307a0411a3ef7f7d35b85142d8d3cacbfcdc514f1",
+    "src/workspace/git.ts": "e0315afd24567bb2a3fda95e555a266884bc2a45c053a80f1fe6495bf6cb0ba3",
+    "src/workspace/initialize.ts": "aef5db6ca39548d1abc2c55170fdefccb83b3034c1c63b72c5299235250a7f57",
+    "src/workspace/snapshot.ts": "a28e23a9319318a86f0255dfc639542ae6d9ef9632c4c1bce7ff929dfa876c6f",
+    "tests/checker.test.mjs": "6590bd802306dc7cf84cb8f33ba5e4660245c4f61a448acb37bd72992e47eac0",
+    "tests/fixtures/basic-project/.ctx/config.json": "e37aa0696934243b36789c84eda8ca2e8239804efc2c455d5bc93e2827fa6954",
+    "tests/fixtures/basic-project/.ctx/notes/session-boundary.md": "64e2d504740fe9a40b156cb688f00fa070b949e1b26c418904bbea1e96688cca",
+    "tests/fixtures/basic-project/.gitignore": "d9a3a8202fb05afc88fab50edc491843f96c6f5528f4bc687fbac004ed9017f8",
+    "tests/fixtures/basic-project/generated/ignored.ts": "1c087a76e4463d51b74fe6dfedef2c879d69a3add2021ecd7f8d01a406cbf9e8",
+    "tests/fixtures/basic-project/package.json": "5bac545b5316f4f2e21c48270b7cf6cc84eee3048e55f085e31bf05322de6a0a",
+    "tests/fixtures/basic-project/src/db/session.ts": "b25229cd3b5fceec0f1e2e9be05668d46ff34ba4cdcec7a71bec6ab9b16655ad",
+    "tests/fixtures/basic-project/src/models/session.ts": "f0748dcd1f58788d6f6e41be686d432b94c2e6a85c575ef3a017c697875fae79",
+    "tests/fixtures/basic-project/src/services/session.ts": "fd929dc113d0261e8b72eb36b894b277aef08b4de5921d5feda48a7c7755a402",
+    "tests/fixtures/basic-project/src/ui/view.ts": "a075ba63ab0a7993a4ae89c56543ff21675a169ef6dabdc28fcde95cd27c4105",
+    "tests/fixtures/basic-project/tsconfig.json": "e94df2b019c3dd0320ef0863f1bc59da91ed0e193dbd3127440a858777d37696",
+    "tests/retrieval.test.mjs": "2159995b8e556c3fd6710d53803544efdce2db1a48413e0008811857f2d9793c",
+    "tsconfig.json": "572f291bfd7eddef521ac829860b8db2dfb844a201e3d6eec86c855c7e9187c9"
+  },
+  "stages": [
+    {
+      "name": "install-offline",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 15626.342700000001
+    },
+    {
+      "name": "build",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 2459.296299999998
+    },
+    {
+      "name": "doctor",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 606.2871999999988
+    },
+    {
+      "name": "selected-tests",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 64442.8089
+    },
+    {
+      "name": "demo",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 9058.829799999992
+    }
+  ],
+  "passed": true,
+  "selected_test_count": 24,
+  "demo": {
+    "schema_version": 1,
+    "operation": "offline_portfolio_demo",
+    "runtime": "v24.22.1",
+    "verified": true,
+    "model_calls": 0,
+    "synthetic": true,
+    "output": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\.cache\\portfolio-reproduce\\run-M00KkR\\source\\.cache\\portfolio-demo\\run-iJAys8",
+    "fixture": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\.cache\\portfolio-reproduce\\run-M00KkR\\source\\.cache\\portfolio-demo\\run-iJAys8\\fixture",
+    "baseline": "78c33c193af85109c11116e8d3190b843a1ea08a",
+    "discovery": {
+      "query": "symbol:sum",
+      "first_path": "src/math/sum.ts",
+      "budget": {
+        "limit": 2000,
+        "count": 395,
+        "method": "exact",
+        "counter": "o200k_base",
+        "byte_limit": 16384,
+        "bytes": 1029,
+        "truncated": false
+      }
+    },
+    "vocabulary_limitation": {
+      "query": "addition over numeric entries",
+      "status": "no_match",
+      "known_helper": "src/math/sum.ts"
+    },
+    "freshness": {
+      "before": "expanded",
+      "after_edit": "stale_reference",
+      "stale_excerpt_withheld": true
+    },
+    "checking": {
+      "clean": 0,
+      "violation": 1,
+      "candidate_policy_bypass": 1,
+      "repaired": 0
+    },
+    "interpretation": "Reproducible synthetic mechanics: exact-anchor discovery, a lexical vocabulary miss, freshness and direct-boundary enforcement. No agent benefit, latency or general accuracy estimate."
+  }
+}

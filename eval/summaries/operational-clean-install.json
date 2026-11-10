@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-26T18:34:05.751Z",
+  "runtime": "v24.22.1",
+  "platform": "win32",
+  "root": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\clean-install\\2026-10-26T18-31-12-369Z",
+  "records": [
+    {
+      "name": "install-online",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 15444.1877
+    },
+    {
+      "name": "install-offline-replay",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 23500.4795
+    },
+    {
+      "name": "build",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 5033.661499999995
+    },
+    {
+      "name": "doctor",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 777.7246000000014
+    },
+    {
+      "name": "core-tests",
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 75928.3997
+    }
+  ],
+  "passed": true,
+  "initial_attempt": [
+    {
+      "name": "install",
+      "exit_code": 1,
+      "error": null,
+      "elapsed_ms": 5205.6891
+    }
+  ],
+  "initial_failure": "ENOTCACHED: fresh project-local npm cache lacked a locked tarball. Retained original log; populated cache through normal locked install then repeated offline.",
+  "final_source_check": {
+    "created_at": "2026-10-26T18:43:00.858Z",
+    "exit_code": 1,
+    "error": null,
+    "elapsed_ms": 8888.5538,
+    "log": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\clean-install\\2026-10-26T18-31-12-369Z\\final-source-check.log"
+  },
+  "final_source_checked": true,
+  "final_source_check_retry": {
+    "created_at": "2026-10-27T03:31:45.537Z",
+    "exit_code": 0,
+    "error": null,
+    "elapsed_ms": 97151.1522,
+    "log": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\clean-install\\2026-10-26T18-31-12-369Z\\final-source-check-retry.log"
+  }
+}

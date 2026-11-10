@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T04:02:25.708Z",
+  "method": "Exact installed runtime lock snapshots from each protected qualified source export; sanitized runtime-only root manifests. No dependency version retuning. Product dependencies remain unchanged.",
+  "tasks": [
+    {
+      "id": "picomatch-h01",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\picomatch-h01",
+      "package_sha256": "74e4e390ce57204cd04b0e0481cec675ee0c96b2760cbd0ddefdb5ab202b202d",
+      "lock_sha256": "101db83d381dedfe536dab6df7f92124ca882d6900095bd1f514912a8f89f8d9",
+      "installed_runtime_lock_sha256": null
+    },
+    {
+      "id": "picomatch-h02",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\picomatch-h02",
+      "package_sha256": "fdd038a8dff74dbe0d780e0edeb9fd764436c7212dda4747e349be48edf9daaf",
+      "lock_sha256": "e5a482d1ff5bbf3bc112e8ea4eb98568fcf894f55194d580c5170dc1c1d155ae",
+      "installed_runtime_lock_sha256": null
+    },
+    {
+      "id": "picomatch-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\picomatch-h04",
+      "package_sha256": "fdd038a8dff74dbe0d780e0edeb9fd764436c7212dda4747e349be48edf9daaf",
+      "lock_sha256": "e5a482d1ff5bbf3bc112e8ea4eb98568fcf894f55194d580c5170dc1c1d155ae",
+      "installed_runtime_lock_sha256": null
+    },
+    {
+      "id": "picomatch-h06",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\picomatch-h06",
+      "package_sha256": "20d658c2d647b2ed059774ed5d2870e08c798fcfd65982bf8c9daa35dd2329fd",
+      "lock_sha256": "f9efa633996bf4ef7f546f632925a7909f7771231f42119a1ff7ecfcb08dafef",
+      "installed_runtime_lock_sha256": null
+    },
+    {
+      "id": "json-server-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\json-server-h04",
+      "package_sha256": "26143104f11b651e3bdfca38a508ac16813e83ee7eb3e88c2bc7b2e3af9b267e",
+      "lock_sha256": "09ed1dc8bfd0c62df52e616eb49c9a1955fbad23d1bd154d92970bccc95003c6",
+      "installed_runtime_lock_sha256": "6a5a6e348e6c74cca057c6f85d1154c538714f869dd4fa20403dc44a2e18384b"
+    },
+    {
+      "id": "json-server-h05",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\json-server-h05",
+      "package_sha256": "374199d30203a162b2c5270952063ac4017884b7ae8859e6a724d399ba3e1285",
+      "lock_sha256": "5400cf0923a7a84dd934dd68f3ca4198d830030532c732768c3f1deb01d8f671",
+      "installed_runtime_lock_sha256": "6a5a6e348e6c74cca057c6f85d1154c538714f869dd4fa20403dc44a2e18384b"
+    },
+    {
+      "id": "fastify-h01",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\fastify-h01",
+      "package_sha256": "38e7dfd2a1c0ad0e47cf9ccca71b2339eaff97e8f21d690b1ecead824ba74d24",
+      "lock_sha256": "0b10fbc1eecd182a924cd64314bf41e22785bf3b47c3b82392eb3d9d88d91bd1",
+      "installed_runtime_lock_sha256": "4c51b51ac2f1cc60e08b146036247b7edfdfe6f2543b1563ffc7a7cb1899c3ff"
+    },
+    {
+      "id": "fastify-h02",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\fastify-h02",
+      "package_sha256": "38e7dfd2a1c0ad0e47cf9ccca71b2339eaff97e8f21d690b1ecead824ba74d24",
+      "lock_sha256": "0b10fbc1eecd182a924cd64314bf41e22785bf3b47c3b82392eb3d9d88d91bd1",
+      "installed_runtime_lock_sha256": "4c51b51ac2f1cc60e08b146036247b7edfdfe6f2543b1563ffc7a7cb1899c3ff"
+    },
+    {
+      "id": "fastify-h03",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\fastify-h03",
+      "package_sha256": "8961059aa3e6a7313948153335245c05972f13d782c761932e511f8cca23f75e",
+      "lock_sha256": "5c37d7485ffc58bc9727ed4e1d8d6bd040db3ac5770f6db99dc12233f3cbb291",
+      "installed_runtime_lock_sha256": "b27a3b09948f85d26cb3832286f6a628406897e9279f378aa2cea380f69e57f9"
+    },
+    {
+      "id": "fastify-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\fastify-h04",
+      "package_sha256": "8961059aa3e6a7313948153335245c05972f13d782c761932e511f8cca23f75e",
+      "lock_sha256": "5c37d7485ffc58bc9727ed4e1d8d6bd040db3ac5770f6db99dc12233f3cbb291",
+      "installed_runtime_lock_sha256": "b27a3b09948f85d26cb3832286f6a628406897e9279f378aa2cea380f69e57f9"
+    },
+    {
+      "id": "picomatch-h07",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\picomatch-h07",
+      "package_sha256": "486d8f1dd1ca715935de9f0c9526d45f89e19f78dee24de21c3bc899a8e67545",
+      "lock_sha256": "d34065580b5d36a7edc9c7c2b570a3e617caffade67d8e1e71df3d796b2f39c8",
+      "installed_runtime_lock_sha256": null
+    },
+    {
+      "id": "picomatch-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\picomatch-h08",
+      "package_sha256": "a59ef1f650296fbad092c1131311f110356babfdcb53b7dd55271bd5794d9530",
+      "lock_sha256": "7426176295ca8324acefa8bb7be6164e6515acb2b4521c7c43cccfd0dbbbef5b",
+      "installed_runtime_lock_sha256": null
+    },
+    {
+      "id": "json-server-h07",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\json-server-h07",
+      "package_sha256": "9c416fa9b61fe264404ee14824830e85d8a265f2c9d6c0c1e1900fb099c240c7",
+      "lock_sha256": "05c61bf7c0431786f026e1ec9568952ceecf3fed4cad19e8822ab3004f8df35c",
+      "installed_runtime_lock_sha256": "32d983e4f21505a40757d9464c819a5a2c7aed57597f9129d4d5a3951c964637"
+    },
+    {
+      "id": "json-server-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\json-server-h08",
+      "package_sha256": "9c416fa9b61fe264404ee14824830e85d8a265f2c9d6c0c1e1900fb099c240c7",
+      "lock_sha256": "05c61bf7c0431786f026e1ec9568952ceecf3fed4cad19e8822ab3004f8df35c",
+      "installed_runtime_lock_sha256": "32d983e4f21505a40757d9464c819a5a2c7aed57597f9129d4d5a3951c964637"
+    },
+    {
+      "id": "json-server-h09",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\json-server-h09",
+      "package_sha256": "ae8720109736264aabbb9297e743dab017a5652a1900cb116a6f02ca4225ace8",
+      "lock_sha256": "04c9482aee5f216370d8509fe1eeecd108afc2751dac209e355eb07f5d25ad39",
+      "installed_runtime_lock_sha256": "6551d98655b235c4f3cac0b0fa7e344ceac26e06e8dfaa6a4f54b78f08adad25"
+    },
+    {
+      "id": "json-server-h10",
+      "qualification_run": "2026-10-26T18-29-29-901Z",
+      "directory": "eval\\manifests\\holdout-runtime\\json-server-h10",
+      "package_sha256": "0a6ea0e5399fdb32294cea83737a16c84ec6cc1c840e9bd44506543097acc24f",
+      "lock_sha256": "b8fbc99584104658e0508239d9a35ea8d6bc069d07e24fabdc2cedd32a43a389",
+      "installed_runtime_lock_sha256": "145983506b8a819c0975ace3dccef1651c2918cd012fe586659c2bf9a0f8fc9e"
+    },
+    {
+      "id": "fastify-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\fastify-h08",
+      "package_sha256": "e2dbb0251f8cf8bcf0770eea84d60f405f3bae9ca99c12477f194f63288bd3db",
+      "lock_sha256": "c99aab06abd2008a7d0b1a3f2cc10927f90600f0369f78bfaa2e622ce78067d9",
+      "installed_runtime_lock_sha256": "b27a3b09948f85d26cb3832286f6a628406897e9279f378aa2cea380f69e57f9"
+    },
+    {
+      "id": "fastify-h09",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "directory": "eval\\manifests\\holdout-runtime\\fastify-h09",
+      "package_sha256": "e2dbb0251f8cf8bcf0770eea84d60f405f3bae9ca99c12477f194f63288bd3db",
+      "lock_sha256": "c99aab06abd2008a7d0b1a3f2cc10927f90600f0369f78bfaa2e622ce78067d9",
+      "installed_runtime_lock_sha256": "b27a3b09948f85d26cb3832286f6a628406897e9279f378aa2cea380f69e57f9"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-10-26T11:46:40.909Z",
+  "run_id": "2026-10-26T11-30-06-180Z",
+  "counted_responses_verified": 40,
+  "source_excerpts_verified": 219,
+  "expansions": [
+    {
+      "repository": "picomatch",
+      "id": "picomatch-d01",
+      "status": "expanded",
+      "path": "lib/parse.js",
+      "count": 686
+    },
+    {
+      "repository": "json-server",
+      "id": "json-server-d01",
+      "status": "expanded",
+      "path": "src/app.ts",
+      "count": 587
+    },
+    {
+      "repository": "fastify",
+      "id": "fastify-d01",
+      "status": "expanded",
+      "path": "lib/decorate.js",
+      "count": 810
+    }
+  ],
+  "all_frozen_source_hashes_match": true,
+  "source_snapshot": "eval/runs/retrieval/2026-10-26T11-30-06-180Z/source"
+}

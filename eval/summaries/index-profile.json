@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "operation": "index_profile",
+  "created_at": "2026-10-26T10:00:51.130Z",
+  "runtime": "v24.22.1",
+  "platform": {
+    "system": "win32",
+    "release": "10.0.26300",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+    "memory_bytes": 16487870464
+  },
+  "methodology": "One cold build and five unchanged refreshes per exported pinned head in one process, followed by a one-file comment edit and restoration. Fresh cache, OS file cache uncontrolled; not cold-disk measurements. p95 is the largest of five observations. No model/upstream scripts. RSS peak is cumulative for the whole process; units KiB on supported Node platforms. Git exports have no .git, so Git subprocess overhead is excluded; real-worktree correctness is separately tested.",
+  "process_peak_rss_kib": 286400,
+  "results": [
+    {
+      "repository": "picomatch",
+      "commit": "9fab7bf61913ea334c4203ed321c426cfde44a42",
+      "exported": {
+        "files": 78,
+        "bytes": 840759,
+        "skipped": []
+      },
+      "preparation_ms": 334.8546,
+      "edit_path": "bench/first-match-minimatch.js",
+      "warm_summary_ms": {
+        "n": 5,
+        "p50": 465.29230000000007,
+        "p95": 486.9611
+      },
+      "database_bytes": 2793472,
+      "cold": {
+        "files": 73,
+        "source_files": 62,
+        "bytes": 837574,
+        "status": "complete",
+        "symbols": 503,
+        "imports": 127,
+        "timings_ms": {
+          "scan": 243.16700000000003,
+          "configuration": 0.5641999999999143,
+          "parse": 229.85490000000004,
+          "resolution": 31.62019999999984,
+          "verification": 222.0163,
+          "publish": 39.25030000000015,
+          "total": 775.651
+        },
+        "coverage_reasons": {}
+      },
+      "warm_samples_ms": [
+        {
+          "scan": 230.34930000000008,
+          "configuration": 2.2819999999999254,
+          "parse": 0.039099999999962165,
+          "resolution": 17.905099999999948,
+          "verification": 222.4090000000001,
+          "publish": 0.17240000000015243,
+          "total": 486.9611
+        },
+        {
+          "scan": 219.81439999999998,
+          "configuration": 0.7179000000000997,
+          "parse": 0.026599999999689317,
+          "resolution": 17.77370000000019,
+          "verification": 220.77160000000003,
+          "publish": 0.15599999999994907,
+          "total": 472.6382000000001
+        },
+        {
+          "scan": 222.6542000000004,
+          "configuration": 0.6528000000002976,
+          "parse": 0.026599999999689317,
+          "resolution": 16.825400000000172,
+          "verification": 212.10109999999986,
+          "publish": 0.16480000000001382,
+          "total": 465.29230000000007
+        },
+        {
+          "scan": 210.01849999999968,
+          "configuration": 0.6765999999997803,
+          "parse": 0.025300000000243017,
+          "resolution": 17.57470000000012,
+          "verification": 211.7238000000002,
+          "publish": 0.16660000000001673,
+          "total": 453.51449999999977
+        },
+        {
+          "scan": 213.3083999999999,
+          "configuration": 0.7353000000002794,
+          "parse": 0.032999999999901775,
+          "resolution": 18.146400000000085,
+          "verification": 217.6609999999996,
+          "publish": 0.14740000000028886,
+          "total": 462.78139999999985
+        }
+      ],
+      "warm_parsed_files": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "small_edit": {
+        "parsed_files": 1,
+        "reused_files": 61,
+        "timings_ms": {
+          "scan": 221.7514000000001,
+          "configuration": 0.7527999999992971,
+          "parse": 0.327900000000227,
+          "resolution": 17.683500000000095,
+          "verification": 221.08780000000024,
+          "publish": 2.9627999999993335,
+          "total": 478.7497000000003
+        }
+      },
+      "restored_generation": 3
+    },
+    {
+      "repository": "json-server",
+      "commit": "89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea",
+      "exported": {
+        "files": 33,
+        "bytes": 87971,
+        "skipped": []
+      },
+      "preparation_ms": 228.2484000000004,
+      "edit_path": "src/adapters/normalized-adapter.test.ts",
+      "warm_summary_ms": {
+        "n": 5,
+        "p50": 244.5666000000001,
+        "p95": 257.52189999999973
+      },
+      "database_bytes": 364544,
+      "cold": {
+        "files": 25,
+        "source_files": 16,
+        "bytes": 81587,
+        "status": "incomplete",
+        "symbols": 238,
+        "imports": 75,
+        "timings_ms": {
+          "scan": 117.0592999999999,
+          "configuration": 7.310600000000704,
+          "parse": 30.88459999999941,
+          "resolution": 6.051399999999376,
+          "verification": 118.14519999999993,
+          "publish": 6.822000000000116,
+          "total": 294.59530000000086
+        },
+        "coverage_reasons": {
+          "syntax_or_project_error": 6,
+          "unsupported_local": 31
+        }
+      },
+      "warm_samples_ms": [
+        {
+          "scan": 113.6903999999995,
+          "configuration": 2.2058999999999287,
+          "parse": 0.016300000000228465,
+          "resolution": 5.241299999999683,
+          "verification": 115.28099999999995,
+          "publish": 0.14729999999963184,
+          "total": 241.29439999999977
+        },
+        {
+          "scan": 114.27459999999974,
+          "configuration": 1.943000000000211,
+          "parse": 0.012300000000323053,
+          "resolution": 5.009799999999814,
+          "verification": 118.70350000000053,
+          "publish": 0.1845999999995911,
+          "total": 244.5666000000001
+        },
+        {
+          "scan": 119.08180000000084,
+          "configuration": 2.075900000000729,
+          "parse": 0.020099999999729334,
+          "resolution": 6.924399999999878,
+          "verification": 124.44669999999951,
+          "publish": 0.15930000000025757,
+          "total": 257.52189999999973
+        },
+        {
+          "scan": 127.2521999999999,
+          "configuration": 1.9802999999992608,
+          "parse": 0.010900000000219734,
+          "resolution": 4.406499999999141,
+          "verification": 117.27959999999985,
+          "publish": 0.14719999999942956,
+          "total": 255.84130000000005
+        },
+        {
+          "scan": 110.0650999999998,
+          "configuration": 1.6304999999993015,
+          "parse": 0.010800000000017462,
+          "resolution": 3.979599999999664,
+          "verification": 109.64950000000044,
+          "publish": 0.16610000000036962,
+          "total": 229.8217999999997
+        }
+      ],
+      "warm_parsed_files": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "small_edit": {
+        "parsed_files": 1,
+        "reused_files": 15,
+        "timings_ms": {
+          "scan": 111.96370000000024,
+          "configuration": 1.7168000000001484,
+          "parse": 0.8924999999999272,
+          "resolution": 3.966699999999946,
+          "verification": 113.63930000000073,
+          "publish": 2.7588000000005195,
+          "total": 239.20679999999993
+        }
+      },
+      "restored_generation": 3
+    },
+    {
+      "repository": "fastify",
+      "commit": "5df959f3af698823dd582f1c3661f3e80df0b5da",
+      "exported": {
+        "files": 397,
+        "bytes": 3037745,
+        "skipped": []
+      },
+      "preparation_ms": 1224.1690999999992,
+      "edit_path": ".github/scripts/lint-ecosystem.js",
+      "warm_summary_ms": {
+        "n": 5,
+        "p50": 1811.7873,
+        "p95": 1964.7114999999994
+      },
+      "database_bytes": 12988416,
+      "cold": {
+        "files": 358,
+        "source_files": 299,
+        "bytes": 2971032,
+        "status": "incomplete",
+        "symbols": 8392,
+        "imports": 1223,
+        "timings_ms": {
+          "scan": 885.524800000001,
+          "configuration": 2.2445999999999913,
+          "parse": 578.7623999999996,
+          "resolution": 72.73470000000088,
+          "verification": 878.8790000000008,
+          "publish": 253.84630000000107,
+          "total": 2680.9093999999986
+        },
+        "coverage_reasons": {
+          "configuration_error": 1,
+          "syntax_or_project_error": 17,
+          "unresolved_local": 4,
+          "unknown": 2,
+          "unsupported_local": 92
+        }
+      },
+      "warm_samples_ms": [
+        {
+          "scan": 914.1625999999997,
+          "configuration": 7.460799999998926,
+          "parse": 0.16740000000027067,
+          "resolution": 69.13349999999991,
+          "verification": 871.0833000000002,
+          "publish": 0.5339999999996508,
+          "total": 1921.2097999999987
+        },
+        {
+          "scan": 854.9184999999998,
+          "configuration": 11.888300000000527,
+          "parse": 0.11719999999877473,
+          "resolution": 66.27859999999964,
+          "verification": 972.1959999999999,
+          "publish": 0.5221000000001368,
+          "total": 1964.7114999999994
+        },
+        {
+          "scan": 841.0429999999997,
+          "configuration": 8.107599999999366,
+          "parse": 0.15940000000045984,
+          "resolution": 67.02390000000014,
+          "verification": 832.1365999999998,
+          "publish": 0.5673999999999069,
+          "total": 1807.0242000000017
+        },
+        {
+          "scan": 822.3150999999998,
+          "configuration": 7.055500000002212,
+          "parse": 0.13039999999818974,
+          "resolution": 69.54179999999906,
+          "verification": 833.7281999999977,
+          "publish": 0.5178999999989173,
+          "total": 1790.1247999999978
+        },
+        {
+          "scan": 824.9964,
+          "configuration": 7.364000000001397,
+          "parse": 0.13509999999951106,
+          "resolution": 64.26180000000022,
+          "verification": 857.4561000000031,
+          "publish": 0.5456000000012864,
+          "total": 1811.7873
+        }
+      ],
+      "warm_parsed_files": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "small_edit": {
+        "parsed_files": 1,
+        "reused_files": 298,
+        "timings_ms": {
+          "scan": 824.1715000000004,
+          "configuration": 6.769199999998818,
+          "parse": 1.5247999999992317,
+          "resolution": 61.74819999999818,
+          "verification": 834.2923999999985,
+          "publish": 9.118899999997666,
+          "total": 1791.9881999999998
+        }
+      },
+      "restored_generation": 3
+    }
+  ]
+}

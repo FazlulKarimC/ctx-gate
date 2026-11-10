@@ -1,0 +1,570 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-27T06-06-47-463Z",
+  "created_at": "2026-11-06T17:37:22.206Z",
+  "planned_attempts": 30,
+  "reserved_attempts": 4,
+  "total_reserved_across_variants": 10,
+  "completed_reports": 4,
+  "unassessed_reservations": 0,
+  "stop_reason": "observed_host_lifecycle_failure",
+  "patch_review_pending": true,
+  "rows": [
+    {
+      "id": "picomatch-h06",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h06-r1-B",
+      "run_id": "2026-10-27T06-06-47-463Z",
+      "reserved_at": "2026-10-27T06:08:14.563Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v2_outcome_precedence",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "task_failure",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'foo.',\n+     '.'\n-     'foo.'\n    ],\n    [\n      'm|c|',\n+     '|c|'\n-     'm|c|'\n    ],\n    [\n      'js',\n      undefined\n    ]\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:31:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [Array],\n  expected: [Array],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":170,\"passed\":170,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'foo.',\n+     'foo\\\\.'\n-     'foo.'\n    ],\n    [\n      'm|c|',\n      'm|c|'\n    ],\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:31:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [Array],\n  expected: [Array],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":170,\"passed\":170,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 1,
+        "valid_context_responses": 1,
+        "nonempty_context_deliveries": 1,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 14,
+        "pre_edit_delivery": true,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": 19673,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 9,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [
+          1343.6344000000008
+        ],
+        "returned_engine_tokens": 1978,
+        "engine_payload_bytes": 5955,
+        "observed_mcp_result_json_bytes": 6424,
+        "tool_configuration": [
+          {
+            "encoding": "o200k_base",
+            "budget_tokens": 2000,
+            "neighbors": false,
+            "notes": false
+          }
+        ],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 326990,
+            "cached_input_tokens": 248832,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2851,
+            "reasoning_output_tokens": 762
+          },
+          "input_tokens": 326990,
+          "cached_input_tokens": 248832,
+          "uncached_input_tokens": 78158,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2851,
+          "reasoning_output_tokens": 762,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/parse.js",
+          "before": {
+            "sha256": "379382c6ec9cf80552413538a60f88fe072f03a8f1adb05bbbeb7f063044890c"
+          },
+          "after": {
+            "sha256": "2e12bde3914db9f234e83da703e278aa973c551078a394b14cc473fe378c7f93"
+          }
+        },
+        {
+          "path": "test/api.picomatch.js",
+          "before": {
+            "sha256": "941267d97d6e7b928e406aea8a7a071ab21dd2941816a5d37c42c22054fdf477"
+          },
+          "after": {
+            "sha256": "96c910dcdede6bf0f35a792c8b134546f08225688baf841aee142f33207ce79f"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/parse.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\original-files\\\\lib\\\\parse.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\patch-files\\\\lib\\\\parse.js\"\nindex c282438..2174eec 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\original-files\\\\lib\\\\parse.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\patch-files\\\\lib\\\\parse.js\"\n@@ -209,8 +209,8 @@ const parse = (input, options) => {\n \n     if (tok.value || tok.output) append(tok);\n     if (prev && prev.type === 'text' && tok.type === 'text') {\n+      prev.output = (prev.output != null ? prev.output : prev.value) + (tok.output != null ? tok.output : tok.value);\n       prev.value += tok.value;\n-      prev.output = (prev.output || '') + tok.value;\n       return;\n     }\n \n"
+        },
+        {
+          "path": "test/api.picomatch.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\original-files\\\\test\\\\api.picomatch.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\patch-files\\\\test\\\\api.picomatch.js\"\nindex c659a64..0fe5531 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\original-files\\\\test\\\\api.picomatch.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-B\\\\patch-files\\\\test\\\\api.picomatch.js\"\n@@ -316,6 +316,35 @@ describe('picomatch', () => {\n \n   describe('.parse', () => {\n     describe('tokens', () => {\n+      it('should preserve values and output when merging adjacent text tokens', () => {\n+        const { tokens, output } = picomatch.parse('foo.(m|c|)js');\n+\n+        assertTokens(tokens, [\n+          ['bos', ''],\n+          ['text', 'foo.'],\n+          ['paren', '('],\n+          ['text', 'm|c|'],\n+          ['paren', ')'],\n+          ['text', 'js']\n+        ]);\n+        assert.strictEqual(tokens[1].output, 'foo\\\\.');\n+        assert.strictEqual(tokens[3].output, 'm|c|');\n+        assert.strictEqual(output, 'foo\\\\.(m|c|)js');\n+      });\n+\n+      it('should retain escaping across consecutive text token merges', () => {\n+        for (const [input, output] of [\n+          ['foo.bar', 'foo\\\\.bar'],\n+          ['foo]bar', 'foo\\\\]bar'],\n+          ['foo@bar', 'foo@bar']\n+        ]) {\n+          const state = picomatch.parse(input);\n+          assertTokens(state.tokens, [['bos', ''], ['text', input]]);\n+          assert.strictEqual(state.tokens[1].output, output);\n+          assert.strictEqual(state.output, output);\n+        }\n+      });\n+\n       it('should return result for pattern that matched by fastpath', () => {\n         const { tokens } = picomatch.parse('a*.txt');\n \n"
+        }
+      ],
+      "run": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 138712.5091,
+        "turn_completed_ms": 137256.4871,
+        "cleanup_elapsed_ms": 1456.0219999999972,
+        "cleanup_forced": false,
+        "cleanup_incomplete": false,
+        "model_turn_completed": true,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "task_failure",
+      "audit_reason": null,
+      "report_path": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/picomatch-h06-r1-B/report.json"
+    },
+    {
+      "id": "picomatch-h06",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h06-r1-A",
+      "run_id": "2026-10-27T06-06-47-463Z",
+      "reserved_at": "2026-10-27T06:10:42.306Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v2_outcome_precedence",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "task_failure",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'foo.',\n+     '.'\n-     'foo.'\n    ],\n    [\n      'm|c|',\n+     '|c|'\n-     'm|c|'\n    ],\n    [\n      'js',\n      undefined\n    ]\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:31:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [Array],\n  expected: [Array],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":170,\"passed\":170,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'foo.',\n+     'foo\\\\.'\n-     'foo.'\n    ],\n    [\n      'm|c|',\n      'm|c|'\n    ],\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:31:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [Array],\n  expected: [Array],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":170,\"passed\":170,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 14,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 10,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 262949,
+            "cached_input_tokens": 227200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2514,
+            "reasoning_output_tokens": 506
+          },
+          "input_tokens": 262949,
+          "cached_input_tokens": 227200,
+          "uncached_input_tokens": 35749,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2514,
+          "reasoning_output_tokens": 506,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/parse.js",
+          "before": {
+            "sha256": "379382c6ec9cf80552413538a60f88fe072f03a8f1adb05bbbeb7f063044890c"
+          },
+          "after": {
+            "sha256": "2e12bde3914db9f234e83da703e278aa973c551078a394b14cc473fe378c7f93"
+          }
+        },
+        {
+          "path": "test/api.picomatch.js",
+          "before": {
+            "sha256": "941267d97d6e7b928e406aea8a7a071ab21dd2941816a5d37c42c22054fdf477"
+          },
+          "after": {
+            "sha256": "fb3b0a14ea853bfe35e67ca40561106661b94417c888320b33d978a73ad8511a"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/parse.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\original-files\\\\lib\\\\parse.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\patch-files\\\\lib\\\\parse.js\"\nindex c282438..2174eec 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\original-files\\\\lib\\\\parse.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\patch-files\\\\lib\\\\parse.js\"\n@@ -209,8 +209,8 @@ const parse = (input, options) => {\n \n     if (tok.value || tok.output) append(tok);\n     if (prev && prev.type === 'text' && tok.type === 'text') {\n+      prev.output = (prev.output != null ? prev.output : prev.value) + (tok.output != null ? tok.output : tok.value);\n       prev.value += tok.value;\n-      prev.output = (prev.output || '') + tok.value;\n       return;\n     }\n \n"
+        },
+        {
+          "path": "test/api.picomatch.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\original-files\\\\test\\\\api.picomatch.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\patch-files\\\\test\\\\api.picomatch.js\"\nindex c659a64..ed5f9e2 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\original-files\\\\test\\\\api.picomatch.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\picomatch-h06-r1-A\\\\patch-files\\\\test\\\\api.picomatch.js\"\n@@ -316,6 +316,35 @@ describe('picomatch', () => {\n \n   describe('.parse', () => {\n     describe('tokens', () => {\n+      it('should preserve values and output when merging adjacent text tokens', () => {\n+        const { tokens, output } = picomatch.parse('foo.(m|c|)js');\n+\n+        assertTokens(tokens, [\n+          ['bos', ''],\n+          ['text', 'foo.'],\n+          ['paren', '('],\n+          ['text', 'm|c|'],\n+          ['paren', ')'],\n+          ['text', 'js']\n+        ]);\n+        assert.strictEqual(tokens[1].output, 'foo\\\\.');\n+        assert.strictEqual(tokens[3].output, 'm|c|');\n+        assert.strictEqual(output, 'foo\\\\.(m|c|)js');\n+        assert.strictEqual(tokens.map(token => token.output != null ? token.output : token.value).join(''), output);\n+      });\n+\n+      it('should preserve merged text output when backtracking', () => {\n+        const state = picomatch.parse('foo..{1..2}');\n+\n+        assert.strictEqual(state.tokens[1].value, 'foo..');\n+        assert.strictEqual(state.tokens[1].output, 'foo\\\\.\\\\.');\n+        assert.strictEqual(state.output, 'foo\\\\.\\\\.[1-2]');\n+        assert(isMatch('foo..1', 'foo..{1..2}'));\n+        assert(isMatch('foo..2', 'foo..{1..2}'));\n+        assert(!isMatch('fooab1', 'foo..{1..2}'));\n+        assert(!isMatch('..1', 'foo..{1..2}'));\n+      });\n+\n       it('should return result for pattern that matched by fastpath', () => {\n         const { tokens } = picomatch.parse('a*.txt');\n \n"
+        }
+      ],
+      "run": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 90392.2599,
+        "turn_completed_ms": 88555.11680000002,
+        "cleanup_elapsed_ms": 1837.1430999999866,
+        "cleanup_forced": false,
+        "cleanup_incomplete": false,
+        "model_turn_completed": true,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "task_failure",
+      "audit_reason": null,
+      "report_path": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/picomatch-h06-r1-A/report.json"
+    },
+    {
+      "id": "json-server-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h04-r1-A",
+      "run_id": "2026-10-27T06-06-47-463Z",
+      "reserved_at": "2026-10-27T06:12:24.066Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v2_outcome_precedence",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "task_failure",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n\r\n404 !== 200\r\n\r\n    at file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/labels/holdout-modern.mjs:52:12\r\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\r\n  generatedMessage: true,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 404,\r\n  expected: 200,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.22.1\r\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\"}\n",
+          "stderr": ""
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 22,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 15,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "src/app.ts",
+          "before": {
+            "sha256": "429d0bb73eb64ca7fa63f51e34499b442c28e445d947c2f078ddbf799d438715"
+          },
+          "after": {
+            "sha256": "76b5265875bd07ef3d6a6dcc7be4ce8ce49ec6ed89c3ba4d035a37f26df480d7"
+          }
+        },
+        {
+          "path": "lib/in-memory-http.mjs",
+          "before": null,
+          "after": {
+            "sha256": "f14cb0c26b073e60438320541e7480830a16a3213d1aa5d790756c8665ed14b3"
+          }
+        },
+        {
+          "path": "lib/service.test.js",
+          "before": null,
+          "after": {
+            "sha256": "39e9ddd9c95e916194f0438037e67ca68f3a5249909ce27eda99794d1ac4713b"
+          }
+        },
+        {
+          "path": "src/app.static.test.ts",
+          "before": null,
+          "after": {
+            "sha256": "ce7a8c4b07ae045f86302b615a975cdd807ab408f2db4c83de665ad9892f8f22"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "src/app.ts",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\src\\\\app.ts\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\src\\\\app.ts\"\nindex 2faf310..bce30d6 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\src\\\\app.ts\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\src\\\\app.ts\"\n@@ -31,7 +31,7 @@ export function createApp(db: Low<Data>, options: AppOptions = {}) {\n   const app = new App()\n \n   // Static files\n-  app.use(sirv(join(__dirname, '../public'), { dev: !isProduction }))\n+  app.use(sirv(join(process.cwd(), 'public'), { dev: !isProduction }))\n   options.static\n     ?.map((path) => (isAbsolute(path) ? path : join(process.cwd(), path)))\n     .forEach((dir) => app.use(sirv(dir, { dev: !isProduction })))\n"
+        },
+        {
+          "path": "lib/in-memory-http.mjs",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\lib\\\\in-memory-http.mjs\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\lib\\\\in-memory-http.mjs\"\nindex e69de29..02b165a 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\lib\\\\in-memory-http.mjs\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\lib\\\\in-memory-http.mjs\"\n@@ -0,0 +1,64 @@\n+import assert from 'node:assert/strict'\n+import { Server } from 'node:http'\n+import { Duplex } from 'node:stream'\n+\n+const servers = new Map()\n+let nextPort = 10000\n+Server.prototype.listen = function () {\n+  const port = nextPort++\n+  servers.set(port, this)\n+  this.address = () => ({ address: '127.0.0.1', family: 'IPv4', port })\n+  process.nextTick(() => this.emit('listening'))\n+  return this\n+}\n+Server.prototype.close = function (callback) {\n+  servers.delete(this.address().port)\n+  process.nextTick(() => {\n+    this.emit('close')\n+    callback?.()\n+  })\n+  return this\n+}\n+globalThis.fetch = async (input) => {\n+  const url = new URL(input)\n+  assert.equal(url.hostname, '127.0.0.1')\n+  const server = servers.get(Number(url.port))\n+  assert.ok(server, 'in-memory server must exist')\n+  const raw = await new Promise((resolve, reject) => {\n+    const chunks = []\n+    const socket = new Duplex({\n+      read() {},\n+      write(chunk, encoding, callback) {\n+        chunks.push(Buffer.from(chunk))\n+        callback()\n+      },\n+    })\n+    socket.on('error', reject)\n+    socket.on('finish', () => {\n+      resolve(Buffer.concat(chunks))\n+      socket.destroy()\n+    })\n+    server.emit('connection', socket)\n+    socket.push(`GET ${url.pathname}${url.search} HTTP/1.1\\r\\nHost: ${url.host}\\r\\nConnection: close\\r\\n\\r\\n`)\n+  })\n+  const boundary = raw.indexOf('\\r\\n\\r\\n')\n+  const [statusLine, ...headerLines] = raw.subarray(0, boundary).toString().split('\\r\\n')\n+  const headers = new Headers()\n+  for (const line of headerLines) {\n+    const index = line.indexOf(':')\n+    headers.append(line.slice(0, index), line.slice(index + 1).trim())\n+  }\n+  let body = raw.subarray(boundary + 4)\n+  if (headers.get('transfer-encoding') === 'chunked') {\n+    const chunks = []\n+    while (body.length) {\n+      const index = body.indexOf('\\r\\n')\n+      const size = parseInt(body.subarray(0, index).toString(), 16)\n+      if (!size) break\n+      chunks.push(body.subarray(index + 2, index + 2 + size))\n+      body = body.subarray(index + 2 + size + 2)\n+    }\n+    body = Buffer.concat(chunks)\n+  }\n+  return new Response(body, { status: Number(statusLine.split(' ')[1]), headers })\n+}\n"
+        },
+        {
+          "path": "lib/service.test.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\lib\\\\service.test.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\lib\\\\service.test.js\"\nindex e69de29..5a4bc8e 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\lib\\\\service.test.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\lib\\\\service.test.js\"\n@@ -0,0 +1,318 @@\n+import assert from 'node:assert/strict';\n+import test from 'node:test';\n+import { Low, Memory } from 'lowdb';\n+import { Service } from './service.js';\n+const defaultData = { posts: [], comments: [], object: {} };\n+const adapter = new Memory();\n+const db = new Low(adapter, defaultData);\n+const service = new Service(db);\n+const POSTS = 'posts';\n+const COMMENTS = 'comments';\n+const OBJECT = 'object';\n+const UNKNOWN_RESOURCE = 'xxx';\n+const UNKNOWN_ID = 'xxx';\n+const post1 = {\n+    id: '1',\n+    title: 'a',\n+    views: 100,\n+    author: { name: 'foo' },\n+    tags: ['foo', 'bar'],\n+};\n+const post2 = {\n+    id: '2',\n+    title: 'b',\n+    views: 200,\n+    author: { name: 'bar' },\n+    tags: ['bar'],\n+};\n+const post3 = {\n+    id: '3',\n+    title: 'c',\n+    views: 300,\n+    author: { name: 'baz' },\n+    tags: ['foo'],\n+};\n+const comment1 = { id: '1', title: 'a', postId: '1' };\n+const items = 3;\n+const obj = {\n+    f1: 'foo',\n+};\n+function reset() {\n+    db.data = structuredClone({\n+        posts: [post1, post2, post3],\n+        comments: [comment1],\n+        object: obj,\n+    });\n+}\n+await test('constructor', () => {\n+    const defaultData = { posts: [{ id: '1' }, {}], object: {} };\n+    const db = new Low(adapter, defaultData);\n+    new Service(db);\n+    if (Array.isArray(db.data['posts'])) {\n+        const id0 = db.data['posts']?.at(0)?.['id'];\n+        const id1 = db.data['posts']?.at(1)?.['id'];\n+        assert.ok(typeof id1 === 'string' && id1.length > 0, `id should be a non empty string but was: ${String(id1)}`);\n+        assert.ok(typeof id0 === 'string' && id0 === '1', `id should not change if already set but was: ${String(id0)}`);\n+    }\n+});\n+await test('findById', () => {\n+    reset();\n+    if (!Array.isArray(db.data?.[POSTS]))\n+        throw new Error('posts should be an array');\n+    assert.deepEqual(service.findById(POSTS, '1', {}), db.data?.[POSTS]?.[0]);\n+    assert.equal(service.findById(POSTS, UNKNOWN_ID, {}), undefined);\n+    assert.deepEqual(service.findById(POSTS, '1', { _embed: ['comments'] }), {\n+        ...post1,\n+        comments: [comment1],\n+    });\n+    assert.deepEqual(service.findById(COMMENTS, '1', { _embed: ['post'] }), {\n+        ...comment1,\n+        post: post1,\n+    });\n+    assert.equal(service.findById(UNKNOWN_RESOURCE, '1', {}), undefined);\n+});\n+await test('find', async (t) => {\n+    const arr = [\n+        {\n+            name: POSTS,\n+            res: [post1, post2, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { id: post1.id },\n+            res: [post1],\n+        },\n+        {\n+            name: POSTS,\n+            params: { id: UNKNOWN_ID },\n+            res: [],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views: post1.views.toString() },\n+            res: [post1],\n+        },\n+        {\n+            name: POSTS,\n+            params: { 'author.name': post1.author.name },\n+            res: [post1],\n+        },\n+        {\n+            name: POSTS,\n+            params: { 'tags[0]': 'foo' },\n+            res: [post1, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { id: UNKNOWN_ID, views: post1.views.toString() },\n+            res: [],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_ne: post1.views.toString() },\n+            res: [post2, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_lt: (post1.views + 1).toString() },\n+            res: [post1],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_lt: post1.views.toString() },\n+            res: [],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_lte: post1.views.toString() },\n+            res: [post1],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_gt: post1.views.toString() },\n+            res: [post2, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_gt: (post1.views - 1).toString() },\n+            res: [post1, post2, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { views_gte: post1.views.toString() },\n+            res: [post1, post2, post3],\n+        },\n+        {\n+            data: { posts: [post3, post1, post2] },\n+            name: POSTS,\n+            params: { _sort: 'views' },\n+            res: [post1, post2, post3],\n+        },\n+        {\n+            data: { posts: [post3, post1, post2] },\n+            name: POSTS,\n+            params: { _sort: '-views' },\n+            res: [post3, post2, post1],\n+        },\n+        {\n+            data: { posts: [post3, post1, post2] },\n+            name: POSTS,\n+            params: { _sort: '-views,id' },\n+            res: [post3, post2, post1],\n+        },\n+        {\n+            name: POSTS,\n+            params: { _start: 0, _end: 2 },\n+            res: [post1, post2],\n+        },\n+        {\n+            name: POSTS,\n+            params: { _start: 1, _end: 3 },\n+            res: [post2, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { _start: 0, _limit: 2 },\n+            res: [post1, post2],\n+        },\n+        {\n+            name: POSTS,\n+            params: { _start: 1, _limit: 2 },\n+            res: [post2, post3],\n+        },\n+        {\n+            name: POSTS,\n+            params: { _page: 1, _per_page: 2 },\n+            res: {\n+                first: 1,\n+                last: 2,\n+                prev: null,\n+                next: 2,\n+                pages: 2,\n+                items,\n+                data: [post1, post2],\n+            },\n+        },\n+        {\n+            name: POSTS,\n+            params: { _page: 2, _per_page: 2 },\n+            res: {\n+                first: 1,\n+                last: 2,\n+                prev: 1,\n+                next: null,\n+                pages: 2,\n+                items,\n+                data: [post3],\n+            },\n+        },\n+        {\n+            name: POSTS,\n+            params: { _page: 3, _per_page: 2 },\n+            res: {\n+                first: 1,\n+                last: 2,\n+                prev: 1,\n+                next: null,\n+                pages: 2,\n+                items,\n+                data: [post3],\n+            },\n+        },\n+        {\n+            name: POSTS,\n+            params: { _page: 2, _per_page: 1 },\n+            res: {\n+                first: 1,\n+                last: 3,\n+                prev: 1,\n+                next: 3,\n+                pages: 3,\n+                items,\n+                data: [post2],\n+            },\n+        },\n+        {\n+            name: POSTS,\n+            params: { _embed: ['comments'] },\n+            res: [\n+                { ...post1, comments: [comment1] },\n+                { ...post2, comments: [] },\n+                { ...post3, comments: [] },\n+            ],\n+        },\n+        {\n+            name: COMMENTS,\n+            params: { _embed: ['post'] },\n+            res: [{ ...comment1, post: post1 }],\n+        },\n+        {\n+            name: UNKNOWN_RESOURCE,\n+            res: undefined,\n+        },\n+        {\n+            name: OBJECT,\n+            res: obj,\n+        },\n+    ];\n+    for (const tc of arr) {\n+        await t.test(`${tc.name} ${JSON.stringify(tc.params)}`, () => {\n+            if (tc.data) {\n+                db.data = tc.data;\n+            }\n+            else {\n+                reset();\n+            }\n+            assert.deepEqual(service.find(tc.name, tc.params), tc.res);\n+        });\n+    }\n+});\n+await test('create', async () => {\n+    reset();\n+    const post = { title: 'new post' };\n+    const res = await service.create(POSTS, post);\n+    assert.equal(res?.['title'], post.title);\n+    assert.equal(typeof res?.['id'], 'string', 'id should be a string');\n+    assert.equal(await service.create(UNKNOWN_RESOURCE, post), undefined);\n+});\n+await test('update', async () => {\n+    reset();\n+    const obj = { f1: 'bar' };\n+    const res = await service.update(OBJECT, obj);\n+    assert.equal(res, obj);\n+    assert.equal(await service.update(UNKNOWN_RESOURCE, obj), undefined, 'should ignore unknown resources');\n+    assert.equal(await service.update(POSTS, {}), undefined, 'should ignore arrays');\n+});\n+await test('updateById', async () => {\n+    reset();\n+    const post = { id: 'xxx', title: 'updated post' };\n+    const res = await service.updateById(POSTS, post1.id, post);\n+    assert.equal(res?.['id'], post1.id, 'id should not change');\n+    assert.equal(res?.['title'], post.title);\n+    assert.equal(await service.updateById(UNKNOWN_RESOURCE, post1.id, post), undefined);\n+    assert.equal(await service.updateById(POSTS, UNKNOWN_ID, post), undefined);\n+});\n+await test('patchById', async () => {\n+    reset();\n+    const post = { id: 'xxx', title: 'updated post' };\n+    const res = await service.patchById(POSTS, post1.id, post);\n+    assert.notEqual(res, undefined);\n+    assert.equal(res?.['id'], post1.id);\n+    assert.equal(res?.['title'], post.title);\n+    assert.equal(await service.patchById(UNKNOWN_RESOURCE, post1.id, post), undefined);\n+    assert.equal(await service.patchById(POSTS, UNKNOWN_ID, post), undefined);\n+});\n+await test('destroy', async () => {\n+    reset();\n+    let prevLength = Number(db.data?.[POSTS]?.length) || 0;\n+    await service.destroyById(POSTS, post1.id);\n+    assert.equal(db.data?.[POSTS]?.length, prevLength - 1);\n+    assert.deepEqual(db.data?.[COMMENTS], [{ ...comment1, postId: null }]);\n+    reset();\n+    prevLength = db.data?.[POSTS]?.length || 0;\n+    await service.destroyById(POSTS, post1.id, [COMMENTS]);\n+    assert.equal(db.data[POSTS].length, prevLength - 1);\n+    assert.equal(db.data[COMMENTS].length, 0);\n+    assert.equal(await service.destroyById(UNKNOWN_RESOURCE, post1.id), undefined);\n+    assert.equal(await service.destroyById(POSTS, UNKNOWN_ID), undefined);\n+});\n"
+        },
+        {
+          "path": "src/app.static.test.ts",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\src\\\\app.static.test.ts\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\src\\\\app.static.test.ts\"\nindex e69de29..9c55d81 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\original-files\\\\src\\\\app.static.test.ts\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8-continuation\\\\2026-10-27T06-06-47-463Z\\\\json-server-h04-r1-A\\\\patch-files\\\\src\\\\app.static.test.ts\"\n@@ -0,0 +1,98 @@\n+import assert from 'node:assert/strict'\n+import { once } from 'node:events'\n+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'\n+import { join } from 'node:path'\n+import test, { TestContext } from 'node:test'\n+import { fileURLToPath } from 'node:url'\n+\n+import { Low, Memory } from 'lowdb'\n+\n+import { AppOptions, createApp } from './app.js'\n+import { Data } from './service.js'\n+\n+async function listen(t: TestContext, options?: AppOptions) {\n+  const db = new Low<Data>(new Memory<Data>(), { posts: [{ id: '1' }] })\n+  const server = createApp(db, options).listen(0, undefined, '127.0.0.1')\n+  t.after(() => new Promise<void>((resolve, reject) => {\n+    server.close((err) => err ? reject(err) : resolve())\n+  }))\n+  await once(server, 'listening')\n+  const address = server.address()\n+  assert.ok(address && typeof address !== 'string')\n+  return `http://127.0.0.1:${address.port}`\n+}\n+\n+await test('static directories resolve from the working directory', async (t) => {\n+  const cwd = process.cwd()\n+  // Keep fixtures inside the repository, separate from the installed source.\n+  const project = mkdtempSync(\n+    join(fileURLToPath(new URL('../', import.meta.url)), '.static-test-'),\n+  )\n+  t.after(() => {\n+    process.chdir(cwd)\n+    rmSync(project, { recursive: true, force: true })\n+  })\n+\n+  const publicDir = join(project, 'public')\n+  const relativeDir = join(project, 'relative')\n+  const absoluteDir = join(project, 'absolute')\n+  for (const dir of [publicDir, relativeDir, absoluteDir]) {\n+    mkdirSync(dir)\n+    writeFileSync(join(dir, 'priority.txt'), dir)\n+  }\n+  writeFileSync(join(publicDir, 'index.html'), '<h1>Project home</h1>')\n+  writeFileSync(join(publicDir, 'public.txt'), 'project public file')\n+  writeFileSync(join(relativeDir, 'relative.txt'), 'relative static file')\n+  writeFileSync(join(absoluteDir, 'absolute.txt'), 'absolute static file')\n+  writeFileSync(join(relativeDir, 'custom-priority.txt'), 'first directory')\n+  writeFileSync(join(absoluteDir, 'custom-priority.txt'), 'second directory')\n+\n+  // Change cwd after importing createApp to exercise resolution at app creation.\n+  process.chdir(project)\n+\n+  const cases: { name: string; options?: AppOptions }[] = [\n+    { name: 'default options' },\n+    { name: 'empty static list', options: { static: [] } },\n+    {\n+      name: 'explicit relative and absolute static directories',\n+      options: { static: ['relative', absoluteDir] },\n+    },\n+  ]\n+  for (const { name, options } of cases) {\n+    await t.test(name, async (t) => {\n+      const url = await listen(t, options)\n+      const files = [\n+        ['/', '<h1>Project home</h1>'],\n+        ['/public.txt', 'project public file'],\n+        ['/priority.txt', publicDir],\n+      ]\n+      if (options?.static?.length) {\n+        files.push(\n+          ['/relative.txt', 'relative static file'],\n+          ['/absolute.txt', 'absolute static file'],\n+          ['/custom-priority.txt', 'first directory'],\n+        )\n+      }\n+      for (const [path, content] of files) {\n+        const response = await fetch(`${url}${path}`)\n+        assert.equal(response.status, 200, path)\n+        assert.equal(await response.text(), content, path)\n+      }\n+\n+      const response = await fetch(`${url}/posts`)\n+      assert.equal(response.status, 200)\n+      assert.deepEqual(await response.json(), [{ id: '1' }])\n+    })\n+  }\n+\n+  await t.test('missing public directory falls through to application routes', async (t) => {\n+    rmSync(publicDir, { recursive: true })\n+    const url = await listen(t)\n+    const response = await fetch(`${url}/`)\n+    assert.equal(response.status, 200)\n+    assert.match(await response.text(), /JSON Server/)\n+    const missing = await fetch(`${url}/public.txt`)\n+    assert.equal(missing.status, 404)\n+    await missing.text()\n+  })\n+})\n"
+        }
+      ],
+      "run": {
+        "exit_code": 1,
+        "timed_out": true,
+        "elapsed_ms": 300177.94009999995,
+        "turn_completed_ms": null,
+        "cleanup_elapsed_ms": null,
+        "cleanup_forced": false,
+        "cleanup_incomplete": false,
+        "model_turn_completed": false,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "task_failure",
+      "audit_reason": null,
+      "report_path": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/json-server-h04-r1-A/report.json"
+    },
+    {
+      "id": "json-server-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h04-r1-B",
+      "run_id": "2026-10-27T06-06-47-463Z",
+      "reserved_at": "2026-10-27T06:17:41.302Z",
+      "method_variant": "terminal_event_with_bounded_cleanup_v2_outcome_precedence",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "infrastructure_invalid",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n\r\n404 !== 200\r\n\r\n    at file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/labels/holdout-modern.mjs:52:12\r\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\r\n  generatedMessage: true,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 404,\r\n  expected: 200,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.22.1\r\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n\r\n404 !== 200\r\n\r\n    at file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/labels/holdout-modern.mjs:52:12\r\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\r\n  generatedMessage: true,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 404,\r\n  expected: 200,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.22.1\r\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "{\"type\":\"error\",\"status\":400,\"error\":{\"type\":\"invalid_request_error\",\"message\":\"The 'gpt-6.1-sol' model is not supported when using Codex with a ChatGPT account.\",\"code\":\"model_not_found\"}}"
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "{\"type\":\"error\",\"status\":400,\"error\":{\"type\":\"invalid_request_error\",\"message\":\"The 'gpt-6.1-sol' model is not supported when using Codex with a ChatGPT account.\",\"code\":\"model_not_found\"}}"
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "infrastructure_invalid",
+        "reason": "observed_host_lifecycle_failure",
+        "stop_batch": true,
+        "task_progress": false
+      },
+      "changed": [],
+      "patches": [],
+      "run": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 8945.284099999932,
+        "turn_completed_ms": null,
+        "cleanup_elapsed_ms": null,
+        "cleanup_forced": false,
+        "cleanup_incomplete": false,
+        "model_turn_completed": false,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true,
+      "original_wrapper_status": "infrastructure_invalid",
+      "audit_reason": null,
+      "report_path": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/json-server-h04-r1-B/report.json"
+    }
+  ],
+  "operation": "phase8_continuation_audit",
+  "raw_preliminary_sha256": "9308930f2d4661eb00360fb6a755256eff67f94318fa417afbdb92ba24c8103d",
+  "globally_unattempted": 26,
+  "adjudication": "Preserve every raw report and recompute only outcome precedence with the registered helper. A task deadline remains a task failure; an explicit unsupported-model host error remains infrastructure-invalid. No model call, retry, task reassignment, model substitution, or review promotion occurs here."
+}

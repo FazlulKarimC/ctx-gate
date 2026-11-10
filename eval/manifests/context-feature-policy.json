@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scope": "Phase 4 independent one-hop and reviewed-note experiments; defaults remain lexical-only until host evidence justifies otherwise",
+  "graph": {
+    "seed_files": 3,
+    "neighbor_candidates": 20,
+    "target_inspection_limit": 40,
+    "incoming_file_threshold": 25,
+    "incoming_scan_cap": 200,
+    "selection": "Ordinary discovery prefers outgoing resolved-local imports; usage intent prefers incoming importers. Rank incoming by non-anchor query relevance and explicit path evidence before filename ties. For high-degree seeds suppress unmatched incoming files unless usage intent is explicit.",
+    "packing": "Interleave up to two neighbor candidates after the first three lexical candidates, then remaining lexical candidates; keep the total 200-candidate pool and existing response/item/per-file limits. Graph presence does not prove execution or callers."
+  },
+  "notes": {
+    "file_limit": 100,
+    "bytes_per_note": 65536,
+    "frontmatter_bytes": 16384,
+    "selected_limit": 2,
+    "selection": "Only valid accepted notes. Match specific scopes to ranked evidence, or require a positive title/rationale/body query match and scope intersecting eligible files. Generic all-repository scopes require a text match. Parse YAML 1.2 as data with no aliases/custom tags. Duplicate IDs are invalid.",
+    "freshness": ["current", "needs_review", "target_missing", "unbound"],
+    "packing": "Notes are atomic source excerpts, never silently shortened. Reserve bounded references for preselected omitted notes and count all warnings/metadata. Expansion requires notes opt-in and revalidates current review status, source bytes and binding freshness.",
+    "research_authoring": "Evaluation-only researcher notes summarize pre-fix README content using fixed repository-level recipes, never future diffs or task-specific answers. Reviewer identity is the implementation agent, not an upstream maintainer/human endorsement."
+  },
+  "evaluation": "Use the original fixed 20 diagnostic development cases, with no holdout/model calls. Before adding notes, lexical-only v2 must reproduce saved controls. All L/G/N/GN conditions then share the same pre-fix source plus evaluation-note files, use exact full-envelope accounting, and are evaluated at 1000/2000/4000 tokens. Record added/displaced labeled evidence and note/neighbor delivery. Offline source-overlap metrics do not measure decision-note utility; future agent trials are required.",
+  "default_neighbors": false,
+  "default_notes": false,
+  "no_post_result_tuning": true
+}

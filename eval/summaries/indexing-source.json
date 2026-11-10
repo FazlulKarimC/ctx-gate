@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "phase": "2",
+  "created_at": "2026-10-26T10:15:00.2971887Z",
+  "commit": null,
+  "runtime": "v24.22.1",
+  "verification": "npm run check: formatting, typecheck, build, 24 tests passed on Windows; supplemental baseline assessments also executed",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "a5568763facde7f023d812e31a4d47a19f0d99389f99dca3d3792c37503f1f3c"
+    },
+    {
+      "path": ".npmrc",
+      "sha256": "ced1ff1ae080204fc1a16bd572efb567ab60cab3d632c9071a9066413193a7c1"
+    },
+    {
+      "path": "eval/labels/initial-spans.json",
+      "sha256": "f471f8ce2b8819636894057096d464eb7be60af4de83e72c14ce8f0539444376"
+    },
+    {
+      "path": "eval/labels/picomatch-existing.cjs",
+      "sha256": "07956498452da42dd79742d052a115a8edeb4c14c1e1e04d76104beb843874db"
+    },
+    {
+      "path": "eval/labels/picomatch-initial.cjs",
+      "sha256": "ceeb5c75ad607927cae3b987a82e4a357cf6ad437a4a4084a2980cae8853bcc7"
+    },
+    {
+      "path": "eval/scripts/check-host.mjs",
+      "sha256": "49cf118bbbe1a5714e67bbd022bfbd5fd4af832534296d0ccd71a25e12128900"
+    },
+    {
+      "path": "eval/scripts/codex-command.mjs",
+      "sha256": "651e62ce855732f4cf3b0bcca375daf356470ae73f28659970f3091a8f43040a"
+    },
+    {
+      "path": "eval/scripts/git-tree.mjs",
+      "sha256": "6295e4707bea0b5f335b1025aea3805eecb4be8ae271105b69bcb2b4337da6e6"
+    },
+    {
+      "path": "eval/scripts/preflight.mjs",
+      "sha256": "09b55600dacd99d5552389a3e91e78376878ea3f9f0d888da348b527e47477ba"
+    },
+    {
+      "path": "eval/scripts/prepare-initial.mjs",
+      "sha256": "242a0b4fdb4c377f3dc3d4e8f8e4b94a7f843f0d059c93c3602921846e9759e6"
+    },
+    {
+      "path": "eval/scripts/profile-index.mjs",
+      "sha256": "8142096e79413f50b43f43e80c95277006f61c1c2a18a62f31434136ee757ecd"
+    },
+    {
+      "path": "eval/scripts/register-corpus.mjs",
+      "sha256": "09fcb6cd56fe9dc15fe45d7f575d014e3fba451f38c5e712507ca9263e1e83fb"
+    },
+    {
+      "path": "eval/scripts/run-initial.mjs",
+      "sha256": "d9d33deba4bd2400c1a7df6ca146b40a815c7fdeebcf420223535878ec0615be"
+    },
+    {
+      "path": "eval/scripts/summarize-initial.mjs",
+      "sha256": "f520f39e43a1e42b13557da70dd78c82963f6efd534c07dfde8f8771d4f86f95"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "c0fbfbb021963f7386f5a2d96478ae90a9143eb1df2d86b654526f5967c0e60f"
+    },
+    {
+      "path": "package.json",
+      "sha256": "db17cc444cec915eac3da1a9b18f0aa07371fb05dff20c7e86d324ebc3fa56a8"
+    },
+    {
+      "path": "src/analyzer/index.ts",
+      "sha256": "33d0756676a49003ab00566700af1ab9710e993585e6dedca159a53334861dfe"
+    },
+    {
+      "path": "src/cli/doctor.ts",
+      "sha256": "09db7e05e13dff0e8ff658663948aab191d655282d4006649a7923812b855214"
+    },
+    {
+      "path": "src/cli/index.ts",
+      "sha256": "9ac8b7689e16df591b03ce7311b0e7dea6f223a882a1e821900e8282283d3cf4"
+    },
+    {
+      "path": "src/contracts/index.ts",
+      "sha256": "1593bc0bab5c8382e2caa621f7a133cc86f366c62a470c367e963059cf6806a6"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "7615777444a4a220ea712ef27e800056949fe85dbe04737b891429173822e53f"
+    },
+    {
+      "path": "src/indexer.ts",
+      "sha256": "10b1b0175ad7455a81dfb97d4f13cc379e1e031c1a4d7cd5202e56f217f71ef3"
+    },
+    {
+      "path": "src/store/index.ts",
+      "sha256": "263818801f13d04495889b781a1e693faf83a1bb23fa074b0c75340c92cbbf6b"
+    },
+    {
+      "path": "src/workspace/git.ts",
+      "sha256": "e1c93c17fefd3534901bedaec54313eac6914a9b7e2e39415360682c00f4122a"
+    },
+    {
+      "path": "src/workspace/initialize.ts",
+      "sha256": "aef5db6ca39548d1abc2c55170fdefccb83b3034c1c63b72c5299235250a7f57"
+    },
+    {
+      "path": "src/workspace/snapshot.ts",
+      "sha256": "5f70d941f1c2812f704a75453a00562cb2bc9c480060b55706849d3e3665ac21"
+    },
+    {
+      "path": "tests/evaluation-guard.test.mjs",
+      "sha256": "4dc72304e06532f2da86fa3b0011bbe8024d4cb1998e578ff91ce394fa147ebc"
+    },
+    {
+      "path": "tests/fixtures/basic-project/generated/ignored.ts",
+      "sha256": "1c087a76e4463d51b74fe6dfedef2c879d69a3add2021ecd7f8d01a406cbf9e8"
+    },
+    {
+      "path": "tests/fixtures/basic-project/package.json",
+      "sha256": "5bac545b5316f4f2e21c48270b7cf6cc84eee3048e55f085e31bf05322de6a0a"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/db/session.ts",
+      "sha256": "b25229cd3b5fceec0f1e2e9be05668d46ff34ba4cdcec7a71bec6ab9b16655ad"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/models/session.ts",
+      "sha256": "f0748dcd1f58788d6f6e41be686d432b94c2e6a85c575ef3a017c697875fae79"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/services/session.ts",
+      "sha256": "fd929dc113d0261e8b72eb36b894b277aef08b4de5921d5feda48a7c7755a402"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/ui/view.ts",
+      "sha256": "a075ba63ab0a7993a4ae89c56543ff21675a169ef6dabdc28fcde95cd27c4105"
+    },
+    {
+      "path": "tests/fixtures/basic-project/tsconfig.json",
+      "sha256": "e94df2b019c3dd0320ef0863f1bc59da91ed0e193dbd3127440a858777d37696"
+    },
+    {
+      "path": "tests/foundation.test.mjs",
+      "sha256": "8d36c42e80aa16c6c476c5fde49651ba2af0e16a219fa912c020c1bda199dfb7"
+    },
+    {
+      "path": "tests/git-tree.test.mjs",
+      "sha256": "ddf6abb713dda590e5181eae3aef45d91c56f19272190422bcc7d586736b39fe"
+    },
+    {
+      "path": "tests/indexer.test.mjs",
+      "sha256": "066a3ef2f892f61d30da4eb922719f0556eb0b1a7454e9d293a4834de2a9a013"
+    },
+    {
+      "path": "tests/sqlite.test.mjs",
+      "sha256": "984f9579a228cdc80726d36f4f207123892f57e3f7ee5fea94c5d74be498f2cf"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "572f291bfd7eddef521ac829860b8db2dfb844a201e3d6eec86c855c7e9187c9"
+    }
+  ]
+}

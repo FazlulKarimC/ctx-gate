@@ -1,0 +1,822 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-26T12:15:10.407Z",
+  "selection_hash": "e787e669f1f63686cb52a181b6d6ed9db93436681e6c052f212a68e84c5ff1b5",
+  "original_manifest_unchanged": true,
+  "original_count": 38,
+  "excluded_originals": 8,
+  "replacement_count": 8,
+  "active_count": 38,
+  "development_count": 20,
+  "holdout_count": 18,
+  "development_families": 15,
+  "holdout_families": 14,
+  "cross_split_family_overlaps": [],
+  "exact_source_patch_duplicates": 0,
+  "categories": {
+    "development": {
+      "cross_file": 4,
+      "exact_symbol": 7,
+      "vague_symptom": 9
+    },
+    "holdout": {
+      "cross_file": 1,
+      "exact_symbol": 6,
+      "vague_symptom": 11
+    }
+  },
+  "behaviorally_verified": 5,
+  "holdout_queried": false,
+  "model_calls": 0,
+  "related_families": {
+    "bracket-negation": [
+      "picomatch-h02",
+      "picomatch-h04"
+    ],
+    "globstar-semantics": [
+      "picomatch-d01",
+      "picomatch-d02"
+    ],
+    "list-property-filtering": [
+      "json-server-d04",
+      "json-server-d07"
+    ],
+    "negated-extglob-suffix": [
+      "picomatch-d07",
+      "picomatch-d08"
+    ],
+    "not-found-routing": [
+      "fastify-h05",
+      "fastify-h07"
+    ],
+    "request-schema-validation": [
+      "fastify-d05",
+      "fastify-d06"
+    ],
+    "resource-relations": [
+      "json-server-h05",
+      "json-server-h07",
+      "json-server-h08"
+    ],
+    "scanner-parts": [
+      "picomatch-d03",
+      "picomatch-d04"
+    ]
+  },
+  "audit": [
+    {
+      "id": "picomatch-d01",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "globstar-semantics",
+      "fix_commit": "8f5ecc02e186bfea06cf50f35d0539c339e1a26e",
+      "base_commit": "838c9d791cbd0e7c92e858f71ae38f6597416c09",
+      "source_patch_id": "c352efd294c5fd188612dcc40f14009fbda52683",
+      "source_diff_sha256": "0441e29e2c5d7bda5b8ababccd475b21ea795ab6a0931d39f5ea045752079ed8",
+      "committed_at": "2026-08-27T22:04:06+03:00",
+      "package_version": "4.0.7",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-h01",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "posix-punctuation",
+      "fix_commit": "15c324a9dae5d5b1e7281a6708d16371a0b14098",
+      "base_commit": "36bc4615479355c30eac88b60a12e79cdaf892fd",
+      "source_patch_id": "391788b35786cd97ded3446100f63f3cf27420d0",
+      "source_diff_sha256": "547eaddc5dae98a2281e74e01598498b1c52db1fefcc3694a8d2d9e65a21941e",
+      "committed_at": "2026-08-27T11:02:26+09:00",
+      "package_version": "4.0.7",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-d02",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "globstar-semantics",
+      "fix_commit": "75c313a9a5de0883afbbd9fa74ae03ef2919bd3e",
+      "base_commit": "36bc4615479355c30eac88b60a12e79cdaf892fd",
+      "source_patch_id": "6bd77c3ce45aefe6d9f08b8b0dddc820a9921bc4",
+      "source_diff_sha256": "2068fabbde9f360b13a7676a8bfa9e14d6a3710d67f7f0a190f902bf8c7b8e4e",
+      "committed_at": "2026-08-25T23:56:07+07:00",
+      "package_version": "4.0.7",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-h02",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "bracket-negation",
+      "fix_commit": "73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+      "base_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "source_patch_id": "ae307b553a893c99c56aded3a9f1f7e7108be094",
+      "source_diff_sha256": "977f3cf47e766c365803f170dfc4517bc80daa7ff206be514a693afbe308192b",
+      "committed_at": "2026-08-25T01:26:35+03:00",
+      "package_version": "4.0.5",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-d03",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "scanner-parts",
+      "fix_commit": "f2011653e8eaa13bae6dffed7e7016ea8e123485",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "source_patch_id": "0df96228f8423ab45d5ec95f8ba22234f2248540",
+      "source_diff_sha256": "901c8532b5f2a75179da3854401416e66a9c48416d8dc2ff5c8f2d8e1b8b7770",
+      "committed_at": "2026-08-24T00:11:49+03:00",
+      "package_version": "4.0.5",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-h03",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Conservative globstar-semantics family overlaps development d01/d02.",
+      "category": "vague_symptom",
+      "family": "globstar-semantics",
+      "fix_commit": "e279bd7f34c4f8b5f9d0490cf7810a1f0c2de178",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "source_patch_id": "8e55a686396b30774b2aa8f1466e8e5458fcbd6b",
+      "source_diff_sha256": "c828988b927311079598a2e36bf8b832453420ad11b0521d701541ab70662fe3",
+      "committed_at": "2026-08-23T23:23:58+03:00",
+      "package_version": "4.0.5",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-d04",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "scanner-parts",
+      "fix_commit": "5f5819dd4c0572c87df9a8011dffa65df5b6879f",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "source_patch_id": "8f1fa8c88516784819f2620fd30f60e634c295b3",
+      "source_diff_sha256": "6bd3cf5fa1223329eb6be4737c52ac84b8cf4e1d9a1263edc3125ac8921dbc95",
+      "committed_at": "2026-08-23T22:19:48+03:00",
+      "package_version": "4.0.5",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-h04",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "bracket-negation",
+      "fix_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "source_patch_id": "93264b4e3c4a62cccee5536f20eef2f66dcbe781",
+      "source_diff_sha256": "5caceb79c9d17187532e2a9168a4d38ee17e4c79821b4fa83a2d108c69855667",
+      "committed_at": "2026-08-22T16:10:54+05:45",
+      "package_version": "4.0.5",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-d05",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "windows-basename",
+      "fix_commit": "ab8bc4df8141b53ffb5473f301c289c6108eedf7",
+      "base_commit": "69a2d181b9c0c7bc5454eb2e188b4763427e9000",
+      "source_patch_id": "fcae79814025d3879381854bec651bb71e0968ec",
+      "source_diff_sha256": "d60b1e5210c85eb1b15c2b8ceaf22cd886222b47503b4cbc830ede20f15ddc72",
+      "committed_at": "2026-07-02T15:54:23+02:00",
+      "package_version": "4.0.4",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-h05",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Source is a ReDoS-mitigation rewrite, outside the registered non-security task scope.",
+      "category": "vague_symptom",
+      "family": "redos-mitigation",
+      "fix_commit": "628930764fb2cd8f619d53947d5b1b39d347e837",
+      "base_commit": "69a2d181b9c0c7bc5454eb2e188b4763427e9000",
+      "source_patch_id": "4865c90a51d8578334122b5b39ef7e321f748196",
+      "source_diff_sha256": "2e6ce038bbe570678ec9757d90cacc6f4e509a6527e7d8bf44c8ab3e3093e233",
+      "committed_at": "2026-07-02T15:49:36+02:00",
+      "package_version": "4.0.4",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-d06",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "replacement-table-lookup",
+      "fix_commit": "a9e2dd27a3bc1e6298ba005c0bc8587162eefa18",
+      "base_commit": "bf6a33bd3db990edfbfd20b3b160eed926cd07dd",
+      "source_patch_id": "1bacbbfc89fa1f1d6acbd478f759c6c4d8d126fa",
+      "source_diff_sha256": "6449c5e0bfdd8de68a48a71e7cdb39aa3678b0a2aa899eb02f3c76c61129530f",
+      "committed_at": "2025-04-18T15:14:49+02:00",
+      "package_version": "4.0.2",
+      "engines": {
+        "node": ">=12"
+      }
+    },
+    {
+      "id": "picomatch-h06",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "parser-text-token",
+      "fix_commit": "563f534f644e1c661799afff32f770137db9c85e",
+      "base_commit": "5214db489eb118db1bcfde39f446188757bb45cf",
+      "source_patch_id": "00e8a652ab284aa20686cf8042d41962ac695ad2",
+      "source_diff_sha256": "0b8481c05c0f105e95dc556512f0d0a89900e858208110aa689668080a672d37",
+      "committed_at": "2023-12-12T12:09:10-08:00",
+      "package_version": "3.0.1",
+      "engines": {
+        "node": ">=10"
+      }
+    },
+    {
+      "id": "picomatch-d07",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "negated-extglob-suffix",
+      "fix_commit": "ac3cb660ca76764627aa825676df59378dd60bcd",
+      "base_commit": "820dbceadc5e450e03b551c7abba91c7d6bc5758",
+      "source_patch_id": "0f89420897c9889f87ad2d00a1ed21a89d464903",
+      "source_diff_sha256": "65737f7a070c0c0bd2e2ae31b51c70774a1509a372b18a5732d1e3ace5998863",
+      "committed_at": "2022-01-02T19:41:55+03:00",
+      "package_version": "2.3.0",
+      "engines": {
+        "node": ">=8.6"
+      }
+    },
+    {
+      "id": "picomatch-d08",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "negated-extglob-suffix",
+      "fix_commit": "e0042e0462fdb46437897aae8f27e99bce54fefc",
+      "base_commit": "0273e43dbc78797bc1424d2f0e1dde77ed2e5dcb",
+      "source_patch_id": "df49f9ffd7935874518647d305e3383a19ea944d",
+      "source_diff_sha256": "a1201453dad289035c13c5a6698532a689db26eff0a55962d04f0f7d085c7236",
+      "committed_at": "2021-05-21T15:40:41-04:00",
+      "package_version": "2.2.3",
+      "engines": {
+        "node": ">=8.6"
+      }
+    },
+    {
+      "id": "json-server-d01",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "missing-resource-response",
+      "fix_commit": "8d42c4079342acd0a6bbc21c9575219235d4e493",
+      "base_commit": "6ad7562b6aba175bec616d342e1319e8dbbad1af",
+      "source_patch_id": "ce480aef9cdb54054a7ec3f646d8120e367ee4c8",
+      "source_diff_sha256": "8d8c716a59deefa695a57de02da0513bf0d006eb6510552e42a5e14c98631601",
+      "committed_at": "2026-03-23T15:13:24+01:00",
+      "package_version": "1.0.0-beta.14",
+      "engines": {
+        "node": ">=22.12.0"
+      }
+    },
+    {
+      "id": "json-server-h01",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Resource-identifier family was already exposed through diagnostic development d06, even though d06 is now excluded from the agent pool.",
+      "category": "vague_symptom",
+      "family": "resource-identifiers",
+      "fix_commit": "5ec6afad313d9e4ce7eda5ec86b9fbc8aeb0d3e0",
+      "base_commit": "352144e0f6c8227affacd78439b8dfb8647d2b99",
+      "source_patch_id": "a10d36679fc6d886d4db71696ded41c9d7ccc22e",
+      "source_diff_sha256": "c925ab8773fb337756b17f108b377191223859e42a819a3126f293652cff0ebd",
+      "committed_at": "2026-03-20T13:26:15+01:00",
+      "package_version": "1.0.0-beta.13",
+      "engines": {
+        "node": ">=22.12.0"
+      }
+    },
+    {
+      "id": "json-server-d02",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "body-shape-validation",
+      "fix_commit": "503b96970edeb36c3f533acaa478176378b8e7cb",
+      "base_commit": "62d245dd60704556f2bb938aeff638a58faadb5a",
+      "source_patch_id": "b339505de7ee24e2134a44dd676a8e72c6b09000",
+      "source_diff_sha256": "13d5426764be0e366f02f19abfc42b05ca7ba54a5d506c85a04d194f2f3c2323",
+      "committed_at": "2026-03-07T02:48:51+01:00",
+      "package_version": "1.0.0-beta.6",
+      "engines": {
+        "node": ">=22.12.0"
+      }
+    },
+    {
+      "id": "json-server-h02",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Adds schema-inserting adapter/startup capabilities as a feature, not a focused runtime correction.",
+      "category": "cross_file",
+      "family": "schema-adapter-feature",
+      "fix_commit": "037609cc1daddcfb6cebccc194341806a3a3b920",
+      "base_commit": "da111a2b993aa6a1f56065fd08b4d824cf2de0b3",
+      "source_patch_id": "b35dea51379dd8c8097aa672b00e35d3cd756479",
+      "source_diff_sha256": "e82b753b7dfb31a77db7caec2ac6c5198f3d4b418d9ca63e105cd36e152a0655",
+      "committed_at": "2026-02-28T01:41:54+01:00",
+      "package_version": "1.0.0-beta.10",
+      "engines": {
+        "node": ">=22.12.0"
+      }
+    },
+    {
+      "id": "json-server-d03",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Runtime merge correction is in service.ts; other changed files contain formatting/refactor noise.",
+      "category": "exact_symbol",
+      "family": "object-resource-update",
+      "fix_commit": "c3afd0fb197bfc5e790bd1a3d2df8dce6f2a4780",
+      "base_commit": "580a71faa6af7d39f2a9dc52e432f90998d6fb27",
+      "source_patch_id": "532972d344ab461f49dcb5905ac52add5b62de24",
+      "source_diff_sha256": "f7f45f10bc33a245ee3cce4a88abfb0b830aef8535db759c9adb605519b01e86",
+      "committed_at": "2026-01-18T00:14:56+01:00",
+      "package_version": "1.0.0-beta.3",
+      "engines": {
+        "node": ">=22.12.0"
+      }
+    },
+    {
+      "id": "json-server-h03",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "List-property-filtering family overlaps development boolean/filtering work.",
+      "category": "exact_symbol",
+      "family": "list-property-filtering",
+      "fix_commit": "e6055e621d326f1bbd0f8840a47d789eb8baa89c",
+      "base_commit": "6f32b9645755db84534c625908c394b558b344c6",
+      "source_patch_id": "c28ca873951ce78acde95826986ff6818a129ba1",
+      "source_diff_sha256": "a791f1802b1122cff871f7316053892c563f3e3bdc6d075f1301147185b30f8f",
+      "committed_at": "2024-08-19T15:02:36+02:00",
+      "package_version": "1.0.0-beta.1",
+      "engines": {
+        "node": ">=18.3"
+      }
+    },
+    {
+      "id": "json-server-d04",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "list-property-filtering",
+      "fix_commit": "827c5c31a4da829b036aa050c4bb678a3b3601f3",
+      "base_commit": "8fb0f728969160ab63286e8cd82a231cfd18c3b1",
+      "source_patch_id": "cb7da76e39b1876fec272330b5d49ea110031747",
+      "source_diff_sha256": "d5afca7f865ad490aa441e4f71b2c08e66431e5e36bd2bb4e10ac14d35f466ef",
+      "committed_at": "2024-05-13T15:22:27+02:00",
+      "package_version": "1.0.0-alpha.23",
+      "engines": {
+        "node": ">=18.3"
+      }
+    },
+    {
+      "id": "json-server-h04",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "static-root",
+      "fix_commit": "d0307026e4440ff16e827293f956b25b77606619",
+      "base_commit": "e58a6ac4991e6312f5764ca30e3677f5cfd655f4",
+      "source_patch_id": "3bf4973af7c4fc85ef208a12711219c392d61941",
+      "source_diff_sha256": "c1d9ade8f23e8e8204c7232757b0036fabdbfd9264c87f7505bf522ca2a0216d",
+      "committed_at": "2024-01-26T17:29:44+01:00",
+      "package_version": "1.0.0-alpha.22",
+      "engines": {
+        "node": ">=18.3"
+      }
+    },
+    {
+      "id": "json-server-d05",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "cross_file",
+      "family": "pagination-slicing",
+      "fix_commit": "3710dce4a025da99ffce4b424a51b6c9d07861bb",
+      "base_commit": "9a255847e075b69aa75ccfcba6984afb6fa168ad",
+      "source_patch_id": "bf54d253a58d4a94fa3fd92eadfb7097d16f9136",
+      "source_diff_sha256": "e3e0fbb12d280698b6e694c755d4c80044fa0b7c5154779f66b4cd6a8cf3cb96",
+      "committed_at": "2024-01-22T15:54:16+01:00",
+      "package_version": "1.0.0-alpha.21",
+      "engines": {
+        "node": ">=18.3"
+      }
+    },
+    {
+      "id": "json-server-h05",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "resource-relations",
+      "fix_commit": "a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+      "base_commit": "a4d829ab52811447449947c841cd7e6ad6714e87",
+      "source_patch_id": "d6b5d2c5b711579738e8e60594c0089df11f1797",
+      "source_diff_sha256": "5ec9ef46e62ccde8eee8b76c8a941d4d1957f61ee46628b274fbbc16d992c251",
+      "committed_at": "2024-01-12T01:09:16+01:00",
+      "package_version": "1.0.0-alpha.18",
+      "engines": {
+        "node": ">=18.3"
+      }
+    },
+    {
+      "id": "json-server-d06",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Adds automatic missing-ID normalization as a feature; retain only in the original diagnostic set, not the runtime-fix agent pool.",
+      "category": "exact_symbol",
+      "family": "resource-identifiers",
+      "fix_commit": "72fc09a95f7d7b5a37ce2fcde4e27e09ae9ca63a",
+      "base_commit": "538cda754c0e98508a87f32b5a185808cf7d12b5",
+      "source_patch_id": "9fc0688b66e53b1e1cff32753574708c06502d11",
+      "source_diff_sha256": "878b9d22764aeb989b6a6f2088132f2d94e22415dfa226f8670dd3543acb58c7",
+      "committed_at": "2024-01-07T17:43:40+01:00",
+      "package_version": "1.0.0-alpha.11",
+      "engines": null
+    },
+    {
+      "id": "json-server-h06",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Introduces per-request delay capability; it is a feature, not a runtime regression fix.",
+      "category": "cross_file",
+      "family": "query-delay-feature",
+      "fix_commit": "f5fd222ae3ff970914a70f980e593b0d239004ad",
+      "base_commit": "dfbfd56511f7ea2decb8bfefe3b6e1b36a9b6a88",
+      "source_patch_id": "838a40b675839803493c777353dd1d509644f2c7",
+      "source_diff_sha256": "e6e46929cbb70ead2e2801a807a0045748b3ea212e80877cf6dc3729f234fbd6",
+      "committed_at": "2017-11-06T13:10:55+01:00",
+      "package_version": "0.12.1",
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    {
+      "id": "fastify-d01",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "decorator-getter-access",
+      "fix_commit": "2a64ae1627d78fe1f22fb021a7e5763581384473",
+      "base_commit": "05869c5cca5964776fdb61230ac60c5fa297f593",
+      "source_patch_id": "7eb4bc9706ff987816ba82693d653b955d1efe5c",
+      "source_diff_sha256": "e33015a8cd090d28e14d969feef370d238bcd8fcf112d81d54e92710c3bcad34",
+      "committed_at": "2026-10-24T18:28:02+02:00",
+      "package_version": "6.0.0-alpha.5",
+      "engines": null
+    },
+    {
+      "id": "fastify-h01",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "parser-error-containment",
+      "fix_commit": "37df44a421817e7bb048fce834bf691abb0999d6",
+      "base_commit": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "source_patch_id": "50ae82138ed9e86a4d82b93f54328df6fb0164d2",
+      "source_diff_sha256": "a0fc022dc9d42cbf8e3d0900203ba44d08ec6eb9c7a27866e5b3b7ee315ad069",
+      "committed_at": "2026-10-15T13:10:00+02:00",
+      "package_version": "6.0.0-alpha.5",
+      "engines": null
+    },
+    {
+      "id": "fastify-d02",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "cross_file",
+      "family": "error-status-selection",
+      "fix_commit": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "base_commit": "f736849a10a9b2ca57fb09437feb8294cda76234",
+      "source_patch_id": "b015e1666abbef2407b14a8f8cd0568ed65ac489",
+      "source_diff_sha256": "3b68a871c51d29136e0551e303a6be600c1b5c4fb96c8fe0c1fe79c7efa9ebd4",
+      "committed_at": "2026-10-15T11:31:35+02:00",
+      "package_version": "6.0.0-alpha.5",
+      "engines": null
+    },
+    {
+      "id": "fastify-h02",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "stream-trailer-completion",
+      "fix_commit": "a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+      "base_commit": "e222f53aa267080b349eacdeaff03ea9a061e8c7",
+      "source_patch_id": "66617d7b9999bfe11a9e2f17dd3e95e2524dd406",
+      "source_diff_sha256": "339255c96ebc443562fe69654e726604c83ddf260d6e6e498d9c13a0dea9b25c",
+      "committed_at": "2026-10-14T08:28:39Z",
+      "package_version": "6.0.0-alpha.5",
+      "engines": null
+    },
+    {
+      "id": "fastify-d03",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "set-cookie-ownership",
+      "fix_commit": "5c081d4b7237f0eb2db9f1204dc6400e3aa1325e",
+      "base_commit": "b7eb53e41e1db355ddd2a04f2fbbfca7962a7bd9",
+      "source_patch_id": "afbfbc0c8a4397dd041927d2ebeaa9f24855698a",
+      "source_diff_sha256": "0aceafd57a95bd53df30fe6af04cec8cd0b9f0b532841be7d5ae214df2ed0183",
+      "committed_at": "2026-10-08T07:00:20-07:00",
+      "package_version": "6.0.0-alpha.4",
+      "engines": null
+    },
+    {
+      "id": "fastify-h03",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "effective-media-type",
+      "fix_commit": "19d5be0daf1c0daace758efe3ea788f924ca1224",
+      "base_commit": "d174a98e1a541639878d9f25b3738c78aa5c0165",
+      "source_patch_id": "f608172a7164d623fa9e1380f5512ebbd9e78cb8",
+      "source_diff_sha256": "570ca2e954598d0d8be4e6131c4df5b72d4e3dc0a818a822cd2991137be3c45e",
+      "committed_at": "2026-09-29T11:40:52+02:00",
+      "package_version": "6.0.0-alpha.4",
+      "engines": null
+    },
+    {
+      "id": "fastify-d04",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "cross_file",
+      "family": "query-empty-body",
+      "fix_commit": "bc25b7499acedb803ef3cef644d0d56cf4e7c725",
+      "base_commit": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "source_patch_id": "577e253c2060a9aa663ff87e6fb3fc48a0c99a88",
+      "source_diff_sha256": "dd46750f8c7a3a109856de931aef2b98fa72ab909771b77051ea3beda1697668",
+      "committed_at": "2026-09-27T09:35:02+02:00",
+      "package_version": "6.0.0-alpha.4",
+      "engines": null
+    },
+    {
+      "id": "fastify-h04",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "exact_symbol",
+      "family": "serialization-metadata",
+      "fix_commit": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "base_commit": "2e3ebc5f984e0744b0738faff207cbac1875c3b3",
+      "source_patch_id": "3aaeece1cad71493a9b5727a441d94c5a19cea3c",
+      "source_diff_sha256": "7070a70c29b5c590929341b54cbf862ebd06e871a2182fc80c580ac897a784dc",
+      "committed_at": "2026-09-26T18:32:08+02:00",
+      "package_version": "6.0.0-alpha.4",
+      "engines": null
+    },
+    {
+      "id": "fastify-d05",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "request-schema-validation",
+      "fix_commit": "a34c3e530ffcbe3740b044a1599bea77ccc71d67",
+      "base_commit": "d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+      "source_patch_id": "e7000134d4d4ca595aa0ceb8bcdbfc21b0f061d8",
+      "source_diff_sha256": "c39bf64e0ff8c9c81fcf4327408e3b1aa4adc24f5f7d1d13f896917f81fd1420",
+      "committed_at": "2026-09-03T23:34:55+02:00",
+      "package_version": "6.0.0-alpha.2",
+      "engines": null
+    },
+    {
+      "id": "fastify-h05",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "vague_symptom",
+      "family": "not-found-routing",
+      "fix_commit": "d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+      "base_commit": "0c170ca13f70aafa8ade685406c913591900e1f4",
+      "source_patch_id": "3183a1592b64e909ecd7dee4c64d8d2d3463820c",
+      "source_diff_sha256": "c30317d04117a7b4d9bd673f161316658ed768b10bdf5e8f801895160b247865",
+      "committed_at": "2026-09-03T23:32:51+02:00",
+      "package_version": "6.0.0-alpha.2",
+      "engines": null
+    },
+    {
+      "id": "fastify-d06",
+      "origin": "original",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "category": "cross_file",
+      "family": "request-schema-validation",
+      "fix_commit": "0c170ca13f70aafa8ade685406c913591900e1f4",
+      "base_commit": "3aa8dfd7298c6e02399a7b3c29c637eb092dc9ef",
+      "source_patch_id": "dc85b6cd35d52bce8ac9460f3dfca1d7ef1ef961",
+      "source_diff_sha256": "bd0b3a58806e2b7a74ed1a236f314186ff40337c2faf82939c317eb0b1d0485e",
+      "committed_at": "2026-09-03T23:31:21+02:00",
+      "package_version": "6.0.0-alpha.2",
+      "engines": null
+    },
+    {
+      "id": "fastify-h06",
+      "origin": "original",
+      "disposition": "excluded_agent_pool",
+      "reason": "Conservative request-schema-validation family overlaps diagnostic development d05/d06.",
+      "category": "cross_file",
+      "family": "request-schema-validation",
+      "fix_commit": "3aa8dfd7298c6e02399a7b3c29c637eb092dc9ef",
+      "base_commit": "af6e2e433cfa2b4531e6297738da2acd66207742",
+      "source_patch_id": "3edaf29de86dd360584873d9379adca6764dd5ac",
+      "source_diff_sha256": "0a3d262c1ea34b94050cc7cbe96d440e4ce438c1e4963a62f9b05b282a53a571",
+      "committed_at": "2026-09-03T18:53:58+02:00",
+      "package_version": "6.0.0-alpha.2",
+      "engines": null
+    },
+    {
+      "id": "picomatch-h07",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing brace parsing loses balanced/literal brace behavior; distinct from development extglob/globstar families.",
+      "category": "vague_symptom",
+      "family": "brace-compilation",
+      "fix_commit": "f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "base_commit": "002e806951ddadc7b27c9d8e8f92d6709d34d1d7",
+      "source_patch_id": "7f08929a76650046878a458e03f6720efe0fcefe",
+      "source_diff_sha256": "032f3744f752452dc2a7adc475812beab10c8f230d2bb4ad4b0b3f52b47b71c1",
+      "committed_at": "2020-01-04T16:19:18-05:00",
+      "package_version": "2.2.0",
+      "engines": {
+        "node": ">=8.6"
+      }
+    },
+    {
+      "id": "picomatch-h08",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Public parse must provide full parse state rather than the matching fast-path shortcut; different contract from wildcard matching.",
+      "category": "exact_symbol",
+      "family": "public-parse-state",
+      "fix_commit": "5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "base_commit": "44c925c5de037cf16b357c3c5a0a9fac86b025f0",
+      "source_patch_id": "9c2b7a1b3db910e6dbcf1abec8af1e74e4502639",
+      "source_diff_sha256": "7cfef9c9929c77c989856cdc68beb43bcd2e1073576bf8ce5abfbf3364761914",
+      "committed_at": "2019-12-23T20:05:55+03:00",
+      "package_version": "2.1.1",
+      "engines": {
+        "node": ">=8.6"
+      }
+    },
+    {
+      "id": "json-server-h07",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing CLI foreignKeySuffix option is not honored across nested/relationship paths; source before the fix already advertises the option. New regression exercises the existing flag.",
+      "category": "cross_file",
+      "family": "resource-relations",
+      "fix_commit": "9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "base_commit": "3ec3dec19a97ae3b7b4fa8f53073f16e9d71aaa5",
+      "source_patch_id": "b3f7cf5d066a686b7d3aa15470a029a4ed2c03dc",
+      "source_diff_sha256": "eff7af87a446f9900274d46971dcda778d1c0f7f7b3b15e3a54867b5f11299ef",
+      "committed_at": "2017-06-28T23:05:21+02:00",
+      "package_version": "0.10.1",
+      "engines": {
+        "node": ">= 4"
+      }
+    },
+    {
+      "id": "json-server-h08",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Despite the lint title, source adds a default opts object and tests remove explicit defaults: a runtime default-router regression, not just formatting.",
+      "category": "exact_symbol",
+      "family": "resource-relations",
+      "fix_commit": "e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "base_commit": "74903968c2a3a7cd40cb7793ea2744cbe4ba8136",
+      "source_patch_id": "59b6244fe1f08650440e41ea94578cbf36056426",
+      "source_diff_sha256": "519c91bebb304f3ca3cd46b9e76d9a7392226047c01cd4fd8d079e44f514f967",
+      "committed_at": "2017-06-27T23:17:27+02:00",
+      "package_version": "0.10.1",
+      "engines": {
+        "node": ">= 4"
+      }
+    },
+    {
+      "id": "json-server-d07",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Null field values reach string conversion; a focused runtime guard. This family is already development-only.",
+      "category": "vague_symptom",
+      "family": "list-property-filtering",
+      "fix_commit": "dcae2885a0d678d0f2b3479d567ceecc4ac276cf",
+      "base_commit": "6559219acdf610bc1d56061833f6d8b04d88b6c0",
+      "source_patch_id": "9ba475a5222d8344ff7e217b685b5b4a6df8f3a2",
+      "source_diff_sha256": "17cb9b7bb30a94bdaadf2df1db8ea0e04d4fe9e87509e9e7ac61c24f1e3abb76",
+      "committed_at": "2017-04-12T21:16:37+02:00",
+      "package_version": "0.9.6",
+      "engines": {
+        "node": ">= 4"
+      }
+    },
+    {
+      "id": "json-server-h09",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Duplicate q parameters produce an array and crash string normalization; no diagnostic development q-search task.",
+      "category": "vague_symptom",
+      "family": "fulltext-input-shape",
+      "fix_commit": "7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "base_commit": "2c435eeb4ea4df9475ba3ba20765060c4b637578",
+      "source_patch_id": "1b33376a4901ca2bd278951caa022ea7cf2553d7",
+      "source_diff_sha256": "5fea5de53631a5f890252e4ebe893eaf9bedb3ba643dd924f8c2d4178edde7bd",
+      "committed_at": "2017-02-07T00:42:00+01:00",
+      "package_version": "0.9.4",
+      "engines": {
+        "node": ">= 0.12"
+      }
+    },
+    {
+      "id": "json-server-h10",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Wrong Link header name in CORS exposure; header transport contract is separate from pagination arithmetic.",
+      "category": "vague_symptom",
+      "family": "cors-header-exposure",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "source_patch_id": "09156280ab2fc6693164e480745b66b551bcb11a",
+      "source_diff_sha256": "aacc3926b9e03fca2cd137077f9f915e7f19cf9630895329194e4a956a75fc94",
+      "committed_at": "2016-11-02T23:33:55+01:00",
+      "package_version": "0.8.22",
+      "engines": null
+    },
+    {
+      "id": "fastify-h07",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Registration order drops not-found preHandler hooks; development has no not-found-routing task. Related holdout 404 tasks remain clustered.",
+      "category": "exact_symbol",
+      "family": "not-found-routing",
+      "fix_commit": "4176096a31f5b4c31512c36f578b08a596a72435",
+      "base_commit": "83e69762aff047940b376fc2a266d143499ef727",
+      "source_patch_id": "679bb01e32da72a9101a2704b550fa5869477f14",
+      "source_diff_sha256": "f239fedd6a87e8208af89eea57591acc94a53a80be79bc90339c5f39e7f5f520",
+      "committed_at": "2026-08-23T16:04:18+08:00",
+      "package_version": "6.0.0-alpha.2",
+      "engines": null
+    }
+  ],
+  "review_sha256": "44a873bb87c247099eba3664d435de098e83c4457bfb63b54cf81c302618c562",
+  "review_formatting_finalized_at": "2026-10-26T12:21:01.141Z"
+}

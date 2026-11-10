@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "stratum": "gpt56_terra_independent_pilot",
+  "reservations": [],
+  "note": "The Terra ledger begins empty. This file pins that fact before registration and does not refer to Sol reservations."
+}

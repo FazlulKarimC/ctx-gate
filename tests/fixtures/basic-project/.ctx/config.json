@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "roots": ["src"],
+  "rules": [
+    {
+      "id": "ui-no-db",
+      "kind": "deny_import",
+      "from": "src/ui/**",
+      "to": "src/db/**",
+      "explanation": "UI uses the service boundary."
+    }
+  ]
+}

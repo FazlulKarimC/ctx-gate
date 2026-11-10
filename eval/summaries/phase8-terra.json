@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "operation": "phase8_terra_analysis",
+  "created_at": "2026-11-06T19:19:42.149Z",
+  "stratum": "gpt56_terra_independent_pilot",
+  "run_id": "2026-11-06T19-03-07-312Z",
+  "planned_attempts": 12,
+  "reserved_attempts": 1,
+  "completed_reports": 1,
+  "unattempted_registered_slots": 11,
+  "stop_reason": "account_limit_after_task_progress",
+  "interpretation": "One treatment arm received nonempty lexical context and one expansion, then hit an account usage limit before a terminal model event or patch. There is no paired A/B outcome, accepted patch, timing comparison, or model-performance conclusion. This partial Terra result must not be pooled with the Sol strata.",
+  "by_condition": {
+    "A": {
+      "assigned": 6,
+      "attempted": 0,
+      "task_failures": 0
+    },
+    "B": {
+      "assigned": 6,
+      "attempted": 1,
+      "task_failures": 1
+    }
+  },
+  "pairs": [
+    {
+      "id": "picomatch-h07",
+      "repository": "picomatch",
+      "category": "vague_symptom",
+      "A": "not_attempted",
+      "B": "task_failure",
+      "complete_pair": false
+    },
+    {
+      "id": "picomatch-h08",
+      "repository": "picomatch",
+      "category": "exact_symbol",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "complete_pair": false
+    },
+    {
+      "id": "json-server-h07",
+      "repository": "json-server",
+      "category": "cross_file",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "complete_pair": false
+    },
+    {
+      "id": "json-server-h09",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "complete_pair": false
+    },
+    {
+      "id": "fastify-h01",
+      "repository": "fastify",
+      "category": "vague_symptom",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "complete_pair": false
+    },
+    {
+      "id": "fastify-h03",
+      "repository": "fastify",
+      "category": "exact_symbol",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "complete_pair": false
+    }
+  ],
+  "rows": [
+    {
+      "id": "picomatch-h07",
+      "slot": "picomatch-h07-terra-r1-B",
+      "condition": "B",
+      "repository": "picomatch",
+      "category": "vague_symptom",
+      "family": "brace-compilation",
+      "outcome": "task_failure",
+      "model_turn_completed": false,
+      "elapsed_ms": 103397.2303,
+      "context_attempts": 1,
+      "expand_attempts": 1,
+      "nonempty_context_deliveries": 1,
+      "pre_edit_delivery": true,
+      "usage": {
+        "raw": null,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "cache_write_input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null,
+        "billing_cost": null
+      },
+      "host_failure": {
+        "status": "task_failure",
+        "reason": "account_limit_after_task_progress",
+        "stop_batch": true,
+        "task_progress": true
+      },
+      "report": "eval/runs/phase8-terra/2026-11-06T19-03-07-312Z/picomatch-h07-terra-r1-B/report.json"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version":1,
+  "registered_on":"2026-10-27",
+  "authorization":"User: continue and complete next phase also, after starting Phase 7. Complete local operational work, then a separately frozen held-out comparison under these ceilings. No purchases, resets, new keys or unrestricted host permissions.",
+  "scope_refinement":"One repetition initially: 18 tasks x A/B = 36 reserved task attempts. The plan allows a second repetition when affordable; defer it before observing any held-out outcome because the development block exhausted quota after one valid pair. This is a small pilot, not 18 independent families or a broad performance benchmark. Do not automatically launch another block after quota resets.",
+  "task_manifest":"eval/manifests/holdout-readiness.json",
+  "model":"gpt-6.1-sol",
+  "reasoning_effort":"high",
+  "conditions":{"A":"Existing host, original pre-fix guidance, controlled state and runtime dependencies","B":"Identical host/setup plus ctx_context/ctx_expand and the fixed usage instruction. Lexical v2; notes/neighbors off. ctx_check excluded through the host tool allowlist."},
+  "max_task_attempts":36,
+  "repetitions":1,
+  "timeout_seconds_per_task":300,
+  "max_model_capability_probes":1,
+  "timeout_seconds_per_capability_probe":90,
+  "order":"Task order remains manifest order, one A/B pair per task, alternating first arm by task index. Preserve within-split family clusters. Reserve append-only ledger before each model invocation.",
+  "stop_rule":"Stop entire block immediately on infrastructure/authentication/quota failure. Preserve every attempt; never retry a task to improve its outcome. Task failure, valid timeout or ignored tool remains an eligible outcome. Incomplete assessments require honest unassessed labels, not automatic success.",
+  "readiness":"Require verified frozen product/task/assessment hashes, 18 fail-before/pass-after assessments, a fresh static sandbox/config report and one matching real MCP/filesystem capability probe. Check protected project, personal state and peer denials before each task; clean up owned sandbox deny state in finally.",
+  "assessment":"Protected pre-fix source export with only production edits overlaid, original tests restored, runtime dependencies identical in both arms. Focused hidden behavioral regression plus declared pre-existing behavior controls and patch review. Original upstream selected tests where qualified; full upstream lint/types/coverage suites are not promised. Review task requirements beyond the focused test. Agent-edited tests cannot replace protected checks.",
+  "limitations":["Public historical tasks may be known to the model", "Legacy dependency graphs use recorded compatible resolved locks where upstream locks cannot install; not the exact original historical environment", "Assessment author is the implementation agent, independent of treatment outcomes but not a blinded independent human reviewer", "No uniform full upstream regression suite; focused acceptance plus control tests and patch review limits general correctness claims", "Windows sandbox allows root reads with explicit protected denials and permits loopback; known assessment isolation, not a malicious-host security proof"],
+  "usage":"Reported input/output/cache fields, command/tool timing and default non-use remain in the primary comparison. Cached input is a subset. Missing usage/compaction/prices remain unavailable. Tool-invoked subgroup is descriptive and noncausal.",
+  "optional_improvement":"At most one later development-only experiment if a dominant failure and budget justify it. No held-out tuning; further improvements may be explicitly deferred."
+}

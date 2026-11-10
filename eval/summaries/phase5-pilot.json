@@ -1,0 +1,1365 @@
+{
+  "schema_version": 1,
+  "operation": "phase5_pilot_audit",
+  "created_at": "2026-10-26T17:26:27.808Z",
+  "run_id": "2026-10-26T15-29-49-794Z",
+  "status": "complete_reduced_pilot_under_attempt_ceiling",
+  "raw_summary_sha256": "0800f38e83cf398cf4736b9af193f0d2e56e43ec015dbc551ee2a677a2823e57",
+  "patch_review_sha256": "e19aa013318547c5329885244c3b7e18eb2214298e26a1629e2eb16d18392a74",
+  "assigned_attempts": 20,
+  "attempt_ceiling_consumed": true,
+  "eligible_started_tasks": 3,
+  "completed_task_attempts": 2,
+  "account_interrupted_after_progress": 1,
+  "infrastructure_invalid": 17,
+  "complete_pairs": 1,
+  "all_assignments_by_condition": {
+    "A": {
+      "assigned": 10,
+      "eligible": 1,
+      "task_success": 1,
+      "task_failure": 0,
+      "infrastructure_invalid": 9
+    },
+    "B": {
+      "assigned": 10,
+      "eligible": 2,
+      "task_success": 1,
+      "task_failure": 1,
+      "infrastructure_invalid": 8
+    }
+  },
+  "uptake": {
+    "eligible_B": 2,
+    "context_invoked": 2,
+    "pre_edit_nonempty_delivery": 2,
+    "pre_edit_labeled_span_delivery": 0,
+    "all_assigned_B": 10,
+    "expansions": 0,
+    "interpretation": "2/2 eligible B attempts received context before an observed edit; 2/10 assigned B slots when infrastructure-invalid sessions are also displayed. Too small to establish general adoption. Useful labeled-span delivery is a distinct metric."
+  },
+  "usage": {
+    "available_records": 2,
+    "assigned_records": 20,
+    "known_input_tokens_sum": 528798,
+    "known_output_tokens_sum": 5665,
+    "total_usage": null,
+    "billing_cost": null,
+    "reason": "Final usage missing on interrupted/rejected attempts; visible sums are not total account consumption. Cached/reasoning fields are not added again."
+  },
+  "sessions_not_provider_requests": true,
+  "model_task_sessions": 20,
+  "capability_sessions_separate": true,
+  "no_additional_attempts_authorized": true,
+  "holdout_sessions": 0,
+  "harness_stop_rule_violation": {
+    "observed": true,
+    "cause": "Detector matched rate limit/quota exceeded but missed the provider's usage-limit wording and stderr-only 429 waits. It should have stopped after the third task session; seventeen later reservations are retained and corrected as infrastructure-invalid.",
+    "corrected_with": "host-failures.mjs, immediate runtime termination, and focused regression tests; no model calls used for verification"
+  },
+  "matched_pairs": [
+    {
+      "id": "picomatch-d01",
+      "repetition": 1,
+      "A": {
+        "status": "task_success",
+        "agent_elapsed_ms": 116335,
+        "usage": {
+          "raw": {
+            "input_tokens": 263657,
+            "cached_input_tokens": 221952,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2909,
+            "reasoning_output_tokens": 1029
+          },
+          "input_tokens": 263657,
+          "cached_input_tokens": 221952,
+          "uncached_input_tokens": 41705,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2909,
+          "reasoning_output_tokens": 1029,
+          "billing_cost": null
+        },
+        "commands": 10
+      },
+      "B": {
+        "status": "task_success",
+        "agent_elapsed_ms": 121948,
+        "usage": {
+          "raw": {
+            "input_tokens": 265141,
+            "cached_input_tokens": 216832,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2756,
+            "reasoning_output_tokens": 653
+          },
+          "input_tokens": 265141,
+          "cached_input_tokens": 216832,
+          "uncached_input_tokens": 48309,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2756,
+          "reasoning_output_tokens": 653,
+          "billing_cost": null
+        },
+        "commands": 8,
+        "pre_edit_delivery": true,
+        "pre_edit_useful_span_delivery": false,
+        "context_delivery_ms": 23950,
+        "retrieval_ms": [
+          1878.364999999998
+        ],
+        "engine_tokens": 1972,
+        "engine_payload_bytes": 6347,
+        "observed_tool_result_json_bytes": 6691
+      },
+      "difference_B_minus_A": {
+        "agent_elapsed_ms": 5613,
+        "input_tokens": 1484,
+        "uncached_input_tokens": 6604,
+        "output_tokens": -153,
+        "commands": -2
+      }
+    }
+  ],
+  "tool_invoked_subgroup": {
+    "matched_pairs": 1,
+    "interpretation": "Descriptive selected subgroup only; not causal. The additional interrupted B run has no eligible matched A counterpart."
+  },
+  "limitations": [
+    "Only one complete pair and two effective task IDs from the same globstar family; no representative benefit estimate or equivalence claim",
+    "Quota interruption is an external resource failure, not evidence that retrieval caused the incomplete patch",
+    "Both completed patches were reviewed by the implementation agent, not an independent human",
+    "Original protected selected tests plus focused behavior and reviewed agent-added tests; full upstream npm/lint/coverage unavailable",
+    "Windows loopback remains reachable; known project/history, personal state and peer paths were denied",
+    "Backend model revision, billing cost and unexposed compaction remain unavailable; no new run allowance inferred"
+  ],
+  "rows": [
+    {
+      "slot": "picomatch-d01-r1-A",
+      "id": "picomatch-d01",
+      "repetition": 1,
+      "condition": "A",
+      "original_status": "unassessed",
+      "status": "task_success",
+      "outcome_reason": "reviewed_scoped_correction",
+      "task_progress": true,
+      "eligible": true,
+      "agent_elapsed_ms": 116335,
+      "setup_ms": 6635,
+      "assessment_ms": 388,
+      "exit_code": 0,
+      "timed_out": false,
+      "focused_regression_passed": true,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 16,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 10,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 263657,
+            "cached_input_tokens": 221952,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2909,
+            "reasoning_output_tokens": 1029
+          },
+          "input_tokens": 263657,
+          "cached_input_tokens": 221952,
+          "uncached_input_tokens": 41705,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2909,
+          "reasoning_output_tokens": 1029,
+          "billing_cost": null
+        }
+      },
+      "patch_review": {
+        "accepted": true,
+        "task_constraints_met": true,
+        "reviewer": "implementation agent; not independent human review"
+      },
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d01-r1-A/report.json"
+    },
+    {
+      "slot": "picomatch-d01-r1-B",
+      "id": "picomatch-d01",
+      "repetition": 1,
+      "condition": "B",
+      "original_status": "unassessed",
+      "status": "task_success",
+      "outcome_reason": "reviewed_scoped_correction",
+      "task_progress": true,
+      "eligible": true,
+      "agent_elapsed_ms": 121948,
+      "setup_ms": 4111,
+      "assessment_ms": 389,
+      "exit_code": 0,
+      "timed_out": false,
+      "focused_regression_passed": true,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 1,
+        "valid_context_responses": 1,
+        "nonempty_context_deliveries": 1,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 16,
+        "pre_edit_delivery": true,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": 23950,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 8,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [
+          1878.364999999998
+        ],
+        "returned_engine_tokens": 1972,
+        "engine_payload_bytes": 6347,
+        "observed_mcp_result_json_bytes": 6691,
+        "tool_configuration": [
+          {
+            "encoding": "o200k_base",
+            "budget_tokens": 2000,
+            "neighbors": false,
+            "notes": false
+          }
+        ],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 265141,
+            "cached_input_tokens": 216832,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2756,
+            "reasoning_output_tokens": 653
+          },
+          "input_tokens": 265141,
+          "cached_input_tokens": 216832,
+          "uncached_input_tokens": 48309,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2756,
+          "reasoning_output_tokens": 653,
+          "billing_cost": null
+        }
+      },
+      "patch_review": {
+        "accepted": true,
+        "task_constraints_met": true,
+        "reviewer": "implementation agent; not independent human review"
+      },
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d01-r1-B/report.json"
+    },
+    {
+      "slot": "picomatch-d02-r1-B",
+      "id": "picomatch-d02",
+      "repetition": 1,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "task_failure",
+      "outcome_reason": "account_limit_after_task_progress",
+      "task_progress": true,
+      "eligible": true,
+      "agent_elapsed_ms": 105527,
+      "setup_ms": 7229,
+      "assessment_ms": 297,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 1,
+        "valid_context_responses": 1,
+        "nonempty_context_deliveries": 1,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 18,
+        "pre_edit_delivery": true,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": 24550,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 7,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [
+          1752.448199999999
+        ],
+        "returned_engine_tokens": 1839,
+        "engine_payload_bytes": 5951,
+        "observed_mcp_result_json_bytes": 6284,
+        "tool_configuration": [
+          {
+            "encoding": "o200k_base",
+            "budget_tokens": 2000,
+            "neighbors": false,
+            "notes": false
+          }
+        ],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": {
+        "accepted": false,
+        "task_constraints_met": false,
+        "reviewer": "implementation agent; not independent human review"
+      },
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d02-r1-B/report.json"
+    },
+    {
+      "slot": "picomatch-d02-r1-A",
+      "id": "picomatch-d02",
+      "repetition": 1,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9778,
+      "setup_ms": 7281,
+      "assessment_ms": 215,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d02-r1-A/report.json"
+    },
+    {
+      "slot": "picomatch-d03-r1-A",
+      "id": "picomatch-d03",
+      "repetition": 1,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9679,
+      "setup_ms": 7107,
+      "assessment_ms": 216,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d03-r1-A/report.json"
+    },
+    {
+      "slot": "picomatch-d03-r1-B",
+      "id": "picomatch-d03",
+      "repetition": 1,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 10139,
+      "setup_ms": 6902,
+      "assessment_ms": 206,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d03-r1-B/report.json"
+    },
+    {
+      "slot": "picomatch-d04-r1-B",
+      "id": "picomatch-d04",
+      "repetition": 1,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 299140,
+      "setup_ms": 6935,
+      "assessment_ms": 209,
+      "exit_code": 1,
+      "timed_out": true,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d04-r1-B/report.json"
+    },
+    {
+      "slot": "picomatch-d04-r1-A",
+      "id": "picomatch-d04",
+      "repetition": 1,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9522,
+      "setup_ms": 6899,
+      "assessment_ms": 208,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d04-r1-A/report.json"
+    },
+    {
+      "slot": "picomatch-d05-r1-A",
+      "id": "picomatch-d05",
+      "repetition": 1,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9646,
+      "setup_ms": 6909,
+      "assessment_ms": 205,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d05-r1-A/report.json"
+    },
+    {
+      "slot": "picomatch-d05-r1-B",
+      "id": "picomatch-d05",
+      "repetition": 1,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 10057,
+      "setup_ms": 6943,
+      "assessment_ms": 221,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d05-r1-B/report.json"
+    },
+    {
+      "slot": "picomatch-d01-r2-B",
+      "id": "picomatch-d01",
+      "repetition": 2,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9784,
+      "setup_ms": 6909,
+      "assessment_ms": 208,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d01-r2-B/report.json"
+    },
+    {
+      "slot": "picomatch-d01-r2-A",
+      "id": "picomatch-d01",
+      "repetition": 2,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9447,
+      "setup_ms": 6913,
+      "assessment_ms": 207,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d01-r2-A/report.json"
+    },
+    {
+      "slot": "picomatch-d02-r2-A",
+      "id": "picomatch-d02",
+      "repetition": 2,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 300157,
+      "setup_ms": 7032,
+      "assessment_ms": 211,
+      "exit_code": 1,
+      "timed_out": true,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d02-r2-A/report.json"
+    },
+    {
+      "slot": "picomatch-d02-r2-B",
+      "id": "picomatch-d02",
+      "repetition": 2,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 218329,
+      "setup_ms": 6884,
+      "assessment_ms": 212,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d02-r2-B/report.json"
+    },
+    {
+      "slot": "picomatch-d03-r2-B",
+      "id": "picomatch-d03",
+      "repetition": 2,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9750,
+      "setup_ms": 6960,
+      "assessment_ms": 208,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d03-r2-B/report.json"
+    },
+    {
+      "slot": "picomatch-d03-r2-A",
+      "id": "picomatch-d03",
+      "repetition": 2,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 10055,
+      "setup_ms": 6896,
+      "assessment_ms": 208,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d03-r2-A/report.json"
+    },
+    {
+      "slot": "picomatch-d04-r2-A",
+      "id": "picomatch-d04",
+      "repetition": 2,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9529,
+      "setup_ms": 6961,
+      "assessment_ms": 218,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d04-r2-A/report.json"
+    },
+    {
+      "slot": "picomatch-d04-r2-B",
+      "id": "picomatch-d04",
+      "repetition": 2,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 9907,
+      "setup_ms": 6913,
+      "assessment_ms": 211,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d04-r2-B/report.json"
+    },
+    {
+      "slot": "picomatch-d05-r2-B",
+      "id": "picomatch-d05",
+      "repetition": 2,
+      "condition": "B",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 10420,
+      "setup_ms": 6967,
+      "assessment_ms": 206,
+      "exit_code": 1,
+      "timed_out": false,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [
+          {
+            "type": "error",
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+          },
+          {
+            "type": "turn.failed",
+            "error": {
+              "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 10:00 PM."
+            }
+          }
+        ],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d05-r2-B/report.json"
+    },
+    {
+      "slot": "picomatch-d05-r2-A",
+      "id": "picomatch-d05",
+      "repetition": 2,
+      "condition": "A",
+      "original_status": "task_failure",
+      "status": "infrastructure_invalid",
+      "outcome_reason": "account_limit_before_task_progress",
+      "task_progress": false,
+      "eligible": false,
+      "agent_elapsed_ms": 300148,
+      "setup_ms": 6937,
+      "assessment_ms": 210,
+      "exit_code": 1,
+      "timed_out": true,
+      "focused_regression_passed": false,
+      "new_protected_existing_failures": 0,
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": null,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 0,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": null,
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "uncached_input_tokens": null,
+          "cache_write_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null,
+          "billing_cost": null
+        }
+      },
+      "patch_review": null,
+      "raw_report": "eval/runs/phase5-pilot/2026-10-26T15-29-49-794Z/picomatch-d05-r2-A/report.json"
+    }
+  ]
+}

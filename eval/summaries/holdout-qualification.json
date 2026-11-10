@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-26T18-46-38-758Z",
+  "created_at": "2026-10-26T18:47:06.545Z",
+  "runtime": "v24.22.1",
+  "platform": "win32",
+  "registration": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\holdout-qualification\\2026-10-26T18-46-38-758Z\\registration.json",
+  "readiness_sha256": "9aa0c6f4f316728a81c6d8c8cf4b76296059e01a4b4ab29295db0eecbf20942f",
+  "tasks": 1,
+  "verified": 0,
+  "model_calls": 0,
+  "holdout_queries": 0,
+  "agent_runs_allowed": false,
+  "results": [
+    {
+      "id": "json-server-h10",
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "setup": {
+        "dependency_key": "48636ef122aa9453e37ab94d8d837f25f07861317ea6a86f707281d396efeb59",
+        "status": "ready",
+        "elapsed_ms": 13077.2212,
+        "source_lock_available": false,
+        "dependency_mode": "runtime_only_regenerated_lock",
+        "lock_sha256": "db5b60c29b20fb8101c2ccb74b03df39cc67f7da349abcab896d955b2f0cc439",
+        "error": null,
+        "exit_code": 0
+      },
+      "before": {
+        "exit_code": 1,
+        "signal": null,
+        "timed_out": false,
+        "elapsed_ms": 4290.960299999999,
+        "stdout": "",
+        "stderr": "TypeError: app.use() requires a middleware function\n    at app.use (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-46-38-758Z\\json-server-h10\\before\\node_modules\\express\\lib\\application.js:217:11)\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:191:9)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n",
+        "error": null
+      },
+      "after": {
+        "exit_code": 1,
+        "signal": null,
+        "timed_out": false,
+        "elapsed_ms": 1498.7536,
+        "stdout": "",
+        "stderr": "TypeError: app.use() requires a middleware function\n    at app.use (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-46-38-758Z\\json-server-h10\\after\\node_modules\\express\\lib\\application.js:217:11)\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:191:9)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n",
+        "error": null
+      },
+      "status": "needs_review"
+    }
+  ]
+}

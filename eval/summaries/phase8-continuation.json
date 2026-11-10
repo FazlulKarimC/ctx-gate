@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "operation": "phase8_continuation_analysis",
+  "created_at": "2026-11-06T17:37:22.284Z",
+  "run_id": "2026-10-27T06-06-47-463Z",
+  "planned_attempts": 30,
+  "reserved_attempts": 4,
+  "globally_reserved_attempts": 10,
+  "globally_unattempted_attempts": 26,
+  "stop_reason": "observed_host_lifecycle_failure",
+  "interpretation": "Separate continuation stratum. The two completed Picomatch turns both failed their focused task test; their paired timing/token difference is descriptive only and is not a performance effect. The JSON Server treatment was rejected before model execution as unsupported, so it is infrastructure-invalid. No success claim, model comparison, or whole-agent context benefit is estimable.",
+  "by_condition": {
+    "A": {
+      "n": 2,
+      "eligible": 2,
+      "task_failure": 2,
+      "infrastructure_invalid": 0,
+      "terminal_completed": 1,
+      "metrics": {
+        "elapsed_ms": {
+          "n": 2,
+          "mean": 195285.09999999998,
+          "min": 90392.2599,
+          "max": 300177.94009999995
+        },
+        "input_tokens": {
+          "n": 1,
+          "mean": 262949,
+          "min": 262949,
+          "max": 262949
+        },
+        "command_count": {
+          "n": 2,
+          "mean": 12.5,
+          "min": 10,
+          "max": 15
+        }
+      }
+    },
+    "B": {
+      "n": 2,
+      "eligible": 1,
+      "task_failure": 1,
+      "infrastructure_invalid": 1,
+      "terminal_completed": 1,
+      "metrics": {
+        "elapsed_ms": {
+          "n": 1,
+          "mean": 138712.5091,
+          "min": 138712.5091,
+          "max": 138712.5091
+        },
+        "input_tokens": {
+          "n": 1,
+          "mean": 326990,
+          "min": 326990,
+          "max": 326990
+        },
+        "command_count": {
+          "n": 1,
+          "mean": 9,
+          "min": 9,
+          "max": 9
+        }
+      }
+    }
+  },
+  "pairs": [
+    {
+      "id": "picomatch-h06",
+      "repository": "picomatch",
+      "category": "exact_symbol",
+      "family": "parser-text-token",
+      "A": "task_failure",
+      "B": "task_failure",
+      "eligible_pair": true,
+      "completed_turn_pair": true,
+      "delta_B_minus_A": {
+        "elapsed_ms": 48320.24919999999,
+        "input_tokens": 64041
+      }
+    },
+    {
+      "id": "json-server-h04",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "family": "static-root",
+      "A": "task_failure",
+      "B": "infrastructure_invalid",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "json-server-h05",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "family": "resource-relations",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "fastify-h01",
+      "repository": "fastify",
+      "category": "vague_symptom",
+      "family": "parser-error-containment",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "fastify-h02",
+      "repository": "fastify",
+      "category": "vague_symptom",
+      "family": "stream-trailer-completion",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "fastify-h03",
+      "repository": "fastify",
+      "category": "exact_symbol",
+      "family": "effective-media-type",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "fastify-h04",
+      "repository": "fastify",
+      "category": "exact_symbol",
+      "family": "serialization-metadata",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "picomatch-h07",
+      "repository": "picomatch",
+      "category": "vague_symptom",
+      "family": "brace-compilation",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "picomatch-h08",
+      "repository": "picomatch",
+      "category": "exact_symbol",
+      "family": "public-parse-state",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "json-server-h07",
+      "repository": "json-server",
+      "category": "cross_file",
+      "family": "resource-relations",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "json-server-h08",
+      "repository": "json-server",
+      "category": "exact_symbol",
+      "family": "resource-relations",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "json-server-h09",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "family": "fulltext-input-shape",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "json-server-h10",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "family": "cors-header-exposure",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "fastify-h08",
+      "repository": "fastify",
+      "category": "exact_symbol",
+      "family": "prefix-route-metadata",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    },
+    {
+      "id": "fastify-h09",
+      "repository": "fastify",
+      "category": "vague_symptom",
+      "family": "preclose-lifecycle",
+      "A": "not_attempted",
+      "B": "not_attempted",
+      "eligible_pair": false,
+      "completed_turn_pair": false,
+      "delta_B_minus_A": {
+        "elapsed_ms": null,
+        "input_tokens": null
+      }
+    }
+  ],
+  "rows": [
+    {
+      "id": "picomatch-h06",
+      "slot": "picomatch-h06-r1-B",
+      "condition": "B",
+      "repository": "picomatch",
+      "category": "exact_symbol",
+      "family": "parser-text-token",
+      "eligible": true,
+      "outcome": "task_failure",
+      "model_turn_completed": true,
+      "timed_out": false,
+      "elapsed_ms": 138712.5091,
+      "turn_completed_ms": 137256.4871,
+      "cleanup_elapsed_ms": 1456.0219999999972,
+      "usage": {
+        "raw": {
+          "input_tokens": 326990,
+          "cached_input_tokens": 248832,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2851,
+          "reasoning_output_tokens": 762
+        },
+        "input_tokens": 326990,
+        "cached_input_tokens": 248832,
+        "uncached_input_tokens": 78158,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2851,
+        "reasoning_output_tokens": 762,
+        "billing_cost": null
+      },
+      "command_count": 9,
+      "context_attempts": 1,
+      "expand_attempts": 0,
+      "pre_edit_delivery": true,
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "report": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/picomatch-h06-r1-B/report.json"
+    },
+    {
+      "id": "picomatch-h06",
+      "slot": "picomatch-h06-r1-A",
+      "condition": "A",
+      "repository": "picomatch",
+      "category": "exact_symbol",
+      "family": "parser-text-token",
+      "eligible": true,
+      "outcome": "task_failure",
+      "model_turn_completed": true,
+      "timed_out": false,
+      "elapsed_ms": 90392.2599,
+      "turn_completed_ms": 88555.11680000002,
+      "cleanup_elapsed_ms": 1837.1430999999866,
+      "usage": {
+        "raw": {
+          "input_tokens": 262949,
+          "cached_input_tokens": 227200,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2514,
+          "reasoning_output_tokens": 506
+        },
+        "input_tokens": 262949,
+        "cached_input_tokens": 227200,
+        "uncached_input_tokens": 35749,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2514,
+        "reasoning_output_tokens": 506,
+        "billing_cost": null
+      },
+      "command_count": 10,
+      "context_attempts": 0,
+      "expand_attempts": 0,
+      "pre_edit_delivery": false,
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "report": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/picomatch-h06-r1-A/report.json"
+    },
+    {
+      "id": "json-server-h04",
+      "slot": "json-server-h04-r1-A",
+      "condition": "A",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "family": "static-root",
+      "eligible": true,
+      "outcome": "task_failure",
+      "model_turn_completed": false,
+      "timed_out": true,
+      "elapsed_ms": 300177.94009999995,
+      "turn_completed_ms": null,
+      "cleanup_elapsed_ms": null,
+      "usage": {
+        "raw": null,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "cache_write_input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null,
+        "billing_cost": null
+      },
+      "command_count": 15,
+      "context_attempts": 0,
+      "expand_attempts": 0,
+      "pre_edit_delivery": false,
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "report": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/json-server-h04-r1-A/report.json"
+    },
+    {
+      "id": "json-server-h04",
+      "slot": "json-server-h04-r1-B",
+      "condition": "B",
+      "repository": "json-server",
+      "category": "vague_symptom",
+      "family": "static-root",
+      "eligible": false,
+      "outcome": "infrastructure_invalid",
+      "model_turn_completed": false,
+      "timed_out": false,
+      "elapsed_ms": 8945.284099999932,
+      "turn_completed_ms": null,
+      "cleanup_elapsed_ms": null,
+      "usage": {
+        "raw": null,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "cache_write_input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null,
+        "billing_cost": null
+      },
+      "command_count": 0,
+      "context_attempts": 0,
+      "expand_attempts": 0,
+      "pre_edit_delivery": false,
+      "host_failure": {
+        "status": "infrastructure_invalid",
+        "reason": "observed_host_lifecycle_failure",
+        "stop_batch": true,
+        "task_progress": false
+      },
+      "report": "eval/runs/phase8-continuation/2026-10-27T06-06-47-463Z/json-server-h04-r1-B/report.json"
+    }
+  ]
+}

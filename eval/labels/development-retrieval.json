@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-26T11:28:05.455Z",
+  "scope": "Assessment-only pre-fix source relevance for all 20 development candidates; never exported or indexed",
+  "method": "Manual inspection of existing pre-fix source and upstream changes. Source hunks are supporting evidence, not all changed files: formatting-only changes are excluded. Prompts contain symptoms/behavior, not the future patch. Labels fixed before the first retrieval query.",
+  "limitations": [
+    "Not exhaustive useful-span truth; contextual lines can make line recall conservative",
+    "Remaining agent-task behavioral eligibility and full split/fix-family qualification stay pending",
+    "json-server-d06 is a feature candidate, included for diagnostic source finding, not certified as a runtime-fix trial",
+    "All 20 have a local source answer; realistic no-local-helper relevance cases remain a later dataset gap",
+    "d03/d04 Picomatch are related; candidate observations are not independent samples"
+  ],
+  "tasks": [
+    {
+      "id": "picomatch-d01",
+      "source_spans": [
+        {
+          "path": "lib/parse.js",
+          "start_line": 1403,
+          "end_line": 1425
+        }
+      ],
+      "existing_tests": ["test/issue-related.js"],
+      "acceptance": "Adjacent-literal double stars stay in a path segment while standalone globstars keep traversing directories",
+      "prompt": "Patterns such as **.thing.js and **.js incorrectly match files inside nested directories. A double star adjacent to a literal in the same path segment should behave like a single star. Fix this while preserving matching for files in the current segment and standalone **/ directory traversal. Add regression coverage.",
+      "category": "vague_symptom",
+      "reuse_tag": "existing local behavior; see initial manual labels"
+    },
+    {
+      "id": "picomatch-d02",
+      "source_spans": [
+        {
+          "path": "lib/parse.js",
+          "start_line": 388,
+          "end_line": 405
+        },
+        {
+          "path": "lib/parse.js",
+          "start_line": 1373,
+          "end_line": 1386
+        }
+      ],
+      "existing_tests": ["test/globstars.js"],
+      "acceptance": "Newline-bearing paths match in both parser paths without changing default dotfile exclusion",
+      "prompt": "Globstar matching fails for legal POSIX paths containing newline characters. Make ** and nested globstar patterns support these paths without changing default hidden-file behavior. Add regression coverage.",
+      "category": "vague_symptom",
+      "reuse_tag": "existing local behavior; see initial manual labels"
+    },
+    {
+      "id": "picomatch-d03",
+      "source_spans": [
+        {
+          "path": "lib/scan.js",
+          "start_line": 48,
+          "end_line": 65
+        },
+        {
+          "path": "lib/scan.js",
+          "start_line": 180,
+          "end_line": 205
+        },
+        {
+          "path": "lib/scan.js",
+          "start_line": 253,
+          "end_line": 283
+        },
+        {
+          "path": "lib/scan.js",
+          "start_line": 345,
+          "end_line": 392
+        }
+      ],
+      "existing_tests": ["test/api.scan.js"],
+      "acceptance": "Parts preserve boundary empty segments and do not split inside nested/escaped parentheses",
+      "prompt": "picomatch.scan(pattern, { parts: true }) returns incomplete pattern parts. Handle patterns without separators, preserve leading/trailing empty segments, and avoid splitting inside nested or escaped parentheses. Keep prefixes out of the returned parts. Add regression coverage.",
+      "category": "exact_symbol",
+      "reuse_tag": "existing local behavior; see initial manual labels"
+    },
+    {
+      "id": "picomatch-d04",
+      "source_spans": [
+        {
+          "path": "lib/scan.js",
+          "start_line": 48,
+          "end_line": 65
+        }
+      ],
+      "existing_tests": ["test/api.scan.js"],
+      "acceptance": "The tokens option requests full-pattern scanning, retaining explicit-parts behavior",
+      "prompt": "picomatch.scan(\"a/b/*/c\", { tokens: true }) should return parts [\"a\", \"b\", \"*\", \"c\"], just as the explicit parts option does, instead of stopping at the first glob. Fix the tokens-only behavior and add a regression test.",
+      "category": "exact_symbol",
+      "reuse_tag": "existing local behavior; see initial manual labels"
+    },
+    {
+      "id": "picomatch-d05",
+      "source_spans": [
+        {
+          "path": "lib/picomatch.js",
+          "start_line": 150,
+          "end_line": 174
+        }
+      ],
+      "supporting_symbols": [
+        {
+          "path": "lib/utils.js",
+          "name": "exports.basename"
+        }
+      ],
+      "existing_tests": ["test/options.js"],
+      "acceptance": "Existing Windows-aware basename functionality is used consistently without breaking negative matches",
+      "prompt": "picomatch basename/matchBase matching with windows: true fails on backslash-separated and mixed-separator paths. For example foo\\bar.js should match bar.js with basename: true and windows: true. Preserve negative matches and add regression coverage.",
+      "category": "exact_symbol",
+      "reuse_tag": "existing local behavior; see initial manual labels"
+    },
+    {
+      "id": "picomatch-d06",
+      "category": "vague_symptom",
+      "prompt": "A literal glob pattern containing constructor unexpectedly throws instead of being matched as ordinary text. Find the parsing cause and preserve normal pattern matching.",
+      "source_spans": [
+        {
+          "path": "lib/constants.js",
+          "start_line": 93,
+          "end_line": 111
+        }
+      ],
+      "existing_tests": ["test/malicious.js"],
+      "reuse_tag": "existing replacement table"
+    },
+    {
+      "id": "picomatch-d07",
+      "category": "vague_symptom",
+      "prompt": "Negated extglobs with stars followed by a suffix expression match incorrectly, including patterns such as !(*.d).{ts,tsx}. Find the suffix handling without breaking ordinary extension matches.",
+      "source_spans": [
+        {
+          "path": "lib/parse.js",
+          "start_line": 235,
+          "end_line": 270
+        }
+      ],
+      "existing_tests": ["test/extglobs.js"],
+      "reuse_tag": "existing parser can process suffix expressions"
+    },
+    {
+      "id": "picomatch-d08",
+      "category": "vague_symptom",
+      "prompt": "Negated extglob patterns such as !(*.d).ts produce incorrect matches when text follows the closing parenthesis. Investigate how the inner glob and trailing extension are compiled.",
+      "source_spans": [
+        {
+          "path": "lib/parse.js",
+          "start_line": 193,
+          "end_line": 215
+        },
+        {
+          "path": "lib/parse.js",
+          "start_line": 235,
+          "end_line": 263
+        }
+      ],
+      "existing_tests": ["test/extglobs-temp.js", "test/extglobs.js"],
+      "reuse_tag": "existing negated-extglob compilation"
+    },
+    {
+      "id": "json-server-d01",
+      "category": "vague_symptom",
+      "prompt": "A request for a missing resource returns plain-text Not Found. Return a JSON error response for the missing-resource case while preserving its 404 status and normal resource responses.",
+      "source_spans": [
+        {
+          "path": "src/app.ts",
+          "start_line": 153,
+          "end_line": 171
+        }
+      ],
+      "existing_tests": ["src/app.test.ts"],
+      "reuse_tag": "existing response middleware"
+    },
+    {
+      "id": "json-server-d02",
+      "category": "vague_symptom",
+      "prompt": "Requests with invalid JSON body shapes should return 400 rather than silently continuing as if no action occurred. Handle create, update and patch paths consistently without invoking the service on invalid bodies.",
+      "source_spans": [
+        {
+          "path": "src/app.ts",
+          "start_line": 63,
+          "end_line": 97
+        }
+      ],
+      "existing_tests": ["src/app.test.ts"],
+      "reuse_tag": "two existing body-validation wrappers"
+    },
+    {
+      "id": "json-server-d03",
+      "category": "exact_symbol",
+      "prompt": "Service.patch on an object resource nests the old object under an item property instead of preserving its top-level fields. Find and correct the object patch merge while preserving full-update behavior.",
+      "source_spans": [
+        {
+          "path": "src/service.ts",
+          "start_line": 382,
+          "end_line": 406
+        }
+      ],
+      "existing_tests": ["src/app.test.ts", "src/service.test.ts"],
+      "reuse_tag": "existing update-or-patch helper; other changed files mostly formatting"
+    },
+    {
+      "id": "json-server-d04",
+      "category": "exact_symbol",
+      "prompt": "Service.find equality and not-equal filters mishandle boolean fields from string query parameters. Preserve meaningful boolean, numeric and string comparisons.",
+      "source_spans": [
+        {
+          "path": "src/service.ts",
+          "start_line": 276,
+          "end_line": 306
+        }
+      ],
+      "existing_tests": ["src/service.test.ts"],
+      "reuse_tag": "existing condition switch"
+    },
+    {
+      "id": "json-server-d05",
+      "category": "cross_file",
+      "prompt": "List pagination parameters arrive as query strings and slicing behaves incorrectly for zero start/end and limit values. Follow the HTTP request into service slicing and make numeric pagination consistent.",
+      "source_spans": [
+        {
+          "path": "src/app.ts",
+          "start_line": 43,
+          "end_line": 61
+        },
+        {
+          "path": "src/service.ts",
+          "start_line": 300,
+          "end_line": 338
+        }
+      ],
+      "existing_tests": ["src/service.test.ts"],
+      "reuse_tag": "request normalization and service slice paths"
+    },
+    {
+      "id": "json-server-d06",
+      "category": "exact_symbol",
+      "prompt": "Service should ensure array items loaded from a database have id fields, preserving existing ids and object resources. Reuse the id generation behavior already used when creating new items.",
+      "source_spans": [
+        {
+          "path": "src/service.ts",
+          "start_line": 104,
+          "end_line": 131
+        },
+        {
+          "path": "src/service.ts",
+          "start_line": 312,
+          "end_line": 335
+        }
+      ],
+      "existing_tests": ["src/service.test.ts"],
+      "reuse_tag": "inline randomBytes id creation exists; feature eligibility for agent trials pending"
+    },
+    {
+      "id": "fastify-d01",
+      "category": "exact_symbol",
+      "prompt": "getInstanceDecorator should evaluate a getter only once. Keep functions bound to the instance while returning ordinary decorator values unchanged.",
+      "source_spans": [
+        {
+          "path": "lib/decorate.js",
+          "start_line": 30,
+          "end_line": 54
+        }
+      ],
+      "existing_tests": ["test/decorator.test.js"],
+      "reuse_tag": "existing getter access and binding"
+    },
+    {
+      "id": "fastify-d02",
+      "category": "cross_file",
+      "prompt": "Error replies must use status codes from 400 through 599 with a 500 fallback. Check both error-handler paths and preserve the intended statusCode versus status precedence.",
+      "source_spans": [
+        {
+          "path": "lib/error-handler.js",
+          "start_line": 130,
+          "end_line": 156
+        },
+        {
+          "path": "lib/error-status.js",
+          "start_line": 1,
+          "end_line": 15
+        }
+      ],
+      "existing_tests": [
+        "test/diagnostics-channel/error-status.test.js",
+        "test/reply-error.test.js"
+      ],
+      "reuse_tag": "two existing status-code paths"
+    },
+    {
+      "id": "fastify-d03",
+      "category": "exact_symbol",
+      "prompt": "reply.header with a set-cookie array should not mutate the caller-owned array when later cookies are added. Preserve accumulation and normal scalar-header behavior.",
+      "source_spans": [
+        {
+          "path": "lib/reply.js",
+          "start_line": 260,
+          "end_line": 298
+        }
+      ],
+      "existing_tests": ["test/internals/reply.test.js"],
+      "reuse_tag": "existing header storage and append logic"
+    },
+    {
+      "id": "fastify-d04",
+      "category": "cross_file",
+      "prompt": "An HTTP QUERY request with a Content-Type header but an empty body is incorrectly rejected. Allow the empty-body case while preserving missing-content-type validation and remove obsolete error handling.",
+      "source_spans": [
+        {
+          "path": "lib/handle-request.js",
+          "start_line": 1,
+          "end_line": 90
+        },
+        {
+          "path": "lib/errors.js",
+          "start_line": 452,
+          "end_line": 482
+        }
+      ],
+      "existing_tests": [
+        "test/internals/errors.test.js",
+        "test/rfc-10008.test.js",
+        "test/types/errors.tst.ts"
+      ],
+      "reuse_tag": "request validation and error definition"
+    },
+    {
+      "id": "fastify-d05",
+      "category": "vague_symptom",
+      "prompt": "Async validation resolves with user data that may contain value or error keys. Those data fields should not replace request data or be interpreted as a custom synchronous validation result. Preserve failed validation handling.",
+      "source_spans": [
+        {
+          "path": "lib/validation.js",
+          "start_line": 277,
+          "end_line": 322
+        }
+      ],
+      "existing_tests": ["test/schema-special-usage.test.js"],
+      "reuse_tag": "existing sync versus Promise validator handling"
+    },
+    {
+      "id": "fastify-d06",
+      "category": "cross_file",
+      "prompt": "Boolean false is a present JSON request schema, but truthiness checks skip its compilation. Follow route setup, query alias normalization and validation compilation so false schemas are handled consistently.",
+      "source_spans": [
+        {
+          "path": "lib/route.js",
+          "start_line": 401,
+          "end_line": 438
+        },
+        {
+          "path": "lib/schemas.js",
+          "start_line": 54,
+          "end_line": 83
+        },
+        {
+          "path": "lib/validation.js",
+          "start_line": 218,
+          "end_line": 290
+        }
+      ],
+      "existing_tests": ["test/schema-feature.test.js"],
+      "reuse_tag": "existing schema selection paths"
+    }
+  ],
+  "premeasurement_errata": [
+    {
+      "id": "picomatch-d03",
+      "path": "lib/scan.js",
+      "end_line": 392,
+      "reason": "Context span ended past pre-fix EOF; clipped before any retrieval measurement"
+    },
+    {
+      "id": "json-server-d01",
+      "path": "src/app.ts",
+      "end_line": 171,
+      "reason": "Context span ended past pre-fix EOF; clipped before any retrieval measurement"
+    },
+    {
+      "id": "fastify-d02",
+      "path": "lib/error-status.js",
+      "end_line": 15,
+      "reason": "Context span ended past pre-fix EOF; clipped before any retrieval measurement"
+    }
+  ]
+}

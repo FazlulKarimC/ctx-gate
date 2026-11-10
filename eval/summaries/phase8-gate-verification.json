@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T04:19:13.706Z",
+  "invalid_readiness_rejected": true,
+  "reservations_unchanged": true,
+  "model_calls": 0,
+  "stderr": "file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/scripts/phase8-run.mjs:215\r\n  throw Error(\"Fresh exact host/isolation/MCP capability required\");\r\n        ^\r\n\r\nError: Fresh exact host/isolation/MCP capability required\r\n    at file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/scripts/phase8-run.mjs:215:9\r\n\r\nNode.js v24.22.1\r\n"
+}

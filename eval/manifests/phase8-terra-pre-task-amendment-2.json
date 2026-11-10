@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-11-06T19:02:55.929Z",
+  "supersedes_amendment_sha256": "e4f4f3757172601e3461b37c91c83226d02077eabb82ff03dba756bbfbbecaaa",
+  "reason": "The first diagnostic showed that the peer negative probe appended 'workspace' twice and therefore tested a nonexistent path. This amendment corrects only that probe path; no model request or reservation occurred, and it changes no task, arm order, model, effort, timeout, host pin, prompt, assessment, stop rule, or ceiling.",
+  "prior_no_model_runs": [
+    "eval/runs/phase8-terra/2026-11-06T18-57-37-134Z",
+    "eval/runs/phase8-terra/2026-11-06T19-01-09-888Z"
+  ],
+  "source_hashes": {
+    "eval/scripts/phase8-terra-run.mjs": "0266720ed6f3fcacb745240e0e038bd0e56661275f1ba33a158ceab9b9c1b296",
+    "eval/scripts/phase8-terra-host.mjs": "136d9d7c96282b11d29cd92836db5b16736f347a1491443a824d238e12ba6d18",
+    "eval/scripts/phase8-terra-host-bootstrap.mjs": "f9a3604f83ae714882956ee43601eb02a1f0c7f44e22fc2c3940dd8e24df2291",
+    "eval/scripts/phase8-terra-plan.mjs": "05dde23e6b89851dbaa9545c84bcab2c2a740b11f742f1403d1854b14d1f3544",
+    "eval/scripts/phase8-terra-model-list.mjs": "0c84b520f77944ba452edf695a5b1c53e906ca211f7f67a4e39a67c1368bb7ba",
+    "eval/scripts/phase8-terra-isolation.mjs": "41f87e29f73f59d3d4e5d44202211c7d2ccbf973b197f29f833263fd0be93b78",
+    "eval/scripts/observed-host-process.mjs": "8c0276a18d6e549ac89c2cd1fe9aea09b08ad622e6f726058fa5ef33294edce3",
+    "eval/scripts/evaluation-outcome.mjs": "ed2f9f32c0c1a78363abf35778c3a3a3c42c662c470aa0a96470f3a721a9fe54",
+    "eval/scripts/host-failures.mjs": "10d9f9891e280c66bc7dba79ab56c31f920d4aa8d9c5d9197ad912b21cda3efc",
+    "eval/scripts/pilot-metrics.mjs": "468bc00fcfca6483a6501dc291831355a4d5f04deb11732fe82723dd0b9a9a60",
+    "eval/scripts/mcp-observer.mjs": "d00411b2a6595385a9128f926a6c0033a3059244ab3ccc11d615fa359fc9860e",
+    "eval/scripts/phase8-cleanup.mjs": "f249fba15819b69d8c22df35c7903b02e48dc362d8fd6ec17532831d1cc77c29",
+    "eval/scripts/phase5-host.mjs": "462708a2159e34a44da2318480a783c16f6de457e02e5e521fdadd7dde049613",
+    "eval/scripts/verify-freeze.mjs": "29f5624be1c8660c6e3e70cac8e3f3f16ecaeb3af7510ad5d7d8ecc3646b0de9",
+    "eval/manifests/phase8-terra-policy.json": "83c4ce45eaebc511164127e6044774056b9dfb6b0e232f1257f14bc7c71d1770",
+    "eval/manifests/phase8-terra-prefix.json": "7ecedcbb1b079123c6cd521d7016df3b03f9ad2018c36bea693b500ba6861ecc",
+    "eval/manifests/phase8-terra-host.json": "14c3b5c70f53fad60e989ce5de77eed86814bc0f795523929f253dc1943ebfed"
+  },
+  "assignments": [
+    {
+      "id": "picomatch-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h07-terra-r1-B"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h07-terra-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h08-terra-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h08-terra-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h07-terra-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h07-terra-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h09-terra-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h09-terra-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h01-terra-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h01-terra-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h03-terra-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h03-terra-r1-B"
+    }
+  ],
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "timeout_ms_per_task": 240000,
+  "max_attempts": 12
+}

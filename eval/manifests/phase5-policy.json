@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "registered_on": "2026-10-26",
+  "authorization": "User requested complete next phase after Phase 4 closure; Phase 5 implementation and its bounded development pilot are in scope. Existing account access only; no API keys, purchases, global settings or model substitution.",
+  "tasks": ["picomatch-d01", "picomatch-d02", "picomatch-d03", "picomatch-d04", "picomatch-d05"],
+  "scope_exception": "Only these five independently behaviorally verified development tasks may execute. The broader agent-pool agent_runs_allowed=false gate remains in place for all other tasks and holdout.",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "conditions": {"A": "Fresh Codex host with ordinary repository instructions and controlled memory/integrations", "B": "Same host plus ctx_context/ctx_expand and a short usage instruction; lexical v2 defaults; checker disabled"},
+  "repetitions": 2,
+  "max_task_attempts": 20,
+  "timeout_seconds_per_task": 300,
+  "execution": "Sequential; alternate A/B order by task index plus repetition. Fresh independent pre-fix export per arm. Reserve each slot in an append-only ledger before invoking the host. Stop on infrastructure failure, preserve every attempt and do not replace task losses.",
+  "order_seed": "ctxgate-v1-20261026",
+  "max_model_capability_probes": 2,
+  "timeout_seconds_per_model_capability_probe": 90,
+  "readiness": "Require a fresh matching report: workspace read/write, denied assessment-folder reads, denied external TCP with reachable host control, disabled memory generation/injection and unrelated integrations, matching model/reasoning, and actual MCP delivery before a shell roundtrip in an independent ephemeral session. Windows loopback remains reachable and must be disclosed.",
+  "isolation": "Trial roots outside the project; deny the project containing labels, manifests, upstream fixes and past results, personal Codex state, peer trial roots and host-state/log directories. Preserve Windows sandboxing; no unrestricted execution. This protects known assessment/history paths, not all user files or malicious MCP servers. A fresh static report can link the preserved successful model-capability report for unchanged host/model/MCP, with stricter command-side denials tested without another model call.",
+  "uptake_target": "Valid ctx_context evidence before first substantive edit in at least 80% of all eligible nontrivial B runs. Retain non-use and tool errors in the primary table; tool-invoked subgroup descriptive only. Do not force calls or drop losing runs to meet the target.",
+  "assessment": "Focused hidden behavioral regressions verified fail-before/pass-after; inspected existing-test subset relative to the same base; original assessment files protected from agent edits; patch review of correctness, regressions, scope and task constraints. Passing focused tests alone is not a final task-success assertion.",
+  "usage": "Final cumulative turn usage only, cached input a subset; missing fields null. Engine content budget excludes MCP/host wrappers; preserve raw protocol evidence. Record attempted calls, valid delivery, expansions, pre-edit delivery, commands, compaction when exposed, latencies and all errors. No monetary cost estimate without reliable billing data.",
+  "limitations": ["Five Picomatch tasks with dependent fix families, not a representative or blinded novel benchmark", "Public tasks may be in model training", "Existing tests are an inspected subset, not full upstream npm test/lint/coverage", "Small pilot cannot establish equivalence or broad token savings", "No frozen holdout execution in Phase 5"]
+}

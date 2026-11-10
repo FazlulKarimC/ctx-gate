@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-26",
+  "project_commit": null,
+  "reason": "No project commit exists; file hashes identify the verified source",
+  "node": "24.22.1",
+  "sqlite": "3.53.4",
+  "binding": "node:sqlite",
+  "local_checks": "format, typecheck, build, 10 tests",
+  "clean_install": "passed",
+  "remote_ci": "not_run",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "a5568763facde7f023d812e31a4d47a19f0d99389f99dca3d3792c37503f1f3c"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "9f930bc2c8c025f89a81e73403364d6198b3561011d42493837141e95baefbe2"
+    },
+    {
+      "path": ".npmrc",
+      "sha256": "ced1ff1ae080204fc1a16bd572efb567ab60cab3d632c9071a9066413193a7c1"
+    },
+    {
+      "path": "eval/labels/initial-spans.json",
+      "sha256": "f471f8ce2b8819636894057096d464eb7be60af4de83e72c14ce8f0539444376"
+    },
+    {
+      "path": "eval/labels/picomatch-initial.cjs",
+      "sha256": "ceeb5c75ad607927cae3b987a82e4a357cf6ad437a4a4084a2980cae8853bcc7"
+    },
+    {
+      "path": "eval/manifests/corpus.json",
+      "sha256": "45370c851f559d780cef298d1f85afdadaa8ab32d84946e8469b2648f2074e33"
+    },
+    {
+      "path": "eval/scripts/git-tree.mjs",
+      "sha256": "6295e4707bea0b5f335b1025aea3805eecb4be8ae271105b69bcb2b4337da6e6"
+    },
+    {
+      "path": "eval/scripts/preflight.mjs",
+      "sha256": "f802ac340aa03302b096421fa2a6c9f790228220e4981caba17a4bcbdf62c01b"
+    },
+    {
+      "path": "eval/scripts/prepare-initial.mjs",
+      "sha256": "242a0b4fdb4c377f3dc3d4e8f8e4b94a7f843f0d059c93c3602921846e9759e6"
+    },
+    {
+      "path": "eval/scripts/register-corpus.mjs",
+      "sha256": "09fcb6cd56fe9dc15fe45d7f575d014e3fba451f38c5e712507ca9263e1e83fb"
+    },
+    {
+      "path": "eval/scripts/run-initial.mjs",
+      "sha256": "d86c688e67a43244682ee8bd725775f7b22643c5bdd9fd98ad82348ac7537d47"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "eab697f770248542bcc76b24e64e1009f1d2ca306b2e291a760076a022433f1c"
+    },
+    {
+      "path": "package.json",
+      "sha256": "bf009926050eaacdd3510105917db087447fffc7c24a70c7a1f990c089af2e3d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "938a91091c59c7ab5c928c4d325a0def7d472f3b925266600ef85c07ebe5b932"
+    },
+    {
+      "path": "src/cli/doctor.ts",
+      "sha256": "db6279730cc9d3faeca443b4bb3b2fb6824555dc630087a82ee463c4b8f73cd9"
+    },
+    {
+      "path": "src/cli/index.ts",
+      "sha256": "c2dc433c83082c364ee9438ca2458d69f3177fb16cba752bf95c5096efcc2c45"
+    },
+    {
+      "path": "src/contracts/index.ts",
+      "sha256": "46954b27e8f276926bded003ee80d442e9896098442ed004e11af78ebba7db5a"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "f2fc33065229a55e031b8a8c712b403c701961b6ea418b939eeba4105987ebf7"
+    },
+    {
+      "path": "src/workspace/initialize.ts",
+      "sha256": "aef5db6ca39548d1abc2c55170fdefccb83b3034c1c63b72c5299235250a7f57"
+    },
+    {
+      "path": "tests/evaluation-guard.test.mjs",
+      "sha256": "4dc72304e06532f2da86fa3b0011bbe8024d4cb1998e578ff91ce394fa147ebc"
+    },
+    {
+      "path": "tests/fixtures/basic-project/.ctx/config.json",
+      "sha256": "e37aa0696934243b36789c84eda8ca2e8239804efc2c455d5bc93e2827fa6954"
+    },
+    {
+      "path": "tests/fixtures/basic-project/.ctx/notes/session-boundary.md",
+      "sha256": "64e2d504740fe9a40b156cb688f00fa070b949e1b26c418904bbea1e96688cca"
+    },
+    {
+      "path": "tests/fixtures/basic-project/.gitignore",
+      "sha256": "d9a3a8202fb05afc88fab50edc491843f96c6f5528f4bc687fbac004ed9017f8"
+    },
+    {
+      "path": "tests/fixtures/basic-project/generated/ignored.ts",
+      "sha256": "1c087a76e4463d51b74fe6dfedef2c879d69a3add2021ecd7f8d01a406cbf9e8"
+    },
+    {
+      "path": "tests/fixtures/basic-project/package.json",
+      "sha256": "5bac545b5316f4f2e21c48270b7cf6cc84eee3048e55f085e31bf05322de6a0a"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/db/session.ts",
+      "sha256": "b25229cd3b5fceec0f1e2e9be05668d46ff34ba4cdcec7a71bec6ab9b16655ad"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/models/session.ts",
+      "sha256": "f0748dcd1f58788d6f6e41be686d432b94c2e6a85c575ef3a017c697875fae79"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/services/session.ts",
+      "sha256": "fd929dc113d0261e8b72eb36b894b277aef08b4de5921d5feda48a7c7755a402"
+    },
+    {
+      "path": "tests/fixtures/basic-project/src/ui/view.ts",
+      "sha256": "a075ba63ab0a7993a4ae89c56543ff21675a169ef6dabdc28fcde95cd27c4105"
+    },
+    {
+      "path": "tests/fixtures/basic-project/tsconfig.json",
+      "sha256": "e94df2b019c3dd0320ef0863f1bc59da91ed0e193dbd3127440a858777d37696"
+    },
+    {
+      "path": "tests/foundation.test.mjs",
+      "sha256": "8d36c42e80aa16c6c476c5fde49651ba2af0e16a219fa912c020c1bda199dfb7"
+    },
+    {
+      "path": "tests/git-tree.test.mjs",
+      "sha256": "ddf6abb713dda590e5181eae3aef45d91c56f19272190422bcc7d586736b39fe"
+    },
+    {
+      "path": "tests/sqlite.test.mjs",
+      "sha256": "984f9579a228cdc80726d36f4f207123892f57e3f7ee5fea94c5d74be498f2cf"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "572f291bfd7eddef521ac829860b8db2dfb844a201e3d6eec86c855c7e9187c9"
+    }
+  ]
+}

@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-26T18:26:37.024Z",
+  "source_pool_sha256": "21dbfbeeaefb42d74eef379187b30787c449163cd21ddf41e6f460239efc37d1",
+  "status": "rubrics_and_focused_ground_truth_verified",
+  "agent_runs_allowed": false,
+  "holdout_queries": 0,
+  "model_calls": 0,
+  "selection": "Apply pre-existing exclusion policy before outcomes; preserve old pool unchanged. Only assessment/source inspection, no retrieval or treatment tuning.",
+  "excluded": [
+    {
+      "id": "fastify-h05",
+      "reason": "Malformed URL dispatch into unrelated authenticated/private not-found scopes is ambiguous security behavior; registered policy excludes ambiguous security fixes."
+    },
+    {
+      "id": "fastify-h07",
+      "reason": "Regression test explicitly references GHSA-gm8r-x7h4-fm5r; earlier metadata review missed this security scope."
+    }
+  ],
+  "inspected_replacement_skips": [
+    {
+      "commit": "9493c0fb716cb7eb7c3568702912e3abb92f3193",
+      "reason": "Root-value validation overlaps protected development request-schema-validation family."
+    },
+    {
+      "commit": "af079bd4c60c3cbebedc7640517d7288468fb5eb",
+      "reason": "Trust-proxy security behavior excluded."
+    }
+  ],
+  "notes": {
+    "enabled_in_primary_treatment": false,
+    "agent_visible_researcher_notes": [],
+    "provenance": "Phase 4 notes are not installed in these tasks; retain original pre-fix repository guidance. No future-fix rationale enters task roots."
+  },
+  "isolation": "Assessments, source history, review diffs, manifests and outputs remain under protected project paths, outside exported agent inputs. Existing host sandbox must be revalidated for any later run.",
+  "tasks": [
+    {
+      "id": "picomatch-h01",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "36bc4615479355c30eac88b60a12e79cdaf892fd",
+      "fix_commit": "15c324a9dae5d5b1e7281a6708d16371a0b14098",
+      "title": "fix: include the backslash in [[:punct:]]",
+      "source_files_changed": [
+        "lib/constants.js"
+      ],
+      "assessment_files_changed": [
+        "test/posix-classes.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/15c324a9dae5d5b1e7281a6708d16371a0b14098",
+      "prompt": "The POSIX punctuation class fails to match a backslash. Correct punctuation matching while keeping letters excluded and other punctuation supported. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "posix-punctuation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "391788b35786cd97ded3446100f63f3cf27420d0",
+      "expected_behavior": "Backslash and ordinary punctuation match [[:punct:]]; letters do not.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/micromatch/picomatch/commit/15c324a9dae5d5b1e7281a6708d16371a0b14098",
+        "reviewed_diff_sha256": "0c3ba53bf68fa980300f1c219b47c757d2633d9004c56002fd5fb59efe32c133"
+      }
+    },
+    {
+      "id": "picomatch-h02",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "fix_commit": "73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+      "title": "fix: preserve bracket negation compatibility",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/brackets.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+      "prompt": "Bracket negation loses compatibility for incomplete classes and a closing bracket as the first negated character. Repair these cases while preserving negation when posix is false and literal bracket options. Add regression tests.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "bracket-negation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "ae307b553a893c99c56aded3a9f1f7e7108be094",
+      "expected_behavior": "Incomplete [!] stays literal-compatible; [!]] excludes closing bracket; posix=false still supports bracket negation.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/micromatch/picomatch/commit/73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+        "reviewed_diff_sha256": "cc891d64c222f9756df24693cc5c242c00f7502bd1aa59ad8fa7743bd477439a"
+      }
+    },
+    {
+      "id": "picomatch-h04",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "fix_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "title": "fix: translate POSIX bracket negation by default",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/brackets.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "prompt": "A leading exclamation mark in a bracket expression behaves literally unless an option is enabled. Support standard bracket negation by default, preserving escaped/non-leading exclamation and path separators. Add regressions.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "bracket-negation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "93264b4e3c4a62cccee5536f20eef2f66dcbe781",
+      "expected_behavior": "Default [!abc] excludes a,b,c and matches d; non-leading exclamation remains literal; slash stays excluded.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/micromatch/picomatch/commit/c5308fe10dcfed88ffac4d5bbb667348119706d9",
+        "reviewed_diff_sha256": "6a7042379a665b361415e12e2e9f9fa3b784a59094105c171c43b3919ba2647a"
+      }
+    },
+    {
+      "id": "picomatch-h06",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "5214db489eb118db1bcfde39f446188757bb45cf",
+      "fix_commit": "563f534f644e1c661799afff32f770137db9c85e",
+      "title": "fix bad `text` values in `parse`",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/api.picomatch.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/563f534f644e1c661799afff32f770137db9c85e",
+      "prompt": "picomatch.parse produces incorrect output for adjacent text tokens, including foo.(m|c|)js. Correct token output without changing the parsed token values. Add a regression.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "parser-text-token",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "00e8a652ab284aa20686cf8042d41962ac695ad2",
+      "expected_behavior": "Text token output preserves the initial value when adjacent text is merged.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/micromatch/picomatch/commit/563f534f644e1c661799afff32f770137db9c85e",
+        "reviewed_diff_sha256": "185c00f5a188fdd51f307297078ce24b26eaef8d6f23c4eacd0022b202263c92"
+      }
+    },
+    {
+      "id": "json-server-h04",
+      "repository": "json-server",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "e58a6ac4991e6312f5764ca30e3677f5cfd655f4",
+      "fix_commit": "d0307026e4440ff16e827293f956b25b77606619",
+      "title": "fix: public",
+      "source_files_changed": [
+        "src/app.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/d0307026e4440ff16e827293f956b25b77606619",
+      "prompt": "The public directory in the current project is not served when json-server is used from another installation directory. Correct default static-file resolution while preserving explicitly supplied static directories. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/holdout-modern.mjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "static-root",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "3bf4973af7c4fc85ef208a12711219c392d61941",
+      "expected_behavior": "A file in working-directory public is served rather than requiring package-relative public.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/typicode/json-server/commit/d0307026e4440ff16e827293f956b25b77606619",
+        "reviewed_diff_sha256": "2528e51d8c2410546b522c8dac30760274d74a36c5856b1524e0c10b9a944588"
+      }
+    },
+    {
+      "id": "json-server-h05",
+      "repository": "json-server",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "a4d829ab52811447449947c841cd7e6ad6714e87",
+      "fix_commit": "a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+      "title": "fix: _embed param",
+      "source_files_changed": [
+        "src/service.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+      "prompt": "A single _embed query parameter can fail or be treated as a normal filter. Support one or multiple embedded relationships consistently on collection and item reads. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/holdout-modern.mjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "resource-relations",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "d6b5d2c5b711579738e8e60594c0089df11f1797",
+      "expected_behavior": "String and array embed inputs work; embed is not interpreted as an ordinary filter.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/typicode/json-server/commit/a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+        "reviewed_diff_sha256": "bff39a72338e1b2ec19c39f7cb41aaaabf60af338851783da1834a2e5f152a3e"
+      }
+    },
+    {
+      "id": "fastify-h01",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "fix_commit": "37df44a421817e7bb048fce834bf691abb0999d6",
+      "title": "fix: contain synchronous throws from custom content type parsers (#7118)",
+      "source_files_changed": [
+        "lib/content-type-parser.js"
+      ],
+      "assessment_files_changed": [
+        "test/content-parser.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/37df44a421817e7bb048fce834bf691abb0999d6",
+      "prompt": "A synchronous throw from a custom content-type parser can escape the request error path. Handle parser throws consistently with route errors, including statusCode, in string and stream parser modes. Add regressions.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "parser-error-containment",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "50ae82138ed9e86a4d82b93f54328df6fb0164d2",
+      "expected_behavior": "Thrown parser statusCode/message become an HTTP error response instead of an uncaught exception.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/fastify/fastify/commit/37df44a421817e7bb048fce834bf691abb0999d6",
+        "reviewed_diff_sha256": "3f5fb20d85087ba6fa722c758ecea58e2ac4671ed06986f84aa471e3606b26d7"
+      }
+    },
+    {
+      "id": "fastify-h02",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "e222f53aa267080b349eacdeaff03ea9a061e8c7",
+      "fix_commit": "a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+      "title": "fix(reply): send stream trailers after the stream actually finishes (#6953)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/reply-trailers.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+      "prompt": "Stream responses can end before asynchronously computed trailers are flushed. Correct trailer completion for streamed bodies and retain ordinary streams without trailers. Test using real sockets.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "stream-trailer-completion",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "66617d7b9999bfe11a9e2f17dd3e95e2524dd406",
+      "expected_behavior": "A real streamed response contains its full body and delayed computed trailer.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/fastify/fastify/commit/a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+        "reviewed_diff_sha256": "c36b572a0f12c249e94f10634a6b65b0c46bd2b8793a46b36023dbdd12758372"
+      }
+    },
+    {
+      "id": "fastify-h03",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "d174a98e1a541639878d9f25b3738c78aa5c0165",
+      "fix_commit": "19d5be0daf1c0daace758efe3ea788f924ca1224",
+      "title": "fix: resolve reply.mediaType from raw response headers (#7054)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/internals/reply.test.js",
+        "test/reply-media-type.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/19d5be0daf1c0daace758efe3ea788f924ca1224",
+      "prompt": "reply.mediaType ignores content types set through reply.raw.setHeader. Make it reflect the effective case-insensitive header while preserving reply.type precedence. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "effective-media-type",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "f608172a7164d623fa9e1380f5512ebbd9e78cb8",
+      "expected_behavior": "raw Content-Type is reflected by reply.mediaType; precedence requires separate regression review.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/fastify/fastify/commit/19d5be0daf1c0daace758efe3ea788f924ca1224",
+        "reviewed_diff_sha256": "a5cb886f33786c1760585b89b964c31d7ab28dea8baeb1ebde648be3260a3c44"
+      }
+    },
+    {
+      "id": "fastify-h04",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "qualification": "focused_behavior_verified",
+      "base_commit": "2e3ebc5f984e0744b0738faff207cbac1875c3b3",
+      "fix_commit": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "title": "fix: omit absent compileSerializationSchema metadata instead of passing null (#7001)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/internals/reply-serialize.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "prompt": "compileSerializationSchema passes null for omitted optional metadata to a custom serializer compiler. Align omitted httpStatus and contentType with the documented undefined behavior and preserve explicit arguments. Add a regression.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "family": "serialization-metadata",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "3aaeece1cad71493a9b5727a441d94c5a19cea3c",
+      "expected_behavior": "Omitted serializer metadata is undefined; explicit metadata must remain supported.",
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/fastify/fastify/commit/c3051e5b60c0e0e95ac0638fae342e82099fe534",
+        "reviewed_diff_sha256": "73c65b589f50815d09127ecd82f9305e9ac722541f7da1a6e42a5bf536c2c546"
+      }
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "base_commit": "002e806951ddadc7b27c9d8e8f92d6709d34d1d7",
+      "title": "fixes https://github.com/micromatch/picomatch/issues/49",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/braces.js"
+      ],
+      "id": "picomatch-h07",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "brace-compilation",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing brace parsing loses balanced/literal brace behavior; distinct from development extglob/globstar families.",
+      "qualification": "focused_behavior_verified",
+      "review_reason": "Existing brace parsing loses balanced/literal brace behavior; distinct from development extglob/globstar families.",
+      "source_patch_id": "7f08929a76650046878a458e03f6720efe0fcefe",
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "prompt": "Single-element brace expressions such as a {abc} b should match their literal braces. Repair this without breaking real brace alternatives and ranges. Add regressions.",
+      "expected_behavior": "Single-element braces remain literal; ordinary {a,b} alternatives still work.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/micromatch/picomatch/commit/f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+        "reviewed_diff_sha256": "1a537de8d71e1da2003345885c0cec0e7bd06a779ae367845a9288efa1caf3a5"
+      }
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "base_commit": "44c925c5de037cf16b357c3c5a0a9fac86b025f0",
+      "title": "fix: disable fastpaths mode for parse method",
+      "source_files_changed": [
+        "lib/picomatch.js"
+      ],
+      "assessment_files_changed": [
+        "test/api.picomatch.js"
+      ],
+      "id": "picomatch-h08",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "public-parse-state",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Public parse must provide full parse state rather than the matching fast-path shortcut; different contract from wildcard matching.",
+      "qualification": "focused_behavior_verified",
+      "review_reason": "Public parse must provide full parse state rather than the matching fast-path shortcut; different contract from wildcard matching.",
+      "source_patch_id": "9c2b7a1b3db910e6dbcf1abec8af1e74e4502639",
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "prompt": "The public picomatch.parse method returns incomplete token state for simple patterns handled by a matching fast path. Ensure full token state for a*.txt even with fastpaths requested. Preserve matching behavior.",
+      "expected_behavior": "Public parse returns bos/text/star/text tokens for a*.txt.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/micromatch/picomatch/commit/5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+        "reviewed_diff_sha256": "171ca4281743afac37cab8119444816956bf1c08159ffc083e9b885039c6f521"
+      }
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "base_commit": "3ec3dec19a97ae3b7b4fa8f53073f16e9d71aaa5",
+      "title": "Foreign key suffix (#570)",
+      "source_files_changed": [
+        "src/cli/index.js",
+        "src/cli/run.js",
+        "src/server/mixins.js",
+        "src/server/router/index.js",
+        "src/server/router/nested.js",
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/cli/index.js",
+        "test/server/mixins.js",
+        "test/server/plural-with-custom-foreign-key.js"
+      ],
+      "id": "json-server-h07",
+      "split": "holdout",
+      "category": "cross_file",
+      "family": "resource-relations",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing CLI foreignKeySuffix option is not honored across nested/relationship paths; source before the fix already advertises the option. New regression exercises the existing flag.",
+      "qualification": "focused_behavior_verified",
+      "review_reason": "Existing CLI foreignKeySuffix option is not honored across nested/relationship paths; source before the fix already advertises the option. New regression exercises the existing flag.",
+      "source_patch_id": "b3f7cf5d066a686b7d3aa15470a029a4ed2c03dc",
+      "provenance_url": "https://github.com/typicode/json-server/commit/9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "prompt": "The existing foreignKeySuffix option is not consistently honored across routing and relation cleanup. Make custom suffixes work through nested, embed/expand and cleanup paths, while preserving default Id behavior. Add focused tests.",
+      "expected_behavior": "Custom _id relation keys are used in embedding; default Id behavior and CLI propagation are reviewed separately.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/typicode/json-server/commit/9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+        "reviewed_diff_sha256": "7eb12c1f5f27739f12a270641a238e7674e9a9122f2a98bcc300f2ab92c358e8"
+      }
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "base_commit": "74903968c2a3a7cd40cb7793ea2744cbe4ba8136",
+      "title": "Fix lint",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-h08",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "resource-relations",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Despite the lint title, source adds a default opts object and tests remove explicit defaults: a runtime default-router regression, not just formatting.",
+      "qualification": "focused_behavior_verified",
+      "review_reason": "Despite the lint title, source adds a default opts object and tests remove explicit defaults: a runtime default-router regression, not just formatting.",
+      "source_patch_id": "59b6244fe1f08650440e41ea94578cbf36056426",
+      "provenance_url": "https://github.com/typicode/json-server/commit/e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "prompt": "Direct router use without options can throw when embedding or expanding relationships. Restore default foreign-key behavior for callers that omit options while retaining explicit custom options. Add regression coverage.",
+      "expected_behavior": "router(data) can embed default postId relationships without options.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/typicode/json-server/commit/e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+        "reviewed_diff_sha256": "df6179e220cd241a533cd16c6fa59f306c6d328464cc3c759cb50c71fd7f7b1e"
+      }
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "base_commit": "2c435eeb4ea4df9475ba3ba20765060c4b637578",
+      "title": "Fix duplicate query params error (Issue: #352) (#465)",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-h09",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "fulltext-input-shape",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Duplicate q parameters produce an array and crash string normalization; no diagnostic development q-search task.",
+      "qualification": "focused_behavior_verified",
+      "review_reason": "Duplicate q parameters produce an array and crash string normalization; no diagnostic development q-search task.",
+      "source_patch_id": "1b33376a4901ca2bd278951caa022ea7cf2553d7",
+      "provenance_url": "https://github.com/typicode/json-server/commit/7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "prompt": "Repeated full-text q parameters can crash collection reads. Handle duplicate q values consistently, retaining the first query and ordinary single-query behavior. Add a regression.",
+      "expected_behavior": "Duplicate q parameters return the first-query result rather than throwing.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/typicode/json-server/commit/7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+        "reviewed_diff_sha256": "5669c68c0ca43f630a8a09e9331560f7c68d487dbbc70a0afd25ee6176843d5a"
+      }
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "title": "Exposing `Link` in the header instead of `Links` (#394)",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-h10",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "cors-header-exposure",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Wrong Link header name in CORS exposure; header transport contract is separate from pagination arithmetic.",
+      "qualification": "focused_behavior_verified",
+      "review_reason": "Wrong Link header name in CORS exposure; header transport contract is separate from pagination arithmetic.",
+      "source_patch_id": "09156280ab2fc6693164e480745b66b551bcb11a",
+      "provenance_url": "https://github.com/typicode/json-server/commit/2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "prompt": "Paginated responses expose the wrong header name to browser clients. Correct the CORS exposed-header list so clients can read the pagination link, preserving total count and paging. Add a regression.",
+      "expected_behavior": "Access-Control-Expose-Headers includes Link, not Links, when pagination emits Link.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/typicode/json-server/commit/2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+        "reviewed_diff_sha256": "8831dd2d0923d0cbbdca9101a868658c0acec30a660c9442c16a8f46828d0183"
+      }
+    },
+    {
+      "id": "fastify-h08",
+      "repository": "fastify",
+      "base_commit": "d693f43d890f07a8852b4737b048ed76458139a2",
+      "fix_commit": "6e95cb9f6de47deaf145138661c70a1eec34ec97",
+      "source_files_changed": [
+        "lib/route.js"
+      ],
+      "assessment_files_changed": [
+        "test/route-prefix.test.js"
+      ],
+      "category": "exact_symbol",
+      "family": "prefix-route-metadata",
+      "title": "Fix prefix route options url (#6719)",
+      "prompt": "Hidden prefix trailing-slash routes report inconsistent request.routeOptions.url. Correct their canonical URL without duplicating onRoute hooks or changing explicit trailing-slash routes. Add regressions.",
+      "expected_behavior": "/prefix and /prefix/ report canonical /prefix, /prefix/bar/ stays unchanged; onRoute fires once per declared route.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/fastify/fastify/commit/6e95cb9f6de47deaf145138661c70a1eec34ec97",
+        "reviewed_diff_sha256": "a7428cedbc6cb0d0f23bd19bb99177e1385ce54c2ae2c019e5d5f6b8d529a5ce"
+      },
+      "qualification": "focused_behavior_verified"
+    },
+    {
+      "id": "fastify-h09",
+      "repository": "fastify",
+      "base_commit": "9a1535bcfe2a780cc6f9c6555df86e5072ca9a29",
+      "fix_commit": "f5ef34443c5be0cfc7fbde44f84253ef5d0ec66e",
+      "source_files_changed": [
+        "fastify.js"
+      ],
+      "assessment_files_changed": [
+        "test/close.test.js"
+      ],
+      "category": "vague_symptom",
+      "family": "preclose-lifecycle",
+      "title": "fix: run preClose hook exactly once per declaring instance (#6940)",
+      "prompt": "A preClose hook can run multiple times when child plugins exist. Ensure it runs once per declaring instance, including nested plugins, and preserve shutdown ordering. Add regression coverage.",
+      "expected_behavior": "Root preClose executes once with nested children; shutdown ordering requires review/regression coverage.",
+      "assessment": {
+        "script": "eval/labels/holdout-regressions.cjs",
+        "ground_truth_verified": true,
+        "verification": "fail_before_pass_after",
+        "independence": "Authored from pinned upstream behavior/source/tests before treatment outcomes; implementation agent review, not an independent human assessor.",
+        "audit_run": "2026-10-26T18-48-30-353Z"
+      },
+      "rubric": {
+        "correctness": "All focused behavioral assertions pass and patch review confirms the request, including requirements not covered by the focused probe.",
+        "regressions": "Run original selected tests plus task-requested positive/negative controls; report unsupported setup separately.",
+        "scope": "No unrelated production changes, weakened tests, answer hard-coding or dependency churn.",
+        "evidence": "Condition-blind review where practical; passing one regression is not sufficient alone."
+      },
+      "provenance": {
+        "url": "https://github.com/fastify/fastify/commit/f5ef34443c5be0cfc7fbde44f84253ef5d0ec66e",
+        "reviewed_diff_sha256": "8211eec982a83693a592fb47596d09ab111e9af4fd9f4cfe02cc0b91b5bb3db3"
+      },
+      "qualification": "focused_behavior_verified"
+    }
+  ],
+  "verification_report": "eval/summaries/holdout-readiness.json",
+  "verified_at": "2026-10-27T03:40:37.071Z",
+  "ground_truth_limit": "Protected focused regressions verified fail-before/pass-after; implementation-agent review, not blinded human review. Full upstream test/lint/types suites are not established."
+}

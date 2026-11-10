@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-27T05-21-56-704Z",
+  "method_variant": "terminal_event_with_bounded_cleanup_v1",
+  "reviewer": "Implementation agent; condition labels visible, not an independent blinded human reviewer",
+  "method": "Review all source/test diffs, task scope, protected regressions/controls and recorded trace. Only passing acceptance plus appropriate scope can be accepted.",
+  "rows": [
+    {
+      "slot": "picomatch-h02-r1-A",
+      "report_sha256": "d89adf42add47fb65ded871d42ddaaa295ddb6077c05bbd443e7bb172b87638b",
+      "decision": "accepted",
+      "reason": "Narrow parser condition keeps [!] literal unless another closing bracket can terminate negation. Tests cover incomplete classes, closing-bracket-first negation, posix false and literal/nobracket options. Existing ineffective slash assertions are strengthened rather than weakened. Protected focused/control checks and 172 selected upstream tests pass. This is an unmatched A assignment in the recovery stratum.",
+      "failure_category": null,
+      "useful_span_before_edit": null
+    },
+    {
+      "slot": "picomatch-h04-r1-A",
+      "report_sha256": "a27d479757d94136917c71dbb4f7373ad42e7c4dd4c50fd1a7ef977039215661",
+      "decision": "accepted",
+      "reason": "Removes the posix-only gate for leading bracket negation and records whether the original token was escaped, preserving escaped exclamation with unescape options. Added tests cover default/true/false posix, path expressions, literal/escaped and non-leading exclamation, and separator exclusion. Protected focused/control checks and 172 selected upstream tests pass. Forced post-turn cleanup is valid under the separately registered recovery completion rule.",
+      "failure_category": null,
+      "useful_span_before_edit": null
+    },
+    {
+      "slot": "picomatch-h04-r1-B",
+      "report_sha256": "ceebe8bef0c685b1414ad1f2bf7aceaf8db2d833df4e19518dc5e77f862c32a2",
+      "decision": "accepted",
+      "reason": "Captured source fixes default leading negation while guarding originally escaped tokens. Regression additions cover default matching, escaped/non-leading exclamation and separators. It retains the explicit posix=false legacy behavior; equivalence beyond the stated default-behavior rubric is not claimed. Protected focused/control checks and 172 selected tests pass. Patch acceptance is supplemental only: provider quota interrupted the agent before turn.completed, so the registered outcome remains task_failure.",
+      "failure_category": "quota_after_progress",
+      "useful_span_before_edit": false,
+      "navigation_evidence": "The brief returns scan.js character imports and broad README/options documentation, omitting parse.js and the modified negation branch. One context call, no expansion; ordinary commands find the source."
+    }
+  ]
+}

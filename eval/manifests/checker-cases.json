@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-26",
+  "scope": "Synthetic mechanics, independently specified direct-edge labels. No model calls, retrieval tuning or held-out tasks.",
+  "policy": {"schema_version":1,"roots":["src"],"rules":[{"id":"ui-no-db","kind":"deny_import","from":"src/ui/**","to":"src/db/**","edge_kinds":["runtime"],"explanation":"UI uses a service boundary."}]},
+  "cases": [
+    {"id":"runtime-import","target_files":{"src/ui/new.ts":"import { readSession } from '../db/session';"},"expected":{"exit_code":1,"new":1},"direct":"forbidden","transitive":"not evaluated"},
+    {"id":"alias-reexport","target_files":{"src/ui/new.ts":"export * from '@app/db/session';"},"expected":{"exit_code":1,"new":1},"direct":"forbidden","transitive":"not evaluated"},
+    {"id":"require","target_files":{"src/ui/new.ts":"const db = require('../db/session');"},"expected":{"exit_code":1,"new":1},"direct":"forbidden","transitive":"not evaluated"},
+    {"id":"literal-dynamic","target_files":{"src/ui/new.ts":"export const load = () => import('../db/session');"},"expected":{"exit_code":1,"new":1},"direct":"forbidden","transitive":"not evaluated"},
+    {"id":"type-only-allowed","target_files":{"src/ui/new.ts":"export type { Session } from '../db/session';"},"expected":{"exit_code":0,"new":0},"direct":"allowed by runtime-only rule","transitive":"not evaluated"},
+    {"id":"service-transitive","target_files":{},"expected":{"exit_code":0,"new":0},"direct":"allowed","transitive":"UI reaches DB through service; intentionally not forbidden"},
+    {"id":"completed-refactor","base_files":{"src/ui/legacy.ts":"export * from '../db/session';"},"target_files":{"src/services/bridge.ts":"export * from '../db/session';","src/ui/new.ts":"export * from '../services/bridge';"},"remove":["src/ui/legacy.ts"],"expected":{"exit_code":0,"new":0,"removed":1},"direct":"completed move removes forbidden edge","transitive":"DB remains reachable through service"},
+    {"id":"outside-editor","write_via_child":true,"target_files":{"src/ui/new.ts":"export * from '../db/session';"},"expected":{"exit_code":1,"new":1},"direct":"forbidden even when written by child process","transitive":"not evaluated"},
+    {"id":"declared-external","target_files":{"package.json":"{\"name\":\"fixture\",\"dependencies\":{\"react\":\"1.0.0\"}}","src/ui/new.ts":"import 'react'; import 'node:fs';"},"expected":{"exit_code":0,"new":0},"direct":"declared external and builtin allowed","transitive":"not evaluated"},
+    {"id":"existing-debt","base_files":{"src/ui/debt.ts":"export * from '../db/session';"},"target_files":{"src/ui/debt.ts":"\n\nexport * from '../db/session';"},"expected":{"exit_code":0,"new":0,"existing":1},"direct":"existing forbidden edge","transitive":"not evaluated"},
+    {"id":"delete-source","base_files":{"src/ui/debt.ts":"export * from '../db/session';"},"target_files":{},"remove":["src/ui/debt.ts"],"expected":{"exit_code":0,"new":0,"removed":1},"direct":"removed forbidden edge","transitive":"not evaluated"},
+    {"id":"policy-self-disable","target_files":{".ctx/config.json":"{\"schema_version\":1,\"roots\":[\"src\"],\"rules\":[]}",".gitignore":"src/ui/new.ts\n","src/ui/new.ts":"export * from '../db/session';"},"expected":{"exit_code":1,"new":1},"direct":"forbidden under trusted base policy","transitive":"not evaluated"},
+    {"id":"missing-local","target_files":{"src/ui/new.ts":"import './missing';"},"expected":{"exit_code":2},"direct":"unknown target","transitive":"unknown"},
+    {"id":"nonliteral-dynamic","target_files":{"src/ui/new.ts":"const p = 'x'; import(p);"},"expected":{"exit_code":2},"direct":"unknown target","transitive":"unknown"},
+    {"id":"malformed","target_files":{"src/ui/new.ts":"export const = ;"},"expected":{"exit_code":2},"direct":"unknown due to parse error","transitive":"unknown"},
+    {"id":"baseline-unknown","base_files":{"src/ui/unknown.ts":"import './missing';"},"target_files":{"src/ui/new.ts":"export * from '../db/session';"},"expected":{"exit_code":2,"new":0,"unclassified":1},"direct":"forbidden target edge; novelty unproven","transitive":"unknown"}
+  ]
+}

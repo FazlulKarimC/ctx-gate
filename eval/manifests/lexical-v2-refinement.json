@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-26T12:44:00.444Z",
+  "version": "lexical-v2-refinement",
+  "scope": "One combined lexical focus/packing refinement, following source/category/family metadata qualification. Original diagnostic labels and v1 outcomes remain intact.",
+  "agent_pool_selection_hash": "e787e669f1f63686cb52a181b6d6ed9db93436681e6c052f212a68e84c5ff1b5",
+  "labels_sha256": "b2f4d78c59fc09a6b68134d77ab2e67b6bcb615f2e2cf08c7f39fd6a78f191b1",
+  "original_study": "eval/summaries/lexical-baseline.json",
+  "variants": {
+    "v1": {
+      "body_focus": false,
+      "packing_candidates": 200
+    },
+    "v2": {
+      "body_focus": true,
+      "packing_candidates": 40
+    }
+  },
+  "shared_configuration": {
+    "candidate_limit": 200,
+    "max_items": 6,
+    "per_file": 2,
+    "excerpt_radius": 8,
+    "field_weights": [
+      8,
+      4,
+      2,
+      2,
+      1
+    ]
+  },
+  "encoding": "o200k_base",
+  "budget_tokens": 2000,
+  "repetitions": 3,
+  "order": "Alternate v1/v2 order by task index plus repetition index. Both warm, same retained root/view. Tokenizer initialized before timings.",
+  "required_control": "Every v1 response and metric must reproduce the retained v1 study exactly before measuring.",
+  "acceptance": "Retain v2 if any-span hit count and mean labeled-span recall do not decline, pooled descriptive warm p95 decreases, and all budgets/provenance are valid. Report all individual losses. No parameter retuning after outcomes.",
+  "graph": false,
+  "notes": false,
+  "model_calls": 0,
+  "holdout_queries": 0,
+  "source_hashes": {
+    "src/index.ts": "88076174057b8eac72a849d95bb763a396d4b31e100baac4bcdcf8c66596393d",
+    "src/indexer.ts": "81b246f0d27a96804e113abf9dc74b41ef66edf1c5845da244be4f40c2930132",
+    "src/store/index.ts": "263818801f13d04495889b781a1e693faf83a1bb23fa074b0c75340c92cbbf6b",
+    "src/workspace/snapshot.ts": "deaf8ddc22380ef35d6ea5805452093d40cc65bc26419e21e34fa97a4abfc22b",
+    "src/workspace/initialize.ts": "aef5db6ca39548d1abc2c55170fdefccb83b3034c1c63b72c5299235250a7f57",
+    "src/workspace/git.ts": "e1c93c17fefd3534901bedaec54313eac6914a9b7e2e39415360682c00f4122a",
+    "src/cli/index.ts": "02c6d2d989e30afcb31ef7e8a79015103ac757f9c49b8f341d994b4b5214dc89",
+    "src/cli/doctor.ts": "0a4d62dc2706cd88c4d4575824bf79fdba5cd7fbdb688275d4d501b5fb532af7",
+    "src/retrieval/query.ts": "30a8489e504269a23498513e373ba476cc54a43d37cccf2e0a57373a298060f1",
+    "src/contracts/index.ts": "d3b7eebdebbec86db1368995609e1f82a3b16a76eca0a49d486958fefd729794",
+    "src/retrieval/index.ts": "26c8df4665d319b775e51843bebd4513cc6652d9e070b1454cf5db627d09b8d7",
+    "src/retrieval/focus.ts": "771e198758403fc5c08e7d2d1130924cd6827a9c9092ef6a3b70c5bb4a99cfb2",
+    "src/retrieval/budget.ts": "546674344f6488ab94b5b995cad237905d9198d9f58b92594602b72496f73a92",
+    "src/analyzer/index.ts": "33d0756676a49003ab00566700af1ab9710e993585e6dedca159a53334861dfe",
+    "eval/scripts/refine-lexical.mjs": "b8d32957b888e6f9de3f1e74030e0d920b947ae201eaffac89f323a8d5489f19",
+    "eval/scripts/relevance-metrics.mjs": "5d8b783baf3c50b0f4c4d461abea9f73bf8230c66b0c913c8527d885b009a465",
+    "package-lock.json": "4c08a698c8c0b8664e036c20cb92c72c159075cbad50fe1ee509c684d6c2e6ea"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "operation": "phase8_readonly_account_limits",
+  "created_at": "2026-10-27T05:35:17.916Z",
+  "model_calls": 0,
+  "login_changes": false,
+  "resets_consumed": false,
+  "credential_files_read_by_script": false,
+  "host": {
+    "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "version": "codex-cli 0.163.0"
+  },
+  "account": {
+    "type": "chatgpt",
+    "plan": "plus",
+    "id_fingerprint": null,
+    "email_fingerprint": "92359d260d4635cce7594d9b659003d7bd52865fd0769692f1274001d0ce1d60",
+    "requires_auth": true
+  },
+  "rate_limits": {
+    "limitId": "codex",
+    "limitName": null,
+    "normalModelSlug": null,
+    "primary": {
+      "usedPercent": 3,
+      "windowDurationMins": 300,
+      "resetsAt": 1793097151
+    },
+    "secondary": {
+      "usedPercent": 0,
+      "windowDurationMins": 10080,
+      "resetsAt": 1793683951
+    },
+    "credits": {
+      "hasCredits": false,
+      "unlimited": false,
+      "balance": "0"
+    },
+    "individualLimit": null,
+    "spendControlReached": false,
+    "planType": "plus",
+    "rateLimitReachedType": null
+  },
+  "rate_limits_by_id": {
+    "codex": {
+      "limitId": "codex",
+      "limitName": null,
+      "normalModelSlug": null,
+      "primary": {
+        "usedPercent": 3,
+        "windowDurationMins": 300,
+        "resetsAt": 1793097151
+      },
+      "secondary": {
+        "usedPercent": 0,
+        "windowDurationMins": 10080,
+        "resetsAt": 1793683951
+      },
+      "credits": {
+        "hasCredits": false,
+        "unlimited": false,
+        "balance": "0"
+      },
+      "individualLimit": null,
+      "spendControlReached": false,
+      "planType": "plus",
+      "rateLimitReachedType": null
+    }
+  }
+}

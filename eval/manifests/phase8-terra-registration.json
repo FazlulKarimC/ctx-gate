@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-11-06T18:55:36.495Z",
+  "authorization": "User: start implementing and complete. GPT-5.6 Terra is a separately planned, affordable, 12-attempt pilot; no Sol slot, report, policy, or ledger may be changed.",
+  "stratum": "gpt56_terra_independent_pilot",
+  "policy_sha256": "83c4ce45eaebc511164127e6044774056b9dfb6b0e232f1257f14bc7c71d1770",
+  "prefix_sha256": "7ecedcbb1b079123c6cd521d7016df3b03f9ad2018c36bea693b500ba6861ecc",
+  "model_list_sha256": "d42017bc0ad07a04cab7303cdfc8ed017112a15cd45e3166c72c12976241ab22",
+  "isolation_sha256": "7af1de4aa9a31e3c594e4eb5a940eaf14825341a8afe423e2b5daf89a5e92e39",
+  "evaluation_freeze_sha256": "3aa49c2d40d6979bb72c988ec9579dee5bc14e2cee5838d30f1211a58781bdf8",
+  "historical_sol_ledger_sha256": "319921e89d63eed96f47de73063094258f19237ed9653f0051b991da28bbe92c",
+  "independent_ledger": "eval/runs/phase8-terra/attempts.jsonl",
+  "assignments": [
+    {
+      "id": "picomatch-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h07-terra-r1-B"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h07-terra-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h08-terra-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h08-terra-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h07-terra-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h07-terra-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h09-terra-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h09-terra-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h01-terra-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h01-terra-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h03-terra-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h03-terra-r1-B"
+    }
+  ],
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "timeout_ms_per_task": 240000,
+  "max_attempts": 12,
+  "max_additional_model_probes": 0,
+  "host": {
+    "schema_version": 1,
+    "purpose": "Terra evaluation host recovery after legacy temp cleanup",
+    "legacy_host_manifest_sha256": "2465e16ebbc045a9dd208faeb84f13d30b18fbe67760b3e4627eeaaa9744ff1e",
+    "version": "codex-cli 0.163.0",
+    "command": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "windows_sandbox": "mxc",
+    "runtime": "v24.22.1",
+    "files": [
+      {
+        "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "sha256": "2692c8c7bb2cf8b0aefe638741fc90236f4b824c59578ce84994f9de58200993"
+      },
+      {
+        "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex-code-mode-host.exe",
+        "sha256": "07f3869f0849cd54b31cec1f86ec796f004501bd3a215135c1facc883a2b9988"
+      },
+      {
+        "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\codex-path\\rg.exe",
+        "sha256": "14231169855ec5205cf5a1b6f1db358ff4aed4247c86b69ce8aae647c77f6680"
+      },
+      {
+        "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\codex-resources\\codex-command-runner.exe",
+        "sha256": "fc89dc66c806f25675b9be1e7dafb226807d22761e9741a3bb24b667b803d46c"
+      },
+      {
+        "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\codex-resources\\codex-windows-sandbox-setup.exe",
+        "sha256": "2efc67f77de2658667c1481e00a1c4c964d3e8f6d4f39b638620d80b9d0f6d8a"
+      }
+    ],
+    "manifest": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\manifests\\phase8-terra-host.json",
+    "base": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor"
+  },
+  "source_hashes": {
+    "eval/scripts/phase8-terra-run.mjs": "c93a587119a8d29f521cd5fb7a10fcfd0b398c588ddbd0db3855243a514d4438",
+    "eval/scripts/phase8-terra-host.mjs": "136d9d7c96282b11d29cd92836db5b16736f347a1491443a824d238e12ba6d18",
+    "eval/scripts/phase8-terra-host-bootstrap.mjs": "f9a3604f83ae714882956ee43601eb02a1f0c7f44e22fc2c3940dd8e24df2291",
+    "eval/scripts/phase8-terra-plan.mjs": "05dde23e6b89851dbaa9545c84bcab2c2a740b11f742f1403d1854b14d1f3544",
+    "eval/scripts/phase8-terra-model-list.mjs": "0c84b520f77944ba452edf695a5b1c53e906ca211f7f67a4e39a67c1368bb7ba",
+    "eval/scripts/phase8-terra-isolation.mjs": "41f87e29f73f59d3d4e5d44202211c7d2ccbf973b197f29f833263fd0be93b78",
+    "eval/scripts/observed-host-process.mjs": "8c0276a18d6e549ac89c2cd1fe9aea09b08ad622e6f726058fa5ef33294edce3",
+    "eval/scripts/evaluation-outcome.mjs": "ed2f9f32c0c1a78363abf35778c3a3a3c42c662c470aa0a96470f3a721a9fe54",
+    "eval/scripts/host-failures.mjs": "10d9f9891e280c66bc7dba79ab56c31f920d4aa8d9c5d9197ad912b21cda3efc",
+    "eval/scripts/pilot-metrics.mjs": "468bc00fcfca6483a6501dc291831355a4d5f04deb11732fe82723dd0b9a9a60",
+    "eval/scripts/mcp-observer.mjs": "d00411b2a6595385a9128f926a6c0033a3059244ab3ccc11d615fa359fc9860e",
+    "eval/scripts/phase8-cleanup.mjs": "f249fba15819b69d8c22df35c7903b02e48dc362d8fd6ec17532831d1cc77c29",
+    "eval/scripts/phase5-host.mjs": "462708a2159e34a44da2318480a783c16f6de457e02e5e521fdadd7dde049613",
+    "eval/scripts/verify-freeze.mjs": "29f5624be1c8660c6e3e70cac8e3f3f16ecaeb3af7510ad5d7d8ecc3646b0de9",
+    "eval/manifests/phase8-terra-policy.json": "83c4ce45eaebc511164127e6044774056b9dfb6b0e232f1257f14bc7c71d1770",
+    "eval/manifests/phase8-terra-prefix.json": "7ecedcbb1b079123c6cd521d7016df3b03f9ad2018c36bea693b500ba6861ecc",
+    "eval/manifests/phase8-terra-host.json": "14c3b5c70f53fad60e989ce5de77eed86814bc0f795523929f253dc1943ebfed"
+  },
+  "stop_rule": "Stop the entire Terra block after model-not-found, quota, authentication, isolation, protocol, cleanup, or unexpected host failure. Preserve the reservation; never retry, substitute a model, or extend the pilot. A normal deadline, wrong patch, ignored context, or non-use of retrieval is an eligible outcome."
+}

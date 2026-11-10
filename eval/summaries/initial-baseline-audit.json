@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-26T08-30-15-850Z",
+  "reviewed_on": "2026-10-26",
+  "scope": "Instrumentation baseline only",
+  "reports": [
+    {
+      "task_id": "picomatch-d01",
+      "status": "infrastructure_invalid",
+      "reason": "Repository inspection blocked by host execution policy; no commands completed and no files changed.",
+      "elapsed_ms": 21391,
+      "usage": {
+        "input_tokens": 66654,
+        "cached_input_tokens": 59904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 252,
+        "reasoning_output_tokens": 14
+      },
+      "changes": 0,
+      "regression_result": false,
+      "not_a_task_failure": true
+    },
+    {
+      "task_id": "picomatch-d02",
+      "status": "infrastructure_invalid",
+      "reason": "Repository inspection blocked by host execution policy; no commands completed and no files changed.",
+      "elapsed_ms": 17692,
+      "usage": {
+        "input_tokens": 77121,
+        "cached_input_tokens": 62976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 248,
+        "reasoning_output_tokens": 29
+      },
+      "changes": 0,
+      "regression_result": false,
+      "not_a_task_failure": true
+    },
+    {
+      "task_id": "picomatch-d03",
+      "status": "infrastructure_invalid",
+      "reason": "Repository inspection blocked by host execution policy; no commands completed and no files changed.",
+      "elapsed_ms": 27155,
+      "usage": {
+        "input_tokens": 78398,
+        "cached_input_tokens": 65664,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 255,
+        "reasoning_output_tokens": 15
+      },
+      "changes": 0,
+      "regression_result": false,
+      "not_a_task_failure": true
+    },
+    {
+      "task_id": "picomatch-d04",
+      "status": "infrastructure_invalid",
+      "reason": "Repository inspection blocked by host execution policy; no commands completed and no files changed.",
+      "elapsed_ms": 23061,
+      "usage": {
+        "input_tokens": 78413,
+        "cached_input_tokens": 63616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 240,
+        "reasoning_output_tokens": 15
+      },
+      "changes": 0,
+      "regression_result": false,
+      "not_a_task_failure": true
+    },
+    {
+      "task_id": "picomatch-d05",
+      "status": "infrastructure_invalid",
+      "reason": "Repository inspection blocked by host execution policy; no commands completed and no files changed.",
+      "elapsed_ms": 20899,
+      "usage": {
+        "input_tokens": 78469,
+        "cached_input_tokens": 63616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 241,
+        "reasoning_output_tokens": 19
+      },
+      "changes": 0,
+      "regression_result": false,
+      "not_a_task_failure": true
+    }
+  ],
+  "limitations": [
+    "Reply-only preflight missed tool denial. The original classifier incorrectly left completed-but-blocked turns unassessed, so five attempts ran instead of stopping at the first denial.",
+    "Original raw reports preserved; this is the explicit classification correction.",
+    "Host model identity and memory isolation not independently verified.",
+    "No ctx-gate retrieval or task-performance conclusion is possible."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "registered_on": "2026-10-26",
+  "purpose": "Operational sufficiency, not retrieval relevance or agent benefit. No model calls or held-out queries.",
+  "file_scales": [100, 1000, 4992],
+  "extra_eligible_files_per_scale": 6,
+  "source_body_bytes": 512,
+  "warm_repetitions": 10,
+  "byte_probe": {"documents":99,"bytes_per_document":1048576,"repetitions":1},
+  "operation_timeout_ms":120000,
+  "operations":["cold_index","warm_index","context_estimate","context_exact","expand","check_worktree","check_commit","small_edit_index"],
+  "budgets":{"cold_index_ms":30000,"warm_context_p95_ms":2000,"ordinary_check_p95_ms":5000},
+  "method":"Fresh child process per observation; parent wall time includes process/module startup, operation and response serialization. Per-child peak RSS excludes Git child memory. Fresh database for cold indexing; warm means persisted cache, not a persistent JS process. OS filesystem cache is uncontrolled. Fixed exact-symbol query; one-file comment mutation. Ten samples per warm operation/scale, nearest-rank p50/p95; p95 equals sample maximum, not a stable tail estimate. One near-byte-limit observation per operation; no percentile claim. Immutable Git preparation timed separately, also reported with cold index/check where relevant.",
+  "stop_rule":"Sequential observations. Record deadline/failure and stop that case's dependent operations; do not lower the input size or silently drop failed samples. No algorithm tuning grid. Fix correctness issues with a separate recorded re-run; retain originals.",
+  "heldout_gate":"Assessment authoring may inspect pinned source/test changes, but no ctxgate holdout retrieval, model attempts or tuning. Behaviorally unverified tasks remain ineligible. Final evaluation requires all readiness gates and a new explicit run decision."
+}

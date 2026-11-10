@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-27T04-47-25-818Z",
+  "reviewer": "Implementation agent; not an independent blinded human reviewer",
+  "method": "Inspect all production/test diffs, protected regression/control outcomes, trace and requested scope. Do not accept solely from one passing focused test.",
+  "rows": [
+    {
+      "slot": "picomatch-h01-r1-A",
+      "report_sha256": "90b9a1b4990a0c0bd19db63324eb375e8ccfb87f77d0a077d5b4c19858dbb63e",
+      "decision": "accepted",
+      "reason": "Adds the missing escaped backslash only to POSIX punctuation. Updates serialization expectations and adds backslash/printable ASCII positive-negative regressions without weakening existing behavior. Protected focused/control checks and 177 selected upstream tests pass.",
+      "failure_category": null,
+      "useful_span_before_edit": null
+    },
+    {
+      "slot": "picomatch-h01-r1-B",
+      "report_sha256": "13d2511ba590c1720b5e33dd68777ac9649da770e366fbc52f2a5577f2eb22ba",
+      "decision": "accepted",
+      "reason": "Production change adds only the missing backslash escape. Regression additions cover backslash, all ASCII punctuation and exclusion of uppercase/lowercase letters, with matching serialized-regex expectations. Focused/control checks and 177 protected selected upstream tests pass. Patch acceptance is supplemental: host shutdown timed out after turn.completed, so this attempt is infrastructure-invalid in strict primary analysis.",
+      "failure_category": "host_lifecycle",
+      "useful_span_before_edit": false,
+      "navigation_evidence": "The brief supplies the POSIX_REGEX_SOURCE caller and class documentation, but omits lib/constants.js and its punctuation definition. No ctx_expand call; ordinary search recovers the target."
+    }
+  ]
+}

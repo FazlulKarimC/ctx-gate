@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "scope": "Assessment-only initial development labels; never export to task workspaces",
+  "method": "Behaviorally verified upstream fixes plus manual inspection of source hunks and helper behavior; useful spans are not exhaustive ground truth",
+  "tasks": [
+    {
+      "id": "picomatch-d01",
+      "source_spans": [
+        {
+          "path": "lib/parse.js",
+          "start_line": 1403,
+          "end_line": 1425
+        }
+      ],
+      "existing_tests": ["test/issue-related.js"],
+      "acceptance": "Adjacent-literal double stars stay in a path segment while standalone globstars keep traversing directories"
+    },
+    {
+      "id": "picomatch-d02",
+      "source_spans": [
+        {
+          "path": "lib/parse.js",
+          "start_line": 388,
+          "end_line": 405
+        },
+        {
+          "path": "lib/parse.js",
+          "start_line": 1373,
+          "end_line": 1386
+        }
+      ],
+      "existing_tests": ["test/globstars.js"],
+      "acceptance": "Newline-bearing paths match in both parser paths without changing default dotfile exclusion"
+    },
+    {
+      "id": "picomatch-d03",
+      "source_spans": [
+        {
+          "path": "lib/scan.js",
+          "start_line": 48,
+          "end_line": 65
+        },
+        {
+          "path": "lib/scan.js",
+          "start_line": 180,
+          "end_line": 205
+        },
+        {
+          "path": "lib/scan.js",
+          "start_line": 253,
+          "end_line": 283
+        },
+        {
+          "path": "lib/scan.js",
+          "start_line": 345,
+          "end_line": 392
+        }
+      ],
+      "existing_tests": ["test/api.scan.js"],
+      "acceptance": "Parts preserve boundary empty segments and do not split inside nested/escaped parentheses"
+    },
+    {
+      "id": "picomatch-d04",
+      "source_spans": [
+        {
+          "path": "lib/scan.js",
+          "start_line": 48,
+          "end_line": 65
+        }
+      ],
+      "existing_tests": ["test/api.scan.js"],
+      "acceptance": "The tokens option requests full-pattern scanning, retaining explicit-parts behavior"
+    },
+    {
+      "id": "picomatch-d05",
+      "source_spans": [
+        {
+          "path": "lib/picomatch.js",
+          "start_line": 150,
+          "end_line": 174
+        }
+      ],
+      "supporting_symbols": [
+        {
+          "path": "lib/utils.js",
+          "name": "exports.basename"
+        }
+      ],
+      "existing_tests": ["test/options.js"],
+      "acceptance": "Existing Windows-aware basename functionality is used consistently without breaking negative matches"
+    }
+  ],
+  "review_rubric": [
+    "Focused regression suite passes",
+    "Existing behavior beyond the requested change remains intact",
+    "Regression tests were added or a concrete reason is documented",
+    "No unnecessary replacement/helper duplication",
+    "No assessment/future-source access in the trace"
+  ],
+  "limitation": "Task d03 and d04 share scanner behavior and a pre-fix snapshot. Treat development tasks as diagnostic examples, not independent statistical samples. Audit related fix families across splits before corpus qualification.",
+  "erratum": "2026-10-26: clipped d03 final span from line 395 to pre-fix EOF 392, discovered during Phase 3 validation before retrieval queries; prior raw labels/hashes remain historical records."
+}

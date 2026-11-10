@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-26T18:04:18.797Z",
+  "finished_at": "2026-10-26T18:04:45.521Z",
+  "runtime": "v24.22.1",
+  "platform": "win32",
+  "manifest_sha256": "f89e8df8be952368d0d9fa2da01a0b61d722b3874f09febcd3c7f5262d6405bc",
+  "source_manifest": "eval/runs/checker/2026-10-26T18-04-18-797Z/registration.json",
+  "total": 16,
+  "matched": 16,
+  "complete": 12,
+  "incomplete": 4,
+  "accuracy_on_complete": {
+    "true_positive": 6,
+    "false_negative": 0,
+    "true_negative": 6,
+    "false_positive": 0
+  },
+  "ci_helper_exits_verified": [
+    0,
+    1,
+    2
+  ],
+  "results": [
+    {
+      "id": "runtime-import",
+      "expected": {
+        "exit_code": 1,
+        "new": 1
+      },
+      "matched": true,
+      "exit_code": 1,
+      "counts": {
+        "new": 1,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 950.1858,
+      "direct": "forbidden",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "alias-reexport",
+      "expected": {
+        "exit_code": 1,
+        "new": 1
+      },
+      "matched": true,
+      "exit_code": 1,
+      "counts": {
+        "new": 1,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 914.7392,
+      "direct": "forbidden",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "require",
+      "expected": {
+        "exit_code": 1,
+        "new": 1
+      },
+      "matched": true,
+      "exit_code": 1,
+      "counts": {
+        "new": 1,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 864.9527000000007,
+      "direct": "forbidden",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "literal-dynamic",
+      "expected": {
+        "exit_code": 1,
+        "new": 1
+      },
+      "matched": true,
+      "exit_code": 1,
+      "counts": {
+        "new": 1,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 864.7307000000001,
+      "direct": "forbidden",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "type-only-allowed",
+      "expected": {
+        "exit_code": 0,
+        "new": 0
+      },
+      "matched": true,
+      "exit_code": 0,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 854.3951000000006,
+      "direct": "allowed by runtime-only rule",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "service-transitive",
+      "expected": {
+        "exit_code": 0,
+        "new": 0
+      },
+      "matched": true,
+      "exit_code": 0,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 2,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 867.2219999999998,
+      "direct": "allowed",
+      "transitive": "UI reaches DB through service; intentionally not forbidden"
+    },
+    {
+      "id": "completed-refactor",
+      "expected": {
+        "exit_code": 0,
+        "new": 0,
+        "removed": 1
+      },
+      "matched": true,
+      "exit_code": 0,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 1,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 4,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 910.9045000000006,
+      "direct": "completed move removes forbidden edge",
+      "transitive": "DB remains reachable through service"
+    },
+    {
+      "id": "outside-editor",
+      "expected": {
+        "exit_code": 1,
+        "new": 1
+      },
+      "matched": true,
+      "exit_code": 1,
+      "counts": {
+        "new": 1,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 822.1196,
+      "direct": "forbidden even when written by child process",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "declared-external",
+      "expected": {
+        "exit_code": 0,
+        "new": 0
+      },
+      "matched": true,
+      "exit_code": 0,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 828.1466999999993,
+      "direct": "declared external and builtin allowed",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "existing-debt",
+      "expected": {
+        "exit_code": 0,
+        "new": 0,
+        "existing": 1
+      },
+      "matched": true,
+      "exit_code": 0,
+      "counts": {
+        "new": 0,
+        "existing": 1,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 4,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 919.9585000000006,
+      "direct": "existing forbidden edge",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "delete-source",
+      "expected": {
+        "exit_code": 0,
+        "new": 0,
+        "removed": 1
+      },
+      "matched": true,
+      "exit_code": 0,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 1,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 874.7870999999977,
+      "direct": "removed forbidden edge",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "policy-self-disable",
+      "expected": {
+        "exit_code": 1,
+        "new": 1
+      },
+      "matched": true,
+      "exit_code": 1,
+      "counts": {
+        "new": 1,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": true,
+        "checked_files": 3,
+        "skipped_files": 0,
+        "reasons": []
+      },
+      "elapsed_ms": 877.7587999999996,
+      "direct": "forbidden under trusted base policy",
+      "transitive": "not evaluated"
+    },
+    {
+      "id": "missing-local",
+      "expected": {
+        "exit_code": 2
+      },
+      "matched": true,
+      "exit_code": 2,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": false,
+        "checked_files": 3,
+        "skipped_files": 1,
+        "reasons": [
+          {
+            "code": "target:unresolved_local",
+            "message": "Local path/alias/package could not be resolved within the supported snapshot at line 1",
+            "path": "src/ui/new.ts"
+          }
+        ]
+      },
+      "elapsed_ms": 913.8940000000002,
+      "direct": "unknown target",
+      "transitive": "unknown"
+    },
+    {
+      "id": "nonliteral-dynamic",
+      "expected": {
+        "exit_code": 2
+      },
+      "matched": true,
+      "exit_code": 2,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": false,
+        "checked_files": 3,
+        "skipped_files": 1,
+        "reasons": [
+          {
+            "code": "target:unsupported_local",
+            "message": "Nonliteral module expression at line 1",
+            "path": "src/ui/new.ts"
+          }
+        ]
+      },
+      "elapsed_ms": 855.5282999999981,
+      "direct": "unknown target",
+      "transitive": "unknown"
+    },
+    {
+      "id": "malformed",
+      "expected": {
+        "exit_code": 2
+      },
+      "matched": true,
+      "exit_code": 2,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 0
+      },
+      "coverage": {
+        "complete": false,
+        "checked_files": 3,
+        "skipped_files": 1,
+        "reasons": [
+          {
+            "code": "target:syntax_or_project_error",
+            "message": "Variable declaration expected.",
+            "path": "src/ui/new.ts"
+          }
+        ]
+      },
+      "elapsed_ms": 880.8437999999987,
+      "direct": "unknown due to parse error",
+      "transitive": "unknown"
+    },
+    {
+      "id": "baseline-unknown",
+      "expected": {
+        "exit_code": 2,
+        "new": 0,
+        "unclassified": 1
+      },
+      "matched": true,
+      "exit_code": 2,
+      "counts": {
+        "new": 0,
+        "existing": 0,
+        "removed": 0,
+        "unclassified": 1
+      },
+      "coverage": {
+        "complete": false,
+        "checked_files": 5,
+        "skipped_files": 1,
+        "reasons": [
+          {
+            "code": "baseline:unresolved_local",
+            "message": "Local path/alias/package could not be resolved within the supported snapshot at line 1",
+            "path": "src/ui/unknown.ts"
+          },
+          {
+            "code": "target:unresolved_local",
+            "message": "Local path/alias/package could not be resolved within the supported snapshot at line 1",
+            "path": "src/ui/unknown.ts"
+          }
+        ]
+      },
+      "elapsed_ms": 883.0109000000011,
+      "direct": "forbidden target edge; novelty unproven",
+      "transitive": "unknown"
+    }
+  ]
+}

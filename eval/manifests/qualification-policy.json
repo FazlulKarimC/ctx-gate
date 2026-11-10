@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "scope": "Phase 0.3 metadata, source-fit, category and fix-family qualification before lexical refinement; behavioral assessments remain separately gated",
+  "original_manifest": "eval/manifests/corpus.json",
+  "preserve": "Original IDs and the 20-candidate v1 diagnostic study remain immutable historical inputs",
+  "selection": "Retain eligible originals. Replace excluded agent-trial slots with the newest older non-merge runtime fix outside the original registered candidate commits, in that repository, with existing supported JS/TS source and regression-test changes. Skip already-used commits and ambiguous feature/security/dependency/docs/types-only changes. Record every inspected replacement and reason. Never use retrieval/model outcomes to choose replacements.",
+  "families": "Assign conservative behavior-area families from source diffs, not filenames alone. Holdout may not share a family with any development candidate used in the diagnostic study or qualified agent pool. Exact duplicate source patches cannot count as separate tasks. Related cases within one split remain explicitly clustered, not independent samples.",
+  "categories": "Classify exact-symbol, vague-symptom or cross-file from the actual runtime change and issue-level task, excluding formatting-only changed files. Preserve observed distribution; do not fabricate cross-file balance.",
+  "later_gates": "Metadata eligibility does not establish executable setup, verified hidden regression, enforced host isolation, or held-out performance readiness. Detailed holdout labels and behavioral qualification remain Phase 7 work.",
+  "no_holdout_queries": true,
+  "no_model_calls": true
+}

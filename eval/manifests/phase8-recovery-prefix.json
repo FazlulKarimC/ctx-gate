@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-27T05:19:30.6500641Z",
+  "reason": "Immutable consumed prefix; never retry these slots",
+  "reservations": [
+    {
+      "id": "picomatch-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h01-r1-A",
+      "run_id": "2026-10-27T04-47-25-818Z",
+      "reserved_at": "2026-10-27T04:48:44.063Z"
+    },
+    {
+      "id": "picomatch-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h01-r1-B",
+      "run_id": "2026-10-27T04-47-25-818Z",
+      "reserved_at": "2026-10-27T04:50:04.183Z"
+    },
+    {
+      "id": "picomatch-h02",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h02-r1-B",
+      "run_id": "2026-10-27T04-47-25-818Z",
+      "reserved_at": "2026-10-27T04:55:18.097Z"
+    }
+  ]
+}

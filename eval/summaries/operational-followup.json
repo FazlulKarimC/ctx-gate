@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T03:50:56.744Z",
+  "run_id": "2026-10-27T03-43-53-172Z",
+  "original_run": "2026-10-26T18-20-30-813Z",
+  "registration": "eval/runs/operational-followup/2026-10-27T03-43-53-172Z/registration.json",
+  "runtime": "v24.22.1",
+  "platform": "win32",
+  "results": [
+    {
+      "name": "files-106",
+      "root": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\operational-followup\\2026-10-27T03-43-53-172Z\\files-106",
+      "base": "87630b9a2e1579a12b7b5521b5f92f846d4df47d",
+      "preparation_ms": 1234.9962,
+      "cold_context_ms": 1714.2674000000002,
+      "cold_context_peak_rss_kib": 110920,
+      "coverage_complete": true,
+      "standalone_baseline_capture_ms": 1530.5103999999997,
+      "baseline_capture_internal_ms": 991.5765999999999,
+      "baseline_files": 106,
+      "pairs": [
+        {
+          "original_ms": 1435.9800000000005,
+          "corrected_ms": 1526.4273000000003,
+          "original_rss_kib": 105464,
+          "corrected_rss_kib": 105568,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 1661.189699999999,
+          "corrected_ms": 1779.3510999999999,
+          "original_rss_kib": 105536,
+          "corrected_rss_kib": 105544,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 1542.3618999999999,
+          "corrected_ms": 1625.8276999999998,
+          "original_rss_kib": 106280,
+          "corrected_rss_kib": 106892,
+          "byte_identical": true
+        }
+      ],
+      "corrected_expansion_ms": 1174.202800000001,
+      "corrected_check_ms": 2225.7127,
+      "corrected_check_exit": 0
+    },
+    {
+      "name": "files-1006",
+      "root": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\operational-followup\\2026-10-27T03-43-53-172Z\\files-1006",
+      "base": "3714fdc6659c12933c98fec2872112f588581f0d",
+      "preparation_ms": 7411.216899999999,
+      "cold_context_ms": 12944.2602,
+      "cold_context_peak_rss_kib": 137808,
+      "coverage_complete": true,
+      "standalone_baseline_capture_ms": 8250.729500000001,
+      "baseline_capture_internal_ms": 7469.5037,
+      "baseline_files": 1006,
+      "pairs": [
+        {
+          "original_ms": 7141.137999999999,
+          "corrected_ms": 7303.795299999998,
+          "original_rss_kib": 128968,
+          "corrected_rss_kib": 121256,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 7089.9244000000035,
+          "corrected_ms": 7081.248099999997,
+          "original_rss_kib": 118468,
+          "corrected_rss_kib": 128580,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 7308.846699999995,
+          "corrected_ms": 6394.984299999996,
+          "original_rss_kib": 117968,
+          "corrected_rss_kib": 120572,
+          "byte_identical": true
+        }
+      ],
+      "corrected_expansion_ms": 3374.468399999998,
+      "corrected_check_ms": 9667.013799999986,
+      "corrected_check_exit": 0
+    },
+    {
+      "name": "files-4998",
+      "root": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\operational-followup\\2026-10-27T03-43-53-172Z\\files-4998",
+      "base": "fc82d91528f64c47474c87f637f38749bd9d3607",
+      "preparation_ms": 25638.680299999993,
+      "cold_context_ms": 28495.582899999994,
+      "cold_context_peak_rss_kib": 222268,
+      "coverage_complete": true,
+      "standalone_baseline_capture_ms": 35946.51569999999,
+      "baseline_capture_internal_ms": 35459.0991,
+      "baseline_files": 4998,
+      "pairs": [
+        {
+          "original_ms": 26118.320799999987,
+          "corrected_ms": 25816.012300000002,
+          "original_rss_kib": 176636,
+          "corrected_rss_kib": 221480,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 29052.206099999952,
+          "corrected_ms": 25876.37640000001,
+          "original_rss_kib": 221216,
+          "corrected_rss_kib": 221064,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 28160.706399999966,
+          "corrected_ms": 25723.263399999996,
+          "original_rss_kib": 221468,
+          "corrected_rss_kib": 221172,
+          "byte_identical": true
+        }
+      ],
+      "corrected_expansion_ms": 13187.791399999987,
+      "corrected_check_ms": 31509.875300000014,
+      "corrected_check_exit": 0
+    },
+    {
+      "name": "bytes-near-100MiB",
+      "root": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\operational-followup\\2026-10-27T03-43-53-172Z\\bytes-near-100MiB",
+      "base": "21c5649c820594d37e95040535186d4fc65bdc8f",
+      "preparation_ms": 1525.9572000000044,
+      "cold_context_ms": 4841.044200000004,
+      "cold_context_peak_rss_kib": 328064,
+      "coverage_complete": true,
+      "standalone_baseline_capture_ms": 1092.347299999965,
+      "baseline_capture_internal_ms": 593.9077000000001,
+      "baseline_files": 106,
+      "pairs": [
+        {
+          "original_ms": 2431.107299999974,
+          "corrected_ms": 2419.731000000029,
+          "original_rss_kib": 329644,
+          "corrected_rss_kib": 329092,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 2598.033800000034,
+          "corrected_ms": 2424.4564000000246,
+          "original_rss_kib": 321252,
+          "corrected_rss_kib": 319300,
+          "byte_identical": true
+        },
+        {
+          "original_ms": 2504.2088999999687,
+          "corrected_ms": 2762.0842999999877,
+          "original_rss_kib": 329052,
+          "corrected_rss_kib": 328788,
+          "byte_identical": true
+        }
+      ],
+      "corrected_expansion_ms": 1208.186800000025,
+      "corrected_check_ms": 2640.134299999976,
+      "corrected_check_exit": 0
+    }
+  ]
+}

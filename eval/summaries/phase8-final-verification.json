@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T05:47:37.973Z",
+  "model_calls": 0,
+  "task_reservations": 6,
+  "untouched_slots": 30,
+  "capability_reservations": 1,
+  "frozen": {
+    "schema_version": 1,
+    "operation": "verify_evaluation_freeze",
+    "valid": true,
+    "files": 92,
+    "mismatches": [],
+    "agent_runs_allowed": false,
+    "assessment": "Source integrity only. A separate run-readiness decision, budget and host isolation checks are required."
+  },
+  "guard": {
+    "expected_rejection": true,
+    "exit_code": 1,
+    "ledger_unchanged": true,
+    "message": "Recovery already reserved slots; no implicit retries or further recovery block"
+  },
+  "research_tests": {
+    "lifecycle": 6,
+    "outcome_audit": 4,
+    "all_previously_passed": true,
+    "lifecycle_evidence": "eval/summaries/phase8-lifecycle-followup.json"
+  },
+  "analysis_hashes": {
+    "eval/scripts/audit-phase8.mjs": "edcb7b9d8a56b11a8d4a4851434c66d3d321c26b5f1e5d51bbc3af221c105faf",
+    "eval/scripts/audit-phase8-recovery.mjs": "daca73368102a47cf54a6fe810e859098fd5a82aa8d976da3ffec26d50f21f14",
+    "eval/scripts/evaluation-outcome.mjs": "ed2f9f32c0c1a78363abf35778c3a3a3c42c662c470aa0a96470f3a721a9fe54",
+    "eval/scripts/summarize-phase8.mjs": "b6bcb9346bf8308865ec8bbb97550a6d02b3c56d3834ca16f39d10e0726b2c97",
+    "eval/scripts/phase8-progress.mjs": "f08b0cfd5cbead7eee1aab99422226c1181b0fa46831d6e4e9a345714a3f8d16",
+    "eval/labels/phase8-patch-review.json": "2a1593dc6b71816c749ba14482b2e9ab5dfa072e8014a8dcb392d4d9ce0f82b7",
+    "eval/labels/phase8-recovery-patch-review.json": "91973aafd863683f7fc2685e88c3d40ac5a2fe4d64d4c0637b9b19f4258311ed",
+    "eval/tests/evaluation-outcome.test.mjs": "c60155cafbc128f7a2caf176c6ff22cf01a52b46cd43aabcca17ff0e255e3bcd",
+    "docs/experiments/frozen-evaluation.md": "758d7e6850d7df2cc401458b43da47273ef8c07dc0f207b15e5b46afe9292f95",
+    "docs/experiments/phase8-recovery.md": "4c631d9cd40fa1c63f4b3d366c1a15c6e0d58e2105e6d649d64fbece83c22b73",
+    "implementation.md": "a7086881796c56763f4e17592686d76b87c472361eb636efa145688a54ae7c9d"
+  },
+  "source_git_commit": null,
+  "assessment": "Full Phase 8 remains blocked; reduced original/recovery analyses complete. No model/task retry made by verification.",
+  "output": "eval\\runs\\phase8-verification\\2026-10-27T05-47-37-970Z"
+}

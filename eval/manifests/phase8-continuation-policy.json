@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "registered_on": "2026-10-27",
+  "authorization": "User: complete remaining work and inform me to fix any blocker. Explicit continuation request after the six-slot stop. Only the 30 untouched original assignments; no retries, extra probe, purchase, reset, account or model substitution.",
+  "method_variant": "terminal_event_with_bounded_cleanup_v2_outcome_precedence",
+  "max_new_attempts": 30,
+  "max_total_attempts": 36,
+  "max_additional_model_probes": 0,
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds_per_task": 300,
+  "cleanup_grace_seconds": 5,
+  "prior_capability_report": "eval/runs/phase8-readiness/2026-10-27T04-42-27-838Z/report.json",
+  "prior_capability_sha256": "550e58fda3308b5f697ed0ebc0f7d935a1f44caff63957af7f6a6caa5dee7c56",
+  "completion": "Successful terminal JSONL event before task deadline plus verified owned process/stream cleanup. Five-second cleanup grace applies identically to A/B; forced cleanup is explicit and included in total elapsed time. Correctness requires protected assessment and review.",
+  "readiness": "Fresh static isolation and direct non-model basic-fixture MCP check, with unchanged product/host/arguments/permissions and exact prior successful capability proof. No additional model probe.",
+  "stop_rule": "Stop immediately on quota/authentication/isolation/protocol/cleanup failure. Preserve all slots; no retries, implicit additional recovery block, purchases, resets or model substitution. A genuine task deadline, ignored context or product tool failure remains an eligible outcome.",
+  "analysis": "15 planned new paired tasks in original order. Earlier blocks remain separate. Preserve every eligible failure/non-use, censored timing and missing usage. No held-out tuning or second repetition.",
+  "assignments": [
+    {
+      "id": "picomatch-h06",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h06-r1-B"
+    },
+    {
+      "id": "picomatch-h06",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h06-r1-A"
+    },
+    {
+      "id": "json-server-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h04-r1-A"
+    },
+    {
+      "id": "json-server-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h04-r1-B"
+    },
+    {
+      "id": "json-server-h05",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h05-r1-B"
+    },
+    {
+      "id": "json-server-h05",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h05-r1-A"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h01-r1-A"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h01-r1-B"
+    },
+    {
+      "id": "fastify-h02",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h02-r1-B"
+    },
+    {
+      "id": "fastify-h02",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h02-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h03-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h03-r1-B"
+    },
+    {
+      "id": "fastify-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h04-r1-B"
+    },
+    {
+      "id": "fastify-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h04-r1-A"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h07-r1-A"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h07-r1-B"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h08-r1-B"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h08-r1-A"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h07-r1-A"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h07-r1-B"
+    },
+    {
+      "id": "json-server-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h08-r1-B"
+    },
+    {
+      "id": "json-server-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h08-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h09-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h09-r1-B"
+    },
+    {
+      "id": "json-server-h10",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h10-r1-B"
+    },
+    {
+      "id": "json-server-h10",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h10-r1-A"
+    },
+    {
+      "id": "fastify-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h08-r1-A"
+    },
+    {
+      "id": "fastify-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h08-r1-B"
+    },
+    {
+      "id": "fastify-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h09-r1-B"
+    },
+    {
+      "id": "fastify-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h09-r1-A"
+    }
+  ],
+  "availability_decision": "Current desktop account API reports ordinaryUsageAllowed=true, 12% primary and 2% secondary used, no reached-limit flag. This does not prove model availability. First invocation is the next real assignment, consuming its normal slot; stop immediately if provider refusal repeats. No dedicated model probe.",
+  "implementation_changes": "Use tested evaluationOutcome precedence; await fixture initialization. Keep product/host/MCP/prompts/task limits/cleanup unchanged. Analyze as a separate continuation stratum.",
+  "preceding_registration_sha256": "cb99e2b780da5910986c2c371ef1cb3206ff2e910615edc09dbd9d912b29c117"
+}

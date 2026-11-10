@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "version": "agent-pool-v2",
+  "created_at": "2026-10-26T12:15:10.407Z",
+  "status": "metadata_and_family_qualified_behavior_pending",
+  "original_manifest_sha256": "45370c851f559d780cef298d1f85afdadaa8ab32d84946e8469b2648f2074e33",
+  "review_sha256": "44a873bb87c247099eba3664d435de098e83c4457bfb63b54cf81c302618c562",
+  "selection_hash": "e787e669f1f63686cb52a181b6d6ed9db93436681e6c052f212a68e84c5ff1b5",
+  "policy": "eval/manifests/qualification-policy.json",
+  "limitations": [
+    "Metadata/source fit only. Behavioral fail-before/pass-after and dependency/runtime setup remain pending except initial five tasks.",
+    "Related within-split families remain clustered; 18 holdout tasks are not 18 independent families.",
+    "Older JSON Server replacements span legacy versions; compatibility and effort must be separately reported.",
+    "Few genuinely cross-file runtime fixes remain eligible; category distribution is observed, not forced."
+  ],
+  "agent_runs_allowed": false,
+  "tasks": [
+    {
+      "id": "picomatch-d01",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "behavioral_regression_verified",
+      "base_commit": "838c9d791cbd0e7c92e858f71ae38f6597416c09",
+      "fix_commit": "8f5ecc02e186bfea06cf50f35d0539c339e1a26e",
+      "title": "fix: treat `**` adjacent to a literal as a single star (#99)",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/issue-related.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/8f5ecc02e186bfea06cf50f35d0539c339e1a26e",
+      "prompt": "Patterns such as **.thing.js and **.js incorrectly match files inside nested directories. A double star adjacent to a literal in the same path segment should behave like a single star. Fix this while preserving matching for files in the current segment and standalone **/ directory traversal. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/picomatch-initial.cjs",
+        "ground_truth_verified": true,
+        "review_required_after_tests": true
+      },
+      "family": "globstar-semantics",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "c352efd294c5fd188612dcc40f14009fbda52683"
+    },
+    {
+      "id": "picomatch-h01",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "36bc4615479355c30eac88b60a12e79cdaf892fd",
+      "fix_commit": "15c324a9dae5d5b1e7281a6708d16371a0b14098",
+      "title": "fix: include the backslash in [[:punct:]]",
+      "source_files_changed": [
+        "lib/constants.js"
+      ],
+      "assessment_files_changed": [
+        "test/posix-classes.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/15c324a9dae5d5b1e7281a6708d16371a0b14098",
+      "prompt": null,
+      "assessment": null,
+      "family": "posix-punctuation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "391788b35786cd97ded3446100f63f3cf27420d0"
+    },
+    {
+      "id": "picomatch-d02",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "behavioral_regression_verified",
+      "base_commit": "36bc4615479355c30eac88b60a12e79cdaf892fd",
+      "fix_commit": "75c313a9a5de0883afbbd9fa74ae03ef2919bd3e",
+      "title": "fix: allow globstars to match paths containing newlines",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/globstars.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/75c313a9a5de0883afbbd9fa74ae03ef2919bd3e",
+      "prompt": "Globstar matching fails for legal POSIX paths containing newline characters. Make ** and nested globstar patterns support these paths without changing default hidden-file behavior. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/picomatch-initial.cjs",
+        "ground_truth_verified": true,
+        "review_required_after_tests": true
+      },
+      "family": "globstar-semantics",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "6bd77c3ce45aefe6d9f08b8b0dddc820a9921bc4"
+    },
+    {
+      "id": "picomatch-h02",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "fix_commit": "73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+      "title": "fix: preserve bracket negation compatibility",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/brackets.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+      "prompt": null,
+      "assessment": null,
+      "family": "bracket-negation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "ae307b553a893c99c56aded3a9f1f7e7108be094"
+    },
+    {
+      "id": "picomatch-d03",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "behavioral_regression_verified",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "fix_commit": "f2011653e8eaa13bae6dffed7e7016ea8e123485",
+      "title": "fix: return complete pattern parts from scan",
+      "source_files_changed": [
+        "lib/scan.js"
+      ],
+      "assessment_files_changed": [
+        "test/api.scan.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/f2011653e8eaa13bae6dffed7e7016ea8e123485",
+      "prompt": "picomatch.scan(pattern, { parts: true }) returns incomplete pattern parts. Handle patterns without separators, preserve leading/trailing empty segments, and avoid splitting inside nested or escaped parentheses. Keep prefixes out of the returned parts. Add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/picomatch-initial.cjs",
+        "ground_truth_verified": true,
+        "review_required_after_tests": true
+      },
+      "family": "scanner-parts",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "0df96228f8423ab45d5ec95f8ba22234f2248540"
+    },
+    {
+      "id": "picomatch-d04",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "behavioral_regression_verified",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "fix_commit": "5f5819dd4c0572c87df9a8011dffa65df5b6879f",
+      "title": "fix: scan full pattern when tokens are requested",
+      "source_files_changed": [
+        "lib/scan.js"
+      ],
+      "assessment_files_changed": [
+        "test/api.scan.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/5f5819dd4c0572c87df9a8011dffa65df5b6879f",
+      "prompt": "picomatch.scan(\"a/b/*/c\", { tokens: true }) should return parts [\"a\", \"b\", \"*\", \"c\"], just as the explicit parts option does, instead of stopping at the first glob. Fix the tokens-only behavior and add a regression test.",
+      "assessment": {
+        "script": "eval/labels/picomatch-initial.cjs",
+        "ground_truth_verified": true,
+        "review_required_after_tests": true
+      },
+      "family": "scanner-parts",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "8f1fa8c88516784819f2620fd30f60e634c295b3"
+    },
+    {
+      "id": "picomatch-h04",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "fix_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "title": "fix: translate POSIX bracket negation by default",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/brackets.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "prompt": null,
+      "assessment": null,
+      "family": "bracket-negation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "93264b4e3c4a62cccee5536f20eef2f66dcbe781"
+    },
+    {
+      "id": "picomatch-d05",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "behavioral_regression_verified",
+      "base_commit": "69a2d181b9c0c7bc5454eb2e188b4763427e9000",
+      "fix_commit": "ab8bc4df8141b53ffb5473f301c289c6108eedf7",
+      "title": "fix: honor the windows option when matching basenames",
+      "source_files_changed": [
+        "lib/picomatch.js"
+      ],
+      "assessment_files_changed": [
+        "test/options.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/ab8bc4df8141b53ffb5473f301c289c6108eedf7",
+      "prompt": "picomatch basename/matchBase matching with windows: true fails on backslash-separated and mixed-separator paths. For example foo\\bar.js should match bar.js with basename: true and windows: true. Preserve negative matches and add regression coverage.",
+      "assessment": {
+        "script": "eval/labels/picomatch-initial.cjs",
+        "ground_truth_verified": true,
+        "review_required_after_tests": true
+      },
+      "family": "windows-basename",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "fcae79814025d3879381854bec651bb71e0968ec"
+    },
+    {
+      "id": "picomatch-d06",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "bf6a33bd3db990edfbfd20b3b160eed926cd07dd",
+      "fix_commit": "a9e2dd27a3bc1e6298ba005c0bc8587162eefa18",
+      "title": "fix: exception when glob pattern contains `constructor`",
+      "source_files_changed": [
+        "lib/constants.js"
+      ],
+      "assessment_files_changed": [
+        "test/malicious.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/a9e2dd27a3bc1e6298ba005c0bc8587162eefa18",
+      "prompt": null,
+      "assessment": null,
+      "family": "replacement-table-lookup",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "1bacbbfc89fa1f1d6acbd478f759c6c4d8d126fa"
+    },
+    {
+      "id": "picomatch-h06",
+      "repository": "picomatch",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "5214db489eb118db1bcfde39f446188757bb45cf",
+      "fix_commit": "563f534f644e1c661799afff32f770137db9c85e",
+      "title": "fix bad `text` values in `parse`",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/api.picomatch.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/563f534f644e1c661799afff32f770137db9c85e",
+      "prompt": null,
+      "assessment": null,
+      "family": "parser-text-token",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "00e8a652ab284aa20686cf8042d41962ac695ad2"
+    },
+    {
+      "id": "picomatch-d07",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "820dbceadc5e450e03b551c7abba91c7d6bc5758",
+      "fix_commit": "ac3cb660ca76764627aa825676df59378dd60bcd",
+      "title": "fix: support stars in negation extglobs with expression after closing parenthesis",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/extglobs.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/ac3cb660ca76764627aa825676df59378dd60bcd",
+      "prompt": null,
+      "assessment": null,
+      "family": "negated-extglob-suffix",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "0f89420897c9889f87ad2d00a1ed21a89d464903"
+    },
+    {
+      "id": "picomatch-d08",
+      "repository": "picomatch",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "0273e43dbc78797bc1424d2f0e1dde77ed2e5dcb",
+      "fix_commit": "e0042e0462fdb46437897aae8f27e99bce54fefc",
+      "title": "fixes https://github.com/micromatch/picomatch/issues/83",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/extglobs-temp.js",
+        "test/extglobs.js"
+      ],
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/e0042e0462fdb46437897aae8f27e99bce54fefc",
+      "prompt": null,
+      "assessment": null,
+      "family": "negated-extglob-suffix",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "df49f9ffd7935874518647d305e3383a19ea944d"
+    },
+    {
+      "id": "json-server-d01",
+      "repository": "json-server",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "6ad7562b6aba175bec616d342e1319e8dbbad1af",
+      "fix_commit": "8d42c4079342acd0a6bbc21c9575219235d4e493",
+      "title": "Fix: return JSON response for 404 errors instead of plain text (#1738)",
+      "source_files_changed": [
+        "src/app.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/8d42c4079342acd0a6bbc21c9575219235d4e493",
+      "prompt": null,
+      "assessment": null,
+      "family": "missing-resource-response",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "ce480aef9cdb54054a7ec3f646d8120e367ee4c8"
+    },
+    {
+      "id": "json-server-d02",
+      "repository": "json-server",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "62d245dd60704556f2bb938aeff638a58faadb5a",
+      "fix_commit": "503b96970edeb36c3f533acaa478176378b8e7cb",
+      "title": "fix: return 400 for invalid JSON request bodies",
+      "source_files_changed": [
+        "src/app.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/503b96970edeb36c3f533acaa478176378b8e7cb",
+      "prompt": null,
+      "assessment": null,
+      "family": "body-shape-validation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "b339505de7ee24e2134a44dd676a8e72c6b09000"
+    },
+    {
+      "id": "json-server-d03",
+      "repository": "json-server",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "580a71faa6af7d39f2a9dc52e432f90998d6fb27",
+      "fix_commit": "c3afd0fb197bfc5e790bd1a3d2df8dce6f2a4780",
+      "title": "fix: patch error (#1676)",
+      "source_files_changed": [
+        "src/app.ts",
+        "src/bin.ts",
+        "src/observer.ts",
+        "src/service.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts",
+        "src/service.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/c3afd0fb197bfc5e790bd1a3d2df8dce6f2a4780",
+      "prompt": null,
+      "assessment": null,
+      "family": "object-resource-update",
+      "review_reason": "Runtime merge correction is in service.ts; other changed files contain formatting/refactor noise.",
+      "source_patch_id": "532972d344ab461f49dcb5905ac52add5b62de24"
+    },
+    {
+      "id": "json-server-d04",
+      "repository": "json-server",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "8fb0f728969160ab63286e8cd82a231cfd18c3b1",
+      "fix_commit": "827c5c31a4da829b036aa050c4bb678a3b3601f3",
+      "title": "fix: boolean handling in GET list",
+      "source_files_changed": [
+        "src/service.ts"
+      ],
+      "assessment_files_changed": [
+        "src/service.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/827c5c31a4da829b036aa050c4bb678a3b3601f3",
+      "prompt": null,
+      "assessment": null,
+      "family": "list-property-filtering",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "cb7da76e39b1876fec272330b5d49ea110031747"
+    },
+    {
+      "id": "json-server-h04",
+      "repository": "json-server",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "e58a6ac4991e6312f5764ca30e3677f5cfd655f4",
+      "fix_commit": "d0307026e4440ff16e827293f956b25b77606619",
+      "title": "fix: public",
+      "source_files_changed": [
+        "src/app.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/d0307026e4440ff16e827293f956b25b77606619",
+      "prompt": null,
+      "assessment": null,
+      "family": "static-root",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "3bf4973af7c4fc85ef208a12711219c392d61941"
+    },
+    {
+      "id": "json-server-d05",
+      "repository": "json-server",
+      "split": "development",
+      "category": "cross_file",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "9a255847e075b69aa75ccfcba6984afb6fa168ad",
+      "fix_commit": "3710dce4a025da99ffce4b424a51b6c9d07861bb",
+      "title": "fix: pagination",
+      "source_files_changed": [
+        "src/app.ts",
+        "src/service.ts"
+      ],
+      "assessment_files_changed": [
+        "src/service.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/3710dce4a025da99ffce4b424a51b6c9d07861bb",
+      "prompt": null,
+      "assessment": null,
+      "family": "pagination-slicing",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "bf54d253a58d4a94fa3fd92eadfb7097d16f9136"
+    },
+    {
+      "id": "json-server-h05",
+      "repository": "json-server",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "a4d829ab52811447449947c841cd7e6ad6714e87",
+      "fix_commit": "a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+      "title": "fix: _embed param",
+      "source_files_changed": [
+        "src/service.ts"
+      ],
+      "assessment_files_changed": [
+        "src/app.test.ts"
+      ],
+      "provenance_url": "https://github.com/typicode/json-server/commit/a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+      "prompt": null,
+      "assessment": null,
+      "family": "resource-relations",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "d6b5d2c5b711579738e8e60594c0089df11f1797"
+    },
+    {
+      "id": "fastify-d01",
+      "repository": "fastify",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "05869c5cca5964776fdb61230ac60c5fa297f593",
+      "fix_commit": "2a64ae1627d78fe1f22fb021a7e5763581384473",
+      "title": "fix(decorators): evaluate instance getters once in getDecorator (#7124)",
+      "source_files_changed": [
+        "lib/decorate.js"
+      ],
+      "assessment_files_changed": [
+        "test/decorator.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/2a64ae1627d78fe1f22fb021a7e5763581384473",
+      "prompt": null,
+      "assessment": null,
+      "family": "decorator-getter-access",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "7eb4bc9706ff987816ba82693d653b955d1efe5c"
+    },
+    {
+      "id": "fastify-h01",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "fix_commit": "37df44a421817e7bb048fce834bf691abb0999d6",
+      "title": "fix: contain synchronous throws from custom content type parsers (#7118)",
+      "source_files_changed": [
+        "lib/content-type-parser.js"
+      ],
+      "assessment_files_changed": [
+        "test/content-parser.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/37df44a421817e7bb048fce834bf691abb0999d6",
+      "prompt": null,
+      "assessment": null,
+      "family": "parser-error-containment",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "50ae82138ed9e86a4d82b93f54328df6fb0164d2"
+    },
+    {
+      "id": "fastify-d02",
+      "repository": "fastify",
+      "split": "development",
+      "category": "cross_file",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "f736849a10a9b2ca57fb09437feb8294cda76234",
+      "fix_commit": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "title": "fix: clamp error statusCode between 400 and 599 with 500 fallback (#7089)",
+      "source_files_changed": [
+        "lib/error-handler.js",
+        "lib/error-status.js"
+      ],
+      "assessment_files_changed": [
+        "test/diagnostics-channel/error-status.test.js",
+        "test/reply-error.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "prompt": null,
+      "assessment": null,
+      "family": "error-status-selection",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "b015e1666abbef2407b14a8f8cd0568ed65ac489"
+    },
+    {
+      "id": "fastify-h02",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "e222f53aa267080b349eacdeaff03ea9a061e8c7",
+      "fix_commit": "a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+      "title": "fix(reply): send stream trailers after the stream actually finishes (#6953)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/reply-trailers.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+      "prompt": null,
+      "assessment": null,
+      "family": "stream-trailer-completion",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "66617d7b9999bfe11a9e2f17dd3e95e2524dd406"
+    },
+    {
+      "id": "fastify-d03",
+      "repository": "fastify",
+      "split": "development",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "b7eb53e41e1db355ddd2a04f2fbbfca7962a7bd9",
+      "fix_commit": "5c081d4b7237f0eb2db9f1204dc6400e3aa1325e",
+      "title": "fix: copy a set-cookie array passed to reply.header instead of storing it (#7068)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/internals/reply.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/5c081d4b7237f0eb2db9f1204dc6400e3aa1325e",
+      "prompt": null,
+      "assessment": null,
+      "family": "set-cookie-ownership",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "afbfbc0c8a4397dd041927d2ebeaa9f24855698a"
+    },
+    {
+      "id": "fastify-h03",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "d174a98e1a541639878d9f25b3738c78aa5c0165",
+      "fix_commit": "19d5be0daf1c0daace758efe3ea788f924ca1224",
+      "title": "fix: resolve reply.mediaType from raw response headers (#7054)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/internals/reply.test.js",
+        "test/reply-media-type.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/19d5be0daf1c0daace758efe3ea788f924ca1224",
+      "prompt": null,
+      "assessment": null,
+      "family": "effective-media-type",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "f608172a7164d623fa9e1380f5512ebbd9e78cb8"
+    },
+    {
+      "id": "fastify-d04",
+      "repository": "fastify",
+      "split": "development",
+      "category": "cross_file",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "fix_commit": "bc25b7499acedb803ef3cef644d0d56cf4e7c725",
+      "title": "fix: remove error when HTTP QUERY request has empty body (#6929)",
+      "source_files_changed": [
+        "lib/errors.js",
+        "lib/handle-request.js"
+      ],
+      "assessment_files_changed": [
+        "test/internals/errors.test.js",
+        "test/rfc-10008.test.js",
+        "test/types/errors.tst.ts"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/bc25b7499acedb803ef3cef644d0d56cf4e7c725",
+      "prompt": null,
+      "assessment": null,
+      "family": "query-empty-body",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "577e253c2060a9aa663ff87e6fb3fc48a0c99a88"
+    },
+    {
+      "id": "fastify-h04",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "2e3ebc5f984e0744b0738faff207cbac1875c3b3",
+      "fix_commit": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "title": "fix: omit absent compileSerializationSchema metadata instead of passing null (#7001)",
+      "source_files_changed": [
+        "lib/reply.js"
+      ],
+      "assessment_files_changed": [
+        "test/internals/reply-serialize.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "prompt": null,
+      "assessment": null,
+      "family": "serialization-metadata",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "3aaeece1cad71493a9b5727a441d94c5a19cea3c"
+    },
+    {
+      "id": "fastify-d05",
+      "repository": "fastify",
+      "split": "development",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+      "fix_commit": "a34c3e530ffcbe3740b044a1599bea77ccc71d67",
+      "title": "fix(validation): do not unwrap async validator results",
+      "source_files_changed": [
+        "lib/validation.js"
+      ],
+      "assessment_files_changed": [
+        "test/schema-special-usage.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/a34c3e530ffcbe3740b044a1599bea77ccc71d67",
+      "prompt": null,
+      "assessment": null,
+      "family": "request-schema-validation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "e7000134d4d4ca595aa0ceb8bcdbfc21b0f061d8"
+    },
+    {
+      "id": "fastify-h05",
+      "repository": "fastify",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "0c170ca13f70aafa8ade685406c913591900e1f4",
+      "fix_commit": "d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+      "title": "fix: reject malformed URLs before custom 404 handlers",
+      "source_files_changed": [
+        "lib/four-oh-four.js"
+      ],
+      "assessment_files_changed": [
+        "test/404s.test.js",
+        "test/router-options.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/d66ebd121c5a621ab0b03569fc75bd1cf829e52a",
+      "prompt": null,
+      "assessment": null,
+      "family": "not-found-routing",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "3183a1592b64e909ecd7dee4c64d8d2d3463820c"
+    },
+    {
+      "id": "fastify-d06",
+      "repository": "fastify",
+      "split": "development",
+      "category": "cross_file",
+      "qualification": "metadata_qualified_behavior_pending",
+      "base_commit": "3aa8dfd7298c6e02399a7b3c29c637eb092dc9ef",
+      "fix_commit": "0c170ca13f70aafa8ade685406c913591900e1f4",
+      "title": "fix(validation): compile boolean false request schemas",
+      "source_files_changed": [
+        "lib/route.js",
+        "lib/schemas.js",
+        "lib/validation.js"
+      ],
+      "assessment_files_changed": [
+        "test/schema-feature.test.js"
+      ],
+      "provenance_url": "https://github.com/fastify/fastify/commit/0c170ca13f70aafa8ade685406c913591900e1f4",
+      "prompt": null,
+      "assessment": null,
+      "family": "request-schema-validation",
+      "review_reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified.",
+      "source_patch_id": "dc85b6cd35d52bce8ac9460f3dfca1d7ef1ef961"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "base_commit": "002e806951ddadc7b27c9d8e8f92d6709d34d1d7",
+      "title": "fixes https://github.com/micromatch/picomatch/issues/49",
+      "source_files_changed": [
+        "lib/parse.js"
+      ],
+      "assessment_files_changed": [
+        "test/braces.js"
+      ],
+      "id": "picomatch-h07",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "brace-compilation",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing brace parsing loses balanced/literal brace behavior; distinct from development extglob/globstar families.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Existing brace parsing loses balanced/literal brace behavior; distinct from development extglob/globstar families.",
+      "source_patch_id": "7f08929a76650046878a458e03f6720efe0fcefe",
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/f9c1a97aba3d2e86d4ced104b548a0e80757debb"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "base_commit": "44c925c5de037cf16b357c3c5a0a9fac86b025f0",
+      "title": "fix: disable fastpaths mode for parse method",
+      "source_files_changed": [
+        "lib/picomatch.js"
+      ],
+      "assessment_files_changed": [
+        "test/api.picomatch.js"
+      ],
+      "id": "picomatch-h08",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "public-parse-state",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Public parse must provide full parse state rather than the matching fast-path shortcut; different contract from wildcard matching.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Public parse must provide full parse state rather than the matching fast-path shortcut; different contract from wildcard matching.",
+      "source_patch_id": "9c2b7a1b3db910e6dbcf1abec8af1e74e4502639",
+      "provenance_url": "https://github.com/micromatch/picomatch/commit/5b8d33f3ab6c4dd28fe850dfd6593d78130b576d"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "base_commit": "3ec3dec19a97ae3b7b4fa8f53073f16e9d71aaa5",
+      "title": "Foreign key suffix (#570)",
+      "source_files_changed": [
+        "src/cli/index.js",
+        "src/cli/run.js",
+        "src/server/mixins.js",
+        "src/server/router/index.js",
+        "src/server/router/nested.js",
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/cli/index.js",
+        "test/server/mixins.js",
+        "test/server/plural-with-custom-foreign-key.js"
+      ],
+      "id": "json-server-h07",
+      "split": "holdout",
+      "category": "cross_file",
+      "family": "resource-relations",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing CLI foreignKeySuffix option is not honored across nested/relationship paths; source before the fix already advertises the option. New regression exercises the existing flag.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Existing CLI foreignKeySuffix option is not honored across nested/relationship paths; source before the fix already advertises the option. New regression exercises the existing flag.",
+      "source_patch_id": "b3f7cf5d066a686b7d3aa15470a029a4ed2c03dc",
+      "provenance_url": "https://github.com/typicode/json-server/commit/9bff1b6f3d08e94c43c3641ad07b947428a21ce0"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "base_commit": "74903968c2a3a7cd40cb7793ea2744cbe4ba8136",
+      "title": "Fix lint",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-h08",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "resource-relations",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Despite the lint title, source adds a default opts object and tests remove explicit defaults: a runtime default-router regression, not just formatting.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Despite the lint title, source adds a default opts object and tests remove explicit defaults: a runtime default-router regression, not just formatting.",
+      "source_patch_id": "59b6244fe1f08650440e41ea94578cbf36056426",
+      "provenance_url": "https://github.com/typicode/json-server/commit/e39d25920c392b4f37ce4cc9b7f916ba640f3a5e"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "dcae2885a0d678d0f2b3479d567ceecc4ac276cf",
+      "base_commit": "6559219acdf610bc1d56061833f6d8b04d88b6c0",
+      "title": "Fix #510 thanks to @robinvenneman",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-d07",
+      "split": "development",
+      "category": "vague_symptom",
+      "family": "list-property-filtering",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Null field values reach string conversion; a focused runtime guard. This family is already development-only.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Null field values reach string conversion; a focused runtime guard. This family is already development-only.",
+      "source_patch_id": "9ba475a5222d8344ff7e217b685b5b4a6df8f3a2",
+      "provenance_url": "https://github.com/typicode/json-server/commit/dcae2885a0d678d0f2b3479d567ceecc4ac276cf"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "base_commit": "2c435eeb4ea4df9475ba3ba20765060c4b637578",
+      "title": "Fix duplicate query params error (Issue: #352) (#465)",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-h09",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "fulltext-input-shape",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Duplicate q parameters produce an array and crash string normalization; no diagnostic development q-search task.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Duplicate q parameters produce an array and crash string normalization; no diagnostic development q-search task.",
+      "source_patch_id": "1b33376a4901ca2bd278951caa022ea7cf2553d7",
+      "provenance_url": "https://github.com/typicode/json-server/commit/7ce02798782b1f69ccf69fc75b8f30ab85226adb"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "title": "Exposing `Link` in the header instead of `Links` (#394)",
+      "source_files_changed": [
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js"
+      ],
+      "id": "json-server-h10",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "cors-header-exposure",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Wrong Link header name in CORS exposure; header transport contract is separate from pagination arithmetic.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Wrong Link header name in CORS exposure; header transport contract is separate from pagination arithmetic.",
+      "source_patch_id": "09156280ab2fc6693164e480745b66b551bcb11a",
+      "provenance_url": "https://github.com/typicode/json-server/commit/2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "4176096a31f5b4c31512c36f578b08a596a72435",
+      "base_commit": "83e69762aff047940b376fc2a266d143499ef727",
+      "title": "fix: callNotFound should run not-found preHandler regardless of registration order (#6965)",
+      "source_files_changed": [
+        "lib/four-oh-four.js"
+      ],
+      "assessment_files_changed": [
+        "test/404s.test.js"
+      ],
+      "id": "fastify-h07",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "not-found-routing",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Registration order drops not-found preHandler hooks; development has no not-found-routing task. Related holdout 404 tasks remain clustered.",
+      "qualification": "metadata_qualified_behavior_pending",
+      "review_reason": "Registration order drops not-found preHandler hooks; development has no not-found-routing task. Related holdout 404 tasks remain clustered.",
+      "source_patch_id": "679bb01e32da72a9101a2704b550fa5869477f14",
+      "provenance_url": "https://github.com/fastify/fastify/commit/4176096a31f5b4c31512c36f578b08a596a72435"
+    }
+  ],
+  "pre_tuning_formatting_erratum": {
+    "previous_review_sha256": "1fcfa2e486b6cbc077129a94ae050300d4651153e1504b3c2fcbedd4f192c817",
+    "reason": "Prettier formatting only; parsed decisions and selection hash unchanged; finalized before any lexical refinement."
+  },
+  "metadata_finalized_before_tuning_at": "2026-10-26T12:21:01.141Z"
+}

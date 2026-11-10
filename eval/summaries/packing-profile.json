@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-10-26T11:41:43.965Z",
+  "purpose": "Separate post-study instrumentation only; counter wrapper returns unchanged counts. No production changes or ranking retuning.",
+  "tokenizer_initialization_ms": 426.22889999999995,
+  "rows": [
+    {
+      "id": "picomatch-d01",
+      "total_ms": 4206.8721,
+      "token_count_calls": 1549,
+      "token_count_ms": 3605.399100000005,
+      "items": 4,
+      "counted_tokens": 2000
+    },
+    {
+      "id": "picomatch-d03",
+      "total_ms": 505.46349999999984,
+      "token_count_calls": 22,
+      "token_count_ms": 25.872099999997772,
+      "items": 6,
+      "counted_tokens": 1991
+    },
+    {
+      "id": "fastify-d01",
+      "total_ms": 1929.7614999999996,
+      "token_count_calls": 20,
+      "token_count_ms": 20.179700000001503,
+      "items": 6,
+      "counted_tokens": 1912
+    }
+  ]
+}

@@ -1,0 +1,601 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-26T18-48-30-353Z",
+  "created_at": "2026-10-26T18:49:10.685Z",
+  "runtime": "v24.22.1",
+  "platform": "win32",
+  "registration": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\runs\\holdout-audit\\2026-10-26T18-48-30-353Z\\registration.json",
+  "readiness_sha256": "9aa0c6f4f316728a81c6d8c8cf4b76296059e01a4b4ab29295db0eecbf20942f",
+  "assessments": [
+    {
+      "path": "eval/labels/holdout-regressions.cjs",
+      "sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3"
+    },
+    {
+      "path": "eval/labels/holdout-modern.mjs",
+      "sha256": "e08e76298658bf9266fe869441ce3fef34ef400c4d63c2c2669a4cedd1601486"
+    }
+  ],
+  "tasks": 18,
+  "verified": 18,
+  "model_calls": 0,
+  "holdout_queries": 0,
+  "agent_runs_allowed": false,
+  "results": [
+    {
+      "id": "picomatch-h01",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "f7c411d58e819dc45c8f6cc70b792ef07ece1417faa50177e1d45ae12b6f3604",
+        "status": "ready",
+        "elapsed_ms": 0.5142000000000166,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": null,
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "36bc4615479355c30eac88b60a12e79cdaf892fd",
+      "fix_commit": "15c324a9dae5d5b1e7281a6708d16371a0b14098",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 188.65359999999998,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:15:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 152.07180000000005,
+        "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "picomatch-h02",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "f7c411d58e819dc45c8f6cc70b792ef07ece1417faa50177e1d45ae12b6f3604",
+        "status": "ready",
+        "elapsed_ms": 0.5142000000000166,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": null,
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "fix_commit": "73de57b15b1f3880d5aaeea9327fecadd92a84a4",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 131.00070000000005,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:19:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 139.3789999999999,
+        "stdout": "{\"id\":\"picomatch-h02\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "picomatch-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "f7c411d58e819dc45c8f6cc70b792ef07ece1417faa50177e1d45ae12b6f3604",
+        "status": "ready",
+        "elapsed_ms": 0.5142000000000166,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": null,
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "4f41a8edade7a5ab19832f7b40ecce46b288767f",
+      "fix_commit": "c5308fe10dcfed88ffac4d5bbb667348119706d9",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 139.7281999999998,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:25:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: true,\n  expected: false,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 132.33940000000007,
+        "stdout": "{\"id\":\"picomatch-h04\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "picomatch-h06",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "f7c411d58e819dc45c8f6cc70b792ef07ece1417faa50177e1d45ae12b6f3604",
+        "status": "ready",
+        "elapsed_ms": 0.5142000000000166,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": null,
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "5214db489eb118db1bcfde39f446188757bb45cf",
+      "fix_commit": "563f534f644e1c661799afff32f770137db9c85e",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 185.08300000000008,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'foo.',\n+     '.'\n-     'foo.'\n    ],\n    [\n      'm|c|',\n+     '|c|'\n-     'm|c|'\n    ],\n    [\n      'js',\n      undefined\n    ]\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:31:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [Array],\n  expected: [Array],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 134.0909999999999,
+        "stdout": "{\"id\":\"picomatch-h06\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "json-server-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "1a57e3e78a65ab1946bdcf66c353f1af85b41442a0278537dd69b2542b60b876",
+        "status": "ready",
+        "elapsed_ms": 3749.4090000000006,
+        "source_lock_available": true,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "741fd47da965c4aefdaeacb6c396300599368e35726d890ed7fa10f32affd9b4",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "e58a6ac4991e6312f5764ca30e3677f5cfd655f4",
+      "fix_commit": "d0307026e4440ff16e827293f956b25b77606619",
+      "assessment_sha256": "e08e76298658bf9266fe869441ce3fef34ef400c4d63c2c2669a4cedd1601486",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 1517.5720000000001,
+        "stdout": "",
+        "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n\r\n404 !== 200\r\n\r\n    at file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/labels/holdout-modern.mjs:52:12\r\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\r\n  generatedMessage: true,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 404,\r\n  expected: 200,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.22.1\r\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 3516.435800000001,
+        "stdout": "{\"id\":\"json-server-h04\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "json-server-h05",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "1a57e3e78a65ab1946bdcf66c353f1af85b41442a0278537dd69b2542b60b876",
+        "status": "ready",
+        "elapsed_ms": 3749.4090000000006,
+        "source_lock_available": true,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "741fd47da965c4aefdaeacb6c396300599368e35726d890ed7fa10f32affd9b4",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "a4d829ab52811447449947c841cd7e6ad6714e87",
+      "fix_commit": "a4dda8ec64dcf0c3572db190d03caab191a3f5cc",
+      "assessment_sha256": "e08e76298658bf9266fe869441ce3fef34ef400c4d63c2c2669a4cedd1601486",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 145.57279999999992,
+        "stdout": "",
+        "stderr": "file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/.cache/holdout-qualification/2026-10-26T18-41-27-369Z/json-server-h05/before/src/service.js:109\r\n            query._embed?.forEach((related) => {\r\n                          ^\r\n\r\nTypeError: query._embed?.forEach is not a function\r\n    at Service.findById (file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/.cache/holdout-qualification/2026-10-26T18-41-27-369Z/json-server-h05/before/src/service.js:109:27)\r\n    at file:///C:/Users/FAZLUL/Desktop/MainProject/SuperContext/eval/labels/holdout-modern.mjs:21:13\r\n\r\nNode.js v24.22.1\r\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 138.92499999999927,
+        "stdout": "{\"id\":\"json-server-h05\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "fastify-h01",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "9272ad4ca9cbf7f077976e04075cbfb994138d99b04bb3515449f6ca5fc702b9",
+        "status": "ready",
+        "elapsed_ms": 39285.7362,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "bfc388d3522fa872870da1c58f3d49b0d4cee27afd4790dfd910ccf678a7e99b",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "9e9f61a6bf092bbd3cf8d10b792432aa8be085af",
+      "fix_commit": "37df44a421817e7bb048fce834bf691abb0999d6",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 4174.9424,
+        "stdout": "",
+        "stderr": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:68\r\n            throw error;\r\n            ^\r\n\r\nError: assessment parser boom\r\n    at Parser.fn (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:66:27)\r\n    at Request.onEnd (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\fastify-h01\\before\\lib\\content-type-parser.js:320:27)\r\n    at Request.emit (node:events:514:28)\r\n    at endReadableNT (node:internal/streams/readable:1783:12)\r\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {\r\n  statusCode: 413\r\n}\r\n\r\nNode.js v24.22.1\r\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 1546.1052,
+        "stdout": "{\"id\":\"fastify-h01\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "fastify-h02",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "9272ad4ca9cbf7f077976e04075cbfb994138d99b04bb3515449f6ca5fc702b9",
+        "status": "ready",
+        "elapsed_ms": 39285.7362,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "bfc388d3522fa872870da1c58f3d49b0d4cee27afd4790dfd910ccf678a7e99b",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "e222f53aa267080b349eacdeaff03ea9a061e8c7",
+      "fix_commit": "a479a7ce59f99b6f5a0d20f0745dbd16a3906c09",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 1485.5361000000012,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'assessment-etag'\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:111:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: 'assessment-etag',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 1456.6425999999992,
+        "stdout": "{\"id\":\"fastify-h02\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "fastify-h03",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "924cd533ed88a6019833ce3ba3faac3efcfb271c238b9d9c39d25bd97b9148a4",
+        "status": "ready",
+        "elapsed_ms": 12679.286899999992,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "d82934c54d14248a0d4777506ea7e432810ccde5f1f42e0f43ba3e10c91e6755",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "d174a98e1a541639878d9f25b3738c78aa5c0165",
+      "fix_commit": "19d5be0daf1c0daace758efe3ea788f924ca1224",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 1559.0059,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'' !== 'text/html'\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:119:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '',\n  expected: 'text/html',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 1624.532900000002,
+        "stdout": "{\"id\":\"fastify-h03\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "fastify-h04",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "924cd533ed88a6019833ce3ba3faac3efcfb271c238b9d9c39d25bd97b9148a4",
+        "status": "ready",
+        "elapsed_ms": 12679.286899999992,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "d82934c54d14248a0d4777506ea7e432810ccde5f1f42e0f43ba3e10c91e6755",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "2e3ebc5f984e0744b0738faff207cbac1875c3b3",
+      "fix_commit": "c3051e5b60c0e0e95ac0638fae342e82099fe534",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 1765.1971999999987,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- undefined\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:135:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: null,\n  expected: undefined,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 1837.1679000000004,
+        "stdout": "{\"id\":\"fastify-h04\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "picomatch-h07",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "f7c411d58e819dc45c8f6cc70b792ef07ece1417faa50177e1d45ae12b6f3604",
+        "status": "ready",
+        "elapsed_ms": 0.5142000000000166,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": null,
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "002e806951ddadc7b27c9d8e8f92d6709d34d1d7",
+      "fix_commit": "f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 201.88290000000052,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:42:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: true,\n  expected: false,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 134.27930000000197,
+        "stdout": "{\"id\":\"picomatch-h07\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "picomatch-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "f7c411d58e819dc45c8f6cc70b792ef07ece1417faa50177e1d45ae12b6f3604",
+        "status": "ready",
+        "elapsed_ms": 0.5142000000000166,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": null,
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "44c925c5de037cf16b357c3c5a0a9fac86b025f0",
+      "fix_commit": "5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 135.2674999999981,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'bos',\n      ''\n    ],\n-   [\n-     'text',\n-     'a'\n-   ],\n-   [\n-     'star',\n-     '*'\n-   ],\n-   [\n-     'text',\n-     '.txt'\n-   ]\n  ]\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:45:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [Array],\n  expected: [Array],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 118.37350000000151,
+        "stdout": "{\"id\":\"picomatch-h08\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "json-server-h07",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "e41537b012a46c464e856cd69d6f555fd6e4344510361aa1613c7a7fdf78fd5e",
+        "status": "ready",
+        "elapsed_ms": 2333.0815999999904,
+        "source_lock_available": true,
+        "dependency_mode": "runtime_only_regenerated_lock",
+        "lock_sha256": "352208dc2645b6b217aabbae4b8beacd2f3f581ba964bcfd5b8a2739173e393d",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "3ec3dec19a97ae3b7b4fa8f53073f16e9d71aaa5",
+      "fix_commit": "9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 2720.6375000000007,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'undefined' !== '1'\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:226:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 'undefined',\n  expected: '1',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 1565.5168999999987,
+        "stdout": "{ opts: { foreignKeySuffix: '_id' } }\n[ { name: 'comments', id: 1 }, { name: 'comments', id: 3 } ]\n{\"id\":\"json-server-h07\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "json-server-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "e41537b012a46c464e856cd69d6f555fd6e4344510361aa1613c7a7fdf78fd5e",
+        "status": "ready",
+        "elapsed_ms": 2333.0815999999904,
+        "source_lock_available": true,
+        "dependency_mode": "runtime_only_regenerated_lock",
+        "lock_sha256": "352208dc2645b6b217aabbae4b8beacd2f3f581ba964bcfd5b8a2739173e393d",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "74903968c2a3a7cd40cb7793ea2744cbe4ba8136",
+      "fix_commit": "e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 496.385199999997,
+        "stdout": "",
+        "stderr": "TypeError: Cannot read properties of undefined (reading 'foreignKeySuffix')\n    at C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\src\\server\\router\\plural.js:19:44\n    at Array.forEach (<anonymous>)\n    at embed (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\src\\server\\router\\plural.js:15:8)\n    at show (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\src\\server\\router\\plural.js:221:7)\n    at Layer.handle [as handle_request] (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h08\\before\\node_modules\\express\\lib\\router\\index.js:365:14)\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n500 !== 200\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:205:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 500,\n  expected: 200,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 518.3973000000042,
+        "stdout": "{\"id\":\"json-server-h08\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "json-server-h09",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "003a170b7ea14db4763a2ad4ddd2fefdeb9e10da5fa634340a0b99b7c2801013",
+        "status": "ready",
+        "elapsed_ms": 51179.35339999999,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "24534e3cd62410a121ab24c58821e208fb0f8999797cf5d8337403a75dda88a5",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "2c435eeb4ea4df9475ba3ba20765060c4b637578",
+      "fix_commit": "7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 532.715400000001,
+        "stdout": "",
+        "stderr": "TypeError: q.toLowerCase is not a function\n    at list (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\src\\server\\router\\plural.js:95:13)\n    at Layer.handle [as handle_request] (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\holdout-qualification\\2026-10-26T18-41-27-369Z\\json-server-h09\\before\\node_modules\\express\\lib\\router\\index.js:47:12)\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n500 !== 200\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:205:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 500,\n  expected: 200,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 509.7531999999992,
+        "stdout": "{\"id\":\"json-server-h09\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "json-server-h10",
+      "qualification_run": "2026-10-26T18-29-29-901Z",
+      "setup": {
+        "dependency_key": "0fc62778f36c4820fdffb419fa73d9ae233d46c7e28ca435dc1bd01e718e6ac7",
+        "status": "ready",
+        "elapsed_ms": 22605.18590000001,
+        "source_lock_available": false,
+        "lock_sha256": "89752381b432252fe47d96e44d148959e9d9296836f56786aaba2bceefc8d0fd",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 1530.0504,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:209:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 1451.4935000000041,
+        "stdout": "{\"id\":\"json-server-h10\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "fastify-h08",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "924cd533ed88a6019833ce3ba3faac3efcfb271c238b9d9c39d25bd97b9148a4",
+        "status": "ready",
+        "elapsed_ms": 12679.286899999992,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "d82934c54d14248a0d4777506ea7e432810ccde5f1f42e0f43ba3e10c91e6755",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "d693f43d890f07a8852b4737b048ed76458139a2",
+      "fix_commit": "6e95cb9f6de47deaf145138661c70a1eec34ec97",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 425.7641999999978,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '/prefix/'\n- '/prefix'\n          ^\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:148:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '/prefix/',\n  expected: '/prefix',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 421.35050000000047,
+        "stdout": "{\"id\":\"fastify-h08\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    },
+    {
+      "id": "fastify-h09",
+      "qualification_run": "2026-10-26T18-41-27-369Z",
+      "setup": {
+        "dependency_key": "924cd533ed88a6019833ce3ba3faac3efcfb271c238b9d9c39d25bd97b9148a4",
+        "status": "ready",
+        "elapsed_ms": 12679.286899999992,
+        "source_lock_available": false,
+        "dependency_mode": "upstream_package_and_lock_when_available",
+        "lock_sha256": "d82934c54d14248a0d4777506ea7e432810ccde5f1f42e0f43ba3e10c91e6755",
+        "error": null,
+        "exit_code": 0
+      },
+      "base_commit": "9a1535bcfe2a780cc6f9c6555df86e5072ca9a29",
+      "fix_commit": "f5ef34443c5be0cfc7fbde44f84253ef5d0ec66e",
+      "assessment_sha256": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+      "before": {
+        "exit_code": 1,
+        "timed_out": false,
+        "elapsed_ms": 398.35659999999916,
+        "stdout": "",
+        "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 1\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:166:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 3,\n  expected: 1,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+      },
+      "after": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 393.79320000000007,
+        "stdout": "{\"id\":\"fastify-h09\",\"status\":\"passed\"}\n",
+        "stderr": ""
+      },
+      "verified": true
+    }
+  ]
+}

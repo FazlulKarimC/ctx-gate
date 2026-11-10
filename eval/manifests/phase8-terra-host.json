@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "purpose": "Terra evaluation host recovery after legacy temp cleanup",
+  "legacy_host_manifest_sha256": "2465e16ebbc045a9dd208faeb84f13d30b18fbe67760b3e4627eeaaa9744ff1e",
+  "version": "codex-cli 0.163.0",
+  "command": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+  "windows_sandbox": "mxc",
+  "runtime": "v24.22.1",
+  "files": [
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "sha256": "2692c8c7bb2cf8b0aefe638741fc90236f4b824c59578ce84994f9de58200993"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex-code-mode-host.exe",
+      "sha256": "07f3869f0849cd54b31cec1f86ec796f004501bd3a215135c1facc883a2b9988"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\codex-path\\rg.exe",
+      "sha256": "14231169855ec5205cf5a1b6f1db358ff4aed4247c86b69ce8aae647c77f6680"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\codex-resources\\codex-command-runner.exe",
+      "sha256": "fc89dc66c806f25675b9be1e7dafb226807d22761e9741a3bb24b667b803d46c"
+    },
+    {
+      "path": "C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\.cache\\phase8-terra-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\codex-resources\\codex-windows-sandbox-setup.exe",
+      "sha256": "2efc67f77de2658667c1481e00a1c4c964d3e8f6d4f39b638620d80b9d0f6d8a"
+    }
+  ]
+}

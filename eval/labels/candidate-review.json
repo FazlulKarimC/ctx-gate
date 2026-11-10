@@ -1,0 +1,841 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-26T12:13:04.893Z",
+  "method": "Source diffs, base declarations and changed tests reviewed without holdout retrieval/model outcomes. Family/category judgments are explicit and conservative, not proof of statistical independence.",
+  "protected_diagnostic_families": [
+    "body-shape-validation",
+    "decorator-getter-access",
+    "error-status-selection",
+    "globstar-semantics",
+    "list-property-filtering",
+    "missing-resource-response",
+    "negated-extglob-suffix",
+    "object-resource-update",
+    "pagination-slicing",
+    "query-empty-body",
+    "replacement-table-lookup",
+    "request-schema-validation",
+    "resource-identifiers",
+    "scanner-parts",
+    "set-cookie-ownership",
+    "windows-basename"
+  ],
+  "original_decisions": [
+    {
+      "id": "picomatch-d01",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "globstar-semantics",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-h01",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "posix-punctuation",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-d02",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "globstar-semantics",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-h02",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "bracket-negation",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-d03",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "scanner-parts",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-h03",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "globstar-semantics",
+      "disposition": "excluded_agent_pool",
+      "reason": "Conservative globstar-semantics family overlaps development d01/d02."
+    },
+    {
+      "id": "picomatch-d04",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "scanner-parts",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-h04",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "bracket-negation",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-d05",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "windows-basename",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-h05",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "redos-mitigation",
+      "disposition": "excluded_agent_pool",
+      "reason": "Source is a ReDoS-mitigation rewrite, outside the registered non-security task scope."
+    },
+    {
+      "id": "picomatch-d06",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "replacement-table-lookup",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-h06",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "parser-text-token",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-d07",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "negated-extglob-suffix",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "picomatch-d08",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "negated-extglob-suffix",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-d01",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "missing-resource-response",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-h01",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "resource-identifiers",
+      "disposition": "excluded_agent_pool",
+      "reason": "Resource-identifier family was already exposed through diagnostic development d06, even though d06 is now excluded from the agent pool."
+    },
+    {
+      "id": "json-server-d02",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "body-shape-validation",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-h02",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "schema-adapter-feature",
+      "disposition": "excluded_agent_pool",
+      "reason": "Adds schema-inserting adapter/startup capabilities as a feature, not a focused runtime correction."
+    },
+    {
+      "id": "json-server-d03",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "object-resource-update",
+      "disposition": "retain_agent_pool",
+      "reason": "Runtime merge correction is in service.ts; other changed files contain formatting/refactor noise."
+    },
+    {
+      "id": "json-server-h03",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "list-property-filtering",
+      "disposition": "excluded_agent_pool",
+      "reason": "List-property-filtering family overlaps development boolean/filtering work."
+    },
+    {
+      "id": "json-server-d04",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "list-property-filtering",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-h04",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "static-root",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-d05",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "pagination-slicing",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-h05",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "resource-relations",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "json-server-d06",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "resource-identifiers",
+      "disposition": "excluded_agent_pool",
+      "reason": "Adds automatic missing-ID normalization as a feature; retain only in the original diagnostic set, not the runtime-fix agent pool."
+    },
+    {
+      "id": "json-server-h06",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "query-delay-feature",
+      "disposition": "excluded_agent_pool",
+      "reason": "Introduces per-request delay capability; it is a feature, not a runtime regression fix."
+    },
+    {
+      "id": "fastify-d01",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "decorator-getter-access",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-h01",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "parser-error-containment",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-d02",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "error-status-selection",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-h02",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "stream-trailer-completion",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-d03",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "set-cookie-ownership",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-h03",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "effective-media-type",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-d04",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "query-empty-body",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-h04",
+      "origin": "original",
+      "category": "exact_symbol",
+      "family": "serialization-metadata",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-d05",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "request-schema-validation",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-h05",
+      "origin": "original",
+      "category": "vague_symptom",
+      "family": "not-found-routing",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-d06",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "request-schema-validation",
+      "disposition": "retain_agent_pool",
+      "reason": "Supported runtime correction with source and regression-test changes; execution remains separately qualified."
+    },
+    {
+      "id": "fastify-h06",
+      "origin": "original",
+      "category": "cross_file",
+      "family": "request-schema-validation",
+      "disposition": "excluded_agent_pool",
+      "reason": "Conservative request-schema-validation family overlaps diagnostic development d05/d06."
+    }
+  ],
+  "replacements": [
+    {
+      "repository": "picomatch",
+      "fix_commit": "f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "base_commit": "002e806951ddadc7b27c9d8e8f92d6709d34d1d7",
+      "title": "fixes https://github.com/micromatch/picomatch/issues/49",
+      "source_files_changed": ["lib/parse.js"],
+      "assessment_files_changed": ["test/braces.js"],
+      "id": "picomatch-h07",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "brace-compilation",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing brace parsing loses balanced/literal brace behavior; distinct from development extglob/globstar families."
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "base_commit": "44c925c5de037cf16b357c3c5a0a9fac86b025f0",
+      "title": "fix: disable fastpaths mode for parse method",
+      "source_files_changed": ["lib/picomatch.js"],
+      "assessment_files_changed": ["test/api.picomatch.js"],
+      "id": "picomatch-h08",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "public-parse-state",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Public parse must provide full parse state rather than the matching fast-path shortcut; different contract from wildcard matching."
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "base_commit": "3ec3dec19a97ae3b7b4fa8f53073f16e9d71aaa5",
+      "title": "Foreign key suffix (#570)",
+      "source_files_changed": [
+        "src/cli/index.js",
+        "src/cli/run.js",
+        "src/server/mixins.js",
+        "src/server/router/index.js",
+        "src/server/router/nested.js",
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/cli/index.js",
+        "test/server/mixins.js",
+        "test/server/plural-with-custom-foreign-key.js"
+      ],
+      "id": "json-server-h07",
+      "split": "holdout",
+      "category": "cross_file",
+      "family": "resource-relations",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Existing CLI foreignKeySuffix option is not honored across nested/relationship paths; source before the fix already advertises the option. New regression exercises the existing flag."
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "base_commit": "74903968c2a3a7cd40cb7793ea2744cbe4ba8136",
+      "title": "Fix lint",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "id": "json-server-h08",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "resource-relations",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Despite the lint title, source adds a default opts object and tests remove explicit defaults: a runtime default-router regression, not just formatting."
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "dcae2885a0d678d0f2b3479d567ceecc4ac276cf",
+      "base_commit": "6559219acdf610bc1d56061833f6d8b04d88b6c0",
+      "title": "Fix #510 thanks to @robinvenneman",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "id": "json-server-d07",
+      "split": "development",
+      "category": "vague_symptom",
+      "family": "list-property-filtering",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Null field values reach string conversion; a focused runtime guard. This family is already development-only."
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "base_commit": "2c435eeb4ea4df9475ba3ba20765060c4b637578",
+      "title": "Fix duplicate query params error (Issue: #352) (#465)",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "id": "json-server-h09",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "fulltext-input-shape",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Duplicate q parameters produce an array and crash string normalization; no diagnostic development q-search task."
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "title": "Exposing `Link` in the header instead of `Links` (#394)",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "id": "json-server-h10",
+      "split": "holdout",
+      "category": "vague_symptom",
+      "family": "cors-header-exposure",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Wrong Link header name in CORS exposure; header transport contract is separate from pagination arithmetic."
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "4176096a31f5b4c31512c36f578b08a596a72435",
+      "base_commit": "83e69762aff047940b376fc2a266d143499ef727",
+      "title": "fix: callNotFound should run not-found preHandler regardless of registration order (#6965)",
+      "source_files_changed": ["lib/four-oh-four.js"],
+      "assessment_files_changed": ["test/404s.test.js"],
+      "id": "fastify-h07",
+      "split": "holdout",
+      "category": "exact_symbol",
+      "family": "not-found-routing",
+      "origin": "replacement",
+      "disposition": "retain_agent_pool",
+      "reason": "Registration order drops not-found preHandler hooks; development has no not-found-routing task. Related holdout 404 tasks remain clustered."
+    }
+  ],
+  "inspected_replacement_candidates": [
+    {
+      "repository": "picomatch",
+      "fix_commit": "fb08a301388a6bbf7e8b86409df70051aabcbc92",
+      "base_commit": "032e3f51800a695b883242b7b75ad8c540ab603f",
+      "title": "fix: do not skip pattern seperator for square brackets",
+      "source_files_changed": ["lib/scan.js"],
+      "assessment_files_changed": ["test/api.scan.js"],
+      "selected_id": null,
+      "disposition": "scanner-parts overlaps development"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "032e3f51800a695b883242b7b75ad8c540ab603f",
+      "base_commit": "4a510d7fd7a3037efaf54786e5fe2b553cdc657a",
+      "title": "fix: set negatedExtGlob also if it does not span the whole pattern",
+      "source_files_changed": ["lib/parse.js"],
+      "assessment_files_changed": ["test/api.picomatch.js"],
+      "selected_id": null,
+      "disposition": "negated-extglob family overlaps development"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "2f25761963aa4da75d69e02725274156f0d13e40",
+      "base_commit": "4a510d7fd7a3037efaf54786e5fe2b553cdc657a",
+      "title": "Remove automatic windows detection, document `windows` option",
+      "source_files_changed": [
+        "lib/parse.js",
+        "lib/picomatch.js",
+        "lib/utils.js"
+      ],
+      "assessment_files_changed": [
+        "test/extglobs-bash.js",
+        "test/extglobs-minimatch.js",
+        "test/extglobs-temp.js",
+        "test/non-globs.js",
+        "test/options.js",
+        "test/regex-features.js",
+        "test/slashes-posix.js",
+        "test/slashes-windows.js",
+        "test/special-characters.js",
+        "test/support/index.js"
+      ],
+      "selected_id": null,
+      "disposition": "Intentional platform-default behavior change; ambiguous feature/policy change, not a focused regression fix"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "2ca064f068a45497c9bf1866700c5fc5df874789",
+      "base_commit": "e97ba078f5a5ed3da671d9a18072f1a06078852f",
+      "title": "fix(scan): handle characters in parentheses correctly",
+      "source_files_changed": ["lib/scan.js"],
+      "assessment_files_changed": ["test/api.scan.js"],
+      "selected_id": null,
+      "disposition": "scanner-parts overlaps development"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "f9c1a97aba3d2e86d4ced104b548a0e80757debb",
+      "base_commit": "002e806951ddadc7b27c9d8e8f92d6709d34d1d7",
+      "title": "fixes https://github.com/micromatch/picomatch/issues/49",
+      "source_files_changed": ["lib/parse.js"],
+      "assessment_files_changed": ["test/braces.js"],
+      "selected_id": "picomatch-h07",
+      "disposition": "selected"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "5b8d33f3ab6c4dd28fe850dfd6593d78130b576d",
+      "base_commit": "44c925c5de037cf16b357c3c5a0a9fac86b025f0",
+      "title": "fix: disable fastpaths mode for parse method",
+      "source_files_changed": ["lib/picomatch.js"],
+      "assessment_files_changed": ["test/api.picomatch.js"],
+      "selected_id": "picomatch-h08",
+      "disposition": "selected"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "9caca07ed8095e4aaface446c82f0cf8d42b2958",
+      "base_commit": "766bcb0440e3f311376fff260e6971c3c029c4dd",
+      "title": "fixes https://github.com/micromatch/picomatch/issues/20",
+      "source_files_changed": ["lib/parse.js"],
+      "assessment_files_changed": ["test/options.noglobstar.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "picomatch",
+      "fix_commit": "068236732761ab9e8a451aae7294fc0a7c0bf96b",
+      "base_commit": "5ecda3a8f1929de5bfedbaa40b85fac5ffd45266",
+      "title": "Run eslint during pretest, fix existing eslint findings",
+      "source_files_changed": ["lib/utils.js"],
+      "assessment_files_changed": ["test/globstars.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "9bff1b6f3d08e94c43c3641ad07b947428a21ce0",
+      "base_commit": "3ec3dec19a97ae3b7b4fa8f53073f16e9d71aaa5",
+      "title": "Foreign key suffix (#570)",
+      "source_files_changed": [
+        "src/cli/index.js",
+        "src/cli/run.js",
+        "src/server/mixins.js",
+        "src/server/router/index.js",
+        "src/server/router/nested.js",
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": [
+        "test/cli/index.js",
+        "test/server/mixins.js",
+        "test/server/plural-with-custom-foreign-key.js"
+      ],
+      "selected_id": "json-server-h07",
+      "disposition": "selected"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "e39d25920c392b4f37ce4cc9b7f916ba640f3a5e",
+      "base_commit": "74903968c2a3a7cd40cb7793ea2744cbe4ba8136",
+      "title": "Fix lint",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "selected_id": "json-server-h08",
+      "disposition": "selected"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "dcae2885a0d678d0f2b3479d567ceecc4ac276cf",
+      "base_commit": "6559219acdf610bc1d56061833f6d8b04d88b6c0",
+      "title": "Fix #510 thanks to @robinvenneman",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "selected_id": "json-server-d07",
+      "disposition": "selected"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "7ce02798782b1f69ccf69fc75b8f30ab85226adb",
+      "base_commit": "2c435eeb4ea4df9475ba3ba20765060c4b637578",
+      "title": "Fix duplicate query params error (Issue: #352) (#465)",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "selected_id": "json-server-h09",
+      "disposition": "selected"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "eca6b763f2b904e6c0739f14cd4f9eb04a7c2a27",
+      "base_commit": "b5eec153f7ca9551338e3b884c0d140f93cde42e",
+      "title": "fix filter for boolean value false (#412) (#413)",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "selected_id": null,
+      "disposition": "list-property-filtering already development; no remaining development slot"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "2b26630ac6379fba77eb104b22e83b41a004b52e",
+      "base_commit": "44bdfb490a986e9666abc2c4da5acd2b61b053cc",
+      "title": "v0.9.0 (#404)",
+      "source_files_changed": [
+        "src/cli/bin.js",
+        "src/cli/index.js",
+        "src/cli/run.js",
+        "src/cli/utils/is.js",
+        "src/cli/utils/load.js",
+        "src/server/body-parser.js",
+        "src/server/common.js",
+        "src/server/defaults.js",
+        "src/server/index.js",
+        "src/server/mixins.js",
+        "src/server/rewriter.js",
+        "src/server/router/index.js",
+        "src/server/router/nested.js",
+        "src/server/router/plural.js",
+        "src/server/router/singular.js",
+        "src/server/router/validate-data.js",
+        "src/server/utils.js"
+      ],
+      "assessment_files_changed": [
+        "test/cli/index.js",
+        "test/mocha.opts",
+        "test/server/mixins.js",
+        "test/server/plural.js",
+        "test/server/singular.js",
+        "test/server/utils.js",
+        "test/server/validate-data.js"
+      ],
+      "selected_id": null,
+      "disposition": "Release-wide changes, not one focused runtime task"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "2b93bf5113aa2d2e1a36449613e3e8c7ec4eb13a",
+      "base_commit": "0dbb5ba1a79a94b4248ed2c8501ffd74f66726e7",
+      "title": "Exposing `Link` in the header instead of `Links` (#394)",
+      "source_files_changed": ["src/server/router/plural.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "selected_id": "json-server-h10",
+      "disposition": "selected"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "b06bc27d91ea8a5fef5feb5825cf9d6252c39f6a",
+      "base_commit": "e5473811b16ad6e783628d239d946cba406ac02f",
+      "title": "Add support for query params in rewrite targets (#373)",
+      "source_files_changed": ["src/server/rewriter.js"],
+      "assessment_files_changed": ["test/server/plural.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "4176096a31f5b4c31512c36f578b08a596a72435",
+      "base_commit": "83e69762aff047940b376fc2a266d143499ef727",
+      "title": "fix: callNotFound should run not-found preHandler regardless of registration order (#6965)",
+      "source_files_changed": ["lib/four-oh-four.js"],
+      "assessment_files_changed": ["test/404s.test.js"],
+      "selected_id": "fastify-h07",
+      "disposition": "selected"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "9493c0fb716cb7eb7c3568702912e3abb92f3193",
+      "base_commit": "af079bd4c60c3cbebedc7640517d7288468fb5eb",
+      "title": "fix(validation): preserve coerced root values",
+      "source_files_changed": ["lib/validation.js"],
+      "assessment_files_changed": ["test/fix-root-primitive-coercion.test.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "af079bd4c60c3cbebedc7640517d7288468fb5eb",
+      "base_commit": "6e95cb9f6de47deaf145138661c70a1eec34ec97",
+      "title": "fix: disable numeric trustProxy hop-count trust",
+      "source_files_changed": ["lib/request.js"],
+      "assessment_files_changed": [
+        "test/trust-proxy.test.js",
+        "test/types/fastify.tst.ts"
+      ],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "6e95cb9f6de47deaf145138661c70a1eec34ec97",
+      "base_commit": "d693f43d890f07a8852b4737b048ed76458139a2",
+      "title": "Fix prefix route options url (#6719)",
+      "source_files_changed": ["lib/route.js"],
+      "assessment_files_changed": ["test/route-prefix.test.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "f5ef34443c5be0cfc7fbde44f84253ef5d0ec66e",
+      "base_commit": "9a1535bcfe2a780cc6f9c6555df86e5072ca9a29",
+      "title": "fix: run preClose hook exactly once per declaring instance (#6940)",
+      "source_files_changed": ["fastify.js"],
+      "assessment_files_changed": ["test/close.test.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "15c2fb1933461f846a6160923a2bc4e091039826",
+      "base_commit": "eaff726a68c629c1aedc99f96b3c4b95dfdb38d1",
+      "title": "fix(content-type): return undefined for invalid media types (#6942)",
+      "source_files_changed": ["lib/content-type.js"],
+      "assessment_files_changed": ["test/content-type.test.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "e4ffc205328db294d550c5855d2573b33f5e9d62",
+      "base_commit": "ed664c344f4d7e0171f252d5e886db6d7d241770",
+      "title": "fix: remove raw response headers (#6860)",
+      "source_files_changed": ["lib/reply.js"],
+      "assessment_files_changed": ["test/internals/reply.test.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "fastify",
+      "fix_commit": "16a74e7cb2d1abdc2feca9097f2936fe8b851a5c",
+      "base_commit": "27938ac777c15482a81881b29f86c82b025f7fae",
+      "title": "fix: reset lastIndex before testing global/sticky content-type RegExp parsers (#6846)",
+      "source_files_changed": ["lib/content-type-parser.js"],
+      "assessment_files_changed": ["test/content-parser.test.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "2d278fbcb872d5c6a97439ba8334ba6da350d39b",
+      "base_commit": "9f596a7a64173535f4f143e071b8a719a1d1128d",
+      "title": "Fix PUT should replace resource",
+      "source_files_changed": [
+        "src/server/router/plural.js",
+        "src/server/router/singular.js"
+      ],
+      "assessment_files_changed": [
+        "test/server/plural.js",
+        "test/server/singular.js"
+      ],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "a49db2c5c3ec7f7fc64f16bbccefea9fa0702ecf",
+      "base_commit": "756b8b48230dcb065b8c51cad78b2d203b17dd2c",
+      "title": "Fix CLI regressions and refactor",
+      "source_files_changed": [
+        "src/cli/index.js",
+        "src/cli/run.js",
+        "src/cli/utils/load.js",
+        "src/server/router/plural.js"
+      ],
+      "assessment_files_changed": ["test/cli/index.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "6317c41d55c6172f641ac57260fa6037c8065aae",
+      "base_commit": "3a90daaf07cb69ed23861ede80ebaedacea97273",
+      "title": "Fix deepQuery",
+      "source_files_changed": ["src/mixins.js"],
+      "assessment_files_changed": ["test/index.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "69eace2975912770ffb56222cb793b3321676eeb",
+      "base_commit": "46242d157852452382076686d44bc318e69e67c1",
+      "title": "Fix query parameters conversion",
+      "source_files_changed": ["src/utils.js"],
+      "assessment_files_changed": ["test/utils.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "b1ca61ba9e92359cafae62f89b39cc4a40d8eec9",
+      "base_commit": "ce73c479b42a104585cfe39846b09c6efba52117",
+      "title": "Fix code style",
+      "source_files_changed": [
+        "src/defaults.js",
+        "src/index.js",
+        "src/router.js",
+        "src/utils.js"
+      ],
+      "assessment_files_changed": ["test/index.js", "test/utils.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    },
+    {
+      "repository": "json-server",
+      "fix_commit": "73f919ddd0aff94cfe7e8d40184ab9b23f5f893f",
+      "base_commit": "66b8a148ef0177ceba37fac453a81c133e994260",
+      "title": "Fix POST status code, thanks to @lagoLast",
+      "source_files_changed": ["src/router.js"],
+      "assessment_files_changed": ["test/index.js"],
+      "selected_id": null,
+      "disposition": "not selected after applicable slots filled; no eligibility claim"
+    }
+  ],
+  "limitations": [
+    "Metadata/source fit only. Behavioral fail-before/pass-after and dependency/runtime setup remain pending except initial five tasks.",
+    "Related within-split families remain clustered; 18 holdout tasks are not 18 independent families.",
+    "Older JSON Server replacements span legacy versions; compatibility and effort must be separately reported.",
+    "Few genuinely cross-file runtime fixes remain eligible; category distribution is observed, not forced."
+  ]
+}

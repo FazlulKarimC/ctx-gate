@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-27T04-47-25-818Z",
+  "created_at": "2026-10-27T05:15:33.4348126Z",
+  "planned_attempts": 36,
+  "reserved_attempts": 3,
+  "completed_reports": 2,
+  "unassessed_reservations": 1,
+  "stop_reason": "Manual infrastructure stop after completed-turn process/stream hang; primary interpretation is in phase8-audit.json",
+  "patch_review_pending": false,
+  "interpretation": "Original wrapper labels retained; use audited summary for primary outcomes. Interrupted reservation remains unassessed.",
+  "rows": [
+    {
+      "id": "picomatch-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h01-r1-A",
+      "run_id": "2026-10-27T04-47-25-818Z",
+      "reserved_at": "2026-10-27T04:48:44.063Z",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "unassessed",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:15:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":177,\"passed\":177,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\"}\n",
+          "stderr": ""
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":177,\"passed\":177,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 0,
+        "valid_context_responses": 0,
+        "nonempty_context_deliveries": 0,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 12,
+        "pre_edit_delivery": false,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": null,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 6,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [],
+        "returned_engine_tokens": 0,
+        "engine_payload_bytes": 0,
+        "observed_mcp_result_json_bytes": 0,
+        "tool_configuration": [],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 169873,
+            "cached_input_tokens": 135168,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2252,
+            "reasoning_output_tokens": 467
+          },
+          "input_tokens": 169873,
+          "cached_input_tokens": 135168,
+          "uncached_input_tokens": 34705,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2252,
+          "reasoning_output_tokens": 467,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/constants.js",
+          "before": {
+            "sha256": "c28f952d2758261fe5428a121add485cc25b03e0193633f649de903dc0e5e222"
+          },
+          "after": {
+            "sha256": "0dada48b7d6a47bacdbccfcb7955508b71427d4abe8251ed24d10b7a1b8bb9df"
+          }
+        },
+        {
+          "path": "test/posix-classes.js",
+          "before": {
+            "sha256": "d1f0d65d9549efe881678695a4fc05d050c39b3daccaeb6d1ef871eccb240b61"
+          },
+          "after": {
+            "sha256": "726d5ad422ab96eae87f1377a9edd6c579c9597c224ce5f8427d48cc701d68e4"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/constants.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\original-files\\\\lib\\\\constants.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\patch-files\\\\lib\\\\constants.js\"\nindex f0aeda7..09c52f8 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\original-files\\\\lib\\\\constants.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\patch-files\\\\lib\\\\constants.js\"\n@@ -81,7 +81,7 @@ const POSIX_REGEX_SOURCE = {\n   graph: '\\\\x21-\\\\x7E',\n   lower: 'a-z',\n   print: '\\\\x20-\\\\x7E ',\n-  punct: '\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]^_`{|}~',\n+  punct: '\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]\\\\\\\\^_`{|}~',\n   space: ' \\\\t\\\\r\\\\n\\\\v\\\\f',\n   upper: 'A-Z',\n   word: 'A-Za-z0-9_',\n"
+        },
+        {
+          "path": "test/posix-classes.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\original-files\\\\test\\\\posix-classes.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\patch-files\\\\test\\\\posix-classes.js\"\nindex f3eed94..658e173 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\original-files\\\\test\\\\posix-classes.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-A\\\\patch-files\\\\test\\\\posix-classes.js\"\n@@ -21,7 +21,7 @@ describe('posix classes', () => {\n       assert.strictEqual(convert('[![:lower:]]'), '(?=.)[^a-z]');\n       assert.strictEqual(convert('[[:digit:][:upper:][:space:]]'), '(?=.)[0-9A-Z \\\\t\\\\r\\\\n\\\\v\\\\f]');\n       assert.strictEqual(convert('[[:xdigit:]]'), '(?=.)[A-Fa-f0-9]');\n-      assert.strictEqual(convert('[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'), '(?=.)[a-zA-Z0-9a-zA-Z \\\\t\\\\x00-\\\\x1F\\\\x7F0-9\\\\x21-\\\\x7Ea-z\\\\x20-\\\\x7E \\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]^_`{|}~ \\\\t\\\\r\\\\n\\\\v\\\\fA-ZA-Fa-f0-9]');\n+      assert.strictEqual(convert('[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'), '(?=.)[a-zA-Z0-9a-zA-Z \\\\t\\\\x00-\\\\x1F\\\\x7F0-9\\\\x21-\\\\x7Ea-z\\\\x20-\\\\x7E \\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]\\\\\\\\^_`{|}~ \\\\t\\\\r\\\\n\\\\v\\\\fA-ZA-Fa-f0-9]');\n       assert.strictEqual(convert('[^[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:lower:][:space:][:upper:][:xdigit:]]'), '(?=.)[^a-zA-Z0-9a-zA-Z \\\\t\\\\x00-\\\\x1F\\\\x7F0-9a-z \\\\t\\\\r\\\\n\\\\v\\\\fA-ZA-Fa-f0-9]');\n       assert.strictEqual(convert('[a-c[:digit:]x-z]'), '(?=.)[a-c0-9x-z]');\n       assert.strictEqual(convert('[_[:alpha:]][_[:alnum:]][_[:alnum:]]*'), '(?=.)[_a-zA-Z][_a-zA-Z0-9][_a-zA-Z0-9]*', []);\n@@ -29,6 +29,22 @@ describe('posix classes', () => {\n   });\n \n   describe('.isMatch', () => {\n+    it('should match backslashes with the punctuation class', () => {\n+      assert(pm.isMatch('\\\\', '[[:punct:]]', { ...opts, windows: false }));\n+    });\n+\n+    it('should match only punctuation among printable ASCII characters', () => {\n+      const match = pm('[[:punct:]]', { ...opts, windows: false });\n+      const negate = pm('[![:punct:]]', { ...opts, windows: false });\n+\n+      for (let code = 32; code <= 126; code++) {\n+        const char = String.fromCharCode(code);\n+        const punctuation = !/[a-zA-Z0-9 ]/.test(char);\n+        assert.strictEqual(match(char), punctuation, `punctuation: ${JSON.stringify(char)}`);\n+        assert.strictEqual(negate(char), !punctuation, `negated punctuation: ${JSON.stringify(char)}`);\n+      }\n+    });\n+\n     it('should support POSIX.2 character classes', () => {\n       assert(isMatch('e', '[[:xdigit:]]'));\n \n@@ -133,7 +149,7 @@ describe('posix classes', () => {\n \n     it('should not create an invalid posix character class:', () => {\n       assert.strictEqual(convert('[:al:]'), '(?:\\\\[:al:\\\\]|[:al:])');\n-      assert.strictEqual(convert('[abc[:punct:][0-9]'), '(?=.)[abc\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]^_`{|}~\\\\[0-9]');\n+      assert.strictEqual(convert('[abc[:punct:][0-9]'), '(?=.)[abc\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]\\\\\\\\^_`{|}~\\\\[0-9]');\n     });\n \n     it('should return `true` when the pattern matches:', () => {\n"
+        }
+      ],
+      "run": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_ms": 70958,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true
+    },
+    {
+      "id": "picomatch-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h01-r1-B",
+      "run_id": "2026-10-27T04-47-25-818Z",
+      "reserved_at": "2026-10-27T04:50:04.183Z",
+      "host": {
+        "command": "C:\\Users\\FAZLUL\\AppData\\Local\\Temp\\ctxgate-phase8-host\\codex-0.163.0\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "version": "codex-cli 0.163.0"
+      },
+      "status": "task_failure",
+      "checker_used": false,
+      "baseline": {
+        "focused": {
+          "exit_code": 1,
+          "error": null,
+          "stdout": "",
+          "stderr": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at main (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:15:14)\n    at Object.<anonymous> (C:\\Users\\FAZLUL\\Desktop\\MainProject\\SuperContext\\eval\\labels\\holdout-regressions.cjs:242:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n"
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":177,\"passed\":177,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "assessment": {
+        "focused": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\"}\n",
+          "stderr": ""
+        },
+        "controls": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"id\":\"picomatch-h01\",\"status\":\"passed\",\"scope\":\"Deterministic pre-existing behavior smoke controls; not the full upstream suite\"}\n",
+          "stderr": ""
+        },
+        "existing": {
+          "exit_code": 0,
+          "error": null,
+          "stdout": "{\"runner\":\"version-qualified-describe-it-subset-v2\",\"files\":[\"api.picomatch.js\",\"api.scan.js\",\"globstars.js\",\"stars.js\",\"dotfiles.js\",\"options.js\",\"slashes-posix.js\",\"slashes-windows.js\",\"non-globs.js\"],\"total\":177,\"passed\":177,\"failures\":[]}\n",
+          "stderr": ""
+        }
+      },
+      "metrics": {
+        "context_attempts": 1,
+        "valid_context_responses": 1,
+        "nonempty_context_deliveries": 1,
+        "expand_attempts": 0,
+        "valid_expansions": 0,
+        "first_substantive_edit_event": 13,
+        "pre_edit_delivery": true,
+        "pre_edit_useful_span_delivery": false,
+        "time_to_context_delivery_ms": 16506,
+        "edit_timing_method": "Earliest file-change event or recognized shell-write command; ambiguous shell writes require trace review. Without an observed edit, delivery means before any observed edit only.",
+        "command_count": 6,
+        "repeated_exact_commands": 0,
+        "compaction_observed_events": null,
+        "retrieval_ms": [
+          2030.7008999999998
+        ],
+        "returned_engine_tokens": 1954,
+        "engine_payload_bytes": 5754,
+        "observed_mcp_result_json_bytes": 6235,
+        "tool_configuration": [
+          {
+            "encoding": "o200k_base",
+            "budget_tokens": 2000,
+            "neighbors": false,
+            "notes": false
+          }
+        ],
+        "host_errors": [],
+        "usage": {
+          "raw": {
+            "input_tokens": 202987,
+            "cached_input_tokens": 143360,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2510,
+            "reasoning_output_tokens": 685
+          },
+          "input_tokens": 202987,
+          "cached_input_tokens": 143360,
+          "uncached_input_tokens": 59627,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2510,
+          "reasoning_output_tokens": 685,
+          "billing_cost": null
+        }
+      },
+      "host_failure": {
+        "status": "eligible",
+        "reason": null,
+        "stop_batch": false,
+        "task_progress": true
+      },
+      "changed": [
+        {
+          "path": "lib/constants.js",
+          "before": {
+            "sha256": "c28f952d2758261fe5428a121add485cc25b03e0193633f649de903dc0e5e222"
+          },
+          "after": {
+            "sha256": "0dada48b7d6a47bacdbccfcb7955508b71427d4abe8251ed24d10b7a1b8bb9df"
+          }
+        },
+        {
+          "path": "test/posix-classes.js",
+          "before": {
+            "sha256": "d1f0d65d9549efe881678695a4fc05d050c39b3daccaeb6d1ef871eccb240b61"
+          },
+          "after": {
+            "sha256": "348c6281c7706296fa62c0a92a5dee7fb72ca93046fd93d170bf7d0db19ccf10"
+          }
+        }
+      ],
+      "patches": [
+        {
+          "path": "lib/constants.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\original-files\\\\lib\\\\constants.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\patch-files\\\\lib\\\\constants.js\"\nindex f0aeda7..09c52f8 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\original-files\\\\lib\\\\constants.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\patch-files\\\\lib\\\\constants.js\"\n@@ -81,7 +81,7 @@ const POSIX_REGEX_SOURCE = {\n   graph: '\\\\x21-\\\\x7E',\n   lower: 'a-z',\n   print: '\\\\x20-\\\\x7E ',\n-  punct: '\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]^_`{|}~',\n+  punct: '\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]\\\\\\\\^_`{|}~',\n   space: ' \\\\t\\\\r\\\\n\\\\v\\\\f',\n   upper: 'A-Z',\n   word: 'A-Za-z0-9_',\n"
+        },
+        {
+          "path": "test/posix-classes.js",
+          "patch": "diff --git \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\original-files\\\\test\\\\posix-classes.js\" \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\patch-files\\\\test\\\\posix-classes.js\"\nindex f3eed94..d537a41 100644\n--- \"a/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\original-files\\\\test\\\\posix-classes.js\"\n+++ \"b/C:\\\\Users\\\\FAZLUL\\\\Desktop\\\\MainProject\\\\SuperContext\\\\eval\\\\runs\\\\phase8\\\\2026-10-27T04-47-25-818Z\\\\picomatch-h01-r1-B\\\\patch-files\\\\test\\\\posix-classes.js\"\n@@ -21,7 +21,7 @@ describe('posix classes', () => {\n       assert.strictEqual(convert('[![:lower:]]'), '(?=.)[^a-z]');\n       assert.strictEqual(convert('[[:digit:][:upper:][:space:]]'), '(?=.)[0-9A-Z \\\\t\\\\r\\\\n\\\\v\\\\f]');\n       assert.strictEqual(convert('[[:xdigit:]]'), '(?=.)[A-Fa-f0-9]');\n-      assert.strictEqual(convert('[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'), '(?=.)[a-zA-Z0-9a-zA-Z \\\\t\\\\x00-\\\\x1F\\\\x7F0-9\\\\x21-\\\\x7Ea-z\\\\x20-\\\\x7E \\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]^_`{|}~ \\\\t\\\\r\\\\n\\\\v\\\\fA-ZA-Fa-f0-9]');\n+      assert.strictEqual(convert('[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'), '(?=.)[a-zA-Z0-9a-zA-Z \\\\t\\\\x00-\\\\x1F\\\\x7F0-9\\\\x21-\\\\x7Ea-z\\\\x20-\\\\x7E \\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]\\\\\\\\^_`{|}~ \\\\t\\\\r\\\\n\\\\v\\\\fA-ZA-Fa-f0-9]');\n       assert.strictEqual(convert('[^[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:lower:][:space:][:upper:][:xdigit:]]'), '(?=.)[^a-zA-Z0-9a-zA-Z \\\\t\\\\x00-\\\\x1F\\\\x7F0-9a-z \\\\t\\\\r\\\\n\\\\v\\\\fA-ZA-Fa-f0-9]');\n       assert.strictEqual(convert('[a-c[:digit:]x-z]'), '(?=.)[a-c0-9x-z]');\n       assert.strictEqual(convert('[_[:alpha:]][_[:alnum:]][_[:alnum:]]*'), '(?=.)[_a-zA-Z][_a-zA-Z0-9][_a-zA-Z0-9]*', []);\n@@ -133,7 +133,7 @@ describe('posix classes', () => {\n \n     it('should not create an invalid posix character class:', () => {\n       assert.strictEqual(convert('[:al:]'), '(?:\\\\[:al:\\\\]|[:al:])');\n-      assert.strictEqual(convert('[abc[:punct:][0-9]'), '(?=.)[abc\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]^_`{|}~\\\\[0-9]');\n+      assert.strictEqual(convert('[abc[:punct:][0-9]'), '(?=.)[abc\\\\-!\"#$%&\\'()\\\\*+,./:;<=>?@[\\\\]\\\\\\\\^_`{|}~\\\\[0-9]');\n     });\n \n     it('should return `true` when the pattern matches:', () => {\n@@ -276,6 +276,19 @@ describe('posix classes', () => {\n       assert(isMatch('|++', '[[:punct:]]*'));\n     });\n \n+    it('should match backslashes as punctuation', () => {\n+      assert(isMatch('\\\\', '[[:punct:]]'));\n+    });\n+\n+    it('should support all ASCII punctuation and exclude letters', () => {\n+      for (const char of '!\"#$%&\\'()*+,-./:;<=>?@[\\\\]^_`{|}~') {\n+        assert(isMatch(char, '[[:punct:]]'), `Expected punctuation ${char} to match`);\n+      }\n+      for (const char of 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {\n+        assert(!isMatch(char, '[[:punct:]]'), `Expected letter ${char} to be excluded`);\n+      }\n+    });\n+\n     it('should only match one character', () => {\n       assert(!isMatch('?*+', '[[:punct:]]'));\n     });\n"
+        }
+      ],
+      "run": {
+        "exit_code": 1,
+        "timed_out": true,
+        "elapsed_ms": 300149,
+        "account_limit_detected": false,
+        "spawn_error": null
+      },
+      "review_required": true
+    }
+  ]
+}

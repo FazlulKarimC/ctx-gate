@@ -1,0 +1,48 @@
+name: required-boundary-example
+on:
+  workflow_call:
+    inputs:
+      base_sha:
+        required: true
+        type: string
+      target_sha:
+        required: true
+        type: string
+      policy_sha:
+        description: Trusted revision containing checker source, lockfile and policy
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    env:
+      CTX_BASE_SHA: ${{ inputs.base_sha }}
+      CTX_TARGET_SHA: ${{ inputs.target_sha }}
+      CTX_POLICY_SHA: ${{ inputs.policy_sha }}
+      CTX_CANDIDATE_ROOT: candidate
+    steps:
+      - name: Validate immutable inputs
+        run: node -e "for(const k of ['CTX_BASE_SHA','CTX_TARGET_SHA','CTX_POLICY_SHA'])if(!/^(?:[a-f0-9]{40}|[a-f0-9]{64})$/i.test(process.env[k]||''))process.exit(2)"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.policy_sha }}
+          path: tool
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target_sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Build trusted checker only
+        working-directory: tool
+        run: |
+          npm ci --ignore-scripts
+          npm run build
+      - name: Required immutable comparison
+        run: node tool/eval/scripts/run-required-check.mjs

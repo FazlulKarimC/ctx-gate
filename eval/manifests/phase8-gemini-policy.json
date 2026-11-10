@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "registered_on": "2026-11-10",
+  "stratum": "gemini_flash_38_low_pilot",
+  "host_mode": "direct_gemini_api",
+  "model": "gemini-flash-3.8",
+  "reasoning_effort": "low",
+  "max_attempts": 12,
+  "max_additional_model_probes": 0,
+  "timeout_seconds_per_task": 240,
+  "completion": "A completed terminal model response within 240 seconds. Correctness additionally requires protected assessment and an explicit patch review.",
+  "stop_rule": "Stop the entire Gemini block after model-not-found, quota, authentication, isolation, protocol, or unexpected API failure. Preserve the reservation; never retry, substitute a model, or extend the pilot. A normal deadline, wrong patch, ignored context, or non-use of retrieval is an eligible outcome.",
+  "analysis": "Compare A and B only within this Gemini Flash 3.8 (low reasoning) stratum. Retain all attempted arms, report uptake and missing usage fields, and never pool this pilot with archived historical strata.",
+  "assignments": [
+    {
+      "id": "picomatch-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h07-gemini-r1-B"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h07-gemini-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h08-gemini-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h08-gemini-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h07-gemini-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h07-gemini-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h09-gemini-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h09-gemini-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h01-gemini-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h01-gemini-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h03-gemini-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h03-gemini-r1-B"
+    }
+  ],
+  "independent_ledger": "eval/runs/phase8-gemini/attempts.jsonl"
+}

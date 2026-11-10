@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-27T05:20:03.598Z",
+  "authorization": "User explicitly answered: Proceed with registered recovery (recommended), in response to the 33-unused-slot recovery proposal after the original infrastructure stop.",
+  "method_variant": "terminal_event_with_bounded_cleanup_v1",
+  "original_prefix_sha256": "3ba956fde5eefbacd84fb057097764a590eeed88559fe9284d2eb2922ac02267",
+  "parent_registration_sha256": "390f6f028447ce28b6fc5479b485008f21b5f0cdc1937b330b236e8c30b9f69b",
+  "assignments": [
+    {
+      "id": "picomatch-h02",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h02-r1-A"
+    },
+    {
+      "id": "picomatch-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h04-r1-A"
+    },
+    {
+      "id": "picomatch-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h04-r1-B"
+    },
+    {
+      "id": "picomatch-h06",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h06-r1-B"
+    },
+    {
+      "id": "picomatch-h06",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h06-r1-A"
+    },
+    {
+      "id": "json-server-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h04-r1-A"
+    },
+    {
+      "id": "json-server-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h04-r1-B"
+    },
+    {
+      "id": "json-server-h05",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h05-r1-B"
+    },
+    {
+      "id": "json-server-h05",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h05-r1-A"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h01-r1-A"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h01-r1-B"
+    },
+    {
+      "id": "fastify-h02",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h02-r1-B"
+    },
+    {
+      "id": "fastify-h02",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h02-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h03-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h03-r1-B"
+    },
+    {
+      "id": "fastify-h04",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h04-r1-B"
+    },
+    {
+      "id": "fastify-h04",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h04-r1-A"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h07-r1-A"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h07-r1-B"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h08-r1-B"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h08-r1-A"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h07-r1-A"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h07-r1-B"
+    },
+    {
+      "id": "json-server-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h08-r1-B"
+    },
+    {
+      "id": "json-server-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h08-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h09-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h09-r1-B"
+    },
+    {
+      "id": "json-server-h10",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h10-r1-B"
+    },
+    {
+      "id": "json-server-h10",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h10-r1-A"
+    },
+    {
+      "id": "fastify-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h08-r1-A"
+    },
+    {
+      "id": "fastify-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h08-r1-B"
+    },
+    {
+      "id": "fastify-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h09-r1-B"
+    },
+    {
+      "id": "fastify-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h09-r1-A"
+    }
+  ],
+  "source_hashes": {
+    "eval/scripts/phase8-run.mjs": "55b37ee365b0c3e193703219bbdadf961d787e8afef814c6fedf9f14a68140ae",
+    "eval/scripts/restore-phase8-slot.ps1": "e54302b9054479211e7b71eef682c6c5fff6c1bf584649ca5f76cbb0d1ee91c1",
+    "eval/scripts/codex-command.mjs": "651e62ce855732f4cf3b0bcca375daf356470ae73f28659970f3091a8f43040a",
+    "eval/scripts/verify-freeze.mjs": "29f5624be1c8660c6e3e70cac8e3f3f16ecaeb3af7510ad5d7d8ecc3646b0de9",
+    "eval/scripts/phase5-host.mjs": "462708a2159e34a44da2318480a783c16f6de457e02e5e521fdadd7dde049613",
+    "eval/scripts/phase8-readiness.mjs": "dce72f25a6552aad117e462ab011ef7229a1fd78b3c1680cfe6bc37291af6759",
+    "eval/scripts/phase8-readiness-core.mjs": "e6769a93699c8393122920d3c25d9edce2fd969e5d766ed4eb09a363b5d9cdff",
+    "eval/scripts/phase8-cleanup.mjs": "f249fba15819b69d8c22df35c7903b02e48dc362d8fd6ec17532831d1cc77c29",
+    "eval/scripts/restore-phase8-access.ps1": "2d87eaf9f989635bc639ee7b5cd45a2bfdc6d0b7623f1a4b2a767d228f43c863",
+    "eval/scripts/phase8-mxc-diagnostic.mjs": "921e83ce42afe72f04e2dddf22470093b66fc5f820e52184a895132ed482d651",
+    "eval/scripts/phase8-mxc-thread-diagnostic.mjs": "43205562e3a5a6c21ca38ef136727a410a6d2ea160ff29c70778d4b07b06c26e",
+    "eval/scripts/phase8-host-pin.mjs": "e3483da770ca13d3baedacb577032e75dc6491b49e960a8872992d73c0c289fb",
+    "eval/manifests/phase8-host.json": "2465e16ebbc045a9dd208faeb84f13d30b18fbe67760b3e4627eeaaa9744ff1e",
+    "eval/manifests/phase8-host-runtime-package-lock.json": "8167d9561769a0a44a48e5a14b6596b111c0e2ad3288f871671d847f469e3afa",
+    "eval/scripts/mcp-observer.mjs": "d00411b2a6595385a9128f926a6c0033a3059244ab3ccc11d615fa359fc9860e",
+    "eval/scripts/pilot-metrics.mjs": "468bc00fcfca6483a6501dc291831355a4d5f04deb11732fe82723dd0b9a9a60",
+    "eval/scripts/host-failures.mjs": "10d9f9891e280c66bc7dba79ab56c31f920d4aa8d9c5d9197ad912b21cda3efc",
+    "eval/scripts/git-tree.mjs": "6295e4707bea0b5f335b1025aea3805eecb4be8ae271105b69bcb2b4337da6e6",
+    "eval/manifests/evaluation-freeze.json": "3aa49c2d40d6979bb72c988ec9579dee5bc14e2cee5838d30f1211a58781bdf8",
+    "eval/manifests/phase8-policy.json": "94127944ec5787b6723e1d2d54512eec6bb181a175d1a2a4c1a915699c401ce8",
+    "eval/manifests/holdout-readiness.json": "140df0328683d254714c41cf1324f6bd3b53435c42144d817a1264314a3f0459",
+    "eval/manifests/holdout-runtime.json": "2d53542fbfcc31c3cdaca33e20e2d9c903b7e228e35e8534957e0dc6f524bfd2",
+    "eval/labels/holdout-regressions.cjs": "cf13e6cc28a044e0099eecd8fa7e1b9167ad99b8d300420df081fd49c64b31b3",
+    "eval/labels/holdout-modern.mjs": "e08e76298658bf9266fe869441ce3fef34ef400c4d63c2c2669a4cedd1601486",
+    "eval/labels/holdout-controls.cjs": "3fad1aa0cfe576016a7e59fa8c45500180b061db130b6b5d1b479cdd6b58249a",
+    "eval/labels/holdout-existing.cjs": "ba1acbff5df2cddcaa6880cdefdf36d99ba77e7e0cc6abd7998c261319f17f76",
+    "docs/ctxgate-instruction.md": "a450c65485d2a42e08a0dfa76c731fa79db67148d1cf7d04679772f298c3780c",
+    "eval/scripts/phase8-recovery-run.mjs": "3fb61fa6bff98c24e5029138f410c9937a2558207480133cbb9ae70cb3626e5c",
+    "eval/scripts/phase8-recovery-readiness.mjs": "6b798bdf0d690a98a844c006c493e82bb1055aa9e59f6959e66165aaf33dfaa0",
+    "eval/scripts/observed-host-process.mjs": "8c0276a18d6e549ac89c2cd1fe9aea09b08ad622e6f726058fa5ef33294edce3",
+    "eval/tests/host-lifecycle.test.mjs": "daaa1e60ab58620d08dfe4cd2f6804ec4478e6c8be645cd6958fdcebd62c4534",
+    "eval/manifests/phase8-recovery-policy.json": "97212ced422bd420775fe0006da11cf2aa3794bc1efee0c6a82366b480a82988",
+    "eval/manifests/phase8-recovery-prefix.json": "3ba956fde5eefbacd84fb057097764a590eeed88559fe9284d2eb2922ac02267"
+  },
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "max_new_attempts": 33,
+  "max_total_attempts": 36,
+  "max_additional_model_probes": 0
+}
