@@ -18,8 +18,8 @@ import {
 } from "../scripts/phase8-gemini-run.mjs";
 import { pilotMetrics } from "../scripts/pilot-metrics.mjs";
 
-test("Gemini 3.8 Flash (low reasoning) pilot fixes six task pairs and alternates first arm", () => {
-  assert.equal(GEMINI_MODEL, "gemini-3.8-flash");
+test("Gemini 3.5 Flash Lite (low reasoning) pilot fixes six task pairs and alternates first arm", () => {
+  assert.equal(GEMINI_MODEL, "gemini-3.5-flash-lite");
   assert.equal(GEMINI_PREFERRED_EFFORT, "low");
   assert.equal(GEMINI_TIMEOUT_MS, 240_000);
   assert.equal(GEMINI_ASSIGNMENTS.length, GEMINI_MAX_ATTEMPTS);
@@ -52,8 +52,8 @@ test("Gemini plan prefers low reasoning effort and exposes ctx tools only in con
     }),
     "low",
   );
-  assert.equal(geminiToolDeclarations("A")[0].functionDeclarations.length, 4);
-  assert.equal(geminiToolDeclarations("B")[0].functionDeclarations.length, 6);
+  assert.equal(geminiToolDeclarations("A")[0].functionDeclarations.length, 5);
+  assert.equal(geminiToolDeclarations("B")[0].functionDeclarations.length, 7);
 });
 
 test("multi-turn Gemini function-calling loop executes ctx_context and workspace edits without temperature parameter", async (t) => {
@@ -175,6 +175,7 @@ test("multi-turn Gemini function-calling loop executes ctx_context and workspace
     condition: "B",
     prompt: "Fix add(a, b) so it returns a + b.",
     apiKey: "test-key",
+    minTurnSpacingMs: 0,
     fetchImpl: mockFetch,
     onToolObservation: (obs) => telemetry.push(obs),
   });

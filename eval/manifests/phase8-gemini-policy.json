@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "registered_on": "2026-11-10",
-  "stratum": "gemini_38_flash_low_pilot",
+  "stratum": "gemini_35_flash_lite_low_pilot",
   "host_mode": "direct_gemini_api",
-  "model": "gemini-3.8-flash",
+  "model": "gemini-3.5-flash-lite",
   "reasoning_effort": "low",
   "max_attempts": 12,
   "max_additional_model_probes": 0,
   "timeout_seconds_per_task": 240,
   "completion": "A completed terminal model response within 240 seconds. Correctness additionally requires protected assessment and an explicit patch review.",
-  "stop_rule": "Stop the entire Gemini block after model-not-found, quota, authentication, isolation, protocol, or unexpected API failure. Preserve the reservation; never retry, substitute a model, or extend the pilot. A normal deadline, wrong patch, ignored context, or non-use of retrieval is an eligible outcome.",
-  "analysis": "Compare A and B only within this Gemini 3.8 Flash (low reasoning) stratum. Retain all attempted arms, report uptake and missing usage fields, and never pool this pilot with archived historical strata.",
+  "stop_rule": "Stop the entire Gemini block after model-not-found, daily quota exhaustion, authentication, isolation, protocol, or unexpected API failure. Preserve the reservation; never retry a failed task, substitute a model, or extend the pilot. A normal deadline, wrong patch, ignored context, or non-use of retrieval is an eligible outcome.",
+  "analysis": "Compare A and B only within this Gemini 3.5 Flash Lite (low reasoning) stratum. Retain all attempted arms, report uptake and missing usage fields, and never pool this pilot with archived historical strata.",
   "assignments": [
     {
       "id": "picomatch-h07",

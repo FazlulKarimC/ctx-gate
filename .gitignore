@@ -6,3 +6,5 @@ coverage/
 eval/.cache/
 eval/runs/
 *.log
+.env
+.env.*

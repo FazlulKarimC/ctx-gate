@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-11-10T17:16:32.667Z",
+  "stratum": "gemini_35_flash_lite_low_pilot",
+  "host_mode": "direct_gemini_api",
+  "model": "gemini-3.5-flash-lite",
+  "reasoning_effort": "low",
+  "timeout_ms_per_task": 240000,
+  "max_attempts": 12,
+  "evaluation_freeze_sha256": "8e82f10c580b780c68720e8738d47cea0f74e2b6b3173b2b5a1b300260f64be8",
+  "policy_sha256": "4b0bd92f46010bbf2c6f0b25d29fb41365d659a534bb50074800980eecdf5f28",
+  "independent_ledger": "eval/runs/phase8-gemini/attempts.jsonl",
+  "assignments": [
+    {
+      "id": "picomatch-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h07-gemini-r1-B"
+    },
+    {
+      "id": "picomatch-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h07-gemini-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "picomatch-h08-gemini-r1-A"
+    },
+    {
+      "id": "picomatch-h08",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "picomatch-h08-gemini-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h07-gemini-r1-B"
+    },
+    {
+      "id": "json-server-h07",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h07-gemini-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "json-server-h09-gemini-r1-A"
+    },
+    {
+      "id": "json-server-h09",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "json-server-h09-gemini-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h01-gemini-r1-B"
+    },
+    {
+      "id": "fastify-h01",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h01-gemini-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "A",
+      "repetition": 1,
+      "slot": "fastify-h03-gemini-r1-A"
+    },
+    {
+      "id": "fastify-h03",
+      "condition": "B",
+      "repetition": 1,
+      "slot": "fastify-h03-gemini-r1-B"
+    }
+  ],
+  "source_hashes": {
+    "eval/scripts/phase8-gemini-run.mjs": "8d7df36a20ad87039198afcd9d93d8ebbaca1dff0c086ae5693fc4c11e7faef2",
+    "eval/scripts/phase8-gemini-plan.mjs": "4c8942850da429cadd38f910c9040ef6c9f9c8f1c479658f9a81bc06ba176eb1",
+    "eval/scripts/evaluation-outcome.mjs": "ed2f9f32c0c1a78363abf35778c3a3a3c42c662c470aa0a96470f3a721a9fe54",
+    "eval/scripts/host-failures.mjs": "10d9f9891e280c66bc7dba79ab56c31f920d4aa8d9c5d9197ad912b21cda3efc",
+    "eval/scripts/pilot-metrics.mjs": "468bc00fcfca6483a6501dc291831355a4d5f04deb11732fe82723dd0b9a9a60",
+    "eval/scripts/verify-freeze.mjs": "29f5624be1c8660c6e3e70cac8e3f3f16ecaeb3af7510ad5d7d8ecc3646b0de9",
+    "eval/manifests/phase8-gemini-policy.json": "4b0bd92f46010bbf2c6f0b25d29fb41365d659a534bb50074800980eecdf5f28"
+  },
+  "stop_rule": "Stop the entire Gemini block after model-not-found, daily quota exhaustion, authentication, isolation, protocol, or unexpected API failure. Preserve the reservation; never retry a failed task, substitute a model, or extend the pilot. A normal deadline, wrong patch, ignored context, or non-use of retrieval is an eligible outcome."
+}

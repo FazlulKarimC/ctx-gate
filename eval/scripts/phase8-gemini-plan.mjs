@@ -1,8 +1,9 @@
-export const GEMINI_MODEL = "gemini-3.8-flash";
+export const GEMINI_MODEL = "gemini-3.5-flash-lite";
 export const GEMINI_PREFERRED_EFFORT = "low";
 export const GEMINI_TIMEOUT_MS = 240_000;
 export const GEMINI_MAX_ATTEMPTS = 12;
-export const GEMINI_MAX_TURNS = 24;
+export const GEMINI_MAX_TURNS = 16;
+export const GEMINI_MIN_TURN_SPACING_MS = 4_200;
 
 export const GEMINI_ASSIGNMENTS = [
   ["picomatch-h07", "B"],

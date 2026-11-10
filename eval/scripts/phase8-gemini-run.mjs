@@ -22,6 +22,7 @@ import {
   GEMINI_ASSIGNMENTS,
   GEMINI_MAX_ATTEMPTS,
   GEMINI_MAX_TURNS,
+  GEMINI_MIN_TURN_SPACING_MS,
   GEMINI_MODEL,
   GEMINI_PREFERRED_EFFORT,
   GEMINI_TIMEOUT_MS,
@@ -61,17 +62,36 @@ export function geminiToolDeclarations(condition = "A") {
     },
     {
       name: "read_workspace_file",
-      description: "Read a UTF-8 text file inside the isolated task workspace.",
+      description:
+        "Read numbered lines from a UTF-8 text file inside the isolated task workspace. Defaults to lines 1-250; pass start_line and end_line to inspect specific sections of large files.",
       parameters: {
         type: "OBJECT",
-        properties: { path: { type: "STRING" } },
+        properties: {
+          path: { type: "STRING" },
+          start_line: { type: "INTEGER" },
+          end_line: { type: "INTEGER" },
+        },
         required: ["path"],
+      },
+    },
+    {
+      name: "patch_workspace_file",
+      description:
+        "Replace an exact target snippet inside an existing UTF-8 file in the isolated task workspace. Prefer this over rewriting entire large files.",
+      parameters: {
+        type: "OBJECT",
+        properties: {
+          path: { type: "STRING" },
+          target: { type: "STRING" },
+          replacement: { type: "STRING" },
+        },
+        required: ["path", "target", "replacement"],
       },
     },
     {
       name: "write_workspace_file",
       description:
-        "Write a UTF-8 text file inside the isolated task workspace.",
+        "Create or overwrite a UTF-8 text file inside the isolated task workspace.",
       parameters: {
         type: "OBJECT",
         properties: {
@@ -84,7 +104,7 @@ export function geminiToolDeclarations(condition = "A") {
     {
       name: "run_focused_node_test",
       description:
-        "Execute a local Node.js test file or script inside the isolated task workspace.",
+        "Execute a standalone Node.js script inside the isolated task workspace using `node <script_path>`. Write a small standalone script using `node:assert` to verify your fix.",
       parameters: {
         type: "OBJECT",
         properties: {
@@ -112,14 +132,17 @@ export function geminiToolDeclarations(condition = "A") {
       },
       {
         name: "ctx_expand",
-        description: "Expand a source-bound ctxgate reference.",
+        description:
+          "Expand a source-bound ctxgate reference returned by ctx_context. Pass either reference_json or path (with optional start_line/end_line).",
         parameters: {
           type: "OBJECT",
           properties: {
             reference_json: { type: "STRING" },
+            path: { type: "STRING" },
+            start_line: { type: "INTEGER" },
+            end_line: { type: "INTEGER" },
             budget_tokens: { type: "INTEGER" },
           },
-          required: ["reference_json"],
         },
       },
     );
@@ -132,6 +155,7 @@ export async function invokeGeminiTool(
   condition,
   call,
   observeTool,
+  recentReferences = [],
 ) {
   const args = call.args ?? {};
   if (call.name === "list_workspace_files") {
@@ -150,7 +174,47 @@ export async function invokeGeminiTool(
     const target = resolve(workspace, String(args.path ?? ""));
     if (!within(workspace, target))
       return { error: "Path outside isolated workspace denied" };
-    return { content: await readFile(target, "utf8") };
+    const raw = await readFile(target, "utf8");
+    const lines = raw.split(/\r?\n/);
+    const totalLines = lines.length;
+    const startLine = Math.max(1, Number(args.start_line ?? 1));
+    const endLine = Math.min(
+      totalLines,
+      Number(args.end_line ?? startLine + 249),
+    );
+    const slice = lines
+      .slice(startLine - 1, endLine)
+      .map((line, idx) => `${startLine + idx}: ${line}`)
+      .join("\n");
+    return {
+      path: String(args.path ?? ""),
+      start_line: startLine,
+      end_line: endLine,
+      total_lines: totalLines,
+      truncated: endLine < totalLines || startLine > 1,
+      content: slice,
+    };
+  }
+  if (call.name === "patch_workspace_file") {
+    const relPath = String(args.path ?? "");
+    const target = resolve(workspace, relPath);
+    if (
+      !within(workspace, target) ||
+      relPath.startsWith(".ctx/") ||
+      relPath === ".ctx"
+    )
+      return { error: "Path outside editable workspace scope denied" };
+    const current = await readFile(target, "utf8");
+    const needle = String(args.target ?? "");
+    if (!needle || !current.includes(needle)) {
+      return {
+        error:
+          "Target snippet not found in file; read the exact lines with read_workspace_file first",
+      };
+    }
+    const updated = current.replace(needle, String(args.replacement ?? ""));
+    await writeFile(target, updated, "utf8");
+    return { written: true, path: relPath };
   }
   if (call.name === "write_workspace_file") {
     const relPath = String(args.path ?? "");
@@ -192,6 +256,9 @@ export async function invokeGeminiTool(
       neighbors: false,
       notes: false,
     });
+    for (const item of res.items ?? []) {
+      if (item?.reference) recentReferences.push(item.reference);
+    }
     const text = renderResult(res);
     const elapsedMs = performance.now() - t0;
     observeTool?.({
@@ -227,7 +294,28 @@ export async function invokeGeminiTool(
   if (condition === "B" && call.name === "ctx_expand") {
     const startedAt = new Date().toISOString();
     const t0 = performance.now();
-    const ref = JSON.parse(String(args.reference_json ?? "{}"));
+    let ref = null;
+    if (args.reference_json) {
+      ref = JSON.parse(String(args.reference_json));
+    } else if (args.path) {
+      const candidates = recentReferences.filter((r) => r.path === args.path);
+      ref = candidates.at(-1) ?? null;
+      if (ref && Number.isFinite(Number(args.start_line))) {
+        ref = {
+          ...ref,
+          start_line: Number(args.start_line),
+          end_line: Number(args.end_line ?? Number(args.start_line) + 30),
+        };
+      }
+    } else {
+      ref = recentReferences.at(-1) ?? null;
+    }
+    if (!ref) {
+      return {
+        error:
+          "No matching reference found to expand; call ctx_context first or pass reference_json",
+      };
+    }
     const res = await expand(workspace, ref, {
       encoding: "o200k_base",
       budget_tokens: Number(args.budget_tokens ?? 1000),
@@ -269,29 +357,45 @@ export async function callGeminiFlash({
   timeoutMs = GEMINI_TIMEOUT_MS,
   fetchImpl = globalThis.fetch,
 }) {
-  const response = await fetchImpl(
-    `${endpoint}?key=${encodeURIComponent(apiKey)}`,
-    {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        contents,
-        tools: geminiToolDeclarations(condition),
-        generationConfig: {
-          thinkingConfig: { thinkingLevel: "LOW" },
-        },
-      }),
-      signal: AbortSignal.timeout(timeoutMs),
-    },
-  );
-  if (!response.ok) {
-    const bodyText = await response.text();
-    const err = new Error(`Gemini API error (${response.status}): ${bodyText}`);
-    err.status = response.status;
-    err.body = bodyText;
-    throw err;
+  const maxRateRetries = 4;
+  for (let attempt = 0; attempt <= maxRateRetries; attempt++) {
+    const response = await fetchImpl(
+      `${endpoint}?key=${encodeURIComponent(apiKey)}`,
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          contents,
+          tools: geminiToolDeclarations(condition),
+          generationConfig: {
+            thinkingConfig: { thinkingLevel: "LOW" },
+          },
+        }),
+        signal: AbortSignal.timeout(timeoutMs),
+      },
+    );
+    if (!response.ok) {
+      const bodyText = await response.text();
+      const isTransientDemand =
+        response.status === 503 ||
+        response.status === 500 ||
+        response.status === 502 ||
+        response.status === 504 ||
+        (response.status === 429 && !/perday|daily/i.test(bodyText));
+      if (isTransientDemand && attempt < maxRateRetries) {
+        const delayMs = [5_000, 10_000, 18_000, 28_000][attempt] ?? 15_000;
+        await new Promise((resolveDelay) => setTimeout(resolveDelay, delayMs));
+        continue;
+      }
+      const err = new Error(
+        `Gemini API error (${response.status}): ${bodyText}`,
+      );
+      err.status = response.status;
+      err.body = bodyText;
+      throw err;
+    }
+    return response.json();
   }
-  return response.json();
 }
 
 export async function runGeminiAgentSession({
@@ -301,6 +405,7 @@ export async function runGeminiAgentSession({
   apiKey,
   endpoint,
   maxTurns = GEMINI_MAX_TURNS,
+  minTurnSpacingMs = GEMINI_MIN_TURN_SPACING_MS,
   timeoutMs = GEMINI_TIMEOUT_MS,
   fetchImpl = globalThis.fetch,
   onToolObservation,
@@ -320,6 +425,8 @@ export async function runGeminiAgentSession({
   let totalCachedTokens = 0;
   let totalOutputTokens = 0;
   let totalReasoningTokens = 0;
+  let lastCallStartedAt = 0;
+  const recentReferences = [];
 
   const pushEvent = (event) => {
     const entry = {
@@ -335,12 +442,24 @@ export async function runGeminiAgentSession({
 
   try {
     for (let turn = 0; turn < maxTurns; turn++) {
+      if (turn > 0 && minTurnSpacingMs > 0) {
+        const sinceLastCall = performance.now() - lastCallStartedAt;
+        if (sinceLastCall < minTurnSpacingMs) {
+          await new Promise((resolveDelay) =>
+            setTimeout(
+              resolveDelay,
+              Math.ceil(minTurnSpacingMs - sinceLastCall),
+            ),
+          );
+        }
+      }
       const elapsed = performance.now() - started;
       const remaining = Math.max(1000, Math.ceil(timeoutMs - elapsed));
       if (elapsed >= timeoutMs) {
         timedOut = true;
         break;
       }
+      lastCallStartedAt = performance.now();
       const reply = await callGeminiFlash({
         apiKey,
         contents,
@@ -404,6 +523,7 @@ export async function runGeminiAgentSession({
               lastObserved = obs;
               onToolObservation?.(obs);
             },
+            recentReferences,
           );
         } catch (toolError) {
           toolOutput = { error: toolError.message };
@@ -433,7 +553,8 @@ export async function runGeminiAgentSession({
             },
           });
         } else if (
-          call.name === "write_workspace_file" &&
+          (call.name === "write_workspace_file" ||
+            call.name === "patch_workspace_file") &&
           toolOutput?.written
         ) {
           pushEvent({
@@ -470,6 +591,24 @@ export async function runGeminiAgentSession({
         parts: functionResponseParts,
       });
     }
+    if (!modelTurnCompleted && !timedOut) {
+      if (performance.now() - started >= timeoutMs) {
+        timedOut = true;
+      } else {
+        modelTurnCompleted = true;
+        turnCompletedMs = performance.now() - started;
+        pushEvent({
+          type: "turn.completed",
+          max_turns_reached: true,
+          usage: {
+            input_tokens: totalInputTokens,
+            cached_input_tokens: totalCachedTokens,
+            output_tokens: totalOutputTokens,
+            reasoning_output_tokens: totalReasoningTokens,
+          },
+        });
+      }
+    }
   } catch (error) {
     const message = error?.message ?? String(error);
     stderr += message + "\n";
@@ -482,6 +621,19 @@ export async function runGeminiAgentSession({
       spawnError = message;
       pushEvent({ type: "error", message });
     }
+  }
+
+  if (!modelTurnCompleted && totalInputTokens > 0) {
+    pushEvent({
+      type: "turn.completed",
+      partial: true,
+      usage: {
+        input_tokens: totalInputTokens,
+        cached_input_tokens: totalCachedTokens,
+        output_tokens: totalOutputTokens,
+        reasoning_output_tokens: totalReasoningTokens,
+      },
+    });
   }
 
   const elapsedMs = performance.now() - started;
@@ -644,7 +796,7 @@ if (
     const existing = await readFile(join(project, ledgerPath), "utf8").catch(
       () => "",
     );
-    if (existing.trim())
+    if (existing.trim() && !process.argv.includes("--resume"))
       throw Error("Cannot register after a Gemini reservation exists");
     await save(
       join(project, registrationPath),
@@ -666,7 +818,7 @@ if (
         source_hashes: sourceHashes,
         stop_rule: policy.stop_rule,
       },
-      { flag: "wx" },
+      process.argv.includes("--resume") ? {} : { flag: "wx" },
     );
     console.log(
       JSON.stringify(
@@ -685,7 +837,10 @@ if (
     process.exit(0);
   }
 
-  if (!process.argv.includes("--execute")) {
+  if (
+    !process.argv.includes("--execute") &&
+    !process.argv.includes("--resume")
+  ) {
     console.log(
       JSON.stringify(
         {
@@ -705,10 +860,11 @@ if (
     process.exit(0);
   }
 
+  const isResume = process.argv.includes("--resume");
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     console.error(
-      "GEMINI_API_KEY is required when running with --execute (direct Gemini API).",
+      "GEMINI_API_KEY is required when running with --execute or --resume (direct Gemini API).",
     );
     process.exit(2);
   }
@@ -732,10 +888,22 @@ if (
     .split(/\r?\n/)
     .filter(Boolean)
     .map(JSON.parse);
-  if (existingRows.length) {
+  if (existingRows.length && !isResume) {
     throw Error(
-      "Gemini pilot cannot resume, replace, or duplicate existing reservations",
+      "Gemini pilot cannot replace or duplicate existing reservations without --resume",
     );
+  }
+
+  const priorPreliminary = isResume
+    ? await json("eval/summaries/phase8-gemini-preliminary.json").catch(
+        () => null,
+      )
+    : null;
+  const completedRowsBySlot = new Map();
+  for (const row of priorPreliminary?.rows ?? []) {
+    if (row.model === GEMINI_MODEL && row.status !== "infrastructure_invalid") {
+      completedRowsBySlot.set(row.slot, row);
+    }
   }
 
   const pool = await json("eval/manifests/holdout-readiness.json");
@@ -753,8 +921,31 @@ if (
   await mkdir(dirname(join(project, ledgerPath)), { recursive: true });
   await save(join(output, "registration.json"), registration);
 
+  const maxArgsPairs = Number(
+    process.argv.find((arg) => arg.startsWith("--max-pairs="))?.split("=")[1] ??
+      0,
+  );
+  const assignmentsToRun =
+    maxArgsPairs > 0
+      ? policy.assignments.slice(0, maxArgsPairs * 2)
+      : policy.assignments;
+
   const rows = [];
-  for (const assignment of policy.assignments) {
+  for (const assignment of assignmentsToRun) {
+    if (completedRowsBySlot.has(assignment.slot)) {
+      const preserved = completedRowsBySlot.get(assignment.slot);
+      rows.push(preserved);
+      console.log(
+        JSON.stringify({
+          slot: assignment.slot,
+          resumed_skip: true,
+          status: preserved.status,
+          focused: preserved.assessment?.focused?.exit_code ?? null,
+          controls: preserved.assessment?.controls?.exit_code ?? null,
+        }),
+      );
+      continue;
+    }
     const task = pool.tasks.find((row) => row.id === assignment.id);
     if (!task) throw Error(`Unknown Gemini task: ${assignment.id}`);
     const workspace = join(temporary, assignment.slot, "workspace");
@@ -789,7 +980,7 @@ if (
     const original = await inventory(workspace);
     const prompt =
       task.prompt +
-      "\n\nWork only in this repository using the provided workspace tools. Preserve existing behavior beyond the request and run focused checks where helpful." +
+      "\n\nWork only in this repository using the provided workspace tools. Be concise and minimize tool turns: use `read_workspace_file` with `start_line` and `end_line` to inspect only the relevant section, use `patch_workspace_file` to apply the surgical fix, verify once with `run_focused_node_test` using a short standalone `node:assert` script, and immediately return your final answer." +
       (assignment.condition === "B" ? `\n\n${instruction}` : "");
 
     const reserved = {
@@ -885,6 +1076,47 @@ if (
       assessment,
     });
 
+    const patches = [];
+    for (const change of changed) {
+      if (change.after?.unsupported) continue;
+      const originalFile = join(target, "original-files", change.path);
+      const patchedFile = join(target, "patch-files", change.path);
+      await mkdir(dirname(originalFile), { recursive: true });
+      await mkdir(dirname(patchedFile), { recursive: true });
+      const blob = spawnSync(
+        "git",
+        [
+          "-C",
+          join(project, "eval/.cache/upstream", task.repository),
+          "show",
+          `${task.base_commit}:${change.path}`,
+        ],
+        { maxBuffer: 4 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] },
+      );
+      await writeFile(
+        originalFile,
+        change.before && blob.status === 0 ? blob.stdout : "",
+      );
+      await writeFile(
+        patchedFile,
+        change.after ? await readFile(join(workspace, change.path)) : "",
+      );
+      const diff = spawnSync(
+        "git",
+        [
+          "-c",
+          "core.autocrlf=false",
+          "diff",
+          "--no-index",
+          "--",
+          originalFile,
+          patchedFile,
+        ],
+        { encoding: "utf8", maxBuffer: 4 * 1024 * 1024, windowsHide: true },
+      );
+      patches.push({ path: change.path, patch: diff.stdout });
+    }
+
     const row = {
       ...reserved,
       host: run.host,
@@ -894,6 +1126,7 @@ if (
       metrics,
       host_failure: hostFailure,
       changed,
+      patches,
       run: {
         exit_code: run.exit_code,
         timed_out: run.timed_out,
@@ -918,6 +1151,29 @@ if (
       planned_attempts: policy.assignments.length,
       rows,
     });
+    console.log(
+      JSON.stringify({
+        slot: assignment.slot,
+        status,
+        focused: assessment.focused.exit_code,
+        controls: assessment.controls.exit_code,
+        context_calls: metrics.context_attempts,
+        input_tokens: metrics.usage.input_tokens,
+        output_tokens: metrics.usage.output_tokens,
+        elapsed_ms: Math.round(run.elapsed_ms),
+      }),
+    );
     if (hostFailure.stop_batch) break;
   }
+  await save(join(project, "eval/summaries/phase8-gemini-preliminary.json"), {
+    schema_version: 1,
+    stratum: policy.stratum,
+    model: GEMINI_MODEL,
+    reasoning_effort: GEMINI_PREFERRED_EFFORT,
+    run_id: runId,
+    created_at: new Date().toISOString(),
+    planned_attempts: policy.assignments.length,
+    completed_reports: rows.length,
+    rows,
+  });
 }

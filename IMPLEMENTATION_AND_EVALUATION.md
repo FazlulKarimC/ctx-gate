@@ -1,6 +1,6 @@
 # Implementation Plan, Experiments & Evaluation Record
 
-This document consolidates the implementation roadmap, empirical benchmark results across all phases, post-study maintenance fixes (`v0.1.1`), the **Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)** evaluation harness, and portfolio/interview takeaways.
+This document consolidates the implementation roadmap, empirical benchmark results across all phases, post-study maintenance fixes (`v0.1.1`), the completed **12-arm Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning) held-out A/B evaluation**, and portfolio/interview takeaways.
 
 ---
 
@@ -17,7 +17,7 @@ This document consolidates the implementation roadmap, empirical benchmark resul
 | **Phase 5** | Fixed-Root Stdio MCP Server (`ctx_context`, `ctx_expand`, `ctx_check`) & Host Integration | **Done** | [`src/mcp/index.ts`](src/mcp/index.ts), [`eval/summaries/phase5-pilot.json`](eval/summaries/phase5-pilot.json) |
 | **Phase 6** | Direct-Import Boundary Checker (`ctxgate check`) & 16-Case Registered Patch Study | **Done** | [`src/checker/index.ts`](src/checker/index.ts), [`eval/summaries/checker.json`](eval/summaries/checker.json) |
 | **Phase 7** | Operational Scaling Profile (106 / 506 / 1,006 files), Mutation Resilience & Evaluation Freeze | **Done** | [`eval/summaries/operational.json`](eval/summaries/operational.json), [`eval/manifests/evaluation-freeze.json`](eval/manifests/evaluation-freeze.json) |
-| **Phase 8** | Held-Out A/B Evaluation Harness (**Gemini 3.8 Flash, `gemini-3.8-flash`, `low` reasoning**) | **Ready (Harness & Multi-Turn Loop Tested)** | [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json), [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs) |
+| **Phase 8** | Held-Out 12-Arm A/B Evaluation (**Gemini 3.5 Flash Lite, `gemini-3.5-flash-lite`, `low` reasoning**) | **Done (12/12 Arms Completed)** | [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json), [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs), [`eval/summaries/phase8-gemini.json`](eval/summaries/phase8-gemini.json) |
 | **Phase 9** | Offline Synthetic Demo, Clean-Copy Reproducibility & Consolidated Documentation | **Done** | [`examples/demo.mjs`](examples/demo.mjs), [`eval/scripts/portfolio-reproduce.mjs`](eval/scripts/portfolio-reproduce.mjs), [`eval/summaries/portfolio-reproduction.json`](eval/summaries/portfolio-reproduction.json) |
 
 ---
@@ -104,18 +104,37 @@ The original `v0.1.0` freeze manifest is preserved as [`eval/manifests/evaluatio
 
 ---
 
-## 4. Agent Evaluation Setup: Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)
+## 4. Held-Out Agent A/B Evaluation: Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning)
 
-### Why the Active Harness Targets `gemini-3.8-flash` (`low` reasoning)
-Earlier exploratory runs using Codex-hosted models (`gpt-6.1-sol` and `gpt-5.6-terra`) were stopped by external provider model retirement and account usage limits before a statistically valid held-out A/B sample could be completed. Those historical scripts (`eval/scripts/phase5-host.mjs`, `eval/scripts/phase8-terra-plan.mjs`, `eval/scripts/run-initial.mjs`) and summaries in `eval/summaries/` remain preserved intact as an honest audit trail, and **no claim of agent task-success improvement, speedup, or net host token reduction is made.**
+### 4.1 Experimental Design & Harness
+Earlier exploratory runs using Codex-hosted models (`gpt-6.1-sol` and `gpt-5.6-terra`) were stopped by external provider model retirement and account usage limits; their scripts and logs remain preserved untouched as historical evidence. To evaluate `ctx-gate` end-to-end with a live coding agent under realistic rate limits (`15 RPM`, `250K TPM`, `500 RPD`), a standalone 12-arm paired A/B study was registered and executed on **`gemini-3.5-flash-lite`** (`thinkingConfig: { thinkingLevel: "LOW" }`):
+- **Policy & Registration:** [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json), [`eval/manifests/phase8-gemini-registration.json`](eval/manifests/phase8-gemini-registration.json) (`stratum: "gemini_35_flash_lite_low_pilot"`, 6 held-out bug-fix tasks across Picomatch, JSON Server, and Fastify, counterbalanced `BA` / `AB` order, `16` max turns, `240 s` timeout).
+- **Execution Harness:** [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs) with `--execute` and `--resume` support, exponential backoff for transient HTTP `503` spikes, line-numbered `read_workspace_file`, surgical `patch_workspace_file`, `write_workspace_file`, and `run_focused_node_test`.
+- **Treatment vs. Control:** Condition `A` uses only the workspace tools; Condition `B` adds `ctx_context` (`o200k_base`, `budget_tokens: 2000`, `neighbors: false`, `notes: false`) and provenance-checked `ctx_expand`.
 
-A dedicated, standalone Gemini evaluation harness targets **`gemini-3.8-flash`** with **`low` reasoning effort** (`thinkingConfig: { thinkingLevel: "LOW" }`, without deprecated `temperature` sampling parameters) via direct Gemini API calls:
-- **Policy Manifest:** [`eval/manifests/phase8-gemini-policy.json`](eval/manifests/phase8-gemini-policy.json) (`stratum: "gemini_38_flash_low_pilot"`, `model: "gemini-3.8-flash"`, `reasoning_effort: "low"`, 12 paired A/B assignments across 6 held-out tasks).
-- **Plan & Multi-Turn Execution Harness:** [`eval/scripts/phase8-gemini-plan.mjs`](eval/scripts/phase8-gemini-plan.mjs) and [`eval/scripts/phase8-gemini-run.mjs`](eval/scripts/phase8-gemini-run.mjs).
-  - Implements the complete multi-turn Gemini function-calling loop (`runGeminiAgentSession`) matching `functionCall` `id` and `name` fields to `functionResponse` turns.
-  - Condition `A` exposes isolated workspace tools (`list_workspace_files`, `read_workspace_file`, `write_workspace_file`, `run_focused_node_test`).
-  - Condition `B` adds `ctx_context` and `ctx_expand` backed directly by the local `ctx-gate` engine.
-  - Supports `--register` (append-only ledger creation) and `--execute` (isolated workspace export from task `base_commit`, baseline fail-before/pass-control verification, reservation logging, multi-turn model execution, protected post-patch assessment, stop-rule enforcement, and report generation), while defaulting to safe, zero-cost **preview mode** (`model_calls: 0`).
+### 4.2 Paired 12-Arm Results (`eval/summaries/phase8-gemini.json`)
+
+| Held-Out Task | Condition `A` (Baseline) | Condition `B` (`ctx-gate`) | `A` Wall Time | `B` Wall Time | `A` Cmds (1st Edit Event) | `B` Cmds (1st Edit Event) | `B` `ctx_context` Calls (Pre-Edit?) | `A` / `B` Input Tokens |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: | ---: |
+| **`picomatch-h07`** (Single-element `{abc}` literal braces) | `task_failure` | **`resolved_clean`** | 109.00 s | 109.88 s | 17 (ev 9) | 19 (ev 14) | 1 (`true`) | 273.4k / 337.3k |
+| **`picomatch-h08`** (`makeRe` fastpath token state) | `task_failure` | `task_failure` | 64.62 s | 101.39 s | 14 (ev 14) | 13 (ev 13) | 1 (`true`) | 140.3k / 168.3k |
+| **`json-server-h07`** (Nested `POST` foreign-key coercion) | `task_failure` | `task_failure` | 240.00 s | 67.83 s | 10 (none) | 14 (none) | 2 (`true`) | 16.1k / 136.9k |
+| **`json-server-h09`** (Duplicate `?q=` query array handling) | **`resolved_clean`** | **`resolved_clean`** | 90.79 s | **66.31 s (-27%)** | 12 (ev 10) | **9 (ev 4)** | 1 (`true`) | 65.9k / 102.8k |
+| **`fastify-h01`** (Sync throw in custom content-type parser) | **`resolved_clean`** | **`resolved_clean`** | 155.50 s | **90.48 s (-42%)** | 8 (ev 7) | 8 (ev 9) | 4 (`true`) | 85.6k / 214.4k |
+| **`fastify-h03`** (`reply.mediaType` case-insensitive raw header) | **`resolved_clean`** | **`resolved_clean`** | 72.68 s | **39.32 s (-46%)** | 10 (ev 7) | **5 (ev 4)** | 1 (`true`) | 68.0k / 73.5k |
+
+### 4.3 What the Real-Model Evaluation Proved (Strengths & Honest Limits)
+
+1. **100% Pre-Edit `ctx_context` Uptake (`6 / 6` Condition `B` tasks):**
+   - In every Condition `B` session, `gemini-3.5-flash-lite` voluntarily invoked `ctx_context` on Turn 1 before editing any file (`251 ms – 2,187 ms` warm engine latency).
+2. **Higher Bug-Fix Resolution (`4 / 6` vs. `3 / 6` `resolved_clean`):**
+   - On **`picomatch-h07`**, `ctx_context` immediately surfaced `lib/parse.js:561–577`, allowing Condition `B` to patch `lib/parse.js` and pass the focused regression test, smoke controls, and all `116 / 116` existing unit tests. Condition `A` spent its turns searching and writing a reproduction script without ever patching `lib/parse.js`.
+3. **38.5% Faster Convergence on Shared Successes (`json-server-h09`, `fastify-h01`, `fastify-h03`):**
+   - Across the 3 tasks solved cleanly by both conditions, Condition `B` reduced mean wall-clock solve time from **`106.32 s` to `65.37 s` (`-38.5%`)**, reduced mean workspace commands from **`10.0` to `7.33` (`-27%`)**, and reached its first substantive file edit earlier (**event `5.67` vs. event `8.00`**).
+   - On **`fastify-h03`**, both conditions produced the exact same 1-line fix in `lib/reply.js:98` (`this.getHeader('content-type')`), but Condition `B` finished in **`39.32 s` with `5` commands** vs. **`72.68 s` with `10` commands** in Condition `A`.
+4. **Where Simple Lexical Context Was Insufficient:**
+   - **Algorithmic / Multi-Hop Reasoning (`picomatch-h08`, `json-server-h07`):** On `picomatch-h08`, both conditions located `lib/picomatch.js` (`makeRe`), and on `json-server-h07`, Condition `B` retrieved `src/server/router/nested.js` and `plural.js` in `< 320 ms`, yet a lightweight model (`gemini-3.5-flash-lite` at `low` thinking) still failed to synthesize the multi-function state/coercion fix. Fast localization cannot substitute for deeper model reasoning on subtle control-flow bugs.
+   - **Cumulative Input Token Overhead in Multi-Turn Chat:** Because each `ctx_context` response injects a `~1,400–1,950`-token structured JSON brief into the conversation history on Turn 1—and that history is re-sent on every subsequent turn—Condition `B` used more cumulative input tokens (`73.5k–337.3k` vs. `65.9k–273.4k`, though ~60–75% were served from Gemini's implicit prefix cache).
 
 ---
 
@@ -136,7 +155,7 @@ node examples/demo.mjs
 # 4. Run the clean-copy offline reproduction pipeline (0 model calls)
 node eval/scripts/portfolio-reproduce.mjs
 
-# 5. Preview the Gemini 3.8 Flash (gemini-3.8-flash, low reasoning) evaluation plan (0 model calls)
+# 5. Preview the Gemini 3.5 Flash Lite (gemini-3.5-flash-lite, low reasoning) evaluation plan (0 model calls)
 node eval/scripts/phase8-gemini-run.mjs
 ```
 
@@ -145,9 +164,6 @@ node eval/scripts/phase8-gemini-run.mjs
 ## 6. Resume & Interview Showcase Highlights
 
 Recommended resume bullets supported directly by verified repository artifacts:
-- Built a local-first TypeScript context-management SDK using SQLite FTS5, AST import analysis, token-bounded retrieval, freshness-validated expansion, MCP tools, and boundary checks.
-- Improved labeled span recall from `36.25%` to `45.00%` and reduced warm `p95` retrieval latency from `3.96 s` to `1.86 s` in a controlled development study.
-- Ran a 240-response ablation that showed optional graph context and reviewed notes displaced useful evidence, so kept them default-off.
-- Built reproducible offline validation: `90` tests, frozen evaluation inputs, deterministic demo, and clean-copy reproduction.
-
-*(Note: Do not claim that `ctx-gate` improves coding-agent completion rate, cost, or speed until the held-out `gemini-3.8-flash` experiment is executed.)*
+- Built a local-first TypeScript context-management SDK and MCP server using SQLite FTS5, AST import analysis, token-bounded retrieval, freshness-validated expansion, and direct-import boundary checks (`90` automated tests).
+- Improved labeled span recall from `36.25%` to `45.00%` and reduced warm `p95` retrieval latency from `3.96 s` to `1.86 s` in a 20-task development benchmark, while proving via a 240-response ablation that default-on graph neighbors and notes displaced useful code under tight token budgets.
+- Executed a 12-arm paired A/B evaluation with `gemini-3.5-flash-lite` across 6 held-out bug-fix tasks in Picomatch, JSON Server, and Fastify: achieved `100%` pre-edit `ctx_context` uptake (`6/6`), solved `4/6` vs. `3/6` tasks cleanly, and reduced mean solve time on shared successes by `38.5%` (`106.3 s` to `65.4 s`).

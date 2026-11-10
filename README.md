@@ -10,7 +10,7 @@ Built on **Node 24 LTS** (`node:sqlite` WAL + FTS5, TypeScript syntax/module-res
 
 1. **[`PROBLEM_AND_RESEARCH.md`](PROBLEM_AND_RESEARCH.md)** — Problem statement, why AI coding agents fail on repository context, comparison with RAG/graph/daemon alternatives, and research hypotheses.
 2. **[`ARCHITECTURE_AND_TRADEOFFS.md`](ARCHITECTURE_AND_TRADEOFFS.md)** — The 6-module architecture, provenance & freshness contracts, full-envelope token budgeting, why graph neighbors & reviewed notes are default-off, and the trusted baseline boundary checker.
-3. **[`IMPLEMENTATION_AND_EVALUATION.md`](IMPLEMENTATION_AND_EVALUATION.md)** — Phase-by-phase implementation record, empirical benchmark tables, `v0.1.1` bug fixes, the **Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)** evaluation setup, and resume/interview highlights.
+3. **[`IMPLEMENTATION_AND_EVALUATION.md`](IMPLEMENTATION_AND_EVALUATION.md)** — Phase-by-phase implementation record, empirical benchmark tables, `v0.1.1` bug fixes, the completed **12-arm Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning) held-out A/B evaluation**, and resume/interview highlights.
 
 ---
 
@@ -76,4 +76,7 @@ const verdict = check(repoRoot, { base: baselineCommitSha, mode: "required" });
 - **Lexical Retrieval vs. Raw Search:** On the 20-task development benchmark at a strict 2,000-token `o200k_base` budget, lexical retrieval (`v2`) hit `14/20` relevant source files and `11/20` labeled implementation spans (`45.00%` mean span recall) vs. `0/20` for an alphabetical `ripgrep` baseline.
 - **Intra-Symbol Focus & Bounded Packing (`v2` vs. `v1`):** Focusing windows inside matched symbols and capping packing attempts at 40 reduced warm `p95` latency from `3.96 s` to `1.86 s` and reduced full-envelope tokenizer calls by `73%` (`406.85` to `108.80`).
 - **Evidence-Gated Features:** One-hop import neighbors (`--neighbors`) and reviewed Markdown notes (`--notes`) are supported but **disabled by default** because controlled ablations showed they displaced `9–40` labeled code lines under fixed token budgets without adding new relevant spans.
-- **Honest Scope:** Local retrieval quality, freshness safety, and synthetic boundary checking (`16/16` cases) are deterministically verified; end-to-end coding-agent A/B evaluation is configured for **Gemini 3.8 Flash (`gemini-3.8-flash`, `low` reasoning)** (`node eval/scripts/phase8-gemini-run.mjs`).
+- **Held-Out Agent A/B Evaluation (`gemini-3.5-flash-lite`, `low` reasoning, 12 arms across 6 tasks):**
+  - **100% Pre-Edit Tool Uptake:** Condition `B` (`ctx-gate`) called `ctx_context` before the first file edit on `6 / 6` tasks (`251 ms – 2,187 ms` warm retrieval).
+  - **Test-Verified Resolution (`resolved_clean`):** Condition `B` solved **`4 / 6` tasks** (`picomatch-h07`, `json-server-h09`, `fastify-h01`, `fastify-h03`) vs. **`3 / 6` tasks** for Condition `A` (which failed `picomatch-h07`).
+  - **Faster Convergence on Shared Solves:** Across the 3 tasks solved by both arms (`json-server-h09`, `fastify-h01`, `fastify-h03`), Condition `B` reduced mean wall-clock solve time by **`38.5%`** (`106.32 s` -> `65.37 s`), cut workspace commands from `10.0` to `7.33`, and reached the first substantive edit earlier (event `5.67` vs. `8.00`), at the cost of higher cumulative prompt tokens due to multi-turn context payload replay ([`eval/summaries/phase8-gemini.json`](eval/summaries/phase8-gemini.json)).
