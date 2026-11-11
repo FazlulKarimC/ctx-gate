@@ -10,7 +10,7 @@ Built on **Node 24 LTS** (`node:sqlite` WAL + FTS5, TypeScript syntax/module-res
 
 1. **[`PROBLEM_AND_RESEARCH.md`](PROBLEM_AND_RESEARCH.md)** — Problem statement, why AI coding agents fail on repository context, comparison with RAG/graph/daemon alternatives, and research hypotheses.
 2. **[`ARCHITECTURE_AND_TRADEOFFS.md`](ARCHITECTURE_AND_TRADEOFFS.md)** — The 6-module architecture, provenance & freshness contracts, full-envelope token budgeting, why graph neighbors & reviewed notes are default-off, and the trusted baseline boundary checker.
-3. **[`IMPLEMENTATION_AND_EVALUATION.md`](IMPLEMENTATION_AND_EVALUATION.md)** — Phase-by-phase implementation record, empirical benchmark tables, `v0.1.1` bug fixes, the completed **12-arm Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning) held-out A/B evaluation**, and resume/interview highlights.
+3. **[`IMPLEMENTATION_AND_EVALUATION.md`](IMPLEMENTATION_AND_EVALUATION.md)** — Phase-by-phase implementation record, empirical benchmark tables, `v0.1.1` bug fixes, and the completed **12-arm Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning) held-out A/B evaluation**.
 
 ---
 

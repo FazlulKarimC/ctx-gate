@@ -1,6 +1,6 @@
 # Implementation Plan, Experiments & Evaluation Record
 
-This document consolidates the implementation roadmap, empirical benchmark results across all phases, post-study maintenance fixes (`v0.1.1`), the completed **12-arm Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning) held-out A/B evaluation**, and portfolio/interview takeaways.
+This document consolidates the implementation roadmap, empirical benchmark results across all phases, post-study maintenance fixes (`v0.1.1`), and the completed **12-arm Gemini 3.5 Flash Lite (`gemini-3.5-flash-lite`, `low` reasoning) held-out A/B evaluation**.
 
 ---
 
@@ -158,12 +158,3 @@ node eval/scripts/portfolio-reproduce.mjs
 # 5. Preview the Gemini 3.5 Flash Lite (gemini-3.5-flash-lite, low reasoning) evaluation plan (0 model calls)
 node eval/scripts/phase8-gemini-run.mjs
 ```
-
----
-
-## 6. Resume & Interview Showcase Highlights
-
-Recommended resume bullets supported directly by verified repository artifacts:
-- Built a local-first TypeScript context-management SDK and MCP server using SQLite FTS5, AST import analysis, token-bounded retrieval, freshness-validated expansion, and direct-import boundary checks (`90` automated tests).
-- Improved labeled span recall from `36.25%` to `45.00%` and reduced warm `p95` retrieval latency from `3.96 s` to `1.86 s` in a 20-task development benchmark, while proving via a 240-response ablation that default-on graph neighbors and notes displaced useful code under tight token budgets.
-- Executed a 12-arm paired A/B evaluation with `gemini-3.5-flash-lite` across 6 held-out bug-fix tasks in Picomatch, JSON Server, and Fastify: achieved `100%` pre-edit `ctx_context` uptake (`6/6`), solved `4/6` vs. `3/6` tasks cleanly, and reduced mean solve time on shared successes by `38.5%` (`106.3 s` to `65.4 s`).
