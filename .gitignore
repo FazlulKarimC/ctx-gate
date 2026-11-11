@@ -8,3 +8,4 @@ eval/runs/
 *.log
 .env
 .env.*
+INTERVIEW_PREP.md
